@@ -1,0 +1,147 @@
+/* LOCAL CSS Variables */
+.login-maindiv {
+  --color-login-button: #4c77af;
+  --color-login-button-hover: #6fa0e0;
+  --color-font-primary: black;
+  --color-font-secondary: white;
+
+  --color-faded: #555;
+  --color-faded-white: rgb(202, 202, 202);
+
+  --color-signup-button: rgb(72, 177, 98);
+  --color-signup-button-hover: rgb(99, 190, 148);
+
+  --color-background: rgb(253, 252, 234);
+}
+
+/* <-----------------------------------------------------------------> */
+
+/* Main DIV ko CSS */
+.login-maindiv {
+  width: 100%;
+  max-width: 30rem;
+  margin: 5rem auto;
+  box-shadow: 0 0 10px rgb(168, 168, 168);
+  border-radius: 5px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: var(--color-background);
+}
+
+/* Upper Div (Login text) ko CSS */
+.login-upperdiv h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+/* <-----------------------------------------------------------------> */
+
+/* Middle Div CSS */
+.login-middlediv {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* Input Fields CSS (Username,Password) */
+.login-middlediv input[type='text'] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 1rem;
+  border: 1px solid var(--color-faded-white);
+  border-radius: 0.5rem;
+  font-size: 1.3rem;
+  text-align: left;
+}
+
+/* Login Button CSS */
+.login-middlediv button {
+  width: auto;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  background-color: var(--color-login-button);
+  color: var(--color-font-secondary);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px black;
+}
+
+/* Login Button HOVER Effect */
+.login-middlediv button:hover {
+  background-color: var(--color-login-button-hover);
+}
+
+/* button CLICK huda Effect */
+button:active {
+  translate: 0 1px;
+}
+
+/* <-----------------------------------------------------------------> */
+
+/* Lower Div ko CSS (Forgot password && signup button) */
+.login-lowerdiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* ForgotPassword ? CSS */
+.login-lowerdiv a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: var(--color-faded);
+}
+
+/* Signup Button CSS */
+.login-lowerdiv button {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-signup-button);
+  color: var(--color-font-secondary);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px black;
+}
+
+.login-lowerdiv button:hover {
+  background-color: var(--color-signup-button-hover);
+  cursor: pointer;
+}
+
+/* <-----------------------------------------------------------------> */
+
+/* CSS for responsiveness */
+
+@media (max-width: 480px) {
+  /* Main DIV CSS */
+  .login-maindiv {
+    margin: 5rem auto;
+  }
+
+  /* Login Text CSS */
+  .login-upperdiv h1 {
+    font-size: 3rem;
+  }
+
+  /* Input Fields CSS */
+  .login-middlediv input[type='text'] {
+    margin-bottom: 2rem;
+  }
+
+  /* Login Button CSS */
+  .login-middlediv button {
+    margin-top: 1rem;
+  }
+
+  /* Lower Div CSS ( contains forgot password && signup) */
+  .login-lowerdiv {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+}

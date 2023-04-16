@@ -1,0 +1,115 @@
+/* Importing GOOGLE Fonts */
+
+/* Font name : lora */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,600&display=swap');
+
+/* Custom CSS Variables */
+* {
+  --navbar-background: rgb(150, 204, 204);
+  --font-color: black;
+  --main-font: 'Lora', serif;
+  --secondary-font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+/* <-----------------------------------------------------------------> */
+
+/* Whole NAVBAR ko css */
+.navbar-maindiv {
+  width: 100%;
+  min-height: 3rem;
+  background: var(--navbar-background);
+  font-family: var(--main-font);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+/* NAVBAR's  LOGO ko css */
+.nav-logodiv img {
+  width: 5rem;
+}
+
+/* Navbar's Left Div ko CSS */
+.nav-logodiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1rem;
+}
+
+/* <-----------------------------------------------------------------> */
+
+/* Navbar's right Div ko CSS */
+.navbar-items {
+  margin-right: 2rem;
+  font-family: var(--secondary-font);
+  display: flex;
+  align-items: center;
+}
+
+/* Navbar right side Links CSS */
+.navbar-items a {
+  text-decoration: none;
+  margin-right: 20px;
+  color: var(--font-color);
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* Search bar CSS */
+.navbar-items input[type='text'] {
+  padding: 0.5rem;
+  margin-right: 1rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  color: var(--font-color);
+  border: none;
+  width: 25rem;
+  box-shadow: 0px 0px 5px black;
+}
+/* Search bar CSS */
+.navbar-items input[type='text']:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+
+/* User profile Div */
+.dropdown {
+  position: relative;
+}
+/* User image CSS */
+.dropdown img {
+  width: 2rem;
+}
+
+/* User image button css */
+.profile-btn {
+  padding: 0.5rem 0.5rem;
+  background-color: var(--navbar-background);
+  border: none;
+  border-radius: 10rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Drop down DIV CSS */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+/* Drop down links (Login,Signup) CSS */
+.dropdown-content a {
+  display: block;
+  padding: 0.3rem;
+  text-decoration: none;
+  color: black;
+}
+
+/* Drop down links HOVER Effect */
+.dropdown:hover .dropdown-content {
+  display: block;
+}

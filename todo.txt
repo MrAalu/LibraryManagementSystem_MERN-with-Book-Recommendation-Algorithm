@@ -1,0 +1,5 @@
+1.NAVBAR ma test top ma taseko xa, center ma kasari laune ? ->
+  align-items: center;
+
+
+2. login/singup ma click huda login/signup page kholna paryo ! routing how ?
