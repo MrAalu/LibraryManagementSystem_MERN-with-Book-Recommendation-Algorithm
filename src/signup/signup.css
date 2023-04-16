@@ -1,0 +1,163 @@
+/* LOCAL CSS Variables */
+.signup-maindiv {
+  --color-login-button: #4c77af;
+  --color-login-button-hover: #6fa0e0;
+  --color-font-primary: black;
+  --color-font-secondary: white;
+
+  --color-faded: #555;
+  --color-faded-white: rgb(202, 202, 202);
+
+  --color-signup-button: rgb(72, 177, 98);
+  --color-signup-button-hover: rgb(99, 190, 148);
+
+  --color-background: rgb(253, 252, 234);
+}
+
+/* <-----------------------------------------------------------------> */
+
+/* Main DIV ko CSS */
+.signup-maindiv {
+  width: 100%;
+  max-width: 40rem;
+  margin: 1rem auto;
+  box-shadow: 0 0 10px rgb(168, 168, 168);
+  border-radius: 5px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: var(--color-background);
+}
+
+/* Upper Div (signup text) ko CSS */
+.signup-upperdiv h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+/* <-----------------------------------------------------------------> */
+
+/* Middle Div CSS */
+.signup-middlediv {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* InputFields Labels CSS */
+.signup-middlediv label {
+  display: block;
+  font-size: 1.3rem;
+  text-align: left;
+  margin-top: 2rem;
+}
+
+/* Input Fields CSS (Username,Password) */
+.signup-middlediv input {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid var(--color-faded-white);
+  border-radius: 0.5rem;
+  font-size: 1.3rem;
+  text-align: left;
+}
+
+/* PhoneNumber Input Field ko UP/DOWN ARROW remove gareko  */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* signup Button CSS */
+.signup-middlediv button {
+  width: auto;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  background-color: var(--color-login-button);
+  color: var(--color-font-secondary);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px black;
+}
+
+/* signup Button HOVER Effect */
+.signup-middlediv button:hover {
+  background-color: var(--color-login-button-hover);
+}
+
+/* button CLICK huda Effect */
+button:active {
+  translate: 0 1px;
+}
+
+/* <-----------------------------------------------------------------> */
+
+/* Lower Div ko CSS (Forgot password && signup button) */
+.signup-lowerdiv {
+  display: flex;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* 'Already have an Account' text CSS  */
+.signup-lowerdiv p {
+  font-weight: bold;
+  font-style: italic;
+  margin-right: 1rem;
+}
+
+/* Signup Button CSS */
+.signup-lowerdiv button {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-signup-button);
+  color: var(--color-font-secondary);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px black;
+}
+
+.signup-lowerdiv button:hover {
+  background-color: var(--color-signup-button-hover);
+  cursor: pointer;
+}
+
+/* <-----------------------------------------------------------------> */
+
+/* CSS for responsiveness */
+
+@media (max-width: 480px) {
+  /* Main DIV CSS */
+  .signup-maindiv {
+    margin: 5rem auto;
+  }
+
+  /* signup Text CSS */
+  .signup-upperdiv h1 {
+    font-size: 3rem;
+  }
+
+  /* Input Fields CSS */
+  .signup-middlediv input[type='text'] {
+    margin-bottom: 2rem;
+  }
+
+  /* signup Button CSS */
+  .signup-middlediv button {
+    margin-top: 1rem;
+  }
+
+  /* Lower Div CSS ( contains forgot password && signup) */
+  .signup-lowerdiv {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+}

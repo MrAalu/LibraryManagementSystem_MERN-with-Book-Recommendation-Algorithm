@@ -3,3 +3,5 @@
 
 
 2. login/singup ma click huda login/signup page kholna paryo ! routing how ?
+
+3.Signup ma 'Username must me unique' || 'username already taken' prompt 
