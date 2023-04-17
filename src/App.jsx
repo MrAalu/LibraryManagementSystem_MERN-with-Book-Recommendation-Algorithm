@@ -3,15 +3,18 @@ import React from 'react'
 import Navbar from './Navbar'
 import Login from './login/Login'
 import Signup from './signup/Signup'
+import Home from './home/Home'
 
 const App = () => {
   return (
     <React.Fragment>
       <Navbar />
 
-      {/* <Login></Login> */}
+      {/* <Login></Login>
 
-      <Signup></Signup>
+      <Signup></Signup> */}
+
+      <Home></Home>
     </React.Fragment>
   )
 }

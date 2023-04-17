@@ -1,0 +1,43 @@
+/* HOME PAGE /LANDING PAGE CSS */
+
+.home-recommended-books-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.home-recommended-books-div img {
+  max-width: 10rem;
+  margin-right: 1.5rem;
+}
+
+.home-recommended-books-div h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.home-recommended-books-div h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.home-recommended-books-div p {
+  margin: 1rem 0 0 0;
+}
+
+@media (max-width: 768px) {
+  .home-recommended-books-div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-recommended-books-div img {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}

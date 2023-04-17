@@ -5,3 +5,17 @@
 2. login/singup ma click huda login/signup page kholna paryo ! routing how ?
 
 3.Signup ma 'Username must me unique' || 'username already taken' prompt 
+
+
+Home page ma k k hunxa :
+-Banner with simple quotes (random generate each time) eg: meet your next fav book
+-Trending  books /most issued
+-browse by genres (view all)    filter btn
+
+-right side vertical -> recommended books (only show to login users ,new user lai kasari recommend garna milxa ,on what based?) 
+
+SEARCH BAR - CTRL +K hotkey && search ma click garda pop up (thulo search dialog) and tesma search garne
+
+footer subscribe to our news letter
+New Arrivals -Front page ma (database ma naya add gareko lai display)
+Darkmode /light mode 
