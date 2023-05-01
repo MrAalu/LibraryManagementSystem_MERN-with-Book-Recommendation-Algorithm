@@ -10,7 +10,7 @@ const App = () => {
     <React.Fragment>
       <Navbar />
 
-      <Login></Login>
+      {/* <Login></Login> */}
 
       {/* <Signup></Signup> */}
 
