@@ -32,6 +32,7 @@ const Login = () => {
             value={textfield.username}
             onChange={HandleOnChange}
             name='username'
+            autoComplete='off'
           />
 
           <input
@@ -40,6 +41,7 @@ const Login = () => {
             value={textfield.password}
             onChange={HandleOnChange}
             name='password'
+            autoComplete='off'
           />
 
           <button type='submit'>Login</button>

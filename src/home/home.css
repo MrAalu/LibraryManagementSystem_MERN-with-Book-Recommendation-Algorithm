@@ -1,8 +1,9 @@
 /* HOME PAGE /LANDING PAGE CSS */
 
 .home-recommended-books-div {
-  display: flex;
-  flex-direction: row;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
   align-items: center;
   margin: 1rem;
   padding: 1rem;

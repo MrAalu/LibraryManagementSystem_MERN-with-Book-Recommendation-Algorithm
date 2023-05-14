@@ -32,6 +32,21 @@ const Home = () => {
 
 // <------------------------------------------------------------------------------------------>
 
+// Recommended Books Div here
+const RecommendedBooks = (props) => {
+  const { name, img, description, author } = props
+  return (
+    <div className='home-recommended-books-div'>
+      <div className='recommended-child'>
+        <img src={img} alt='book image' />
+        <h2>{name}</h2>
+        <h3>{author}</h3>
+        <p>{description}</p>
+      </div>
+    </div>
+  )
+}
+
 // Banner Div Here
 const BannerHome = () => {
   return (
@@ -40,19 +55,6 @@ const BannerHome = () => {
         src='https://i.ibb.co/kGdnKt5/Into-the-wild-reading-book-CROPPPED.jpg'
         alt='bannerimagehere'
       />
-    </div>
-  )
-}
-
-// Recommended Books Div here
-const RecommendedBooks = (props) => {
-  const { name, img, description, author } = props
-  return (
-    <div className='home-recommended-books-div'>
-      <img src={img} alt='book image' />
-      <h2>{name}</h2>
-      <h3>{author}</h3>
-      <p>{description}</p>
     </div>
   )
 }

@@ -45,6 +45,7 @@ const Signup = () => {
             value={textField.fullname}
             onChange={HandleOnChange}
             name='fullname'
+            autoComplete='off'
           />
 
           <label htmlFor='usernamefield'>Username : </label>
@@ -55,6 +56,7 @@ const Signup = () => {
             value={textField.username}
             onChange={HandleOnChange}
             name='username'
+            autoComplete='off'
           />
 
           <label htmlFor='emailfield'>Email : </label>
@@ -65,6 +67,7 @@ const Signup = () => {
             value={textField.email}
             onChange={HandleOnChange}
             name='email'
+            autoComplete='off'
           />
 
           <label htmlFor='phonefield'>Phone No. : </label>
@@ -75,6 +78,7 @@ const Signup = () => {
             value={textField.phone}
             onChange={HandleOnChange}
             name='phone'
+            autoComplete='off'
           />
 
           <label htmlFor='passwordfield'>Password : </label>
@@ -85,6 +89,7 @@ const Signup = () => {
             value={textField.password}
             onChange={HandleOnChange}
             name='password'
+            autoComplete='off'
           />
 
           <label htmlFor='confirmpasswordfield'>Re-enter Password : </label>
@@ -95,6 +100,7 @@ const Signup = () => {
             value={textField.confirm_password}
             onChange={HandleOnChange}
             name='confirm_password'
+            autoComplete='off'
           />
 
           <button>Signup</button>

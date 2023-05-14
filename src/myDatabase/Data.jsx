@@ -8,6 +8,7 @@ export const BooksDatabase = [
     description:
       'Meditation: The First and Last Freedom shows that meditation is not a spiritual discipline separate from everyday life in the real world. In essence, it is simply the art of being aware of what is going on inside and around us.',
     author: 'Osho',
+    category: 'spiritual',
   },
 
   {
@@ -18,6 +19,7 @@ export const BooksDatabase = [
 
 In this comprehensive and practical guide, the secrets of the ancient science of Tantra become available to a contemporary audience. Confined to small, hidden mystery schools for centuries, and often misunderstood and misinterpreted today. Tantra is not just a collection of techniques to enhance sexual experience. As Osho shows in these pages, it is a complete science of self-realization, based on the cumulative wisdom of centuries of exploration into the meaning of life and consciousness. Tantra―the very word means “technique”―is a set of powerful, transformative tools that can be used to bring new meaning and joy to every aspect of our daily lives.`,
     author: 'Osho',
+    category: 'science',
   },
 
   {
@@ -29,6 +31,7 @@ Where does jealousy come from, and how can we free ourselves from it?
 Is it really possible to be in a relationship and still have a life outside of the "we" identity?
 What are the real differences between men and women and how they view relationships, versus the differences that we’ve just been conditioned to have?`,
     author: 'Osho',
+    category: 'spiritual',
   },
 
   {
@@ -37,6 +40,7 @@ What are the real differences between men and women and how they view relationsh
     img: `https://m.media-amazon.com/images/I/51OVHl9YkeL._AC_UL400_.jpg`,
     description: `In this thoughtful, provocative work, Osho—one of the most revolutionary thinkers of our time—challenges us to question what we think we know about love and opens us to the possibility of a love that is natural, fulfilling, and free of possessiveness and jealousy.`,
     author: 'Osho',
+    category: 'novel',
   },
   {
     id: 5,
@@ -44,6 +48,7 @@ What are the real differences between men and women and how they view relationsh
     img: `https://m.media-amazon.com/images/I/81BCOPEPiML._AC_UL400_.jpg`,
     description: `Autobiography of a Yogi is one of the famous Spiritual Book of the Twentieth Century which is written by Paramahansa Yogananda. In this book he explained memorable findings of the world of saints and yogis and also explained science and miracles, death and resurgence.`,
     author: 'Paramahansa Yogananda',
+    category: 'spiritual',
   },
 ]
 
