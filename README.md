@@ -1,99 +1,89 @@
-# Library Management System 📚 is a Web Application 📜
+# Library Management System 📚
 
-## REACT ShotCuts
+Its a Project related to Books management for a Libraries 📜.
 
-npx create-react-app . ---> CREATES react app within current folder
+**_NOTE : This isn't an Ecommerce Website (There is no Payment System here)_**
 
-VITE -> npm create vite@latest .
+FrontEnd is divided into two parts (ADMIN && CLIENT)
 
-npx create-react-app my-app
+ADMIN can do -  
+`1.manage books i.e. add/remove/update/delete books.`
 
-(can only use lowercase letters for name/folder) --->To create another Folder/give Name
+`2.Check user' details i.e. name/id/borrowed book/etc`
 
-TO RUN REACT APP
+`3.Confirm user's book request && Confirm book Return`
+`4.Manage Book Charges(Extra fee's for not returing book in time)`
 
-first change to Directory by ---
+CLIENT can do -  
+`1.Basic book surfing's and checking availablities`  
+`2.Request for a book`  
+`3.Viewing/CRUD Operations on Profile || Dashboard`
 
-cd reactappName ---> change directory to reactfolder
+## Demo
 
-npm start ---> Launch react app
+[Showcase Demo Coming Soon!](https://www.github.com/MrAalu)
 
-**_VITE -> npm run dev_**
+## Documentation
 
-TO CLOSE/TERMINATE REACT APP
+[Documentation Coming Soon!](https://www.github.com/MrAalu)
 
----> Ctrl+C
+## How to Run the Project Locally :
 
-REACT HAS OWN SERVER so, in Package.json file we see :
+Clone the project
 
-scripts :
-
-"start" ---> npm start
-
-"build" --->npm build
-
-test" --->npm test
-
-"eject" --->npm eject
-
-npm : node package manager
-
-npx : node package eXecute
-
-TO REINSTALL NODE-MODULE (DO IT AFTER TERMINATING THE REACT)
-
----> npm install
-
-# VSCode Settings.Json
-
+```bash
+  git clone git@github.com:MrAalu/LibraryMgmtSys.git
 ```
 
-{
+Go to the project directory
 
-"editor.fontSize": 20,
-
-"files.autoSave": "off",
-
-"editor.tabSize": 1,
-
-"editor.wordWrap": "on",
-
-"terminal.integrated.fontSize": 16,
-
-"emmet.includeLanguages": {
-
-"javascript": "javascriptreact"
-
-},
-
-"editor.minimap.enabled": false,
-
-"prettier.jsxSingleQuote": true,
-
-"prettier.semi": false,
-
-"prettier.singleQuote": true,
-
-"javascript.updateImportsOnFileMove.enabled": "always",
-
-"editor.formatOnPaste": true,
-
-"editor.formatOnSave": true,
-
-"editor.defaultFormatter": "esbenp.prettier-vscode",
-
-"[javascript]": {
-
-"editor.defaultFormatter": "esbenp.prettier-vscode"
-
-},
-
-"editor.cursorBlinking": "expand"
-
-}
-
+```bash
+  cd LibraryMgmtSys/frontend && backend
 ```
 
-## Extensions For VSCode
+Install dependencies
 
-![vscodeExtensionForReact](https://i.ibb.co/k4xsnKJ/VSCode-React-Extensions.png)
+```bash
+  npm install
+```
+
+Start the server/client
+
+```bash
+  npm run dev
+```
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+Create a file called '.env' on backend folder and define these values
+
+`CONNECTION_URL` -> MONGO DB Connection URL
+
+`CONNECTION_PORT` -> Define Server Listen Port e.g.5000
+
+## API Reference
+
+#### Get all Books
+
+```http
+  GET /api/v1/books
+```
+
+## Lessons Learned
+
+Code Comments are Loveletter's you leave behind for your future self.
+
+## Feedback && Queries
+
+If you have any feedback, feel free to reach out :)  
+Email : amit.kc240@gmail.com
+
+## Tech Stack
+
+**Frontend :** React
+
+**Backend :** Node, Express, Mongo
+
+#### Developed By :- [@MrAalu](https://www.github.com/MrAalu)
