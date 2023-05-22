@@ -1,20 +1,25 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './navbar.css'
+
 const Navbar = () => {
   return (
     <div className='navbar-maindiv'>
       {/* Logo Div Here */}
       <div className='nav-logodiv'>
-        <a href=''>
-          <img src='/book-min.png' alt='' />
-        </a>
+        <Link to='/'>
+          <a href=''>
+            <img src='/book-min.png' alt='' />
+          </a>
+        </Link>
         <h1>Library Management System</h1>
       </div>
 
       {/* Nav Bar items Here */}
       <div className='navbar-items'>
-        <a href=''>Home</a>
-        <a href='#'>Books</a>
+        <Link to='/'>Home</Link>
+        <Link to='/'>Books</Link>
+
         <input type='text' placeholder='Search ...' />
 
         {/* Profile Drop Down Menu */}
@@ -25,8 +30,8 @@ const Navbar = () => {
 
           {/* Drop down ko Contents */}
           <div className='dropdown-content'>
-            <a href='#'>Login</a>
-            <a href='#'>Signup</a>
+            <Link to='/login'>login</Link>
+            <Link to='/signup'>Signup</Link>
           </div>
         </div>
       </div>

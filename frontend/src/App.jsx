@@ -1,23 +1,27 @@
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import Navbar from './navbar/Navbar'
 import Login from './login/Login'
 import Signup from './signup/Signup'
 import Home from './home/Home'
 import Menu from './filterHome/Menu'
+import PagenotFound from './404-pageNotFound/PagenotFound'
 
 const App = () => {
   return (
     <React.Fragment>
-      <Navbar />
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home></Home>} />
+          <Route path='/login' element={<Login></Login>} />
+          <Route path='/signup' element={<Signup></Signup>} />
+          <Route path='/menu' element={<Menu></Menu>} />
 
-      {/* <Home></Home> */}
-
-      <Menu></Menu>
-
-      {/* <Login></Login> */}
-
-      {/* <Signup></Signup> */}
+          <Route path='*' element={<PagenotFound></PagenotFound>} />
+        </Routes>
+      </Router>
     </React.Fragment>
   )
 }
