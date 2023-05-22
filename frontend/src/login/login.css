@@ -43,7 +43,7 @@
 }
 
 /* Input Fields CSS (Username,Password) */
-.login-middlediv input[type='text'] {
+.login-middlediv input {
   display: block;
   width: 100%;
   padding: 10px;
@@ -84,8 +84,7 @@ button:active {
 .login-lowerdiv {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 2rem;
+  align-items: baseline;
 }
 
 /* ForgotPassword ? CSS */
@@ -93,6 +92,11 @@ button:active {
   text-decoration: none;
   font-size: 1.2rem;
   color: var(--color-faded);
+  border-bottom: 2px solid rgba(80, 80, 80, 0.205);
+}
+
+.login-lowerdiv #signupbtn-link {
+  border: none;
 }
 
 /* Signup Button CSS */
@@ -144,4 +148,12 @@ button:active {
     align-items: center;
     margin-top: 1.5rem;
   }
+}
+
+/* Login FAIL or SUCCESS PROMPT CSS */
+#p-success {
+  color: green;
+}
+#p-fail {
+  color: red;
 }

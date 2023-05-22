@@ -4,14 +4,22 @@ require('dotenv').config()
 const cors = require('cors')
 const { ConnectDatabase } = require('./database/databaseConnector')
 const { booksRouter } = require('./routes/bookRoutes')
-const signUpRouter = require('./routes/signUp')
+const signUpRouter = require('./routes/signUpRoute')
+const loginRouter = require('./routes/loginRoutes')
 const CustomError = require('./errorHandler/CustomError')
 const PageNotFound = require('./errorHandler/PageNotFound')
 
+// Allow CORS Policy
 app.use(cors())
+
+app.use(express.urlencoded({ extended: false }))
+
+// Parse Form data in JSON Format
+app.use(express.json())
 app.use('/api/v1/books', booksRouter)
 
 app.use('/api/v1/signup', signUpRouter)
+app.use('/api/v1/login', loginRouter)
 
 app.use(CustomError)
 app.use(PageNotFound)

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import './signup.css'
+import { Link } from 'react-router-dom'
 
 const Signup = () => {
   const API_URL = 'http://localhost:5000/api/v1/signup'
@@ -137,7 +138,9 @@ const Signup = () => {
       {/* LOWER DIV */}
       <div className='signup-lowerdiv'>
         <p>Already have an Account ? </p>
-        <button>Login</button>
+        <Link to='/login'>
+          <button>Login</button>
+        </Link>
       </div>
     </div>
   )

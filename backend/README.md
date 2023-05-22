@@ -1,4 +1,10 @@
-# Guide for BACKEND Setup :
+## app.use() ->
+
+`app.use(express.static('./public'))`
+`app.use(express.urlencoded({ extended: false }))`  
+`app.use(express.json())`
+
+## Guide for BACKEND Setup :
 
 1-> Create Server :)
 
@@ -59,3 +65,5 @@ To run this project, you will need to add the following environment variables to
 `CONNECTION_URL` -> Database Connection LINK
 
 `CONNECTION_PORT` -> Just set this value to 5000
+
+`TOKEN_STRING` -> String to Sign JWT Token

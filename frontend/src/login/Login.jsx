@@ -1,12 +1,49 @@
 import React, { useState } from 'react'
 import './login.css'
-const Login = () => {
-  const Empty_Field_Object = { username: '', password: '' }
-  const [textfield, setTextField] = useState(Empty_Field_Object)
+import axios from 'axios'
+import { Link } from 'react-router-dom'
 
-  const HandleSubmit = (e) => {
-    e.preventDefault()
-    setTextField(Empty_Field_Object)
+const Login = () => {
+  const API_URL = 'http://localhost:5000/api/v1/login'
+
+  const Empty_Field_Object = { email: '', password: '' }
+  const [textfield, setTextField] = useState(Empty_Field_Object)
+  const [successPrompt, setSuccessPrompt] = useState(false)
+  const [errorPrompt, setErrorPrompt] = useState(false)
+
+  const HandleSubmit = async (e) => {
+    try {
+      e.preventDefault()
+      const email = textfield.email
+      const password = textfield.password
+
+      const response = await axios.post(API_URL, { email, password })
+      const token = await response.data.token
+      console.log('Generated Token : ', token)
+
+      localStorage.setItem('token', token)
+
+      setSuccessPrompt('Login Success')
+      setTextField(Empty_Field_Object)
+
+      setTimeout(() => {
+        setSuccessPrompt(false)
+      }, 2000)
+    } catch (error) {
+      if (
+        error.response &&
+        error.response.data &&
+        error.response.data.message
+      ) {
+        // Display the 'if' error message from the backend to frontend
+        const error_message = error.response.data.message
+        setErrorPrompt(error_message)
+      }
+
+      setTimeout(() => {
+        setErrorPrompt(false)
+      }, 2000)
+    }
   }
 
   const HandleOnChange = (event) => {
@@ -25,14 +62,15 @@ const Login = () => {
 
       {/* MIDDLE DIV */}
       <div className='login-middlediv'>
-        <form onSubmit={HandleSubmit}>
+        <form onSubmit={HandleSubmit} method='post'>
           <input
-            type='text'
-            placeholder='Enter Username'
-            value={textfield.username}
+            type='email'
+            placeholder='Enter Email'
+            value={textfield.email}
             onChange={HandleOnChange}
-            name='username'
+            name='email'
             autoComplete='off'
+            required
           />
 
           <input
@@ -42,16 +80,22 @@ const Login = () => {
             onChange={HandleOnChange}
             name='password'
             autoComplete='off'
+            required
           />
 
           <button type='submit'>Login</button>
         </form>
+        <br />
+        {successPrompt ? <p id='p-success'>{successPrompt}</p> : ''}
+        {errorPrompt ? <p id='p-fail'>{errorPrompt}</p> : ''}
       </div>
 
       {/* LOWER DIV */}
       <div className='login-lowerdiv'>
-        <a href=''>Forgot Password ?</a>
-        <button>SignUp</button>
+        <Link to=''>Forgot Password ?</Link>
+        <Link to='/signup' id='signupbtn-link'>
+          <button>SignUp</button>
+        </Link>
       </div>
     </div>
   )
