@@ -8,9 +8,7 @@ const Navbar = () => {
       {/* Logo Div Here */}
       <div className='nav-logodiv'>
         <Link to='/'>
-          <a href=''>
-            <img src='/book-min.png' alt='' />
-          </a>
+          <img src='/book-min.png' alt='' />
         </Link>
         <h1>Library Management System</h1>
       </div>

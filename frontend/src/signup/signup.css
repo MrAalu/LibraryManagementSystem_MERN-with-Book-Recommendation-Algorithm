@@ -100,8 +100,7 @@ button:active {
   display: flex;
   width: auto;
   justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
+  align-items: baseline;
 }
 
 /* 'Already have an Account' text CSS  */
@@ -160,4 +159,13 @@ button:active {
     align-items: center;
     margin-top: 1.5rem;
   }
+}
+
+/* User a/c created SUCCESS || FAIL  */
+#p-success {
+  color: green;
+}
+
+#p-fail {
+  color: red;
 }

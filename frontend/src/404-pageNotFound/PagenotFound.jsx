@@ -1,5 +1,6 @@
 import React from 'react'
 import './pagenotfound.css'
+import { Link } from 'react-router-dom'
 
 const PagenotFound = () => {
   return (
@@ -8,7 +9,9 @@ const PagenotFound = () => {
       <p>The page you are looking for does not exist.</p>
 
       <br />
-      <button>Goto Home Page</button>
+      <Link to='/'>
+        <button>Goto Home Page</button>
+      </Link>
     </div>
   )
 }
