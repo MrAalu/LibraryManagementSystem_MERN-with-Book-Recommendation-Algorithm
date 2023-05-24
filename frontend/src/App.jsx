@@ -6,6 +6,7 @@ import Login from './login/Login'
 import Signup from './signup/Signup'
 import Home from './home/Home'
 import Menu from './filterHome/Menu'
+import Books from './books/Books'
 import PagenotFound from './404-pageNotFound/PagenotFound'
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
           <Route path='/login' element={<Login></Login>} />
           <Route path='/signup' element={<Signup></Signup>} />
           <Route path='/menu' element={<Menu></Menu>} />
+          <Route path='/books' element={<Books />} />
 
           <Route path='*' element={<PagenotFound></PagenotFound>} />
         </Routes>

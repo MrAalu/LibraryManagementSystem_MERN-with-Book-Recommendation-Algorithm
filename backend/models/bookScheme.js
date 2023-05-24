@@ -18,7 +18,7 @@ const bookSchemeStructure = mongoose.Schema({
     required: true,
     trim: true,
   },
-  desciption: {
+  description: {
     type: String,
     required: false,
     default: 'Book Description Here....',

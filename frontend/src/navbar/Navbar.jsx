@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './navbar.css'
+import { navbarData } from './navbardata'
 
 const Navbar = () => {
   return (
@@ -16,7 +17,7 @@ const Navbar = () => {
       {/* Nav Bar items Here */}
       <div className='navbar-items'>
         <Link to='/'>Home</Link>
-        <Link to='/'>Books</Link>
+        <Link to='/books'>Books</Link>
 
         <input type='text' placeholder='Search ...' />
 

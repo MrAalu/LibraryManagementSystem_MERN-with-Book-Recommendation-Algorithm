@@ -19,3 +19,9 @@ SEARCH BAR - CTRL +K hotkey && search ma click garda pop up (thulo search dialog
 footer subscribe to our news letter
 New Arrivals -Front page ma (database ma naya add gareko lai display)
 Darkmode /light mode 
+
+
+//PROFILE OPTIONS
+DASHBOARD ma issued details - timeleft,issued date
+WATCH LIST BOOKS
+VIEW PROFILE
