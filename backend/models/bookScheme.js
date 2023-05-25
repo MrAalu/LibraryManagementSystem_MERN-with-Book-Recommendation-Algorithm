@@ -27,6 +27,10 @@ const bookSchemeStructure = mongoose.Schema({
   category: {
     type: String,
     trim: true,
+    enum: {
+      values: ['SPIRITUAL'],
+      message: `{VALUE} is not supported`,
+    },
     required: [true, 'Book Category is Required'],
   },
   available: {

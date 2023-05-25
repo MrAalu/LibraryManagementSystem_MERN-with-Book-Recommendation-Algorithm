@@ -12,7 +12,7 @@ const postUserLogin = TryCatchWrapper(async (req, res) => {
   const email = ConvertEmail(req.body.email)
 
   const result = await UserModels.findOne({ email }).select('+password')
-  console.log(result)
+  // console.log(result)
 
   if (!result) {
     return res.status(401).json({ message: `User doesn't exists!` })
