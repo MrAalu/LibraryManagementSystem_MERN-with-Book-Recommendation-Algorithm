@@ -1,40 +1,66 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './navbar.css'
-import { navbarData } from './navbardata'
+
+// Importing all Navbar data's i.e. title,logo,links,etc
+import navbarData from './navbardata'
+
+// Conditionally rendering links based on user's login info
+import UserLogin from './UserIsLoggedIn'
+import UserSignin from './UserIsNotLoggedIn'
+
+// navbar search option
+import NavbarSearch from './NavbarSearch'
 
 const Navbar = () => {
+  const [isLoggedin, setIsLoggedin] = useState(false)
+
+  const { navbarLinks, navbarTitle, navbarImage } = navbarData
+
   return (
-    <div className='navbar-maindiv'>
-      {/* Logo Div Here */}
-      <div className='nav-logodiv'>
-        <Link to='/'>
-          <img src='/book-min.png' alt='' />
+    <nav className='navbar navbar-expand-xl '>
+      <div className='container-fluid'>
+        <Link to='/' className='a'>
+          <img
+            src={navbarImage}
+            alt='Logo'
+            width={'50'}
+            className='d-sm-inline-block d-none'
+          />
+          <h4 className='h4 d-inline '>{navbarTitle}</h4>
         </Link>
-        <h1>Library Management System</h1>
-      </div>
 
-      {/* Nav Bar items Here */}
-      <div className='navbar-items'>
-        <Link to='/'>Home</Link>
-        <Link to='/books'>Books</Link>
+        <button
+          id='navbar-mobileview-btn'
+          className='navbar-toggler'
+          type='button'
+          data-bs-toggle='collapse'
+          data-bs-target='#navbarSupportedContent'
+          aria-controls='navbarSupportedContent'
+          aria-expanded='false'
+          aria-label='Toggle navigation'
+        >
+          <span className='navbar-toggler-icon' />
+        </button>
 
-        <input type='text' placeholder='Search ...' />
-
-        {/* Profile Drop Down Menu */}
-        <div className='dropdown'>
-          <button className='profile-btn'>
-            <img src='/profileicon-min.png' alt='' />
-          </button>
-
-          {/* Drop down ko Contents */}
-          <div className='dropdown-content'>
-            <Link to='/login'>login</Link>
-            <Link to='/signup'>Signup</Link>
-          </div>
+        <div className='collapse navbar-collapse' id='navbarSupportedContent'>
+          <ul className='navbar-nav me-auto mb-2 mb-lg-0 mx-auto fs-5'>
+            {navbarLinks.map((link, index) => {
+              const { name, url } = link
+              return (
+                <li className='nav-item' key={index}>
+                  <Link to={url} className='nav-link'>
+                    {name}
+                  </Link>
+                </li>
+              )
+            })}
+            {isLoggedin ? <UserLogin /> : <UserSignin />}
+          </ul>
+          <NavbarSearch></NavbarSearch>
         </div>
       </div>
-    </div>
+    </nav>
   )
 }
 
