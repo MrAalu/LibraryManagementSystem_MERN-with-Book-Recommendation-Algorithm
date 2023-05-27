@@ -1,9 +1,6 @@
 import React from 'react'
 import './home.css'
 
-// Importing Data
-import { BooksDatabase } from '../myDatabase/Data'
-
 import BannerHome from '../bannerHome/BannerHome'
 
 const Home = () => {
