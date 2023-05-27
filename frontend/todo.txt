@@ -6,22 +6,23 @@
 
 3.Signup ma 'Username must me unique' || 'username already taken' prompt 
 
-
-Home page ma k k hunxa :
--Banner with simple quotes (random generate each time) eg: meet your next fav book
--Trending  books /most issued
--browse by genres (view all)    filter btn
-
--right side vertical -> recommended books (only show to login users ,new user lai kasari recommend garna milxa ,on what based?) 
+NOTE :TEXT OVERFLOW eclipse.... rakhne and maintain card elements position fairly
 
 SEARCH BAR - CTRL +K hotkey && search ma click garda pop up (thulo search dialog) and tesma search garne
 
-footer subscribe to our news letter
-New Arrivals -Front page ma (database ma naya add gareko lai display)
-Darkmode /light mode 
+Home page ma k k hunxa :
+-Banner (height small) + recommended books
+-Hero Section with QUOTE 
+-Featured Books (5books)
+-newly addded Books
 
+Books Page : 
+-top full width -> Popular Boooks
+-hero section with Quote
+-horizontal filter + 10books showcase (Browse Collections)
+-Pagination
 
-//PROFILE OPTIONS
-DASHBOARD ma issued details - timeleft,issued date
-WATCH LIST BOOKS
-VIEW PROFILE
+PROFILE Page : 
+-user profile
+-issued books (dashboard)
+-Logout
