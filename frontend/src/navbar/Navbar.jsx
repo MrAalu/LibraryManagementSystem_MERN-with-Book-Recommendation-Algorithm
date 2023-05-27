@@ -13,7 +13,7 @@ import UserSignin from './UserIsNotLoggedIn'
 import NavbarSearch from './NavbarSearch'
 
 const Navbar = () => {
-  const [isLoggedin, setIsLoggedin] = useState(false)
+  const [isLoggedin, setIsLoggedin] = useState(true)
 
   const { navbarLinks, navbarTitle, navbarImage } = navbarData
 
@@ -27,7 +27,9 @@ const Navbar = () => {
             width={'50'}
             className='d-sm-inline-block d-none'
           />
-          <h4 className='h4 d-inline '>{navbarTitle}</h4>
+          <h4 className='h4 d-inline ' id='navbar-title-text'>
+            {navbarTitle}
+          </h4>
         </Link>
 
         <button

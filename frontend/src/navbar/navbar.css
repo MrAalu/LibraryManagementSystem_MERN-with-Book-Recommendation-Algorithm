@@ -13,10 +13,6 @@ li {
   background-color: rgba(109, 184, 235, 0.938);
 }
 
-#navbar-mobileview-btn {
-  box-shadow: none;
-}
-
 .a {
   text-decoration: none;
   color: black;
@@ -34,5 +30,26 @@ li {
   #nav-conditional-rendering {
     display: flex;
     flex-direction: column;
+  }
+}
+
+/* Navbar mobile button */
+#navbar-mobileview-btn {
+  box-shadow: none;
+}
+
+@media screen and (max-width: 380px) {
+  #navbar-mobileview-btn {
+    font-size: 1rem;
+  }
+
+  #navbar-title-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  #navbar-mobileview-btn {
+    font-size: 0.5rem;
   }
 }
