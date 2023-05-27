@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-// import './books.css'
-import 'bootstrap/dist/css/bootstrap.css'
+// import BooksCarousel from './BooksCarousel'
 
 const API_URL = 'http://localhost:5000/api/v1/books/'
 const Books = () => {
@@ -14,27 +13,23 @@ const Books = () => {
       console.log(data)
       setBookData(data)
     } catch (error) {
-      console.log('Error fetching books')
+      console.log('Error fetching books collections')
     }
   }
 
   useEffect(() => {
-    fetchData()
+    // fetchData()
   }, [])
 
   return (
     <div className='container-fluid'>
       <div className='row'>
-        <div className='col-md-12'>
-          <img
-            src='https://c4.wallpaperflare.com/wallpaper/348/534/415/into-the-wild-christopher-mccandless-movie-scenes-men-wallpaper-preview.jpg'
-            alt='Cover Image'
-            className='img-fluid'
-          />
+        <div className='col-md-12 p-0'>
+          {/* <BooksCarousel></BooksCarousel> */}
         </div>
       </div>
 
-      <h1 className='h1' style={{ textAlign: 'center' }}>
+      <h1 className='h1 mt-3' style={{ textAlign: 'center' }}>
         Browse Collections
       </h1>
 
@@ -47,19 +42,46 @@ const Books = () => {
               <input
                 type='text'
                 className='form-control'
-                placeholder='Search . . .'
+                placeholder='Search by title . . .'
               />
             </div>
 
+            {/* Category Filter */}
             <div className='form-group'>
-              <select className='form-control'>
-                <option value=''>All Categories</option>
+              <select className='form-control' defaultValue='all'>
+                <option value='all' disabled hidden>
+                  Categories
+                </option>
+                <option value='all'>All Categories</option>
                 <option value='fiction'>Fiction</option>
                 <option value='non-fiction'>Non-Fiction</option>
                 <option value='mystery'>Mystery</option>
               </select>
             </div>
 
+            {/* Language Filter */}
+            <div className='form-group'>
+              <select className='form-control' defaultValue='all'>
+                <option value='all' disabled hidden>
+                  Language
+                </option>
+                <option value='english'>English</option>
+                <option value='nepali'>Nepali</option>
+              </select>
+            </div>
+
+            {/* Language Filter */}
+            <div className='form-group'>
+              <select className='form-control' defaultValue='all'>
+                <option value='all' disabled hidden>
+                  Author
+                </option>
+                <option value='english'>English</option>
+                <option value='nepali'>Nepali</option>
+              </select>
+            </div>
+
+            {/* Available Filter (stock/outofStock) */}
             <div className='form-group'>
               <div className='form-check'>
                 <label htmlFor='showAvailable' className='form-check-label'>
@@ -74,11 +96,12 @@ const Books = () => {
               </div>
             </div>
 
+            {/* Apply / Clear FILTER properties */}
             <div className='form-group'>
               <button type='button' className='btn btn-success'>
                 Apply Filters
               </button>
-              <button type='button' className='btn btn-danger mr-2'>
+              <button type='button' className='btn btn-danger'>
                 Clear Filters
               </button>
             </div>
@@ -86,7 +109,7 @@ const Books = () => {
         </div>
 
         {/* Book Collection */}
-        <div className='col-md-10'>
+        {/* <div className='col-md-10'>
           <div className='row'>
             {bookData.map((book) => {
               const { _id, title, image, author } = book
@@ -111,12 +134,10 @@ const Books = () => {
               )
             })}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )
 }
 
 export default Books
-
-// BrowseCollectin h1

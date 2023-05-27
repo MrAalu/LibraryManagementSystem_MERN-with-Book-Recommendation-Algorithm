@@ -1,0 +1,55 @@
+#banner-image {
+  max-height: calc(100vh - 60px);
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  filter: brightness(0.3);
+}
+
+/* BANNER LAI full width banako, no white space. incase then,add padding left/right 0 */
+/* parent container-fluid ma p-0 rakhnu parxa */
+.custom-container {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* carousel img bottom indicators CSS */
+.carousel-indicators button {
+  box-shadow: none;
+}
+
+/* Bottom text CSS */
+.text-outline-h {
+  color: rgb(252, 252, 252);
+  -webkit-text-stroke: 0.3px black;
+  font-size: 3rem;
+}
+.text-outline-p {
+  color: rgba(255, 255, 255, 0.466);
+  -webkit-text-stroke: 0.1px black;
+}
+
+@media screen and (max-width: 700px) {
+  .text-outline-h {
+    font-size: 2rem;
+  }
+  .text-outline-p {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .text-outline-h {
+    font-size: 1.5rem;
+  }
+  .text-outline-p {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 280px) {
+  .text-outline-h {
+    font-size: 1rem;
+  }
+  .text-outline-p {
+    font-size: 0.5rem;
+  }
+}
