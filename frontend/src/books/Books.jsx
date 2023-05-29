@@ -53,7 +53,7 @@ const Books = () => {
                       className='img-fluid'
                       src={img}
                       alt='book image'
-                    />
+                    />{' '}
                   </div>
                   <div className='card-body'>
                     <h5 className='h5 card-title'>{name}</h5>
@@ -74,21 +74,18 @@ const Books = () => {
         </div>
       </div>
 
-      <div className='row mt-5'>
-        {/* FILTER BOOKS SECTION */}
-        <div className='col'>
-          <FilterBooks></FilterBooks>
-        </div>
-      </div>
-
-      <div className='col md-9'>
-        {/* Books Collections HEADING */}
-        <h1 className='h1 mt-3' style={{ textAlign: 'center' }}>
+      <div className='col mt-5 '>
+        {/* Browse Collections HEADING */}
+        <h1 className='h1' style={{ textAlign: 'center' }}>
           Browse Collections
         </h1>
+        <div className='mt-1 border'>
+          {/* FILTER BOOKS SECTION */}
+          <FilterBooks></FilterBooks>
+        </div>
 
         {/* Browse Collections */}
-        <div className='row'>
+        <div className='row mt-3'>
           {bookDataDummy.map((book) => {
             const { id, name, img, author } = book
             return (
