@@ -75,6 +75,7 @@ const Books = () => {
         </div>
       </div>
 
+      {/* Into the Wild Banner */}
       <SmallBanner></SmallBanner>
 
       <div className='col mt-5 '>

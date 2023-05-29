@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import axios from 'axios'
 import './signup.css'
 import { Link } from 'react-router-dom'
 
 const Signup = () => {
   const API_URL = 'http://localhost:5000/api/v1/signup'
+
+  const refUsername = useRef(null)
 
   const Empty_Form_Field = {
     // fullname: '',
@@ -64,6 +66,9 @@ const Signup = () => {
 
     setTextField({ ...textField, [field_name]: field_value })
   }
+  useEffect(() => {
+    refUsername.current.focus()
+  }, [])
 
   return (
     <div className='signup-maindiv'>
@@ -85,6 +90,7 @@ const Signup = () => {
             name='username'
             autoComplete='off'
             required
+            ref={refUsername}
           />
           <label htmlFor='emailfield'>Email : </label>
           <input

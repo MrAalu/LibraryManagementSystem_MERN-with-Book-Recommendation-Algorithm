@@ -13,7 +13,7 @@ import UserSignin from './UserIsNotLoggedIn'
 import NavbarSearch from './NavbarSearch'
 
 const Navbar = () => {
-  const [isLoggedin, setIsLoggedin] = useState(true)
+  const [isLoggedin, setIsLoggedin] = useState(false)
 
   const { navbarLinks, navbarTitle, navbarImage } = navbarData
 

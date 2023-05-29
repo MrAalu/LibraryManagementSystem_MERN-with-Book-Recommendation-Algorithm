@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './login.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 const Login = () => {
   const API_URL = 'http://localhost:5000/api/v1/login'
+
+  const refUsername = useRef(null)
 
   const Empty_Field_Object = { email: '', password: '' }
   const [textfield, setTextField] = useState(Empty_Field_Object)
@@ -53,6 +55,10 @@ const Login = () => {
     setTextField({ ...textfield, [field_name]: field_value })
   }
 
+  useEffect(() => {
+    refUsername.current.focus()
+  }, [])
+
   return (
     <div className='login-maindiv'>
       {/* TOP DIV */}
@@ -71,6 +77,7 @@ const Login = () => {
             name='email'
             autoComplete='off'
             required
+            ref={refUsername}
           />
 
           <input
