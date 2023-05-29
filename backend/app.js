@@ -2,10 +2,12 @@ const express = require('express')
 const app = express()
 require('dotenv').config()
 const cors = require('cors')
+require('express-async-errors')
 const { ConnectDatabase } = require('./database/databaseConnector')
 const { booksRouter } = require('./routes/bookRoutes')
 const signUpRouter = require('./routes/signUpRoute')
 const loginRouter = require('./routes/loginRoutes')
+const filterRouter = require('./routes/filterRoutes')
 const CustomError = require('./errorHandler/CustomError')
 const PageNotFound = require('./errorHandler/PageNotFound')
 
@@ -20,6 +22,8 @@ app.use('/api/v1/books', booksRouter)
 
 app.use('/api/v1/signup', signUpRouter)
 app.use('/api/v1/login', loginRouter)
+
+app.use('/api/v1/filter', filterRouter)
 
 app.use(CustomError)
 app.use(PageNotFound)

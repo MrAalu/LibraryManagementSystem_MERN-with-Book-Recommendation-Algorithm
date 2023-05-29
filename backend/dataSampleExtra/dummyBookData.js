@@ -43,9 +43,9 @@ const dummyBookData = [
 
 // module.exports = dummyBookData
 
-const dataModel = require('./models/bookScheme')
+const dataModel = require('../models/bookScheme')
 require('dotenv').config()
-const { ConnectDatabase } = require('./database/databaseConnector')
+const { ConnectDatabase } = require('../database/databaseConnector')
 
 const populateData = async () => {
   try {
