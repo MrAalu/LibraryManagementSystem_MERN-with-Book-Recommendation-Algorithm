@@ -5,6 +5,7 @@ import FilterBooks from './FilterBooks'
 import CustomPagination from '../pagination/CustomPagination'
 
 import { bookDataDummy, dummyPopular } from './dummyBookData'
+import SmallBanner from '../bannerHome/SmallBanner'
 
 const API_URL = 'http://localhost:5000/api/v1/books/'
 
@@ -74,12 +75,14 @@ const Books = () => {
         </div>
       </div>
 
+      <SmallBanner></SmallBanner>
+
       <div className='col mt-5 '>
         {/* Browse Collections HEADING */}
         <h1 className='h1' style={{ textAlign: 'center' }}>
           Browse Collections
         </h1>
-        <div className='mt-1 border'>
+        <div className='mt-1'>
           {/* FILTER BOOKS SECTION */}
           <FilterBooks></FilterBooks>
         </div>

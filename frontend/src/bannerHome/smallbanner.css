@@ -1,0 +1,21 @@
+.div-with-background {
+  height: 400px;
+  overflow: hidden;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.65),
+      rgba(45, 21, 153, 0.3)
+    ),
+    url('/intothewildBanner.jpg');
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  background-color: rgb(75, 129, 177);
+}
+
+.quote-container {
+  text-align: right;
+  width: auto;
+  color: white;
+}
