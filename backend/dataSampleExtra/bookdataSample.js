@@ -81,6 +81,7 @@ const dataScheme = new mongoose.Schema({
   },
 })
 const dataModel = mongoose.model('sampleData', dataScheme)
+
 require('dotenv').config()
 const { ConnectDatabase } = require('../database/databaseConnector')
 
@@ -96,4 +97,6 @@ const Populate_Data = async () => {
   }
 }
 
-Populate_Data()
+// Populate_Data()
+
+module.exports = dataModel
