@@ -8,6 +8,7 @@ import Home from './home/Home'
 import Menu from './filterHome/Menu'
 import Books from './books/Books'
 import Footer from './footer/Footer'
+import AboutUsPage from './about/AboutUsPage'
 import PagenotFound from './404-pageNotFound/PagenotFound'
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
           <Route path='/signup' element={<Signup></Signup>} />
           <Route path='/menu' element={<Menu></Menu>} />
           <Route path='/books' element={<Books />} />
+          <Route path='/about' element={<AboutUsPage />} />
 
           <Route path='*' element={<PagenotFound></PagenotFound>} />
         </Routes>

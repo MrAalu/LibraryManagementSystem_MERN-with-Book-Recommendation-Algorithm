@@ -1,0 +1,25 @@
+.about-div-with-background {
+  height: 400px;
+  overflow: hidden;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.151),
+      rgba(174, 245, 152, 0.041)
+    ),
+    url('/aboutUsBanner.jpg');
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  /* background-attachment: fixed; */
+  background-color: rgb(75, 129, 177);
+}
+
+.about-quote-container {
+  text-align: right;
+  width: auto;
+  color: white;
+}
+
+.about-quote-container p {
+  color: white;
+}
