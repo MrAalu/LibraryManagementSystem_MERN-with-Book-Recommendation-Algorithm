@@ -1,0 +1,15 @@
+.list-unstyled a {
+  text-decoration: none;
+  color: black;
+}
+
+footer {
+  background-color: #e3f2fd;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+footer h5 {
+  font-size: 1.3rem;
+  font-weight: bold;
+}

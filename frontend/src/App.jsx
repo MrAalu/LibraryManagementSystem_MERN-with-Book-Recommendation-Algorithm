@@ -7,6 +7,7 @@ import Signup from './signup/Signup'
 import Home from './home/Home'
 import Menu from './filterHome/Menu'
 import Books from './books/Books'
+import Footer from './footer/Footer'
 import PagenotFound from './404-pageNotFound/PagenotFound'
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
 
           <Route path='*' element={<PagenotFound></PagenotFound>} />
         </Routes>
+        <Footer />
       </Router>
     </React.Fragment>
   )
