@@ -1,0 +1,59 @@
+.navbar {
+  background-color: #e3f2fd;
+}
+
+/* Gap between navbar links */
+li {
+  margin-right: 2rem;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+#navbar-search-btn {
+  box-shadow: none;
+  color: black;
+  background-color: rgba(109, 184, 235, 0.938);
+}
+
+.a {
+  text-decoration: none;
+  color: black;
+}
+.a:hover {
+  color: black;
+}
+
+/* rendering based on if user logged or not */
+#nav-conditional-rendering {
+  display: flex;
+}
+
+@media screen and (max-width: 1199px) {
+  #nav-conditional-rendering {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Navbar mobile button */
+#navbar-mobileview-btn {
+  box-shadow: none;
+}
+
+@media screen and (max-width: 380px) {
+  #navbar-mobileview-btn {
+    font-size: 1rem;
+  }
+
+  #navbar-title-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  #navbar-mobileview-btn {
+    font-size: 0.5rem;
+  }
+}

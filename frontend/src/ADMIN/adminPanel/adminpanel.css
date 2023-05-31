@@ -1,0 +1,20 @@
+.adminpanel-container a {
+  text-decoration: none;
+}
+
+.card-admin {
+  background-color: rgba(144, 206, 241, 0.267) !important;
+  color: black;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.card-admin:hover {
+  background-color: rgba(160, 173, 243, 0.863) !important;
+  color: white;
+}
+
+.adminpanel-container {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.452);
+  border-radius: 10px;
+}

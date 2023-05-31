@@ -2,7 +2,7 @@ import React from 'react'
 import './home.css'
 
 import BannerHome from '../bannerHome/BannerHome'
-import FeaturedBooks from '../filterHome/FeaturedBooks'
+import FeaturedBooks from '../featuredBooks/FeaturedBooks'
 import RecentlyAddedBooks from '../recentlyAddedBooks/RecentlyAddedBooks'
 import { Row } from 'react-bootstrap'
 
