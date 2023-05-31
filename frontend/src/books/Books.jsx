@@ -4,7 +4,7 @@ import FilterBooks from './FilterBooks'
 
 import CustomPagination from '../pagination/CustomPagination'
 
-import { bookDataDummy, dummyPopular } from './dummyBookData'
+import { bookDataDummy, dummyPopular } from '../myDatabase/dummyBookData'
 import SmallBanner from '../bannerHome/SmallBanner'
 
 const API_URL = 'http://localhost:5000/api/v1/books/'

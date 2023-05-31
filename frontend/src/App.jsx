@@ -5,7 +5,7 @@ import Navbar from './navbar/Navbar'
 import Login from './login/Login'
 import Signup from './signup/Signup'
 import Home from './home/Home'
-import Menu from './filterHome/Menu'
+import FeaturedBooks from './filterHome/FeaturedBooks'
 import Books from './books/Books'
 import Footer from './footer/Footer'
 import AboutUsPage from './about/AboutUsPage'
@@ -20,7 +20,7 @@ const App = () => {
           <Route path='/' element={<Home></Home>} />
           <Route path='/login' element={<Login></Login>} />
           <Route path='/signup' element={<Signup></Signup>} />
-          <Route path='/menu' element={<Menu></Menu>} />
+          <Route path='/menu' element={<FeaturedBooks />} />
           <Route path='/books' element={<Books />} />
           <Route path='/about' element={<AboutUsPage />} />
 

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import CategoryButtons from './CategoryButtons'
 import BookList from './BookList'
-import './menu.css'
 import { BooksDatabase } from '../myDatabase/Data'
+import { Row } from 'react-bootstrap'
 
 const bookCategories = [
   'show all',
@@ -13,7 +13,7 @@ const bookCategories = [
   ),
 ]
 
-const Menu = () => {
+const FeaturedBooks = () => {
   const [books, setBooks] = useState(BooksDatabase)
 
   const [categories, setCategories] = useState(bookCategories)
@@ -30,17 +30,21 @@ const Menu = () => {
   }
 
   return (
-    <div className='menu'>
-      <h1>MENU</h1>
+    <div className='container'>
+      <h1 className='h1 text-center'>Featured Books</h1>
 
-      <CategoryButtons
-        filterFunction={FilterItems}
-        categories={categories}
-      ></CategoryButtons>
+      <Row className='text-center mt-4'>
+        <CategoryButtons
+          filterFunction={FilterItems}
+          categories={categories}
+        ></CategoryButtons>
+      </Row>
 
-      <BookList books={books}></BookList>
+      <Row className='my-3'>
+        <BookList books={books}></BookList>
+      </Row>
     </div>
   )
 }
 
-export default Menu
+export default FeaturedBooks

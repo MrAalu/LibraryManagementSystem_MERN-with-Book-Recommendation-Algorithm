@@ -6,7 +6,12 @@ const CategoryButtons = (props) => {
     <div>
       {categories.map((map_para) => {
         return (
-          <button onClick={() => filterFunction(map_para)}>{map_para}</button>
+          <button
+            className='btn btn-success mx-3 my-1'
+            onClick={() => filterFunction(map_para)}
+          >
+            {map_para}
+          </button>
         )
       })}
     </div>

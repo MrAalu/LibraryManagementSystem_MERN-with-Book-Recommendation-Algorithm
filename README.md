@@ -85,7 +85,7 @@ Email : amit.kc240@gmail.com
 
 ## Tech Stack
 
-**Frontend :** React
+**Frontend :** React, Bootstrap
 
 **Backend :** Node, Express, Mongo
 
