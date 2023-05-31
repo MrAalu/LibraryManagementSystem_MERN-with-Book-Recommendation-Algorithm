@@ -17,3 +17,9 @@ p {
   font-size: 1.5rem;
   color: #666;
 }
+
+#admin-pagenotfound-btn {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+}

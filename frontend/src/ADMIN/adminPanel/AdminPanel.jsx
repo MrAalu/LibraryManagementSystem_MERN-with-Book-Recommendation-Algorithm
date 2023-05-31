@@ -4,6 +4,8 @@ import './adminpanel.css'
 import { Link } from 'react-router-dom'
 import { adminpanelData } from './adminpanelData'
 
+import { GiBookshelf } from 'react-icons/gi'
+
 const AdminPanel = () => {
   return (
     <div className='container mt-5 adminpanel-container'>
@@ -11,17 +13,20 @@ const AdminPanel = () => {
         {adminpanelData.map((panel_items) => {
           const { id, title, url } = panel_items
           return (
-            <Col key={id} className='col-sm-12 col-md-6 col-lg-4'>
-              <Link to={url}>
-                <Card className='card-admin my-3 mx-3 '>
+            <div className='col-xs-12 col-md-4 card-admin-main' key={id}>
+              <Card className='card-admin my-3 mx-3'>
+                <Link to={url}>
                   <Card.Body>
+                    <span className='card-admin-icon'>
+                      {panel_items.panel_icon}
+                    </span>
                     <Card.Title className='card-admin-title'>
                       <h3 className='h3 p-3'>{title}</h3>
                     </Card.Title>
                   </Card.Body>
-                </Card>
-              </Link>
-            </Col>
+                </Link>
+              </Card>
+            </div>
           )
         })}
       </Row>
