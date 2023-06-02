@@ -27,14 +27,21 @@ const postUserLogin = TryCatchWrapper(async (req, res) => {
 
   // Generating json web token on success login
   const jwt_token = await jwt.sign(
-    { id: result._id, username: result.username, phone: result.phone, email },
+    {
+      id: result._id,
+      username: result.username,
+      phone: result.phone,
+      email,
+    },
     process.env.TOKEN_STRING,
     {
       expiresIn: '1d',
     }
   )
 
-  res.status(200).json({ success: true, token: jwt_token })
+  res
+    .status(200)
+    .json({ success: true, token: jwt_token, userType: result.userType })
 })
 
 // Converting @gmail.com to lower

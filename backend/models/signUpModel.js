@@ -37,7 +37,10 @@ const signUpScheme = mongoose.Schema({
       message: 'Invalid phone number format.',
     },
   },
-
+  userType: {
+    type: String,
+    default: 'normal_user',
+  },
   password: {
     type: String,
     required: true,

@@ -20,7 +20,7 @@ const Login = () => {
 
       const response = await axios.post(API_URL, { email, password })
       const token = await response.data.token
-
+      const userType = await response.data.userType
       localStorage.setItem('token', token)
 
       toast.promise(new Promise((resolve) => setTimeout(resolve, 1000)), {
@@ -31,7 +31,7 @@ const Login = () => {
       // Redirect to the home page after a delay
       setTimeout(() => {
         setTextField(Empty_Field_Object)
-        window.location.href = '/'
+        // window.location.href = '/'
       }, 2000)
     } catch (error) {
       if (
@@ -41,7 +41,7 @@ const Login = () => {
       ) {
         // Display the 'if' error message from the backend to frontend
         const error_message = error.response.data.message
-
+        console.log(error_message)
         toast.error(error_message)
       }
     }
