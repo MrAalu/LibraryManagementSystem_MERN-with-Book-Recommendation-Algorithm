@@ -17,7 +17,6 @@ export const checkToken = () => {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
-    {/* <AdminAPP /> */}
+    <AdminAPP />
   </React.StrictMode>
 )
