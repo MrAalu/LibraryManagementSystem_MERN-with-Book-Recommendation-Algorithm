@@ -6,9 +6,11 @@ import './main.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.js'
 
+export const backend_server = `http://localhost:5000`
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <App /> */}
-    <AdminAPP />
+    <App />
+    {/* <AdminAPP /> */}
   </React.StrictMode>
 )

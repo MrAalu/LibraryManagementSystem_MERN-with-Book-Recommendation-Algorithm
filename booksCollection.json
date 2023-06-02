@@ -1,0 +1,641 @@
+[{
+  "_id": {
+    "$oid": "647973e99d1daac1a4e03787"
+  },
+  "title": "Gone Girl",
+  "image": "uploads\\02e2af9df9c9a02234688a77241924f2",
+  "author": "Gillian Flynn",
+  "description": "Gone Girl by Gillian Flynn centers its story about Nick and Amy Dunne's strained marriage relationship. Nick used to work as a journalist, but loses his job. With his broke financial status, Nick decides to relocate from New York City to his smaller home town, North Carthage.",
+  "category": "MYSTERY",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T03:45:35.246Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647974491de41547d0528e3f"
+  },
+  "title": "Shutter Island",
+  "image": "uploads\\6d8faf56528d3097e4921ec55f341243",
+  "author": "Dennis Lehane",
+  "description": "n 1954, U.S. Marshal Edward \"Teddy\" Daniels and his new partner Chuck Aule travel to Ashecliffe Hospital for the criminally insane on Shutter Island, Boston Harbor to investigate the disappearance of Rachel Solando, a patient of the hospital who had previously drowned her three children.",
+  "category": "MYSTERY",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647974ad1de41547d0528e41"
+  },
+  "title": "The Da Vinci Code",
+  "image": "uploads\\790ca651cccb4d5fd73161f3dabffc86",
+  "author": "Dan Brown",
+  "description": "The Da Vinci Code is a 2003 mystery thriller novel by Dan Brown. It is Brown's second novel to include the character Robert Langdon: the first was his 2000 novel Angels & Demons.",
+  "category": "MYSTERY",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647974e21de41547d0528e43"
+  },
+  "title": "The Maid",
+  "image": "uploads\\3d81048e05eeb03ef7c91a19c643fbc7",
+  "author": "Nita Prose",
+  "description": "The Maid: A Novel is a 2022 murder mystery debut novel by Canadian author Nita Prose. In 2021, a film adaptation of the novel was announced, with Florence Pugh cast in the lead role.",
+  "category": "MYSTERY",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647975881de41547d0528e56"
+  },
+  "title": "Jiwan Kada Ki Phool",
+  "image": "uploads\\bb367469a423603133b0c570eda20730",
+  "author": "Jhamak Ghimire",
+  "description": "Jiwan Kada Ki Phool' is a book and Madan Puraskar winner written by Jhamak Ghimire about her own story. It has been printed seven times within two years making it the Nepali best seller of all time. It has also received many other awards",
+  "category": "NOVEL",
+  "available": true,
+  "featured": false,
+  "language": "nepali",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647975c01de41547d0528e5a"
+  },
+  "title": "Karodaun Kastoori",
+  "image": "uploads\\f2fc39fd02e23ca73548efdf6cbe64f3",
+  "author": "Amar Neupane",
+  "description": "Karodaun Kasturi is widely mistaken for being the life story of famous actor/ director Hari Bansha Acharya of Nepal. Rather, it is a beautifully written fictional novel about how his life would have been if he had not discovered his talent as a comedian.",
+  "category": "NOVEL",
+  "available": true,
+  "featured": false,
+  "language": "nepali",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647975ec1de41547d0528e5e"
+  },
+  "title": "Palpasa Cafe",
+  "image": "uploads\\90c35c1f70949dcbe2c5f88ef9cf4a8d",
+  "author": "Narayan Wagle",
+  "description": "Palpasa Cafe is a novel by Nepali author Narayan Wagle. It tells the story of an artist, Drishya, during the height of the Nepalese Civil War. The novel is partly a love story of Drishya and the first generation American Nepali, Palpasa, who has returned to the land of her parents after 9/11.",
+  "category": "NOVEL",
+  "available": true,
+  "featured": false,
+  "language": "nepali",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647976181de41547d0528e60"
+  },
+  "title": "Raktakunda",
+  "image": "uploads\\266c3e4c4dd85c238b1858ed6d02844e",
+  "author": "Krishna Abiral",
+  "description": "Rakta Kunda meaning ‘pool of blood’ is a Nepali novel by journalist Krishna Abiral. Based on the accounts of real event that took place in the year 2001, precisely the Royal Massacre, the novel tries to describe and explain the context and the background as well as the activity that took place before, during and after the monstrous act.",
+  "category": "NOVEL",
+  "available": true,
+  "featured": false,
+  "language": "nepali",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647976641de41547d0528e62"
+  },
+  "title": "Seto Dharti",
+  "image": "uploads\\74e21bef8882c9ddf155691670c893bc",
+  "author": "Amar Neupane",
+  "description": "SETO DHARTI is a fantastic art work by Amar Neupane.This reveals the child marriage evil practices and the misery of child widows in Nepali culture.",
+  "category": "NOVEL",
+  "available": true,
+  "featured": false,
+  "language": "nepali",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6479767f1de41547d0528e64"
+  },
+  "title": "Shirishko Phool",
+  "image": "uploads\\0652f2e2d4b710dde847efbef0c0d7a0",
+  "author": "Parijat",
+  "description": "Shirishko Phool, published in 1964, is a Nepali language novel by Parijat. It was the author's first and most successful novel. It was awarded the Madan Puraskar in 1965.",
+  "category": "NOVEL",
+  "available": true,
+  "featured": false,
+  "language": "nepali",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647976a91de41547d0528e68"
+  },
+  "title": "Lord of the Flies",
+  "image": "uploads\\6fc4ad5d2142e44ab4826e2ab52fbc77",
+  "author": "William Golding",
+  "description": "Lord of the Flies is a 1954 novel by the Nobel Prize-winning British author William Golding. The plot concerns a group of British boys who are stranded on an uninhabited island and their disastrous attempts to govern themselves.",
+  "category": "NOVEL",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647976c41de41547d0528e6a"
+  },
+  "title": "The Brothers Karamazov",
+  "image": "uploads\\827667e2e7d673c0df0e3cab2caabd7d",
+  "author": "Fyodor Dostoevsky",
+  "description": "The Brothers Karamazov, also translated as The Karamazov Brothers, is the last novel by Russian author Fyodor Dostoevsky. Dostoevsky spent nearly two years writing The Brothers Karamazov, which was published as a serial in The Russian Messenger from January 1879 to November 1880.",
+  "category": "NOVEL",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647976e41de41547d0528e6e"
+  },
+  "title": "The Call of the Wild",
+  "image": "uploads\\3578560c73d8b51ef79b4c80800b9d83",
+  "author": "Jack London",
+  "description": "The Call of the Wild is a short adventure novel by Jack London, published in 1903 and set in Yukon, Canada, during the 1890s Klondike Gold Rush, when strong sled dogs were in high demand. The central character of the novel is a dog named Buck.",
+  "category": "NOVEL",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647976f81de41547d0528e70"
+  },
+  "title": "To Kill a Mockingbird",
+  "image": "uploads\\e3999b14a171433529a795857c86ea36",
+  "author": "Harper Lee",
+  "description": "To Kill a Mockingbird is a novel by the American author Harper Lee. It was published in 1960 and was instantly successful. In the United States, it is widely read in high schools and middle schools.",
+  "category": "NOVEL",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6479773b1de41547d0528e74"
+  },
+  "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
+  "image": "uploads\\1a2aacde9dfcbd1b8699a35ccad2a705",
+  "author": "Robert Cecil Martin",
+  "description": "Even bad code can function. But if code isn't clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesn't have to be that way.",
+  "category": "PROGRAMMING",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6479777c1de41547d0528e78"
+  },
+  "title": "Head First Java Book",
+  "image": "uploads\\3047ac20662788372fbc61780acf734f",
+  "author": "Kathy Sierra",
+  "description": "Computer programming language Java is not easy to understand. It takes lot of time and practice to understand the complex programming language. But this book takes an interactive and fun approach for better understanding of different fundamentals of Java. The book offers multi-sensory and fun learning experience for new programmers, so they can easily pick up the new language.",
+  "category": "PROGRAMMING",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647977a51de41547d0528e7c"
+  },
+  "title": "Learn Python the hard way",
+  "image": "uploads\\9076b2af647a816ca645807d6598d392",
+  "author": "Zed A.Shaw",
+  "description": "Each project in learn more Python the hard way helps readers build a key practical skill -- combining demonstrations to get them started, and challenges to help them achieve even deeper understanding. Shaw organizes this practical programming course into five sections: working with commands, organizing and using data, applying algorithms, processing text, and implementing simple internet-style networking protocols. Along the way, Shaw stresses efficient processes and practical hacking mind-sets -- helping readers gain true mastery, not just follow recipes!.",
+  "category": "PROGRAMMING",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647977d11de41547d0528e7e"
+  },
+  "title": "Make Your Own Neural Network",
+  "image": "uploads\\6fd60ddbd74e4414c30e57d294795497",
+  "author": "Tariq Rashid",
+  "description": "A step-by-step gentle journey through the mathematics of neural networks, and making your own using the Python computer language. Neural networks are a key element of deep learning and artificial intelligence, which today is capable of some truly impressive feats. Yet too few really understand how neural networks actually work. This guide will take you on a fun and unhurried journey, starting from very simple ideas, and gradually building up an understanding of how neural networks work.",
+  "category": "PROGRAMMING",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647977f81de41547d0528e82"
+  },
+  "title": "The Pragmatic Programmer",
+  "image": "uploads\\2c8c60efb20885a32503c4578c006ed7",
+  "author": "Andrew Hunt",
+  "description": "For twenty years, the lessons from The Pragmatic Programmer have helped a generation of programmers examine the very essence of software development, independent of any particular language, framework, or methodology.",
+  "category": "PROGRAMMING",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647978281de41547d0528e86"
+  },
+  "title": "2001: A Space Odyssey",
+  "image": "uploads\\dfc7a8d2efc637a00298c1e2d5e075c9",
+  "author": "Arthur C.Clarke",
+  "description": "This allegory about humanity’s exploration of the universe—and the universe’s reaction to humanity—is a hallmark achievement in storytelling that follows the crew of the spacecraft Discovery as they embark on a mission to Saturn. Their vessel is controlled by HAL 9000, an artificially intelligent supercomputer capable of the highest level of cognitive functioning that rivals—and perhaps threatens—the human mind.",
+  "category": "SCIENCE",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647978461de41547d0528e88"
+  },
+  "title": "Annihilation",
+  "image": "uploads\\6f5007edd2955bdbe2b6777c0bfcb774",
+  "author": "Jeff Vandermeer",
+  "description": "A contemporary masterpiece’ guardian the first volume of the extraordinary southern reach trilogy now a major motion picture written and directed by Alex Garland (Ex Machina) and starring Natalie Portman and Oscar Isaac for thirty years, area X has remained mysterious and remote behind its intangible border an environmental disaster zone, though to all appearances an abundant wilderness. The southern reach, a secretive government agency, has sent eleven expeditions to investigate area X. One has ended in mass suicide, another in a hail of gunfire, the eleventh in a fatal cancer epidemic. Now four women embark on the twelfth expedition into the unknown",
+  "category": "SCIENCE",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647978601de41547d0528e8a"
+  },
+  "title": "Dune",
+  "image": "uploads\\9bae68c18b79b5b022ce5a82ba44f2b5",
+  "author": "Frank Herbert",
+  "description": "Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, heir to a noble family tasked with ruling an inhospitable world where the only thing of value is the “spice” melange, a drug capable of extending life and enhancing consciousness. Coveted across the known universe, melange is a prize worth killing for....",
+  "category": "SCIENCE",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6479787f1de41547d0528e8c"
+  },
+  "title": "Frankenstein",
+  "image": "uploads\\910aabdd02af37f1e093a4d5392b04f7",
+  "author": "Mark Shelley",
+  "description": "The novel ‘Frankenstein’ by Marry Shelley is a very famous gothic novel and has sold many copies till date. It is a compelling book that has managed to grab the attention of audiences since day-one. According to some, the monster of Frankenstein is symbolic of the industrialization that created havoc and destruction in Europe in the nineteenth century.",
+  "category": "SCIENCE",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647978bc1de41547d0528e90"
+  },
+  "title": "Into the Wild",
+  "image": "uploads\\e09635fce12b04b33df71939dd73baf5",
+  "author": "Jon Krakauer",
+  "description": "Into the Wild is a 1996 non-fiction book written by Jon Krakauer. It is an expansion of a 9,000-word article by Krakauer on Chris McCandless titled \"Death of an Innocent\", which appeared in the January 1993 issue of Outside.",
+  "category": "NONFICTION",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647978d11de41547d0528e92"
+  },
+  "title": "The Martian",
+  "image": "uploads\\973d517e4a1d7f50d740dc7248783347",
+  "author": "Andy Weir",
+  "description": "The Martian is a 2011 science fiction debut novel written by Andy Weir. The book was originally self-published on Weir's blog, in a serialized format. In 2014, the book was re-released after Crown Publishing Group purchased the exclusive publishing rights.",
+  "category": "SCIENCE",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647979001de41547d0528e98"
+  },
+  "title": "12 Rules for Life: An Antidote to Chaos",
+  "image": "uploads\\f69292697cdb81c63fd9b6fd5fbdfa16",
+  "author": "Jordan Peterson",
+  "description": "12 Rules for Life: An Antidote to Chaos is a 2018 self-help book by the Canadian clinical psychologist Jordan Peterson. It provides life advice through essays in abstract ethical principles, psychology, mythology, religion, and personal anecdotes",
+  "category": "SELFIMPROVEMENT",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647979321de41547d0528e9a"
+  },
+  "title": "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+  "image": "uploads\\5be8bdb99fcd173b4a4542802f7cb993",
+  "author": "James Clear",
+  "description": "No matter your goals, Atomic Habits offers a proven framework for improving--every day. James Clear, one of the world's leading experts on habit formation, reveals practical strategies that will teach you exactly how to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results.",
+  "category": "SELFIMPROVEMENT",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6479795b1de41547d0528e9c"
+  },
+  "title": "Cant Hurt Me: Master Your Mind and Defy the Odds",
+  "image": "uploads\\12cef493f7aa5922e0a83eb5dc5fb364",
+  "author": "David Goggins",
+  "description": "David Goggins' \"Can't Hurt Me\" is a powerful memoir that transcends the boundaries of inspiration and self-improvement. It is a raw and unflinchingly honest ...",
+  "category": "SELFIMPROVEMENT",
+  "available": true,
+  "featured": true,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647979781de41547d0528ea0"
+  },
+  "title": "Never Finished",
+  "image": "uploads\\3c97e16d68d3566078173bdcc81d5be0",
+  "author": "David Goggins",
+  "description": "Can't Hurt Me, David Goggins' smash hit memoir, demonstrated how much untapped ability we all have but was merely an introduction to the power of the mind.",
+  "category": "SELFIMPROVEMENT",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6479798f1de41547d0528ea2"
+  },
+  "title": "The Four Agreements",
+  "image": "uploads\\fc6942d8d1b6eeca8e67b03ca94390ae",
+  "author": "Don Miguel Ruiz",
+  "description": "The Four Agreements: A Practical Guide to Personal Freedom is a self-help book by bestselling author Don Miguel Ruiz. The book offers a code of conduct claiming to be based on ancient Toltec wisdom that advocates freedom from self-limiting beliefs that may cause suffering and limitation in a person's life.",
+  "category": "SELFIMPROVEMENT",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647979ac1de41547d0528ea4"
+  },
+  "title": "The Power of Now: A Guide to Spiritual Enlightenment",
+  "image": "uploads\\73b0a2ea362d271a5c172ac7b3893362",
+  "author": "Eckhart Tolle",
+  "description": "The Power of Now: A Guide to Spiritual Enlightenment is a book by Eckhart Tolle. It presents itself as a discussion about how people interact with themselves and others. The concept of self reflection and presence in the moment are presented along with simple exercises for the achievement of its principles",
+  "category": "SELFIMPROVEMENT",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64797e6d1de41547d0528eac"
+  },
+  "title": "Autobiography of a Yogi",
+  "image": "uploads\\197d45f1ec3784c26228fd863c7a536b",
+  "author": "Paramahansa Yogananda",
+  "description": "Autobiography of a Yogi is an autobiography of Paramahansa Yogananda published in 1946. Paramahansa Yogananda was born as Mukunda Lal Ghosh in Gorakhpur, India, into a Bengali Hindu family. Autobiography of a Yogi recounts his life and his encounters with spiritual figures of the Eastern and the Western world.",
+  "category": "SPIRITUAL",
+  "available": true,
+  "featured": true,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64797e901de41547d0528eb0"
+  },
+  "title": "Being in Love",
+  "image": "uploads\\9bb6f20428539eb814c34745406a3bd9",
+  "author": "Osho",
+  "description": "What Is Love?In this thoughtful, provocative work, Osho—one of the most revolutionary thinkers of our time—challenges us to question what we think we know about love and opens us to the possibility of a ...",
+  "category": "SPIRITUAL",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64797eb91de41547d0528eb2"
+  },
+  "title": "DEATH : AN INSIDE STORY",
+  "image": "uploads\\ccf8c4233e667ba984edb4752d790c69",
+  "author": "Sadhguru",
+  "description": "Death is a taboo in most societies in the world. But what if we have got this completely wrong? What if death was not the catastrophe it is made out to be but an essential aspect of life, rife with spiritual possibilities for transcendence? For the first time, someone is saying just that.",
+  "category": "SPIRITUAL",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64797eff1de41547d0528eba"
+  },
+  "title": "Inner Engineering: A Yogi's Guide to Joy",
+  "image": "uploads\\d77797e232961658de1b612f047c252b",
+  "author": "Sadhguru",
+  "description": "Inner Engineering: A Yogi's Guide to Joy is a 2016 book authored by an Indian yogi and mystic Jaggi Vasudev. The book was featured among The New York Times Best Seller in the spirituality and self help category for November 2016.",
+  "category": "SPIRITUAL",
+  "available": true,
+  "featured": true,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64797f1e1de41547d0528ebe"
+  },
+  "title": "Meditation: The First and Last Freedom",
+  "image": "uploads\\a22594c5f0f210b097ae18ed347cbed5",
+  "author": "Osho",
+  "description": "A step-by-step guide to 63 meditation techniques from ancient Buddhist, Taoist, Sufi and Hindu practices. The late author was a 20th-century mystic who wrote over 600 books and whose ashram in Poona is a centre for rest and meditation.",
+  "category": "SPIRITUAL",
+  "available": true,
+  "featured": true,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64797f4d1de41547d0528ec2"
+  },
+  "title": "The Art of Happiness",
+  "image": "uploads\\efbf4f36d75691847be7ddc64584e3f1",
+  "author": "14th Dalai Lama",
+  "description": "The Art of Happiness is a book by the 14th Dalai Lama and Howard Cutler, a psychiatrist who posed questions to the Dalai Lama.",
+  "category": "SPIRITUAL",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64797f891de41547d0528ec4"
+  },
+  "title": "The Book of Secrets: 112 Meditations to Discover the Mystery Within",
+  "image": "uploads\\641eb38c1deeaa2acf2d0adf7ee40d51",
+  "author": "Osho",
+  "description": "n this comprehensive and practical guide, the secrets of the ancient science of Tantra become available to a contemporary audience. Confined to small, hidden mystery schools for centuries, and often misunderstood and misinterpreted today. Tantra is not just a collection of techniques to enhance sexual experience. As Osho shows in these pages, it is a complete science of self-realization, based on the cumulative wisdom of centuries of exploration into the meaning of life and consciousness. Tantra―the very word means “technique”―is a set of powerful, transformative tools that can be used to bring new meaning and joy to every aspect of our daily lives.",
+  "category": "SPIRITUAL",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64797fbe1de41547d0528ec6"
+  },
+  "title": "Complete Works of Lao Tzu: Tao Teh Ching & Hau Hu Ching",
+  "image": "uploads\\d9d3d4787737cbcfc835b16fb6bf6af7",
+  "author": "Lao Tzu",
+  "description": "Written around 500 B.C., the 'Tao Teh Ching' is one of the most frequently translated and most cherished works in the world. 'The Complete Works of Lao Tzu' by Hua-Ching Ni is a remarkable elucidation of the famed 'Tao Teh Ching', the core of Taoist philosophy and a bridge to the subtle truth as well as a practical guideline for natural and harmonious living. Poetic and beautifully realized, this volumn contains one of the only written translations of the 'Hua Hu Ching.'",
+  "category": "SPIRITUAL",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64797fdf1de41547d0528ec8"
+  },
+  "title": "The Prophet",
+  "image": "uploads\\4852815c7605ab11c5184c1ff7efcaab",
+  "author": "Kahlil Gibran",
+  "description": "Through the voice of the prophet AlMustafa, Kahlil Gibran touches on the many intricacies of life and the human condition. Love, marriage, children, friendship, joy and sorrow — just a sample of the wide ranging thoughts that effortlessly touch on the mind and soul",
+  "category": "SPIRITUAL",
+  "available": true,
+  "featured": true,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+}]

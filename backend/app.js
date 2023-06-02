@@ -15,9 +15,55 @@ const PageNotFound = require('./errorHandler/PageNotFound')
 app.use(cors())
 
 app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
+
+// ---------------------------MULTER---CREATING----NEW----BOOK-------------------
+// const ImageModel = require('./model')
+
+// const multer = require('multer')
+// const upload = multer({ dest: 'uploads/' })
+
+// app.post('/api/v1/multer', upload.single('image'), async (req, res) => {
+//   const image = req.file.path
+//   const { title, description, language, author, category } = req.body
+
+//   let featured
+//   if (req.body.featured === 'true') {
+//     featured = true
+//   } else {
+//     featured = false
+//   }
+
+//   let available
+//   if (req.body.available === 'true') {
+//     available = true
+//   } else {
+//     available = false
+//   }
+
+//   // console.log(req.body)
+//   // console.log(req.file.path)
+//   const result = await ImageModel.create({
+//     title,
+//     description,
+//     language,
+//     author,
+//     category,
+//     featured,
+//     available,
+//     image,
+//   })
+
+//   res.status(200).json({ data: result })
+// })
+
+// making uploads folder globally accessable through static routing
+const path = require('path')
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
+
+// ---------------------------MULTER ENDS------------------------------
 
 // Parse Form data in JSON Format
-app.use(express.json())
 app.use('/api/v1/books', booksRouter)
 
 app.use('/api/v1/signup', signUpRouter)

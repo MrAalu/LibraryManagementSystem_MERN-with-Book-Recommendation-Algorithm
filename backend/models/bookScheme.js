@@ -8,9 +8,8 @@ const bookSchemeStructure = mongoose.Schema({
     trim: true,
   },
   image: {
-    type: String, //URL for temporary
-    required: false,
-    default: 'Image Coming Soon',
+    type: String, //Image File path stored here
+    required: true,
     trim: true,
   },
   author: {
@@ -20,22 +19,34 @@ const bookSchemeStructure = mongoose.Schema({
   },
   description: {
     type: String,
-    required: false,
-    default: 'Book Description Here....',
+    required: true,
     trim: true,
   },
   category: {
     type: String,
     trim: true,
-    enum: {
-      values: ['SPIRITUAL'],
-      message: `{VALUE} is not supported`,
-    },
+    // enum: {
+    //   values: ['SPIRITUAL'],
+    //   message: `{VALUE} is not supported`,
+    // },
     required: [true, 'Book Category is Required'],
   },
   available: {
     type: Boolean,
     default: true,
+  },
+  featured: {
+    type: Boolean,
+    default: false,
+  },
+  language: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  createdAdded: {
+    type: Date,
+    default: Date.now(),
   },
 })
 

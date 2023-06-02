@@ -7,9 +7,10 @@ import CustomPagination from '../pagination/CustomPagination'
 import { bookDataDummy, dummyPopular } from '../myDatabase/dummyBookData'
 import SmallBanner from '../bannerHome/SmallBanner'
 
-const API_URL = 'http://localhost:5000/api/v1/books/'
+import { backend_server } from '../../main'
 
 const Books = () => {
+  const API_URL = `${backend_server}/api/v1/books/`
   const [bookData, setBookData] = useState([])
 
   const fetchData = async () => {
@@ -24,7 +25,7 @@ const Books = () => {
   }
 
   useEffect(() => {
-    // fetchData()
+    fetchData()
   }, [])
 
   return (
@@ -90,12 +91,14 @@ const Books = () => {
 
         {/* Browse Collections */}
         <div className='row mt-3'>
-          {bookDataDummy.map((book) => {
-            const { id, name, img, author } = book
+          {bookData.map((book) => {
+            const { _id, name, image, author } = book
+            const imgSrc = `${backend_server}/${image}`
+
             return (
               <div
                 className='col-xxl-2 col-lg-3 col-md-4 col-sm-4 col-6 gy-3 '
-                key={id}
+                key={_id}
               >
                 <div className='card h-100'>
                   <div className='card-img-top'>
@@ -105,7 +108,7 @@ const Books = () => {
                         width: '100%',
                       }}
                       className='img-fluid'
-                      src={img}
+                      src={imgSrc}
                       alt='book image'
                     />
                   </div>
@@ -137,36 +140,3 @@ const Books = () => {
 }
 
 export default Books
-
-// BACKEND Fetch data lai map gareko
-{
-  /* Book Collection */
-}
-{
-  /* <div className='col-md-10'>
-  <div className='row'>
-    {bookData.map((book) => {
-      const { _id, title, image, author } = book
-      return (
-        <div key={_id} className='col-md-2'>
-          <div className='card'>
-            <img
-              src={image}
-              className='card-img-top'
-              alt='Book Cover'
-            />
-            <div className='card-body'>
-              <h3 className='card-title'>{title}</h3>
-              <p className='card-text'>{author}</p>
-              <button className='btn btn-primary'>Reserve</button>
-              <button className='btn btn-secondary'>
-                View Details
-              </button>
-            </div>
-          </div>
-        </div>
-      )
-    })}
-  </div>
-</div> */
-}
