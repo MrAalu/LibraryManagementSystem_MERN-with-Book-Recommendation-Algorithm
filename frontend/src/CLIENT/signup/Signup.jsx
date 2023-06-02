@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react'
 import axios from 'axios'
 import './signup.css'
 import { Link } from 'react-router-dom'
+import toast, { Toaster } from 'react-hot-toast'
 
 const Signup = () => {
   const API_URL = 'http://localhost:5000/api/v1/signup'
@@ -19,12 +20,18 @@ const Signup = () => {
 
   const [textField, setTextField] = useState(Empty_Form_Field)
 
-  const [successFeedback, setSuccessFeedback] = useState(false)
-  const [errorFeedback, setErrorFeedback] = useState(false)
-
   const HandleFormSubmit = async (e) => {
     try {
       e.preventDefault()
+
+      // Validate email format
+      const emailRegex = /^[A-Za-z0-9._%+-]+@gmail\.com$/
+      const isValid = emailRegex.test(textField.email)
+      // console.log(isValid)
+      if (!isValid) {
+        toast.error('Invalid Email Format')
+      }
+
       const username = textField.username
       const email = textField.email
       const phone = textField.phone
@@ -38,25 +45,16 @@ const Signup = () => {
       })
 
       if (response.status === 200) {
-        setSuccessFeedback(response.data.message)
-
-        setTimeout(() => {
-          setSuccessFeedback(false)
-        }, 2000)
+        toast.success('User Created Successfully')
       }
 
       setTextField(Empty_Form_Field)
     } catch (error) {
+      console.log(error.response)
       const userAlreadyExists = error.response.data.message
-      if (userAlreadyExists) {
-        setErrorFeedback(userAlreadyExists)
-      }
+      toast.error(userAlreadyExists)
 
-      setErrorFeedback('Invalid Format')
-
-      setTimeout(() => {
-        setErrorFeedback(false)
-      }, 2000)
+      // setErrorFeedback('Invalid Format')
     }
   }
 
@@ -91,6 +89,8 @@ const Signup = () => {
             autoComplete='off'
             required
             ref={refUsername}
+            maxLength='20'
+            minLength='5'
           />
           <label htmlFor='emailfield'>Email : </label>
           <input
@@ -127,16 +127,10 @@ const Signup = () => {
             name='password'
             autoComplete='off'
             required
+            minLength='5'
           />
           <br />
 
-          {errorFeedback ? <p id='p-fail'>{errorFeedback}</p> : ''}
-
-          {successFeedback ? (
-            <p id='p-success'>User Created Successfully</p>
-          ) : (
-            ''
-          )}
           <button>Signup</button>
         </form>
       </div>
@@ -148,34 +142,9 @@ const Signup = () => {
           <button>Login</button>
         </Link>
       </div>
+      <Toaster />
     </div>
   )
 }
 
 export default Signup
-
-{
-  /* <label htmlFor='confirmpasswordfield'>Re-enter Password : </label>
-          <input
-            type='text'
-            placeholder='Confirm Password'
-            id='confirmpasswordfield'
-            value={textField.confirm_password}
-            onChange={HandleOnChange}
-            name='confirm_password'
-            autoComplete='off'
-          /> */
-}
-
-{
-  /* <label htmlFor='fullnamefield'>Full Name : </label>
-          <input
-            type='text'
-            placeholder='Enter Fullname'
-            id='fullnamefield'
-            value={textField.fullname}
-            onChange={HandleOnChange}
-            name='fullname'
-            autoComplete='off'
-          /> */
-}

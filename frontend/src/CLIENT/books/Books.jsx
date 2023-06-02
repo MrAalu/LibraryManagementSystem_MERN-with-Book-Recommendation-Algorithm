@@ -92,7 +92,7 @@ const Books = () => {
         {/* Browse Collections */}
         <div className='row mt-3'>
           {bookData.map((book) => {
-            const { _id, name, image, author } = book
+            const { _id, title, image, author } = book
             const imgSrc = `${backend_server}/${image}`
 
             return (
@@ -113,7 +113,7 @@ const Books = () => {
                     />
                   </div>
                   <div className='card-body'>
-                    <h5 className='h5 card-title'>{name}</h5>
+                    <h5 className='h5 card-title'>{title}</h5>
                     <p className='p card-text'>{author}</p>
                     <div className='form-group mb-2 justify-content-center d-flex'>
                       <button type='button' className='btn btn-primary me-2'>

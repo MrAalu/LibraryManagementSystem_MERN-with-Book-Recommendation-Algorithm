@@ -12,10 +12,10 @@ const postUserLogin = TryCatchWrapper(async (req, res) => {
   const email = ConvertEmail(req.body.email)
 
   const result = await UserModels.findOne({ email }).select('+password')
-  // console.log(result)
+  console.log(result)
 
   if (!result) {
-    return res.status(401).json({ message: `User doesn't exists!` })
+    return res.status(401).json({ message: `Invalid email or password` })
   }
   const validate_password = await bcrypt.compare(
     req.body.password,
@@ -26,9 +26,13 @@ const postUserLogin = TryCatchWrapper(async (req, res) => {
   }
 
   // Generating json web token on success login
-  const jwt_token = await jwt.sign({ email }, process.env.TOKEN_STRING, {
-    expiresIn: '1d',
-  })
+  const jwt_token = await jwt.sign(
+    { id: result._id, username: result.username, phone: result.phone, email },
+    process.env.TOKEN_STRING,
+    {
+      expiresIn: '1d',
+    }
+  )
 
   res.status(200).json({ success: true, token: jwt_token })
 })

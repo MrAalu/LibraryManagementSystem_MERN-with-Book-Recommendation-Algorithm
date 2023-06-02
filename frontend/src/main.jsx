@@ -8,6 +8,13 @@ import 'bootstrap/dist/js/bootstrap.js'
 
 export const backend_server = `http://localhost:5000`
 
+export const checkToken = () => {
+  const token = localStorage.getItem('token')
+  if (token) {
+    return true
+  }
+}
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />

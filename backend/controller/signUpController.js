@@ -11,7 +11,7 @@ const postUserSignup = TryCatchWrapper(async (req, res) => {
 
   await signUpModel.create({ username, email, phone, password })
 
-  res.status(200).json({ success: true, message: `user created successfully` })
+  res.status(200).json({ success: true, message: `User created successfully` })
 })
 
 module.exports = postUserSignup

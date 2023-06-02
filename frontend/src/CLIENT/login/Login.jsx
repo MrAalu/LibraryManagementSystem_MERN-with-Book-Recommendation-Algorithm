@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import './login.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import toast, { Toaster } from 'react-hot-toast'
 
 const Login = () => {
   const API_URL = 'http://localhost:5000/api/v1/login'
@@ -10,8 +11,6 @@ const Login = () => {
 
   const Empty_Field_Object = { email: '', password: '' }
   const [textfield, setTextField] = useState(Empty_Field_Object)
-  const [successPrompt, setSuccessPrompt] = useState(false)
-  const [errorPrompt, setErrorPrompt] = useState(false)
 
   const HandleSubmit = async (e) => {
     try {
@@ -21,15 +20,18 @@ const Login = () => {
 
       const response = await axios.post(API_URL, { email, password })
       const token = await response.data.token
-      console.log('Generated Token : ', token)
 
       localStorage.setItem('token', token)
 
-      setSuccessPrompt('Login Success')
-      setTextField(Empty_Field_Object)
-
+      toast.promise(new Promise((resolve) => setTimeout(resolve, 1000)), {
+        loading: 'Logging in...',
+        success: <b>Login Success</b>,
+        error: <b>Login Failed</b>,
+      })
+      // Redirect to the home page after a delay
       setTimeout(() => {
-        setSuccessPrompt(false)
+        setTextField(Empty_Field_Object)
+        window.location.href = '/'
       }, 2000)
     } catch (error) {
       if (
@@ -39,12 +41,9 @@ const Login = () => {
       ) {
         // Display the 'if' error message from the backend to frontend
         const error_message = error.response.data.message
-        setErrorPrompt(error_message)
-      }
 
-      setTimeout(() => {
-        setErrorPrompt(false)
-      }, 2000)
+        toast.error(error_message)
+      }
     }
   }
 
@@ -81,7 +80,7 @@ const Login = () => {
           />
 
           <input
-            type='text'
+            type='password'
             placeholder='Enter Password'
             value={textfield.password}
             onChange={HandleOnChange}
@@ -93,8 +92,6 @@ const Login = () => {
           <button type='submit'>Login</button>
         </form>
         <br />
-        {successPrompt ? <p id='p-success'>{successPrompt}</p> : ''}
-        {errorPrompt ? <p id='p-fail'>{errorPrompt}</p> : ''}
       </div>
 
       {/* LOWER DIV */}
@@ -104,6 +101,7 @@ const Login = () => {
           <button>SignUp</button>
         </Link>
       </div>
+      <Toaster />
     </div>
   )
 }
