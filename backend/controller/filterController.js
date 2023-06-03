@@ -3,7 +3,7 @@ const { StatusCodes } = require('http-status-codes')
 const BookList = require('../models/bookScheme')
 
 const getFilterData = async (req, res) => {
-  const { title, available, category, author, language } = req.query
+  const { title, available, category, author, language, featured } = req.query
   const queryObject = {}
 
   if (title) {
@@ -12,6 +12,10 @@ const getFilterData = async (req, res) => {
 
   if (available) {
     queryObject.available = available === 'true' ? true : false
+  }
+
+  if (featured) {
+    queryObject.featured = featured === 'true' ? true : false
   }
 
   if (category) {
@@ -27,7 +31,7 @@ const getFilterData = async (req, res) => {
     queryObject.language = { $regex: language, $options: 'i' }
   }
 
-  const result = await BookList.find(queryObject).limit(10)
+  const result = await BookList.find(queryObject)
 
   res.status(StatusCodes.OK).json({ total: result.length, data: result })
 }

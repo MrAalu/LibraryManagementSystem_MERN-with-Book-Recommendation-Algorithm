@@ -11,10 +11,22 @@ const ManageBooks = () => {
   const API_URL = `${backend_server}/api/v1/books`
 
   const [allBooks, setAllBooks] = useState([])
+  const [categories, setCategories] = useState([])
 
   const fetchBooks = async () => {
     try {
       const response = await axios.get(API_URL)
+
+      const bookCategories = [
+        ...new Set(
+          response.data.data.map((items) => {
+            return items.category
+          })
+        ),
+      ]
+
+      // console.log(bookCategories)
+      setCategories(bookCategories)
 
       setAllBooks(response.data.data)
     } catch (error) {}
@@ -29,7 +41,10 @@ const ManageBooks = () => {
 
       <div className='row my-3'>
         {/* Filter gareko books lai set Gareko */}
-        <ManageSearchBooks setAllBooks={setAllBooks} />
+        <ManageSearchBooks
+          setAllBooks={setAllBooks}
+          bookCategories={categories}
+        />
       </div>
 
       {/* TABLE BOOK DATA */}
