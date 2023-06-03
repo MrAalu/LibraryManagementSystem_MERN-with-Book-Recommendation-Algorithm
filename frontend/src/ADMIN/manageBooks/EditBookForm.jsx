@@ -54,9 +54,6 @@ function EditBookForm() {
     }))
   }
 
-  const handleCancelButton = () => {
-    window.location.href = '/admin-managebooks'
-  }
   const handleUpdateButton = async () => {
     try {
       const response = await axios.patch(`${API_URL}/${id}`, bookData)
@@ -208,12 +205,11 @@ function EditBookForm() {
           className='col mt-3'
           style={{ display: 'flex', justifyContent: 'center' }}
         >
-          <button
-            className='btn btn-secondary mx-3'
-            onClick={handleCancelButton}
-          >
-            Back
-          </button>
+          <Link to='/admin-managebooks'>
+            <button type='button' className='btn btn-secondary mx-3'>
+              Back
+            </button>
+          </Link>
           <button
             type='submit'
             className='btn btn-success mx-3'

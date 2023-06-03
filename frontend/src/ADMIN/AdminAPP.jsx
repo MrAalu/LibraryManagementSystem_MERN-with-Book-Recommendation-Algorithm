@@ -10,6 +10,7 @@ import IssuedBooks from './issuedBooks/IssuedBooks'
 import BooksRequests from './booksRequests/BooksRequests'
 import ReturnedBooks from './returnedBooks/ReturnedBooks'
 import EditBookForm from './manageBooks/EditBookForm'
+import AddNewBook from './addNewBook/AddNewBook'
 
 const AdminAPP = () => {
   return (
@@ -23,6 +24,10 @@ const AdminAPP = () => {
           <Route path='/admin-issuedbooks' element={<IssuedBooks />} />
           <Route path='/admin-booksrequests' element={<BooksRequests />} />
           <Route path='/admin-returnedbooks' element={<ReturnedBooks />} />
+          <Route
+            path='/admin-managebooks/admin-addnewbook'
+            element={<AddNewBook />}
+          />
           <Route
             path='/admin-managebooks/admin-edit-books/:id'
             element={<EditBookForm />}

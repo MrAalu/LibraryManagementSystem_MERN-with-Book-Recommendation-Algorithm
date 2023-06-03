@@ -11,10 +11,41 @@ const getAllBooks = TryCatchWrapper(async (req, res) => {
 })
 
 // add new book
-const postBook = TryCatchWrapper(async (req, res) => {
-  const result = await BookList.create(req.body)
+const postBook = async (req, res) => {
+  // ---------------------------MULTER---CREATING----NEW----BOOK-------------------
+
+  const image = req.file.path
+  const { title, description, language, author, category } = req.body
+
+  let featured
+  if (req.body.featured === 'true') {
+    featured = true
+  } else {
+    featured = false
+  }
+
+  let available
+  if (req.body.available === 'true') {
+    available = true
+  } else {
+    available = false
+  }
+
+  // console.log(req.body)
+  // console.log(req.file.path)
+  const result = await BookList.create({
+    title,
+    description,
+    language,
+    author,
+    category,
+    featured,
+    available,
+    image,
+  })
+
   res.status(201).json({ success: true, data: result })
-})
+}
 
 // fetch single book by ID
 const getSingleBook = TryCatchWrapper(async (req, res) => {

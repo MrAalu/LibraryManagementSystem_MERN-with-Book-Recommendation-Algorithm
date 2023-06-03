@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { backend_server } from '../../main'
+import { Link } from 'react-router-dom'
 
 const ManageSearchBooks = ({ setAllBooks, bookCategories }) => {
   const API_URL = `${backend_server}/api/v1/filter`
@@ -135,7 +136,11 @@ const ManageSearchBooks = ({ setAllBooks, bookCategories }) => {
         </div>
 
         <div className='col mx-1 my-1'>
-          <button className='btn btn-primary'>Add new Book</button>
+          <Link to='admin-addnewbook'>
+            <button className='btn btn-primary' type='button'>
+              Add new Book
+            </button>
+          </Link>
         </div>
       </div>
     </div>
