@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
+import toast, { Toaster } from 'react-hot-toast'
+
+// Are you sure you want to delete confirm prompt
+import { confirmAlert } from 'react-confirm-alert'
+import 'react-confirm-alert/src/react-confirm-alert.css'
 
 import { backend_server } from '../../main'
 import { Col, Row } from 'react-bootstrap'
@@ -35,13 +40,67 @@ function EditBookForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(bookData)
+    // console.log(bookData)
   }
 
   const handleOnChange = (e) => {
     const name = e.target.name
     const value = e.target.value
+
     setBookData({ ...bookData, [name]: value })
+    setBookData((prevData) => ({
+      ...prevData,
+      [name]: name === 'category' ? value.toUpperCase() : value,
+    }))
+  }
+
+  const handleCancelButton = () => {
+    window.location.href = '/admin-managebooks'
+  }
+  const handleUpdateButton = async () => {
+    try {
+      const response = await axios.patch(`${API_URL}/${id}`, bookData)
+      toast.success('Update Success')
+      console.log(response)
+    } catch (error) {
+      console.log(error.response)
+      toast.error('error updating book')
+    }
+  }
+
+  const showConfirmation = () => {
+    confirmAlert({
+      title: 'Confirm',
+      message: 'Are you sure you want to delete this item?',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: handleDeleteButton,
+        },
+        {
+          label: 'No',
+          onClick: () => console.log('Cancelled!'),
+        },
+      ],
+    })
+  }
+
+  const handleDeleteButton = async () => {
+    try {
+      await axios.delete(`${API_URL}/${id}`)
+      toast.promise(new Promise((resolve) => setTimeout(resolve, 100)), {
+        loading: 'Deleting ...',
+        success: <b>Delete Success</b>,
+        error: <b>Delete Failed</b>,
+      })
+
+      setTimeout(() => {
+        window.location.href = '/admin-managebooks'
+      }, 1000)
+    } catch (error) {
+      console.log(error.response)
+      toast.error('error deleting book')
+    }
   }
 
   return (
@@ -149,23 +208,27 @@ function EditBookForm() {
           className='col mt-3'
           style={{ display: 'flex', justifyContent: 'center' }}
         >
-          <button className='btn btn-secondary mx-3'>Cancel</button>
-          <button type='submit' className='btn btn-success mx-3'>
+          <button
+            className='btn btn-secondary mx-3'
+            onClick={handleCancelButton}
+          >
+            Back
+          </button>
+          <button
+            type='submit'
+            className='btn btn-success mx-3'
+            onClick={handleUpdateButton}
+          >
             Update
           </button>
-          <button className='btn btn-danger mx-3'>Delete</button>
+          <button className='btn btn-danger mx-3' onClick={showConfirmation}>
+            Delete
+          </button>
         </div>
       </form>
+      <Toaster />
     </div>
   )
 }
-
-// title: '',
-//   category: '',
-//   author: '',
-//   available: null,
-//   featured: null,
-//   language: '',
-//   description: '',
 
 export default EditBookForm

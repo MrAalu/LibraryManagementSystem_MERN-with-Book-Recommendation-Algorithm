@@ -3,7 +3,8 @@ const BookList = require('../models/bookScheme')
 
 // fetch all books
 const getAllBooks = TryCatchWrapper(async (req, res) => {
-  const result = await BookList.find({})
+  const result = await BookList.find({}).limit(10)
+
   res
     .status(200)
     .json({ success: true, totalHits: result.length, data: result })

@@ -11,16 +11,14 @@ const ManageBooks = () => {
   const API_URL = `${backend_server}/api/v1/books`
 
   const [allBooks, setAllBooks] = useState([])
-  const [totalBooksCount, setTotalBooksCount] = useState(null)
 
   const fetchBooks = async () => {
     try {
       const response = await axios.get(API_URL)
+
       setAllBooks(response.data.data)
-      setTotalBooksCount(response.data.totalHits)
     } catch (error) {}
   }
-
   useEffect(() => {
     fetchBooks()
   }, [])
@@ -30,7 +28,8 @@ const ManageBooks = () => {
       <h1 className='h1 text-center'>Manage Books </h1>
 
       <div className='row my-3'>
-        <ManageSearchBooks />
+        {/* Filter gareko books lai set Gareko */}
+        <ManageSearchBooks setAllBooks={setAllBooks} />
       </div>
 
       {/* TABLE BOOK DATA */}
@@ -62,26 +61,14 @@ const ManageBooks = () => {
                   <td>{availableText}</td>
                   <td>
                     <Link to={`admin-edit-books/${_id}`}>
-                      <button className='btn mx-1 edit-books-btn'>Edit</button>
+                      <button className='btn mx-1 edit-books-btn'>
+                        View Details
+                      </button>
                     </Link>
-                    <button className='btn mx-1 delete-books-btn'>
-                      Delete
-                    </button>
                   </td>
                 </tr>
               )
             })}
-            {/* <tr>
-              <th scope='row'>ID</th>
-              <td>Death : An Inside Story </td>
-              <td>Spiritual</td>
-              <td>True</td>
-              <td>True</td>
-              <td>
-                <button className='btn mx-1 edit-books-btn'>Edit</button>
-                <button className='btn mx-1 delete-books-btn'>Delete</button>
-              </td>
-            </tr> */}
           </tbody>
         </table>
         <p>admin le filter garnu milna paryo for faster edit</p>

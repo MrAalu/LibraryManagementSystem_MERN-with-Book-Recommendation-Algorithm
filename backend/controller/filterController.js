@@ -1,5 +1,6 @@
 const { StatusCodes } = require('http-status-codes')
-const dataModel = require('../dataSampleExtra/bookdataSample')
+// const dataModel = require('../dataSampleExtra/bookdataSample')
+const BookList = require('../models/bookScheme')
 
 const getFilterData = async (req, res) => {
   const { title, available, category, author, language } = req.query
@@ -14,7 +15,7 @@ const getFilterData = async (req, res) => {
   }
 
   if (category) {
-    const categories = category.split(',')
+    const categories = category.split(',').map((cat) => new RegExp(cat, 'i'))
     queryObject.category = { $in: categories }
   }
 
@@ -26,7 +27,7 @@ const getFilterData = async (req, res) => {
     queryObject.language = { $regex: language, $options: 'i' }
   }
 
-  const result = await dataModel.find(queryObject)
+  const result = await BookList.find(queryObject).limit(10)
 
   res.status(StatusCodes.OK).json({ total: result.length, data: result })
 }
