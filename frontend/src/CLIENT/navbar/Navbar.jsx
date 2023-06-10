@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './navbar.css'
 
@@ -12,14 +12,10 @@ import UserSignin from './UserIsNotLoggedIn'
 // navbar search option
 import NavbarSearch from './NavbarSearch'
 
-import { checkToken } from '../../main'
-
 const Navbar = () => {
   const [isLoggedin, setIsLoggedin] = useState(false)
 
-  useEffect(() => {
-    setIsLoggedin(checkToken())
-  })
+  useEffect(() => {})
 
   const { navbarLinks, navbarTitle, navbarImage } = navbarData
 

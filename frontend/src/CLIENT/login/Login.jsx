@@ -3,6 +3,7 @@ import './login.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import toast, { Toaster } from 'react-hot-toast'
+import { createBrowserHistory as CreateHistory } from 'history'
 
 const Login = () => {
   const API_URL = 'http://localhost:5000/api/v1/login'
@@ -19,20 +20,18 @@ const Login = () => {
       const password = textfield.password
 
       const response = await axios.post(API_URL, { email, password })
-      const token = await response.data.token
       const userType = await response.data.userType
-      localStorage.setItem('token', token)
 
-      toast.promise(new Promise((resolve) => setTimeout(resolve, 1000)), {
-        loading: 'Logging in...',
-        success: <b>Login Success</b>,
-        error: <b>Login Failed</b>,
-      })
+      // toast.promise(new Promise((resolve) => setTimeout(resolve, 500)), {
+      //   loading: 'Logging in...',
+      //   success: <b>Login Success</b>,
+      //   error: <b>Login Failed</b>,
+      // })
+
       // Redirect to the home page after a delay
-      setTimeout(() => {
-        setTextField(Empty_Field_Object)
-        // window.location.href = '/'
-      }, 2000)
+      // setTimeout(() => {
+      //   // setTextField(Empty_Field_Object)
+      // }, 2000)
     } catch (error) {
       if (
         error.response &&
@@ -59,7 +58,7 @@ const Login = () => {
   }, [])
 
   return (
-    <div className='login-maindiv'>
+    <div className='login-maindiv '>
       {/* TOP DIV */}
       <div className='login-upperdiv'>
         <h1>Login</h1>

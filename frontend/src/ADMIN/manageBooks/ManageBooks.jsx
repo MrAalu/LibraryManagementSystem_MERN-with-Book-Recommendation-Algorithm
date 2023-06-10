@@ -57,6 +57,7 @@ const ManageBooks = () => {
               <th scope='col'>Category</th>
               <th scope='col'>Featured</th>
               <th scope='col'>Available</th>
+              <th scope='col'> Update</th>
             </tr>
           </thead>
           <tbody>

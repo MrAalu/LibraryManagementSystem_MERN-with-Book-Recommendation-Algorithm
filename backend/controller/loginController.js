@@ -32,8 +32,8 @@ const postUserLogin = async (req, res) => {
     {
       id: result._id,
       username: result.username,
-      phone: result.phone,
       email,
+      userType: result.userType,
     },
     process.env.JWT_SECRET,
     {
@@ -49,9 +49,10 @@ const postUserLogin = async (req, res) => {
     sameSite: 'lax',
   })
 
-  return res
-    .status(StatusCodes.OK)
-    .json({ success: true, userType: result.userType })
+  return res.status(StatusCodes.OK).json({
+    success: true,
+    userType: result.userType,
+  })
 }
 
 // Converting @gmail.com to lower
