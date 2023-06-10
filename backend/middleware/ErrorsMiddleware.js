@@ -1,27 +1,38 @@
 // All IF conditions handler
 
+// cookie isnt available or doesnt exists
 const cookieNotAvailable = (req, res) => {
   return res
     .status(StatusCodes.BAD_REQUEST)
     .json({ success: false, message: `Cookie doesn't exists` })
 }
 
+// token isnt available or doesnt exists
 const tokenNotAvailable = (req, res) => {
   return res
     .status(StatusCodes.BAD_REQUEST)
     .json({ success: false, message: `Token doesn't exists` })
 }
 
+// token verification failed, token was corrupted or INVALID
 const invalidTokenVerification = (req, res) => {
   return res
     .status(StatusCodes.UNAUTHORIZED)
     .json({ success: false, message: `Invalid Token` })
 }
 
+// token verfication PROCESS Failed (Catch Error)
 const tokenVerificationError = (req, res) => {
   return res
     .status(StatusCodes.BAD_REQUEST)
     .json({ success: false, message: `Token Verification Error` })
+}
+
+// Error is not authorized
+const unauthorizedUser = (req, res) => {
+  return res
+    .status(StatusCodes.UNAUTHORIZED)
+    .json({ success: false, message: `ACCESS DENIED! Unauthorized User !` })
 }
 
 module.exports = {
@@ -29,4 +40,5 @@ module.exports = {
   tokenNotAvailable,
   invalidTokenVerification,
   tokenVerificationError,
+  unauthorizedUser,
 }
