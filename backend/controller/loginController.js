@@ -1,28 +1,30 @@
 // controlling login Methods
 
-const TryCatchWrapper = require('../errorHandler/TryCatchBoiler')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 // SignUp model ma vako scheme use garera login credentials CrossCheck
 const UserModels = require('../models/signUpModel')
 
-const postUserLogin = TryCatchWrapper(async (req, res) => {
+const postUserLogin = async (req, res) => {
   // converting @gmail.com domain into lowercase to match with database
   const email = ConvertEmail(req.body.email)
 
   const result = await UserModels.findOne({ email }).select('+password')
-  console.log(result)
 
   if (!result) {
-    return res.status(401).json({ message: `Invalid email or password` })
+    return res
+      .status(StatusCodes.UNAUTHORIZED)
+      .json({ message: `Invalid email or password` })
   }
   const validate_password = await bcrypt.compare(
     req.body.password,
     result.password
   )
   if (!validate_password) {
-    return res.status(401).json({ message: 'Invalid email or password' })
+    return res
+      .status(StatusCodes.UNAUTHORIZED)
+      .json({ message: 'Invalid email or password' })
   }
 
   // Generating json web token on success login
@@ -33,16 +35,24 @@ const postUserLogin = TryCatchWrapper(async (req, res) => {
       phone: result.phone,
       email,
     },
-    process.env.TOKEN_STRING,
+    process.env.JWT_SECRET,
     {
-      expiresIn: '1d',
+      expiresIn: process.env.JWT_LIFE,
     }
   )
 
-  res
-    .status(200)
-    .json({ success: true, token: jwt_token, userType: result.userType })
-})
+  res.cookie(String(result._id), jwt_token, {
+    path: '/',
+    //1000ms * sec * min * hr ->
+    expires: new Date(Date.now() + 1000 * 60),
+    httpOnly: true,
+    sameSite: 'lax',
+  })
+
+  return res
+    .status(StatusCodes.OK)
+    .json({ success: true, userType: result.userType })
+}
 
 // Converting @gmail.com to lower
 const ConvertEmail = (email) => {

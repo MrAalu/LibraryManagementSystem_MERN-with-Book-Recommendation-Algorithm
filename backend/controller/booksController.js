@@ -1,14 +1,13 @@
-const TryCatchWrapper = require('../errorHandler/TryCatchBoiler')
 const BookList = require('../models/bookScheme')
 
 // fetch all books
-const getAllBooks = TryCatchWrapper(async (req, res) => {
+const getAllBooks = async (req, res) => {
   const result = await BookList.find({})
 
   res
-    .status(200)
+    .status(StatusCodes.OK)
     .json({ success: true, totalHits: result.length, data: result })
-})
+}
 
 // add new book
 const postBook = async (req, res) => {
@@ -44,11 +43,11 @@ const postBook = async (req, res) => {
     image,
   })
 
-  res.status(201).json({ success: true, data: result })
+  res.status(StatusCodes.CREATED).json({ success: true, data: result })
 }
 
 // fetch single book by ID
-const getSingleBook = TryCatchWrapper(async (req, res) => {
+const getSingleBook = async (req, res) => {
   const { id: bookID } = req.params
   const result = await BookList.findById({ _id: bookID })
 
@@ -59,11 +58,11 @@ const getSingleBook = TryCatchWrapper(async (req, res) => {
     })
   }
 
-  res.status(200).json({ success: true, data: result })
-})
+  res.status(StatusCodes.OK).json({ success: true, data: result })
+}
 
 // update single book detail
-const patchBook = TryCatchWrapper(async (req, res) => {
+const patchBook = async (req, res) => {
   const { id: bookID } = req.params
 
   const result = await BookList.findByIdAndUpdate({ _id: bookID }, req.body, {
@@ -79,11 +78,11 @@ const patchBook = TryCatchWrapper(async (req, res) => {
     })
   }
 
-  res.status(200).json({ success: true, data: result })
-})
+  res.status(StatusCodes.OK).json({ success: true, data: result })
+}
 
 // delete single book by id
-const deleteBook = TryCatchWrapper(async (req, res) => {
+const deleteBook = async (req, res) => {
   const { id: bookID } = req.params
   const result = await BookList.findByIdAndDelete({ _id: bookID })
 
@@ -94,7 +93,7 @@ const deleteBook = TryCatchWrapper(async (req, res) => {
     })
   }
 
-  res.status(200).json({ status: 'success', data: null })
-})
+  res.status(StatusCodes.OK).json({ status: 'success', data: null })
+}
 
 module.exports = { getAllBooks, postBook, getSingleBook, patchBook, deleteBook }

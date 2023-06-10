@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './CLIENT/App'
-import AdminAPP from './ADMIN/AdminAPP'
+import App from './App'
 import './main.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.js'
@@ -17,6 +16,6 @@ export const checkToken = () => {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AdminAPP />
+    <App></App>
   </React.StrictMode>
 )

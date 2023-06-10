@@ -1,5 +1,3 @@
-const { StatusCodes } = require('http-status-codes')
-// const dataModel = require('../dataSampleExtra/bookdataSample')
 const BookList = require('../models/bookScheme')
 
 const getFilterData = async (req, res) => {

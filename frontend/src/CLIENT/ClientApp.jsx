@@ -11,7 +11,7 @@ import Footer from './footer/Footer'
 import AboutUsPage from './about/AboutUsPage'
 import PagenotFound from './404-pageNotFound/PagenotFound'
 
-const App = () => {
+const ClientApp = () => {
   return (
     <React.Fragment>
       <Router>
@@ -32,4 +32,4 @@ const App = () => {
   )
 }
 
-export default App
+export default ClientApp

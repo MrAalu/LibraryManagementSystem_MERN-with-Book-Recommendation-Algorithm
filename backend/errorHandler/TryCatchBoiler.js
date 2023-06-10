@@ -12,3 +12,5 @@ const TryCatchWrapper = (custom_function) => {
 }
 
 module.exports = TryCatchWrapper
+
+// THIS IS NOT USED ANYMORE - we use package called 'async-express-errors' that does this for us
