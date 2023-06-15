@@ -3,15 +3,19 @@ import './login.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import toast, { Toaster } from 'react-hot-toast'
-import { createBrowserHistory as CreateHistory } from 'history'
+import { backend_server } from '../../main'
+
+import { useLoginState } from '../../LoginState'
 
 const Login = () => {
-  const API_URL = 'http://localhost:5000/api/v1/login'
+  const API_URL = `${backend_server}/api/v1/login`
 
   const refUsername = useRef(null)
 
   const Empty_Field_Object = { email: '', password: '' }
   const [textfield, setTextField] = useState(Empty_Field_Object)
+
+  const userLoginState = useLoginState()
 
   const HandleSubmit = async (e) => {
     try {
@@ -22,11 +26,13 @@ const Login = () => {
       const response = await axios.post(API_URL, { email, password })
       const userType = await response.data.userType
 
-      // toast.promise(new Promise((resolve) => setTimeout(resolve, 500)), {
-      //   loading: 'Logging in...',
-      //   success: <b>Login Success</b>,
-      //   error: <b>Login Failed</b>,
-      // })
+      userLoginState.login(email)
+
+      toast.promise(new Promise((resolve) => setTimeout(resolve, 500)), {
+        loading: 'Logging in...',
+        success: <b>Login Success</b>,
+        error: <b>Login Failed</b>,
+      })
 
       // Redirect to the home page after a delay
       // setTimeout(() => {

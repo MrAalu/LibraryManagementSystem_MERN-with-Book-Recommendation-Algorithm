@@ -12,10 +12,12 @@ import UserSignin from './UserIsNotLoggedIn'
 // navbar search option
 import NavbarSearch from './NavbarSearch'
 
+import { useLoginState } from '../../LoginState'
+
 const Navbar = () => {
   const [isLoggedin, setIsLoggedin] = useState(false)
 
-  useEffect(() => {})
+  const userLoginState = useLoginState()
 
   const { navbarLinks, navbarTitle, navbarImage } = navbarData
 
@@ -59,7 +61,8 @@ const Navbar = () => {
                 </li>
               )
             })}
-            {isLoggedin ? <UserLogin /> : <UserSignin />}
+            {/* {isLoggedin ? <UserLogin /> : <UserSignin />} */}
+            {userLoginState.userLogState ? <UserLogin /> : <UserSignin />}
           </ul>
           <NavbarSearch></NavbarSearch>
         </div>
