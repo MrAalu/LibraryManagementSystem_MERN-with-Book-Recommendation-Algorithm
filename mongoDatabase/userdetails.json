@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "6483e37d05f1290b97a0233c"
+  },
+  "username": "amitkc",
+  "email": "amit@gmail.com",
+  "phone": "9847612345",
+  "userType": "normal_user",
+  "password": "$2b$10$dA/cSotxM/RoTgicYsOuPuZ/eVmkYSpe5mFYchPtTt1prFOHW8MhS",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6483e38e05f1290b97a0233e"
+  },
+  "username": "admin",
+  "email": "admin@gmail.com",
+  "phone": "9847612345",
+  "userType": "admin_user",
+  "password": "$2b$10$qJt27Tql2jqthHFEVscwIOEifrgvgfMhnd/JAH3x3hVV6yrUGwGLK",
+  "__v": 0
+}]

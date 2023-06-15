@@ -280,7 +280,7 @@
   "description": "A step-by-step gentle journey through the mathematics of neural networks, and making your own using the Python computer language. Neural networks are a key element of deep learning and artificial intelligence, which today is capable of some truly impressive feats. Yet too few really understand how neural networks actually work. This guide will take you on a fun and unhurried journey, starting from very simple ideas, and gradually building up an understanding of how neural networks work.",
   "category": "PROGRAMMING",
   "available": true,
-  "featured": false,
+  "featured": true,
   "language": "english",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
@@ -296,7 +296,7 @@
   "description": "For twenty years, the lessons from The Pragmatic Programmer have helped a generation of programmers examine the very essence of software development, independent of any particular language, framework, or methodology.",
   "category": "PROGRAMMING",
   "available": true,
-  "featured": false,
+  "featured": true,
   "language": "english",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
@@ -376,7 +376,7 @@
   "description": "Into the Wild is a 1996 non-fiction book written by Jon Krakauer. It is an expansion of a 9,000-word article by Krakauer on Chris McCandless titled \"Death of an Innocent\", which appeared in the January 1993 issue of Outside.",
   "category": "NONFICTION",
   "available": true,
-  "featured": false,
+  "featured": true,
   "language": "english",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
@@ -504,7 +504,7 @@
   "description": "Autobiography of a Yogi is an autobiography of Paramahansa Yogananda published in 1946. Paramahansa Yogananda was born as Mukunda Lal Ghosh in Gorakhpur, India, into a Bengali Hindu family. Autobiography of a Yogi recounts his life and his encounters with spiritual figures of the Eastern and the Western world.",
   "category": "SPIRITUAL",
   "available": true,
-  "featured": true,
+  "featured": false,
   "language": "english",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
