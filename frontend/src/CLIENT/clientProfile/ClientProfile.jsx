@@ -5,8 +5,8 @@ const ClientProfile = () => {
   const userLoginState = useLoginState()
 
   return (
-    <div>
-      <h1>Welcome {userLoginState.userLogState}</h1>
+    <div className='container'>
+      <h1 className='h1 text-center'>Welcome {userLoginState.userLogState}</h1>
     </div>
   )
 }

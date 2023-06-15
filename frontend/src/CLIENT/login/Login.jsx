@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './login.css'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import toast, { Toaster } from 'react-hot-toast'
 import { backend_server } from '../../main'
 
@@ -9,6 +9,8 @@ import { useLoginState } from '../../LoginState'
 
 const Login = () => {
   const API_URL = `${backend_server}/api/v1/login`
+
+  const navigate = useNavigate()
 
   const refUsername = useRef(null)
 
@@ -35,9 +37,10 @@ const Login = () => {
       })
 
       // Redirect to the home page after a delay
-      // setTimeout(() => {
-      //   // setTextField(Empty_Field_Object)
-      // }, 2000)
+      setTimeout(() => {
+        // setTextField(Empty_Field_Object)
+        navigate('/', { replace: true })
+      }, 1500)
     } catch (error) {
       if (
         error.response &&

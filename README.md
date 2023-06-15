@@ -76,7 +76,8 @@ Create a file called '.env' on backend folder and define these values
 
 ## Lessons Learned
 
-Code Comments are Loveletter's you leave behind for your future self.
+1. Code Comments are Loveletter's you leave behind for your future self.
+2. If you cant Solve it, address it for your Future Self. He sure can!
 
 ## Feedback && Queries
 
