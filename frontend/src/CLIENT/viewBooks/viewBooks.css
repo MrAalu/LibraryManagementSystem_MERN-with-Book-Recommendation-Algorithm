@@ -1,0 +1,13 @@
+@media screen and (min-width: 992px) {
+  .image-div {
+    text-align: right !important;
+    width: fit-content !important;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .image-div {
+    text-align: center !important;
+    width: fit-content !important;
+  }
+}

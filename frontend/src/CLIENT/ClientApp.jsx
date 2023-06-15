@@ -13,6 +13,7 @@ import PagenotFound from './404-pageNotFound/PagenotFound'
 import { LoginState } from '../LoginState'
 import ClientProfile from './clientProfile/ClientProfile'
 import ClientLogout from './clientLogout/ClientLogout'
+import ViewBook from './viewBooks/ViewBook'
 
 const ClientApp = () => {
   return (
@@ -27,6 +28,7 @@ const ClientApp = () => {
             <Route path='/signup' element={<Signup />} />
             <Route path='/menu' element={<FeaturedBooks />} />
             <Route path='/books' element={<Books />} />
+            <Route path='/books/:id' element={<ViewBook />} />
             <Route path='/profile' element={<ClientProfile />} />
             <Route path='/about' element={<AboutUsPage />} />
             <Route path='*' element={<PagenotFound></PagenotFound>} />

@@ -2,13 +2,13 @@ import React from 'react'
 import { backend_server } from '../../main'
 import { Link } from 'react-router-dom'
 
-const BookList = (props) => {
-  const { books } = props
+const BrowseCollectionBooks = ({ bookData }) => {
   return (
-    <div className='row'>
-      {books.map((book) => {
+    <div className='row mt-3'>
+      {bookData.map((book) => {
         const { _id, title, image, author } = book
         const imgSrc = `${backend_server}/${image}`
+
         return (
           <div
             className='col-xxl-2 col-lg-3 col-md-4 col-sm-4 col-6 gy-3 '
@@ -24,7 +24,7 @@ const BookList = (props) => {
                   className='img-fluid'
                   src={imgSrc}
                   alt='book image'
-                />{' '}
+                />
               </div>
               <div className='card-body'>
                 <h5 className='h5 card-title'>{title}</h5>
@@ -50,4 +50,4 @@ const BookList = (props) => {
   )
 }
 
-export default BookList
+export default BrowseCollectionBooks

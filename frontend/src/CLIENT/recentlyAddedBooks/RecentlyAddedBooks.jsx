@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { backend_server } from '../../main'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const RecentlyAddedBooks = () => {
   const recentBooks_Api_URL = `${backend_server}/api/v1/recentBooks`
@@ -34,6 +35,7 @@ const RecentlyAddedBooks = () => {
         {latestBooks.map((book) => {
           const { _id, title, image, author } = book
           const imgSrc = `${backend_server}/${image}`
+
           return (
             <div
               className='col-xxl-2 col-lg-3 col-md-4 col-sm-4 col-6 gy-3 '
@@ -51,16 +53,22 @@ const RecentlyAddedBooks = () => {
                     alt='book image'
                   />{' '}
                 </div>
+
                 <div className='card-body'>
                   <h5 className='h5 card-title'>{title}</h5>
                   <p className='p card-text'>{author}</p>
                   <div className='form-group mb-2 justify-content-center d-flex'>
+                    {/* Request Books Button */}
                     <button type='button' className='btn btn-primary me-2'>
                       Buy
                     </button>
-                    <button type='button' className='btn btn-secondary me-2'>
-                      View
-                    </button>
+
+                    {/* View Books Button */}
+                    <Link to={`/books/${_id}`}>
+                      <button type='button' className='btn btn-secondary me-2'>
+                        View
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
