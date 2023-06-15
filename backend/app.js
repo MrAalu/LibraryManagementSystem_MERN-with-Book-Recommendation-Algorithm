@@ -7,7 +7,12 @@ require('express-async-errors')
 global.StatusCodes = require('http-status-codes').StatusCodes
 
 const { ConnectDatabase } = require('./database/databaseConnector')
-const { booksRouter } = require('./routes/bookRoutes')
+
+const booksRouter = require('./routes/bookRoutes')
+const booksRouterLimitSkip = require('./routes/bookRoutesLimitSkip')
+const booksRouterRecentBooks = require('./routes/booksRoutesRecentBooks')
+const booksRouterFeaturedBooks = require('./routes/booksRoutesFeatured')
+
 const signUpRouter = require('./routes/signUpRoute')
 const loginRouter = require('./routes/loginRoutes')
 const logoutRouter = require('./routes/logoutRoute')
@@ -40,7 +45,14 @@ app.use('/api/v1/logout', logoutRouter)
 
 app.use('/api/v1/filter', filterRouter)
 
+// ALL BOOKS CRUD
 app.use('/api/v1/books', booksRouter)
+
+// Limit() and Skip() & Pagination
+app.use('/api/v1/book', booksRouterLimitSkip)
+
+app.use('/api/v1/recentBooks', booksRouterRecentBooks)
+app.use('/api/v1/featuredBooks', booksRouterFeaturedBooks)
 
 app.use(CustomError)
 app.use(PageNotFound)

@@ -1,7 +1,28 @@
-import React from 'react'
-import { dummyPopular } from '../myDatabase/dummyBookData'
+import React, { useEffect, useState } from 'react'
+import { backend_server } from '../../main'
+import axios from 'axios'
 
 const RecentlyAddedBooks = () => {
+  const recentBooks_Api_URL = `${backend_server}/api/v1/recentBooks`
+
+  const [latestBooks, setLatestBooks] = useState([])
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(recentBooks_Api_URL)
+
+      const fetchedBooks = await response.data.data
+
+      setLatestBooks(fetchedBooks)
+    } catch (error) {
+      console.log(error.respose)
+    }
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
   return (
     <div className='row'>
       <h1 className='h1 mt-3' style={{ textAlign: 'center' }}>
@@ -10,12 +31,13 @@ const RecentlyAddedBooks = () => {
 
       {/* Recently added Books */}
       <div className='row'>
-        {dummyPopular.map((book) => {
-          const { id, name, img, author } = book
+        {latestBooks.map((book) => {
+          const { _id, title, image, author } = book
+          const imgSrc = `${backend_server}/${image}`
           return (
             <div
               className='col-xxl-2 col-lg-3 col-md-4 col-sm-4 col-6 gy-3 '
-              key={id}
+              key={_id}
             >
               <div className='card h-100'>
                 <div className='card-img-top'>
@@ -25,12 +47,12 @@ const RecentlyAddedBooks = () => {
                       width: '100%',
                     }}
                     className='img-fluid'
-                    src={img}
+                    src={imgSrc}
                     alt='book image'
                   />{' '}
                 </div>
                 <div className='card-body'>
-                  <h5 className='h5 card-title'>{name}</h5>
+                  <h5 className='h5 card-title'>{title}</h5>
                   <p className='p card-text'>{author}</p>
                   <div className='form-group mb-2 justify-content-center d-flex'>
                     <button type='button' className='btn btn-primary me-2'>

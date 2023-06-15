@@ -2,9 +2,12 @@ import React from 'react'
 import { backend_server } from '../../main'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { useLoginState } from '../../LoginState'
 
 const ClientLogout = () => {
   const logout_Api_url = `${backend_server}/api/v1/logout`
+
+  const userLoginState = useLoginState()
 
   const navigate = useNavigate()
 
@@ -13,8 +16,8 @@ const ClientLogout = () => {
       // Clear cookie using API
       await axios.post(logout_Api_url)
 
-      // Clear LoginState from LocalStorage
-      localStorage.clear()
+      // reset OR set user login state to NULL
+      userLoginState.logout()
 
       navigate('/', { replace: true })
     } catch (error) {

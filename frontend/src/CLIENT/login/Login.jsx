@@ -30,17 +30,7 @@ const Login = () => {
 
       userLoginState.login(email)
 
-      toast.promise(new Promise((resolve) => setTimeout(resolve, 500)), {
-        loading: 'Logging in...',
-        success: <b>Login Success</b>,
-        error: <b>Login Failed</b>,
-      })
-
-      // Redirect to the home page after a delay
-      setTimeout(() => {
-        // setTextField(Empty_Field_Object)
-        navigate('/', { replace: true })
-      }, 1500)
+      navigate('/', { replace: true })
     } catch (error) {
       if (
         error.response &&

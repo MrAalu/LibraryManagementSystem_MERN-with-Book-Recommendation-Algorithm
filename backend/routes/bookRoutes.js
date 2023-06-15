@@ -13,7 +13,6 @@ const {
 } = require('../controller/booksController')
 
 booksRouter.route('/').get(getAllBooks).post(upload.single('image'), postBook)
-
 booksRouter.route('/:id').get(getSingleBook).patch(patchBook).delete(deleteBook)
 
-module.exports = { booksRouter }
+module.exports = booksRouter

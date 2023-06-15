@@ -1,28 +1,55 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CategoryButtons from './CategoryButtons'
 import BookList from './BookList'
-import { BooksDatabase } from '../myDatabase/Data'
 import { Row } from 'react-bootstrap'
-
-const bookCategories = [
-  'show all',
-  ...new Set(
-    BooksDatabase.map((items) => {
-      return items.category
-    })
-  ),
-]
+import axios from 'axios'
+import { backend_server } from '../../main'
 
 const FeaturedBooks = () => {
-  const [books, setBooks] = useState(BooksDatabase)
+  const featuredBooks_API_URL = `${backend_server}/api/v1/featuredBooks`
 
-  const [categories, setCategories] = useState(bookCategories)
+  // All Featured books
+  const [allFeaturedBooks, setAllFeaturedBooks] = useState([])
+
+  // All featured books categories types
+  const [bookCategories, setBookCategories] = useState([])
+
+  // Books to be displayed based on CATEGORIES
+  const [books, setBooks] = useState(allFeaturedBooks)
+
+  const fetchFeaturedBooks = async () => {
+    try {
+      const response = await axios.get(featuredBooks_API_URL)
+
+      const books_data = await response.data.data
+
+      // mapping fetched books data and extracting unique CATEGORY names
+      const allCategories = [
+        'SHOW ALL',
+        ...new Set(
+          books_data.map((items) => {
+            return items.category
+          })
+        ),
+      ]
+
+      setBookCategories(allCategories)
+      setAllFeaturedBooks(books_data)
+      setBooks(books_data)
+    } catch (error) {
+      console.log(error.response)
+    }
+  }
+
+  useEffect(() => {
+    fetchFeaturedBooks()
+  }, [])
 
   const FilterItems = (category) => {
-    if (category === 'show all') {
-      setBooks(BooksDatabase)
+    if (category === 'SHOW ALL') {
+      setBooks(allFeaturedBooks)
     } else {
-      let newArray = BooksDatabase.filter((filter_para) => {
+      let newArray = allFeaturedBooks.filter((filter_para) => {
         return filter_para.category === category
       })
       setBooks(newArray)
@@ -36,7 +63,7 @@ const FeaturedBooks = () => {
       <Row className='text-center mt-4'>
         <CategoryButtons
           filterFunction={FilterItems}
-          categories={categories}
+          categories={bookCategories}
         ></CategoryButtons>
       </Row>
 

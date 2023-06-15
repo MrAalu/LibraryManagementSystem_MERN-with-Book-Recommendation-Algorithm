@@ -96,4 +96,10 @@ const deleteBook = async (req, res) => {
   res.status(StatusCodes.OK).json({ status: 'success', data: null })
 }
 
-module.exports = { getAllBooks, postBook, getSingleBook, patchBook, deleteBook }
+module.exports = {
+  getAllBooks,
+  postBook,
+  getSingleBook,
+  patchBook,
+  deleteBook,
+}

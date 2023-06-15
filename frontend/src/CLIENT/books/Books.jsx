@@ -10,7 +10,8 @@ import SmallBanner from '../bannerHome/SmallBanner'
 import { backend_server } from '../../main'
 
 const Books = () => {
-  const API_URL = `${backend_server}/api/v1/books/`
+  const API_URL = `${backend_server}/api/v1/book/`
+
   const [bookData, setBookData] = useState([])
 
   const fetchData = async () => {
