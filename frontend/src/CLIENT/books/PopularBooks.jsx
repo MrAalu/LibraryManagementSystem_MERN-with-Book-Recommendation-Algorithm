@@ -2,8 +2,11 @@ import React from 'react'
 import { dummyPopular } from '../myDatabase/dummyBookData'
 import { Link } from 'react-router-dom'
 import './card.css'
+import RequestBook from '../requestBooks/RequestBook'
 
 const PopularBooks = () => {
+  const { request_Book } = RequestBook()
+
   return (
     <div className='row'>
       {dummyPopular.map((book) => {
@@ -31,8 +34,12 @@ const PopularBooks = () => {
                 <h5 className='h5 card-title'>{name}</h5>
                 <p className='p card-text'>{author}</p>
                 <div className='form-group mb-2 justify-content-center d-flex'>
-                  <button type='button' className='btn btn-primary me-2'>
-                    Buy
+                  <button
+                    type='button'
+                    className='btn btn-primary me-2'
+                    // onClick={() => request_Book(_id)}
+                  >
+                    Request
                   </button>
 
                   <Link to={`/books/${id}`}>

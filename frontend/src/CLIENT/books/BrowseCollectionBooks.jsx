@@ -2,10 +2,15 @@ import React from 'react'
 import { backend_server } from '../../main'
 import { Link } from 'react-router-dom'
 import './card.css'
+import RequestBook from '../requestBooks/RequestBook'
+import { Toaster } from 'react-hot-toast'
 
 const BrowseCollectionBooks = ({ bookData }) => {
+  const { request_Book } = RequestBook()
+
   return (
     <div className='row mt-3'>
+      <Toaster />
       {bookData.map((book) => {
         const { _id, title, image, author } = book
 
@@ -29,8 +34,12 @@ const BrowseCollectionBooks = ({ bookData }) => {
                 <h5 className='h5 card-title'>{title}</h5>
                 <p className='p card-text'>{author}</p>
                 <div className='form-group mb-2 justify-content-center d-flex mt-auto'>
-                  <button type='button' className='btn btn-primary me-2'>
-                    Buy
+                  <button
+                    type='button'
+                    className='btn btn-primary me-2'
+                    onClick={() => request_Book(_id)}
+                  >
+                    Request
                   </button>
 
                   {/* View Books Button */}

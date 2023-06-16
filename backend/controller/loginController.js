@@ -44,8 +44,10 @@ const postUserLogin = async (req, res) => {
   res.cookie(String(result._id), jwt_token, {
     path: '/',
     //1000ms * sec * min * hr ->
-    expires: new Date(Date.now() + 1000 * 60),
+    expires: new Date(Date.now() + 1000 * 60 * 60 * 24),
     httpOnly: true,
+
+    // allows get request from same site or external site but , POST from external sites cookie wont be sent
     sameSite: 'lax',
   })
 

@@ -29,7 +29,9 @@ const ManageBooks = () => {
       setCategories(bookCategories)
 
       setAllBooks(response.data.data)
-    } catch (error) {}
+    } catch (error) {
+      console.log(error.response)
+    }
   }
   useEffect(() => {
     fetchBooks()

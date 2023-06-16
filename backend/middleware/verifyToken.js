@@ -27,6 +27,7 @@ const verifyToken = async (req, res, next) => {
       }
 
       req.userId = payload.id
+      req.userEmail = payload.email
       next()
     })
   } catch (error) {

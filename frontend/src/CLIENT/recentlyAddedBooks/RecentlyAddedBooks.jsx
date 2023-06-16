@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { backend_server } from '../../main'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import RequestBook from '../requestBooks/RequestBook'
+import { Toaster } from 'react-hot-toast'
 
 const RecentlyAddedBooks = () => {
   const recentBooks_Api_URL = `${backend_server}/api/v1/recentBooks`
@@ -20,12 +22,15 @@ const RecentlyAddedBooks = () => {
     }
   }
 
+  const { request_Book } = RequestBook()
+
   useEffect(() => {
     fetchData()
   }, [])
 
   return (
     <div className='row'>
+      <Toaster />
       <h1 className='h1 mt-3' style={{ textAlign: 'center' }}>
         Latest Books
       </h1>
@@ -59,8 +64,12 @@ const RecentlyAddedBooks = () => {
                   <p className='p card-text'>{author}</p>
                   <div className='form-group mb-2 justify-content-center d-flex'>
                     {/* Request Books Button */}
-                    <button type='button' className='btn btn-primary me-2'>
-                      Buy
+                    <button
+                      type='button'
+                      className='btn btn-primary me-2'
+                      onClick={() => request_Book(_id)}
+                    >
+                      Request
                     </button>
 
                     {/* View Books Button */}

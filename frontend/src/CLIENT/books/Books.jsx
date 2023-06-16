@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 
 import CustomPagination from '../pagination/CustomPagination'
 
-import { bookDataDummy, dummyPopular } from '../myDatabase/dummyBookData'
 import SmallBanner from '../bannerHome/SmallBanner'
 import PopularBooks from './PopularBooks'
 
@@ -55,7 +54,10 @@ const Books = () => {
 
         <div className='mt-1'>
           {/* FILTER BOOKS SECTION */}
-          <FilterBooks></FilterBooks>
+          <FilterBooks
+            setBookData={setBookData}
+            bookData={bookData}
+          ></FilterBooks>
         </div>
 
         {/* BROWSE COLLECTIONS BOOKS */}

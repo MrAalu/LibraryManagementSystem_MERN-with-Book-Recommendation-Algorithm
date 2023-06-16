@@ -12,6 +12,7 @@ const booksRouter = require('./routes/bookRoutes')
 const booksRouterLimitSkip = require('./routes/bookRoutesLimitSkip')
 const booksRouterRecentBooks = require('./routes/booksRoutesRecentBooks')
 const booksRouterFeaturedBooks = require('./routes/booksRoutesFeatured')
+const requestBookRouter = require('./routes/requestBooksRoute')
 
 const signUpRouter = require('./routes/signUpRoute')
 const loginRouter = require('./routes/loginRoutes')
@@ -53,6 +54,7 @@ app.use('/api/v1/book', booksRouterLimitSkip)
 
 app.use('/api/v1/recentBooks', booksRouterRecentBooks)
 app.use('/api/v1/featuredBooks', booksRouterFeaturedBooks)
+app.use('/api/v1/requestBooks', requestBookRouter)
 
 app.use(CustomError)
 app.use(PageNotFound)

@@ -104,7 +104,7 @@
   "description": "Palpasa Cafe is a novel by Nepali author Narayan Wagle. It tells the story of an artist, Drishya, during the height of the Nepalese Civil War. The novel is partly a love story of Drishya and the first generation American Nepali, Palpasa, who has returned to the land of her parents after 9/11.",
   "category": "NOVEL",
   "available": true,
-  "featured": false,
+  "featured": true,
   "language": "nepali",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
@@ -184,7 +184,7 @@
   "description": "The Brothers Karamazov, also translated as The Karamazov Brothers, is the last novel by Russian author Fyodor Dostoevsky. Dostoevsky spent nearly two years writing The Brothers Karamazov, which was published as a serial in The Russian Messenger from January 1879 to November 1880.",
   "category": "NOVEL",
   "available": true,
-  "featured": false,
+  "featured": true,
   "language": "english",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
@@ -376,7 +376,7 @@
   "description": "Into the Wild is a 1996 non-fiction book written by Jon Krakauer. It is an expansion of a 9,000-word article by Krakauer on Chris McCandless titled \"Death of an Innocent\", which appeared in the January 1993 issue of Outside.",
   "category": "NONFICTION",
   "available": true,
-  "featured": true,
+  "featured": false,
   "language": "english",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
@@ -440,7 +440,7 @@
   "description": "David Goggins' \"Can't Hurt Me\" is a powerful memoir that transcends the boundaries of inspiration and self-improvement. It is a raw and unflinchingly honest ...",
   "category": "SELFIMPROVEMENT",
   "available": true,
-  "featured": true,
+  "featured": false,
   "language": "english",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
@@ -568,7 +568,7 @@
   "description": "A step-by-step guide to 63 meditation techniques from ancient Buddhist, Taoist, Sufi and Hindu practices. The late author was a 20th-century mystic who wrote over 600 books and whose ashram in Poona is a centre for rest and meditation.",
   "category": "SPIRITUAL",
   "available": true,
-  "featured": true,
+  "featured": false,
   "language": "english",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
