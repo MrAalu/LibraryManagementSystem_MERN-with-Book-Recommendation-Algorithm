@@ -1,0 +1,18 @@
+/* CSS to manage all books CARD sizes and shapes */
+
+.card-body {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card-title {
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.card-img-top {
+  height: 400px !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}

@@ -6,18 +6,19 @@ import './viewBooks.css'
 import useFetch from '../../useFetch'
 
 const ViewBook = () => {
-  const bookId = useParams()
-  const API_URL = `${backend_server}/api/v1/books/${bookId.id}`
+  const { id } = useParams() //fetching book id from url params
+  const API_URL = `${backend_server}/api/v1/books/${id}`
 
   const getData = useFetch(API_URL)
 
   // Destructuring fetched data
   const data = getData.fetched_data.data
+  const imageFullPath = getData.imagePath
 
   const [bookData, setBookData] = useState({})
 
   useEffect(() => {
-    setBookData({ ...data })
+    setBookData({ ...data, image: imageFullPath })
   }, [data])
 
   return (
@@ -27,7 +28,7 @@ const ViewBook = () => {
       <div className='row mt-1 mb-3 shadow'>
         <div className='col-lg-6 col-sm-12 mx-5 my-2  image-div'>
           <img
-            src={`${backend_server}/${bookData.image}`}
+            src={bookData.image}
             alt=''
             style={{ height: '100%', width: '250px' }}
             className='img-fluid'

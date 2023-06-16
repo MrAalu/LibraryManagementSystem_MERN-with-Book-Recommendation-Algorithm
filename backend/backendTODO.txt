@@ -1,0 +1,8 @@
+create a Collection for BookTransaction 
+userID 
+bookid
+issueDate
+issueStatus
+isReturned
+extra charge
+returnDueDate

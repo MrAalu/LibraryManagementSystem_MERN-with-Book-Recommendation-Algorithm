@@ -1,6 +1,7 @@
 import React from 'react'
 import { backend_server } from '../../main'
 import { Link } from 'react-router-dom'
+import '../books/card.css'
 
 const BookList = (props) => {
   const { books } = props
@@ -11,7 +12,7 @@ const BookList = (props) => {
         const imgSrc = `${backend_server}/${image}`
         return (
           <div
-            className='col-xxl-2 col-lg-3 col-md-4 col-sm-4 col-6 gy-3 '
+            className='col-xxl-3 col-lg-3 col-md-4 col-sm-6 col-6 gy-3'
             key={_id}
           >
             <div className='card h-100'>

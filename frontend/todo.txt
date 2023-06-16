@@ -6,7 +6,7 @@
 
 3.Signup ma 'Username must me unique' || 'username already taken' prompt 
 
-NOTE :TEXT OVERFLOW eclipse.... rakhne and maintain card elements position fairly
+NOTE :TEXT OVERFLOW elipsis.... rakhne and maintain card elements position fairly
 
 SEARCH BAR - CTRL +K hotkey && search ma click garda pop up (thulo search dialog) and tesma search garne
 

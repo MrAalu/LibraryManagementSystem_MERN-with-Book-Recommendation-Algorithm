@@ -1,6 +1,7 @@
 import React from 'react'
 import { dummyPopular } from '../myDatabase/dummyBookData'
 import { Link } from 'react-router-dom'
+import './card.css'
 
 const PopularBooks = () => {
   return (
@@ -10,7 +11,7 @@ const PopularBooks = () => {
 
         return (
           <div
-            className='col-xxl-2 col-lg-3 col-md-4 col-sm-4 col-6 gy-3 '
+            className='col-lg-3 col-md-4 col-sm-6 col-6 gy-3 mx-auto'
             key={id}
           >
             <div className='card h-100'>
@@ -25,6 +26,7 @@ const PopularBooks = () => {
                   alt='book image'
                 />{' '}
               </div>
+
               <div className='card-body'>
                 <h5 className='h5 card-title'>{name}</h5>
                 <p className='p card-text'>{author}</p>
