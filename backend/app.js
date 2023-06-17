@@ -15,6 +15,8 @@ const booksRouterFeaturedBooks = require('./routes/booksRoutesFeatured')
 const requestBookRouter = require('./routes/requestBooksRoute')
 const popularBooksRouter = require('./routes/popularBooksRoutes')
 
+const userRouter = require('./routes/usersRoute')
+
 const signUpRouter = require('./routes/signUpRoute')
 const loginRouter = require('./routes/loginRoutes')
 const logoutRouter = require('./routes/logoutRoute')
@@ -57,6 +59,9 @@ app.use('/api/v1/recentBooks', booksRouterRecentBooks)
 app.use('/api/v1/featuredBooks', booksRouterFeaturedBooks)
 app.use('/api/v1/requestBooks', requestBookRouter)
 app.use('/api/v1/popularBooks', popularBooksRouter)
+
+// User
+app.use('/api/v1/users', userRouter)
 
 app.use(CustomError)
 app.use(PageNotFound)
