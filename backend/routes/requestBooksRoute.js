@@ -1,9 +1,18 @@
 const express = require('express')
 const requestBookRouter = express.Router()
 
-const { postBooks } = require('../controller/requestBookController')
 const verifyToken = require('../middleware/verifyToken')
 
-requestBookRouter.route('/').post(verifyToken, postBooks)
+const {
+  postBooks,
+  getRequestedBooks,
+  patchRequestedBooks,
+} = require('../controller/requestBookController')
+
+requestBookRouter
+  .route('/')
+  .post(verifyToken, postBooks)
+  .get(verifyToken, getRequestedBooks)
+  .patch(verifyToken, patchRequestedBooks)
 
 module.exports = requestBookRouter

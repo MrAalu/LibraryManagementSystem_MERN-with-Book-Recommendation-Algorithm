@@ -2,6 +2,7 @@ const BookTransaction = require('../models/bookTransaction')
 const BookSchema = require('../models/bookScheme')
 const PopularBookSchema = require('../models/PopularBooks')
 
+// Creates a new User book request transaction
 const postBooks = async (req, res) => {
   const userId = req.userId
   const userEmail = req.userEmail
@@ -56,4 +57,23 @@ const createOrUpdatePopularBook = async (bookId, bookTitle) => {
   }
 }
 
-module.exports = { postBooks }
+// handles Book Request issueStatus (Fetches Pending Requests)
+const getRequestedBooks = async (req, res) => {
+  const result = await BookTransaction.find({ issueStatus: 'PENDING' })
+
+  res
+    .status(200)
+    .json({ success: true, totalHits: result.length, data: result })
+}
+
+// Update book issue Status
+const patchRequestedBooks = async (req, res) => {
+  const { id, issueStatus } = req.body
+  const result = await BookTransaction.findByIdAndUpdate(id, { issueStatus })
+
+  res
+    .status(200)
+    .json({ success: true, totalHits: result.length, data: result })
+}
+
+module.exports = { postBooks, getRequestedBooks, patchRequestedBooks }
