@@ -60,16 +60,21 @@ const FeaturedBooks = () => {
     <div className='container'>
       <h1 className='h1 text-center'>Featured Books</h1>
 
-      <Row className='text-center mt-4'>
-        <CategoryButtons
-          filterFunction={FilterItems}
-          categories={bookCategories}
-        ></CategoryButtons>
-      </Row>
-
-      <Row className='my-3'>
-        <BookList books={books}></BookList>
-      </Row>
+      {allFeaturedBooks.length > 0 ? (
+        <div>
+          <Row className='text-center mt-4'>
+            <CategoryButtons
+              filterFunction={FilterItems}
+              categories={bookCategories}
+            ></CategoryButtons>
+          </Row>
+          <Row className='my-3'>
+            <BookList books={books}></BookList>
+          </Row>{' '}
+        </div>
+      ) : (
+        <p className='p text-center'>Loading ...</p>
+      )}
     </div>
   )
 }
