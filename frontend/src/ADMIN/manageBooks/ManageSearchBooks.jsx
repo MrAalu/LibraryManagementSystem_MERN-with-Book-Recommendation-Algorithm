@@ -137,7 +137,7 @@ const ManageSearchBooks = ({ setAllBooks, bookCategories }) => {
         </div>
 
         <div className='col mx-1 my-1'>
-          <Link to='admin-addnewbook'>
+          <Link to='/admin/managebooks/addnewbook'>
             <button className='btn btn-primary' type='button'>
               Add new Book
             </button>

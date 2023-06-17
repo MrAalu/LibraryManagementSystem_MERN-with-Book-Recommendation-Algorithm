@@ -29,3 +29,6 @@ PROFILE Page :
 
 
 BOOKS PAGE , need to filter books 
+NAVBAR search page,
+Individual VIEW BOOKS page , recommended/similar books algorithm 
+Pagination

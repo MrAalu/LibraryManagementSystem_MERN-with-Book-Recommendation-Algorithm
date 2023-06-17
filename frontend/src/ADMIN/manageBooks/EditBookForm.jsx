@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import toast, { Toaster } from 'react-hot-toast'
 
@@ -9,10 +9,14 @@ import 'react-confirm-alert/src/react-confirm-alert.css'
 
 import { backend_server } from '../../main'
 import { Col, Row } from 'react-bootstrap'
-function EditBookForm() {
+
+const EditBookForm = () => {
   const API_URL = `${backend_server}/api/v1/books`
 
   const { id } = useParams()
+
+  const navigate = useNavigate()
+
   const [bookData, setBookData] = useState({
     title: '',
     category: '',
@@ -205,11 +209,14 @@ function EditBookForm() {
           className='col mt-3'
           style={{ display: 'flex', justifyContent: 'center' }}
         >
-          <Link to='/admin-managebooks'>
-            <button type='button' className='btn btn-secondary mx-3'>
-              Back
-            </button>
-          </Link>
+          <button
+            type='button'
+            className='btn btn-secondary mx-3'
+            onClick={() => navigate(-1)}
+          >
+            Go Back
+          </button>
+
           <button
             type='submit'
             className='btn btn-success mx-3'

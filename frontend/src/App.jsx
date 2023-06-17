@@ -1,15 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ClientApp from './CLIENT/ClientApp'
 import AdminAPP from './ADMIN/AdminAPP'
 
-export const CheckLoginStatus = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-}
-
+// conditionally rendering home page based on user Role/Type
 const App = () => {
+  const [userType, setUserType] = useState('')
+
+  useEffect(() => {
+    const storedUserType = localStorage.getItem('userType')
+    setUserType(storedUserType)
+  }, [])
+
   return (
-    <ClientApp></ClientApp>
-    // <AdminAPP></AdminAPP>
+    <React.Fragment>
+      {userType === 'admin_user' ? <AdminAPP /> : <ClientApp />}
+    </React.Fragment>
   )
 }
 

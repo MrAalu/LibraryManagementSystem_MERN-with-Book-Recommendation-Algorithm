@@ -3,10 +3,12 @@ import axios from 'axios'
 import { Container, Form, Row, Col, Button } from 'react-bootstrap'
 import { backend_server } from '../../main'
 import toast, { Toaster } from 'react-hot-toast'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const AddNewBook = () => {
   const API_URL = `${backend_server}/api/v1/books`
+
+  const navigate = useNavigate()
 
   const empty_inputfield = {
     title: '',
@@ -166,11 +168,14 @@ const AddNewBook = () => {
           <Button type='submit' variant='success'>
             Submit
           </Button>
-          <Link to='/admin-managebooks'>
-            <button type='button' className='btn btn-secondary mx-1'>
-              Back
-            </button>
-          </Link>
+
+          <button
+            type='button'
+            className='btn btn-secondary mx-1'
+            onClick={() => navigate(-1)}
+          >
+            Go Back
+          </button>
         </Form>
       </Container>
       <Toaster />

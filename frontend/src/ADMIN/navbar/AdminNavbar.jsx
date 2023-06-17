@@ -11,7 +11,7 @@ const AdminNavbar = () => {
   return (
     <nav className='navbar navbar-expand-xl '>
       <div className='container-fluid'>
-        <Link to='/adminhome' className='a'>
+        <Link to='/admin' className='a'>
           <img
             src={navbarImage}
             alt='Logo'

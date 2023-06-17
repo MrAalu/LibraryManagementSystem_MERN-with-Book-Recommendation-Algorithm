@@ -28,9 +28,14 @@ const Login = () => {
       const response = await axios.post(API_URL, { email, password })
       const userType = await response.data.userType
 
-      userLoginState.login(email)
-
-      navigate('/', { replace: true })
+      // Passing user email to refrence user is logged in , userType to refrence what user ROLE is
+      userLoginState.login(email, userType)
+      if (userType === 'normal_user') {
+        navigate('/', { replace: true })
+      } else if (userType === 'admin_user') {
+        // Hard reload into ADMIN Page
+        window.location.href = '/admin'
+      }
     } catch (error) {
       if (
         error.response &&

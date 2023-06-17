@@ -5,19 +5,19 @@ const navbarImage = `/book-min.png`
 const navbarLinks = [
   {
     name: 'Home',
-    url: '/adminhome',
+    url: '/admin',
   },
   {
     name: `Book Request's`,
-    url: '/admin-booksrequests',
+    url: '/admin/booksrequests',
   },
   {
     name: 'Users',
-    url: '/admin-viewusers',
+    url: '/admin/viewusers',
   },
   {
     name: 'Logout',
-    url: '/logout',
+    url: '/admin/logout',
   },
   // {
   //  name : '',
