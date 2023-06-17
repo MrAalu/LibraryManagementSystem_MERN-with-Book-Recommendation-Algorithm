@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { backend_server } from '../../main'
 import './viewBooks.css'
 
 import useFetch from '../../useFetch'
+import RequestBook from '../requestBooks/RequestBook'
+import { Toaster } from 'react-hot-toast'
 
 const ViewBook = () => {
   const { id } = useParams() //fetching book id from url params
   const API_URL = `${backend_server}/api/v1/books/${id}`
+
+  const { request_Book } = RequestBook()
+  const navigate = useNavigate()
 
   const getData = useFetch(API_URL)
 
@@ -23,6 +28,7 @@ const ViewBook = () => {
 
   return (
     <div className='container'>
+      <Toaster />
       <h1 className='h1 text-center my-4'>Book Details</h1>
 
       <div className='row mt-1 mb-3 shadow'>
@@ -45,8 +51,20 @@ const ViewBook = () => {
 
           {/* Request Books Button */}
           <div className='text-center'>
-            <button type='button' className='btn btn-primary me-2 mt-3'>
-              Order
+            <button
+              type='button'
+              className='btn btn-primary me-2 mt-3'
+              onClick={() => request_Book(bookData._id)}
+            >
+              Request
+            </button>
+
+            <button
+              type='button'
+              className='btn btn-secondary me-2 mt-3'
+              onClick={() => navigate(-1)}
+            >
+              Go Back
             </button>
           </div>
         </div>

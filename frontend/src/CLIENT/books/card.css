@@ -5,6 +5,10 @@
   overflow: hidden;
 }
 
+.card-body > p::before {
+  content: 'by ';
+}
+
 .card-title {
   width: 100%;
   text-overflow: ellipsis;
@@ -15,4 +19,33 @@
   height: 400px !important;
   width: 100% !important;
   object-fit: cover !important;
+}
+
+@media screen and (max-width: 1199px) {
+  .card-img-top {
+    height: 300px !important;
+  }
+  .card-text {
+    font-size: 1rem;
+  }
+
+  .card-body button {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .card-img-top {
+    height: 250px !important;
+  }
+
+  .card-body button {
+    font-size: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .card-img-top {
+    height: 200px !important;
+  }
 }

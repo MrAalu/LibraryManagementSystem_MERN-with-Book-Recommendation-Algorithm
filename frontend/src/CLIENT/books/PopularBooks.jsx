@@ -34,10 +34,7 @@ const PopularBooks = () => {
           const imgSrc = `${backend_server}/${image}`
 
           return (
-            <div
-              className='col-lg-3 col-md-4 col-sm-6 col-6 gy-3 mx-auto'
-              key={_id}
-            >
+            <div className='col-lg-3 col-md-4 col-sm-6 col-6 gy-3' key={_id}>
               <div className='card h-100'>
                 <div className='card-img-top'>
                   <img
