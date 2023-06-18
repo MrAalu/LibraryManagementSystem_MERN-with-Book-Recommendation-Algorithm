@@ -7,6 +7,7 @@ const {
   postBooks,
   getRequestedBooks,
   patchRequestedBooks,
+  getRequestedBooksACCEPTED,
 } = require('../controller/requestBookController')
 
 requestBookRouter
@@ -14,5 +15,9 @@ requestBookRouter
   .post(verifyToken, postBooks)
   .get(verifyToken, getRequestedBooks)
   .patch(verifyToken, patchRequestedBooks)
+
+requestBookRouter
+  .route('/acceptedbooks')
+  .get(verifyToken, getRequestedBooksACCEPTED)
 
 module.exports = requestBookRouter

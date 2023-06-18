@@ -10,7 +10,6 @@ const BrowseCollectionBooks = ({ bookData }) => {
 
   return (
     <div className='row mt-3'>
-      <Toaster />
       {bookData.length > 0 ? (
         bookData.map((book) => {
           const { _id, title, image, author } = book

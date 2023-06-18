@@ -14,9 +14,11 @@ const BooksRequests = () => {
   const [bookIssueStatus, setBookIssueStatus] = useState()
   const [isAnyBooksPending, setIsAnyBooksPending] = useState(true)
 
-  const fetchPendingBoots = async () => {
+  const fetchPendingBooks = async () => {
     try {
       const response = await axios.get(Pending_Book_API_Url)
+
+      // console.log(response)
 
       const totalHits = response.data.totalHits
       if (totalHits == 0) {
@@ -30,7 +32,7 @@ const BooksRequests = () => {
   }
 
   useEffect(() => {
-    fetchPendingBoots()
+    fetchPendingBooks()
   }, [])
 
   // FORM
@@ -66,7 +68,8 @@ const BooksRequests = () => {
               <thead>
                 <tr>
                   <th scope='col'>#</th>
-                  <th scope='col'>User</th>
+                  <th scope='col'>Username</th>
+                  <th scope='col'>Email</th>
                   <th scope='col'>Book</th>
                   <th scope='col'>Status</th>
                   <th scope='col'> Update</th>
@@ -75,11 +78,13 @@ const BooksRequests = () => {
 
               <tbody>
                 {pendingBooks.map((book, index) => {
-                  const { _id, userEmail, bookTitle, issueStatus } = book
+                  const { _id, userEmail, bookTitle, issueStatus, username } =
+                    book
 
                   return (
                     <tr key={_id}>
                       <th scope='row'>{index + 1}</th>
+                      <td>{username}</td>
                       <td>{userEmail}</td>
                       <td>{bookTitle}</td>
                       <td>{issueStatus}</td>

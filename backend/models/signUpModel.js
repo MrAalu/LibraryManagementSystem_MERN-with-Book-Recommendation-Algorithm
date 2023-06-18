@@ -41,6 +41,10 @@ const signUpScheme = mongoose.Schema({
     type: String,
     default: 'normal_user',
   },
+  totalBooks: {
+    type: Number,
+    default: 0,
+  },
   password: {
     type: String,
     required: true,

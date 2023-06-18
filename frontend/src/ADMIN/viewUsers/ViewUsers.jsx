@@ -25,12 +25,13 @@ const ViewUsers = () => {
               <th scope='col'>Username</th>
               <th scope='col'>Email</th>
               <th scope='col'>Phone</th>
+              <th scope='col'>Total Books</th>
             </tr>
           </thead>
           <tbody>
             {totalUsers &&
               totalUsers.map((user, index) => {
-                const { _id, username, email, phone } = user
+                const { _id, username, email, phone, totalBooks } = user
 
                 return (
                   <tr key={_id}>
@@ -38,6 +39,7 @@ const ViewUsers = () => {
                     <td>{username}</td>
                     <td>{email}</td>
                     <td>{phone}</td>
+                    <td>{totalBooks}</td>
                   </tr>
                 )
               })}

@@ -10,6 +10,7 @@ import PopularBooks from './PopularBooks'
 
 import { backend_server } from '../../main'
 import BrowseCollectionBooks from './BrowseCollectionBooks'
+import { Toaster } from 'react-hot-toast'
 
 const Books = () => {
   const API_URL = `${backend_server}/api/v1/book/`
@@ -33,6 +34,7 @@ const Books = () => {
 
   return (
     <div className='container'>
+      <Toaster />
       {/* Popular Books Heading */}
       <div className='row'>
         <h1 className='h1 mt-3' style={{ textAlign: 'center' }}>

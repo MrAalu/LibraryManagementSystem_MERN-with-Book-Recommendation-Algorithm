@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './card.css'
 import RequestBook from '../requestBooks/RequestBook'
-import useFetch from '../../useFetch'
 import { backend_server } from '../../main'
 import axios from 'axios'
 
@@ -11,6 +10,7 @@ const PopularBooks = () => {
   // const { request_Book } = RequestBook()
 
   const [popularBooks, setPopularBooks] = useState([])
+  const { request_Book } = RequestBook()
 
   const fetchData = async () => {
     try {
@@ -55,7 +55,7 @@ const PopularBooks = () => {
                     <button
                       type='button'
                       className='btn btn-primary me-2'
-                      // onClick={() => request_Book(_id)}
+                      onClick={() => request_Book(_id)}
                     >
                       Request
                     </button>
