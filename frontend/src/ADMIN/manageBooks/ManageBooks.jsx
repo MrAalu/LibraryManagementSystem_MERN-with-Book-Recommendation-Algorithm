@@ -78,7 +78,7 @@ const ManageBooks = () => {
                   <td>{featuredText}</td>
                   <td>{availableText}</td>
                   <td>
-                    <Link to={`/admin/managebooks/admin/editbooks/${_id}`}>
+                    <Link to={`/admin/managebooks/${_id}`}>
                       <button className='btn mx-1 edit-books-btn'>
                         View Details
                       </button>

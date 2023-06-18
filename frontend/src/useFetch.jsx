@@ -18,12 +18,22 @@ const useFetch = (API_URL) => {
 
       // http://localhost:5000/uploads\bb367469a423603133b0c570eda20730
 
-      // Image lai xuttai destructing gareko
-      const imagePath = response.data.data.image
-      const fullImagePath = `${backend_server}/${imagePath}`
+      // If response ma Image exists then handle it , else default value set or Undefined error aauxa
+      if (response.data.data && response.data.data.image) {
+        const imagePath = response.data.data.image
+        const fullImagePath = `${backend_server}/${imagePath}`
+        setImagePath(fullImagePath)
+      } else {
+        // Set a default or fallback value for imagePath
+        setImagePath('default_image_path')
+      }
 
-      setImagePath(fullImagePath)
+      // Old Code for Image
+      // const imagePath = response.data.data.image
+      // const fullImagePath = `${backend_server}/${imagePath}`
+      // setImagePath(fullImagePath)
     } catch (error) {
+      console.log(error)
       console.log(error.response)
     }
   }

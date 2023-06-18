@@ -9,8 +9,6 @@ axios.defaults.withCredentials = true
 
 export const backend_server = `http://localhost:5000`
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App></App>
-  </React.StrictMode>
-)
+ReactDOM.createRoot(document.getElementById('root')).render(<App></App>)
+// <React.StrictMode>
+// </React.StrictMode>

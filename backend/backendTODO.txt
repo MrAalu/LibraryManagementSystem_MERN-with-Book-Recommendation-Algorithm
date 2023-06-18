@@ -2,3 +2,5 @@ when admin accepts book request then only create bookqtyTracker. PENDING books c
 
 API protection  needs to be done : eg . normal user shouldnt be able to access api's that handles books CRUD
 sol : require admin middleware that check userType from cookie token
+
+Book return Date calculate when admin ACCEPTS the status

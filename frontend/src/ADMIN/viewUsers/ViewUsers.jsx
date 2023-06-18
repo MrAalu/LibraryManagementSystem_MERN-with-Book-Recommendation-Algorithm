@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import useFetch from '../../useFetch'
 import { backend_server } from '../../main'
+import { Link } from 'react-router-dom'
 
 const ViewUsers = () => {
   const users_api = `${backend_server}/api/v1/users`
@@ -26,6 +27,7 @@ const ViewUsers = () => {
               <th scope='col'>Email</th>
               <th scope='col'>Phone</th>
               <th scope='col'>Total Books</th>
+              <th scope='col'>Book Details</th>
             </tr>
           </thead>
           <tbody>
@@ -40,6 +42,13 @@ const ViewUsers = () => {
                     <td>{email}</td>
                     <td>{phone}</td>
                     <td>{totalBooks}</td>
+                    <td>
+                      <Link to={`/admin/viewusers/${_id}`}>
+                        <button className='btn mx-1 edit-books-btn'>
+                          View Details
+                        </button>
+                      </Link>
+                    </td>
                   </tr>
                 )
               })}

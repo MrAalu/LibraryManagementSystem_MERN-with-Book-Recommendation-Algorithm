@@ -12,6 +12,7 @@ import ReturnedBooks from './returnedBooks/ReturnedBooks'
 import EditBookForm from './manageBooks/EditBookForm'
 import AddNewBook from './addNewBook/AddNewBook'
 import AdminLogout from './adminLogout/AdminLogout'
+import UserIndividualPage from './viewUsers/UserIndividualPage'
 
 const AdminAPP = () => {
   return (
@@ -23,6 +24,7 @@ const AdminAPP = () => {
           <Route path='/admin/logout' element={<AdminLogout />} />
           <Route path='/admin/managebooks' element={<ManageBooks />} />
           <Route path='/admin/viewusers' element={<ViewUsers />} />
+          <Route path='/admin/viewusers/:id' element={<UserIndividualPage />} />
           <Route path='/admin/issuedbooks' element={<IssuedBooks />} />
           <Route path='/admin/booksrequests' element={<BooksRequests />} />
           <Route path='/admin/returnedbooks' element={<ReturnedBooks />} />
@@ -30,10 +32,7 @@ const AdminAPP = () => {
             path='/admin/managebooks/addnewbook'
             element={<AddNewBook />}
           />
-          <Route
-            path='/admin/managebooks/admin/editbooks/:id'
-            element={<EditBookForm />}
-          />
+          <Route path='/admin/managebooks/:id' element={<EditBookForm />} />
 
           <Route path='*' element={<PagenotFound></PagenotFound>} />
         </Routes>
