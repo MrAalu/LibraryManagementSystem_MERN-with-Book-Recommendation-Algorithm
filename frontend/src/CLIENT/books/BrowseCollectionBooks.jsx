@@ -3,9 +3,8 @@ import { backend_server } from '../../main'
 import { Link } from 'react-router-dom'
 import './card.css'
 import RequestBook from '../requestBooks/RequestBook'
-import { Toaster } from 'react-hot-toast'
 
-const BrowseCollectionBooks = ({ bookData }) => {
+const BrowseCollectionBooks = ({ bookData, searchResult }) => {
   const { request_Book } = RequestBook()
 
   return (
@@ -55,7 +54,9 @@ const BrowseCollectionBooks = ({ bookData }) => {
           )
         })
       ) : (
-        <p className='p text-center'>Loading ...</p>
+        <h5 className='p text-center'>
+          {searchResult ? <p>Loading...</p> : <p>0 Results</p>}
+        </h5>
       )}
     </div>
   )

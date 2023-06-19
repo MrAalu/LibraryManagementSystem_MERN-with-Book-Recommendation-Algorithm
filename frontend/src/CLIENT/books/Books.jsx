@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import FilterBooks from './FilterBooks'
-import { Link } from 'react-router-dom'
 
 import CustomPagination from '../pagination/CustomPagination'
 
@@ -11,11 +9,15 @@ import PopularBooks from './PopularBooks'
 import { backend_server } from '../../main'
 import BrowseCollectionBooks from './BrowseCollectionBooks'
 import { Toaster } from 'react-hot-toast'
+import FilterBooksForm from './FilterBooksForm'
 
 const Books = () => {
   const API_URL = `${backend_server}/api/v1/book/`
 
   const [bookData, setBookData] = useState([])
+
+  // If 0 results then display false , true = results found , false = 0 search results
+  const [searchResult, setSearchResult] = useState(true)
 
   const fetchData = async () => {
     try {
@@ -56,14 +58,17 @@ const Books = () => {
 
         <div className='mt-1'>
           {/* FILTER BOOKS SECTION */}
-          <FilterBooks
+          <FilterBooksForm
             setBookData={setBookData}
-            bookData={bookData}
-          ></FilterBooks>
+            setSearchResult={setSearchResult}
+          ></FilterBooksForm>
         </div>
 
         {/* BROWSE COLLECTIONS BOOKS */}
-        <BrowseCollectionBooks bookData={bookData}></BrowseCollectionBooks>
+        <BrowseCollectionBooks
+          bookData={bookData}
+          searchResult={searchResult}
+        ></BrowseCollectionBooks>
 
         {/* Pagination */}
         <div className='my-3 d-flex justify-content-center'>

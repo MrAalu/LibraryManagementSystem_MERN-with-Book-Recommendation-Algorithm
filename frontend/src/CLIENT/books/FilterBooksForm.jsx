@@ -1,128 +1,194 @@
 import React, { useState, useEffect } from 'react'
 import { backend_server } from '../../main'
+import axios from 'axios'
 
-const FilterBooksForm = ({ setAllBooks, bookCategories }) => {
+import './filterbooksform.css'
+
+const FilterBooksForm = ({ setBookData, setSearchResult }) => {
   const API_URL = `${backend_server}/api/v1/filter`
-
+  const API_FILTER_URL = `${backend_server}/api/v1/filter`
+  const API_ALLBOOKS_URL = `${backend_server}/api/v1/books`
   const empty_field = {
     title: '',
     category: '',
-    featured: '',
-    available: '',
+    author: '',
+    language: '',
   }
 
-  const [filterFields, setFilterFields] = useState(empty_field)
+  const [filterFields, setFilterFields] = useState(empty_field) //Filter FORM Fields Data
+  const [categories, setCategories] = useState([]) //all books CATEGORIES
+  const [author, setAuthor] = useState([])
+  const [language, setLanguage] = useState([])
 
+  // Form Submit handle (FILTER data Fetched)
   const handleFormSubmit = async (e) => {
     e.preventDefault()
 
-    const { title, category, featured, available } = filterFields
+    const { title, category, author, language } = filterFields
     try {
       const response = await axios.get(API_URL, {
         params: {
           title,
           category,
-          featured,
-          available,
+          author,
+          language,
         },
       })
 
-      setAllBooks(response.data.data)
+      let totalHits = response.data.total
+      // console.log(totalHits)
+      if (totalHits == 0) {
+        setSearchResult(false)
+      }
+
+      setBookData(response.data.data)
       // console.log(filterFields)
+    } catch (error) {
+      console.log(error)
+      console.log(error.response)
+    }
+  }
+
+  // FORM INPUT FIELDS On Change Handlers
+  const handleSearchTitleOnChange = (e) => {
+    const { name, value } = e.target
+    setFilterFields({ ...filterFields, [name]: value })
+  }
+  const handleCategoryChange = (e) => {
+    const selectedCategory = e.target.value
+    setFilterFields({ ...filterFields, category: selectedCategory })
+  }
+  const handleAuthorChange = (e) => {
+    const selectedAuthor = e.target.value
+    setFilterFields({ ...filterFields, author: selectedAuthor })
+  }
+  const handleLanguageChange = (e) => {
+    const selectedLanguage = e.target.value
+    setFilterFields({ ...filterFields, language: selectedLanguage })
+  }
+
+  // Fetch ALL  Book Categories / Author / Language
+  const fetchAllCategories = async () => {
+    try {
+      const response = await axios.get(API_ALLBOOKS_URL)
+
+      const bookCategories = [
+        ...new Set(
+          response.data.data.map((category_para) => {
+            return category_para.category
+          })
+        ),
+      ]
+
+      const bookAuthor = [
+        ...new Set(
+          response.data.data.map((author_para) => {
+            return author_para.author
+          })
+        ),
+      ]
+
+      const bookLanguage = [
+        ...new Set(
+          response.data.data.map((language_para) => {
+            return language_para.language
+          })
+        ),
+      ]
+
+      // console.log(bookCategories)
+      // console.log(bookAuthor)
+      // console.log(bookLanguage)
+
+      setCategories(bookCategories)
+      setAuthor(bookAuthor)
+      setLanguage(bookLanguage)
     } catch (error) {
       console.log(error.response)
     }
   }
 
-  const handleOnChange = (e) => {
-    const { name, value } = e.target
-    setFilterFields({ ...filterFields, [name]: value })
-  }
-
-  const handleCategoryChange = (e) => {
-    const selectedCategory = e.target.value
-    setFilterFields({ ...filterFields, category: selectedCategory })
-  }
-  const handleFeaturedChange = (e) => {
-    const selectedFeatured = e.target.value
-    setFilterFields({ ...filterFields, featured: selectedFeatured })
-  }
-
-  const handleAvailableChange = (e) => {
-    const selectedAvailable = e.target.value
-    setFilterFields({ ...filterFields, available: selectedAvailable })
-  }
+  useEffect(() => {
+    fetchAllCategories()
+  }, [])
 
   return (
     <div className='container '>
-      <div className='row'>
+      <div className='row my-3 justify-content-center'>
         <div className='col-md-8'>
-          <form
-            method='get'
-            className='form-inline d-flex justify-content-center'
-          >
+          <form method='get' className='form-inline d-flex'>
             {/* Search Filter */}
-            <input
-              type='text'
-              className='form-control mx-1'
-              autoComplete='off'
-              placeholder='Search by title . . .'
-              name='title'
-              value={filterFields.title}
-              onChange={handleOnChange}
-            />
+            <div className='form-group mx-1 my-1  col-xl-4'>
+              <input
+                type='text'
+                className='form-control mx-1'
+                autoComplete='off'
+                placeholder='Search by title . . .'
+                name='title'
+                value={filterFields.title}
+                onChange={handleSearchTitleOnChange}
+              />
+            </div>
 
             {/* Category Filter */}
-            <select
-              className='form-control mx-1'
-              defaultValue='all'
-              onChange={handleCategoryChange}
-            >
-              <option key='' value=''>
-                All Categories
-              </option>
-              {bookCategories.map((books_category) => {
-                return (
-                  <option key={books_category} value={books_category}>
-                    {books_category}
-                  </option>
-                )
-              })}
-            </select>
+            <div className='form-group mx-1 my-1 col-xl-2'>
+              <select
+                className='form-control mx-1'
+                defaultValue=''
+                onChange={handleCategoryChange}
+              >
+                <option key='' value=''>
+                  Categories
+                </option>
+                {categories.map((books_category) => {
+                  return (
+                    <option key={books_category} value={books_category}>
+                      {books_category}
+                    </option>
+                  )
+                })}
+              </select>
+            </div>
 
-            {/* Featured Filter */}
-            <select
-              className='form-control mx-1'
-              defaultValue='all'
-              onChange={handleFeaturedChange}
-            >
-              <option key='' value=''>
-                Featured
-              </option>
-              <option key='true' value='true'>
-                Yes-Featured
-              </option>
-              <option key='false' value='false'>
-                Not-Featured
-              </option>
-            </select>
+            {/* Author Filter */}
+            <div className='form-group mx-1 my-1 col-xl-2'>
+              <select
+                className='form-control mx-1'
+                defaultValue=''
+                onChange={handleAuthorChange}
+              >
+                <option key='' value=''>
+                  Author
+                </option>
+                {author.map((books_author) => {
+                  return (
+                    <option key={books_author} value={books_author}>
+                      {books_author}
+                    </option>
+                  )
+                })}
+              </select>
+            </div>
 
-            {/* Available Filter */}
-            <select
-              className='form-control mx-1'
-              defaultValue='all'
-              onChange={handleAvailableChange}
-            >
-              <option key='' value=''>
-                Available
-              </option>
-              <option key='true' value='true'>
-                Yes-Available
-              </option>
-              <option key='false' value='false'>
-                Not-Available
-              </option>
-            </select>
+            {/* Language Filter */}
+            <div className='form-group mx-1 my-1 col-xl-2'>
+              <select
+                className='form-control mx-1'
+                defaultValue='all'
+                onChange={handleLanguageChange}
+              >
+                <option key='' value=''>
+                  Language
+                </option>
+                {language.map((books_language) => {
+                  return (
+                    <option key={books_language} value={books_language}>
+                      {books_language.toUpperCase()}
+                    </option>
+                  )
+                })}
+              </select>
+            </div>
 
             <button
               type='submit'

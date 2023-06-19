@@ -21,9 +21,26 @@
   object-fit: cover !important;
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1366px) {
   .card-img-top {
     height: 300px !important;
+  }
+  .card-text {
+    font-size: 1rem;
+  }
+
+  .card-body button {
+    font-size: 0.8rem;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .card-img-top {
+    height: 250px !important;
   }
   .card-text {
     font-size: 1rem;
@@ -36,7 +53,7 @@
 
 @media screen and (max-width: 450px) {
   .card-img-top {
-    height: 250px !important;
+    height: 200px !important;
   }
 
   .card-body button {
@@ -46,6 +63,6 @@
 
 @media screen and (max-width: 390px) {
   .card-img-top {
-    height: 200px !important;
+    height: 180px !important;
   }
 }
