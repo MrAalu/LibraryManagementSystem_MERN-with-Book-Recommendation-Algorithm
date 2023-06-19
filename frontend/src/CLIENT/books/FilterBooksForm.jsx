@@ -5,8 +5,7 @@ import axios from 'axios'
 import './filterbooksform.css'
 
 const FilterBooksForm = ({ setBookData, setSearchResult }) => {
-  const API_URL = `${backend_server}/api/v1/filter`
-  const API_FILTER_URL = `${backend_server}/api/v1/filter`
+  const API_URL_FILTER = `${backend_server}/api/v1/filter`
   const API_ALLBOOKS_URL = `${backend_server}/api/v1/books`
   const empty_field = {
     title: '',
@@ -24,9 +23,15 @@ const FilterBooksForm = ({ setBookData, setSearchResult }) => {
   const handleFormSubmit = async (e) => {
     e.preventDefault()
 
+    // Checking if user falsly hit search without making any changes
+    // this fixes -> empty fields search means fetching all data which we dont want
+    if (JSON.stringify(filterFields) === JSON.stringify(empty_field)) {
+      return // Stop further execution of the function
+    }
+
     const { title, category, author, language } = filterFields
     try {
-      const response = await axios.get(API_URL, {
+      const response = await axios.get(API_URL_FILTER, {
         params: {
           title,
           category,
