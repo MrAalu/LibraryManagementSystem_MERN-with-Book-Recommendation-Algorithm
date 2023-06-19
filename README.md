@@ -26,6 +26,8 @@ CLIENT can do -
 
 [Showcase Demo Coming Soon!](https://www.github.com/MrAalu)
 
+![](https://s11.gifyu.com/images/SQEuf.gif)
+
 ## Documentation
 
 [Documentation Coming Soon!](https://www.github.com/MrAalu)
