@@ -50,7 +50,7 @@ const Navbar = () => {
         </button>
 
         <div className='collapse navbar-collapse' id='navbarSupportedContent'>
-          <ul className='navbar-nav me-auto mb-2 mb-lg-0 mx-auto fs-5'>
+          <ul className='navbar-nav mb-2 mb-lg-0 justify-content-end fs-5'>
             {navbarLinks.map((link, index) => {
               const { name, url } = link
               return (
@@ -64,7 +64,9 @@ const Navbar = () => {
             {/* {isLoggedin ? <UserLogin /> : <UserSignin />} */}
             {userLoginState.userLogState ? <UserLogin /> : <UserSignin />}
           </ul>
-          <NavbarSearch></NavbarSearch>
+
+          {/* NAV BAR SEARCH  */}
+          {/* <NavbarSearch></NavbarSearch> */}
         </div>
       </div>
     </nav>

@@ -18,6 +18,8 @@ const getSingleUser = async (req, res) => {
 
   const getUserBookTransaction = await BookTransactionSchema.find({
     userId,
+
+    // PENDING & ACCEPTED only issueStatus fetch
     issueStatus: { $in: ['PENDING', 'ACCEPTED'] },
   })
 
