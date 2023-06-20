@@ -1,5 +1,6 @@
 const UserModel = require('../models/signUpModel')
 const BookTransactionSchema = require('../models/bookTransaction')
+const bcrypt = require('bcrypt')
 
 // Fetch all USERS data
 const getAllUsers = async (req, res) => {
@@ -54,4 +55,54 @@ const postSingleUser = async (req, res) => {
   })
 }
 
-module.exports = { getAllUsers, getSingleUser, postSingleUser }
+// Update User Details (CLIENT SIDE)
+const patchUserDetail = async (req, res) => {
+  const userId = req.userId
+  const { username, email, phone, old_password, new_password } = req.body
+
+  // Updates Username,email and phone
+  if (username && email && phone) {
+    const result = await UserModel.findByIdAndUpdate(
+      userId,
+      { username, email, phone },
+      {
+        new: true,
+        runValidators: true,
+      }
+    )
+    return res.status(200).json({ success: true, data: result })
+  }
+
+  // Updates Password
+  if (old_password && new_password) {
+    const getPassword = await UserModel.findById({ _id: userId }).select(
+      '+password'
+    )
+
+    const comparePassword = await bcrypt.compare(
+      old_password,
+      getPassword.password
+    )
+
+    // If Password Matches
+    if (comparePassword) {
+      // hash password before updating
+      const updatedPassword = await bcrypt.hash(new_password, 10)
+      const result = await UserModel.findByIdAndUpdate(
+        userId,
+        { password: updatedPassword },
+        {
+          new: true,
+          runValidators: true,
+        }
+      )
+      return res.status(200).json({ success: true, data: result })
+    } else {
+      return res
+        .status(400)
+        .json({ success: false, message: `Invalid Password` })
+    }
+  }
+}
+
+module.exports = { getAllUsers, getSingleUser, postSingleUser, patchUserDetail }
