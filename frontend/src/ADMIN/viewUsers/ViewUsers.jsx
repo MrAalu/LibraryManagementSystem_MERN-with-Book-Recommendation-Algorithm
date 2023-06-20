@@ -9,7 +9,7 @@ const ViewUsers = () => {
 
   const fetched_data = useFetch(users_api)
   const data = fetched_data.fetched_data.data
-
+  console.log(fetched_data.fetched_data.data)
   useEffect(() => {
     setTotalUsers(data)
   }, [data])
@@ -33,7 +33,7 @@ const ViewUsers = () => {
           <tbody>
             {totalUsers &&
               totalUsers.map((user, index) => {
-                const { _id, username, email, phone, totalBooks } = user
+                const { _id, username, email, phone, totalAcceptedBooks } = user
 
                 return (
                   <tr key={_id}>
@@ -41,7 +41,7 @@ const ViewUsers = () => {
                     <td>{username}</td>
                     <td>{email}</td>
                     <td>{phone}</td>
-                    <td>{totalBooks}</td>
+                    <td>{totalAcceptedBooks}</td>
                     <td>
                       <Link to={`/admin/viewusers/${_id}`}>
                         <button className='btn mx-1 edit-books-btn'>

@@ -15,6 +15,7 @@ userRouter
   .get(getAllUsers)
   .post(verifyToken, postSingleUser)
   .patch(verifyToken, patchUserDetail)
+
 userRouter.route('/:userId').get(getSingleUser)
 
 module.exports = userRouter

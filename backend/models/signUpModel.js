@@ -41,7 +41,11 @@ const signUpScheme = mongoose.Schema({
     type: String,
     default: 'normal_user',
   },
-  totalBooks: {
+  totalRequestedBooks: {
+    type: Number,
+    default: 0,
+  },
+  totalAcceptedBooks: {
     type: Number,
     default: 0,
   },

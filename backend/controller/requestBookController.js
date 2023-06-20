@@ -12,10 +12,10 @@ const postBooks = async (req, res) => {
 
   // User can request upto 5 Books
   const getUserData = await UserSchema.findById(userId)
-  // Users total books issued
-  const { totalBooks } = getUserData
+  // Users total books requested
+  const { totalRequestedBooks } = getUserData
 
-  if (totalBooks >= 5) {
+  if (totalRequestedBooks >= 5) {
     return res
       .status(400)
       .json({ success: false, message: `Books Limit Reached` })
@@ -41,10 +41,10 @@ const postBooks = async (req, res) => {
       bookTitle: title,
     })
 
-    // Update users total issued books on 'UserDetails' collection
-    const updatedTotalBooksQty = totalBooks + 1
+    // Update users total requested books on 'UserDetails' collection
+    const updatedTotalRequestedBooks = totalRequestedBooks + 1
     await UserSchema.findByIdAndUpdate(userId, {
-      totalBooks: updatedTotalBooksQty,
+      totalRequestedBooks: updatedTotalRequestedBooks,
     })
 
     return res.status(200).json({ success: true, data: result })
@@ -59,7 +59,7 @@ const getRequestedBooks = async (req, res) => {
     .json({ success: true, totalHits: result.length, data: result })
 }
 
-// issueStatus (filter ACCCEPTED BooksTransaction)
+// issueStatus (filter ACCCEPTED BooksTransaction) NOT USED ANYWHERE , CALM DOWN
 const getRequestedBooksACCEPTED = async (req, res) => {
   const result = await BookTransaction.find({ issueStatus: 'ACCEPTED' })
   res
@@ -73,10 +73,19 @@ const patchRequestedBooks = async (req, res) => {
   const result = await BookTransaction.findByIdAndUpdate(id, { issueStatus })
 
   // Fetching Book ID and Book Title for updating popular books if STATUS is ACCEPTED
-  const { bookId, bookTitle } = result
+  const { bookId, bookTitle, userId } = result
 
   // If admin sets issueStatus to "ACCEPTED" then push that into popular books collection
   if (issueStatus === 'ACCEPTED') {
+    const getUserData = await UserSchema.findById(userId)
+
+    const { totalAcceptedBooks } = getUserData
+
+    const updatedTotalAcceptedBooks = totalAcceptedBooks + 1
+
+    await UserSchema.findByIdAndUpdate(userId, {
+      totalAcceptedBooks: updatedTotalAcceptedBooks,
+    })
     createOrUpdatePopularBook(bookId, bookTitle)
   } else if (issueStatus === 'CANCELLED') {
     // user's id destructer to decrement total books qty for users so he can request for a new books
@@ -84,10 +93,10 @@ const patchRequestedBooks = async (req, res) => {
     const getUserData = await UserSchema.findById(userId)
 
     // destructure user's total books qty and decrement by 1
-    const { totalBooks } = getUserData
-    const updatedTotalBooksQty = totalBooks - 1
+    const { totalRequestedBooks } = getUserData
+    const updatedTotalRequestedBooks = totalRequestedBooks - 1
     await UserSchema.findByIdAndUpdate(userId, {
-      totalBooks: updatedTotalBooksQty,
+      totalRequestedBooks: updatedTotalRequestedBooks,
     })
   }
 

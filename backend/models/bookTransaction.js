@@ -41,14 +41,18 @@ const BookTransaction = new mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
+  returnDate: {
+    type: Date,
+    default: null,
+  },
 })
 
 // Define a virtual property 'returnDate' based on 'issueDate'
-BookTransaction.virtual('returnDate').get(function () {
-  const issueDate = this.issueDate
-  const returnDate = new Date(issueDate.getTime() + 10 * 24 * 60 * 60 * 1000) // Add 10 days in milliseconds
-  return returnDate
-})
+// BookTransaction.virtual('returnDate').get(function () {
+//   const issueDate = this.issueDate
+//   const returnDate = new Date(issueDate.getTime() + 10 * 24 * 60 * 60 * 1000) // Add 10 days in milliseconds
+//   return returnDate
+// })
 
 module.exports = mongoose.model('booktransaction', BookTransaction)
 

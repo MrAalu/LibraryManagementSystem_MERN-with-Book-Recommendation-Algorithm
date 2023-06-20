@@ -19,9 +19,9 @@ const getSingleUser = async (req, res) => {
 
   const getUserBookTransaction = await BookTransactionSchema.find({
     userId,
-
+    issueStatus: 'ACCEPTED',
     // PENDING & ACCEPTED only issueStatus fetch
-    issueStatus: { $in: ['PENDING', 'ACCEPTED'] },
+    // issueStatus: { $in: ['PENDING', 'ACCEPTED'] },
   })
 
   // Fetch all 3 Status to show users - ACCEPTED / PENDING / CANCELLED
