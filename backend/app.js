@@ -17,6 +17,8 @@ const popularBooksRouter = require('./routes/popularBooksRoutes')
 
 const userRouter = require('./routes/usersRoute')
 
+const CheckBookReturnRouter = require('./routes/checkBookReturn')
+
 const signUpRouter = require('./routes/signUpRoute')
 const loginRouter = require('./routes/loginRoutes')
 const logoutRouter = require('./routes/logoutRoute')
@@ -62,6 +64,9 @@ app.use('/api/v1/popularBooks', popularBooksRouter)
 
 // User
 app.use('/api/v1/users', userRouter)
+
+// handles if book not returned then automate CHARGES FINE
+app.use('/api/v1/checkbookreturn', CheckBookReturnRouter)
 
 app.use(CustomError)
 app.use(PageNotFound)

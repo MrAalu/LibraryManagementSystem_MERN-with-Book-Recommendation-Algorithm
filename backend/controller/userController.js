@@ -6,9 +6,6 @@ const bcrypt = require('bcrypt')
 const getAllUsers = async (req, res) => {
   const result = await UserModel.find({ userType: 'normal_user' })
 
-  // Updating book FINE
-  await checkBookReturn()
-
   res
     .status(200)
     .json({ success: true, totalHits: result.length, data: result })
@@ -105,28 +102,6 @@ const patchUserDetail = async (req, res) => {
         .status(400)
         .json({ success: false, message: `Invalid Password` })
     }
-  }
-}
-
-// This API is to be called everytime ADMIN / CLIENT logs in
-// Update Extra charge (PRICE) of entire booktransaction if returnDate is passed and isReturned is still False
-const checkBookReturn = async () => {
-  try {
-    // Find the book transactions where returnDate is passed and isReturned is false
-    const overdueTransactions = await BookTransactionSchema.find({
-      returnDate: { $lt: new Date() },
-      isReturned: false,
-    })
-
-    // Update the extraCharge field for overdue transactions
-    overdueTransactions.forEach((transaction) => {
-      if (transaction.extraCharge === 0) {
-        transaction.extraCharge += 100
-        transaction.save()
-      }
-    })
-  } catch (error) {
-    console.error('Error updating book Fine CHARGE : ', error)
   }
 }
 
