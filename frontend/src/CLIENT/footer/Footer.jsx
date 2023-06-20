@@ -4,7 +4,7 @@ import './footer.css'
 
 const Footer = () => {
   return (
-    <footer className='footer'>
+    <footer className='footer' style={{ marginTop: 'auto' }}>
       <div className='container'>
         <div className='row'>
           <div className='col-md-4'>

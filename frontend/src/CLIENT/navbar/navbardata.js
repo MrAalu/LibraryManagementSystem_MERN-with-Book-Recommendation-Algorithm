@@ -37,10 +37,10 @@ const navbarLinksIsAuthenticated = [
     name: 'Profile',
     url: '/profile',
   },
-  {
-    name: 'Logout',
-    url: '/logout',
-  },
+  // {
+  //   name: 'Logout',
+  //   url: '/logout',
+  // },
 ]
 
 export default {
