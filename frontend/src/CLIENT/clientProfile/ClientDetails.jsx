@@ -128,7 +128,7 @@ const ClientDetails = ({ userData }) => {
 
             <h5>Phone: {userData.phone}</h5>
             <hr />
-            <h5>Total Books: {userData.totalBooks}</h5>
+            <h5>Total Books: {userData.totalAcceptedBooks}</h5>
           </div>
         </Col>
       </Row>

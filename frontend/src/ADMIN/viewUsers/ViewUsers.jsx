@@ -9,7 +9,7 @@ const ViewUsers = () => {
 
   const fetched_data = useFetch(users_api)
   const data = fetched_data.fetched_data.data
-  console.log(fetched_data.fetched_data.data)
+  // console.log(fetched_data.fetched_data.data)
   useEffect(() => {
     setTotalUsers(data)
   }, [data])

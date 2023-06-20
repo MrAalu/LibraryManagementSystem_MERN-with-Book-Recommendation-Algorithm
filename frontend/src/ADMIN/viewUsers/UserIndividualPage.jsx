@@ -14,6 +14,8 @@ const UserIndividualPage = () => {
   const bookData = fetched_data.fetched_data.bookData
   const usersData = fetched_data.fetched_data.userData
 
+  // console.log(fetched_data.fetched_data)
+
   useEffect(() => {
     // Handles Array Length error without throwing error
     if (bookData) {
@@ -60,18 +62,24 @@ const UserIndividualPage = () => {
                     isReturned,
                     extraCharge,
                     issueDate,
+                    returnDate,
                   } = users
 
                   const bookissuedate = new Date(issueDate).toDateString()
 
                   const returnOrNot = isReturned === true ? 'True' : 'False'
+
+                  const updateReturnDate =
+                    returnDate === null
+                      ? 'NULL'
+                      : new Date(returnDate).toDateString()
                   return (
                     <tr key={_id}>
                       <th scope='row'>{index + 1}</th>
                       <td>{bookTitle}</td>
                       <td>{issueStatus}</td>
                       <td>{bookissuedate}</td>
-                      <td>When to REturn</td>
+                      <td>{updateReturnDate}</td>
                       <td>{returnOrNot}</td>
                       <td>Nrs.{extraCharge} /-</td>
                     </tr>

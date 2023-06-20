@@ -30,18 +30,24 @@ const ClientDashboard = ({ userBookData }) => {
                     isReturned,
                     extraCharge,
                     issueDate,
+                    returnDate,
                   } = users
 
                   const bookissuedate = new Date(issueDate).toDateString()
 
                   const returnOrNot = isReturned === true ? 'True' : 'False'
+
+                  const updatedReturnDate =
+                    returnDate === null
+                      ? 'NONE'
+                      : new Date(returnDate).toDateString()
                   return (
                     <tr key={_id}>
                       <th scope='row'>{index + 1}</th>
                       <td>{bookTitle}</td>
                       <td>{issueStatus}</td>
                       <td>{bookissuedate}</td>
-                      <td>When to REturn</td>
+                      <td>{updatedReturnDate}</td>
                       <td>{returnOrNot}</td>
                       <td>Nrs.{extraCharge} /-</td>
                     </tr>

@@ -73,23 +73,28 @@ const patchRequestedBooks = async (req, res) => {
   const result = await BookTransaction.findByIdAndUpdate(id, { issueStatus })
 
   // Fetching Book ID and Book Title for updating popular books if STATUS is ACCEPTED
-  const { bookId, bookTitle, userId } = result
+  const { bookId, bookTitle, userId, returnDate } = result
 
-  // If admin sets issueStatus to "ACCEPTED" then push that into popular books collection
+  // If "ACCEPTED" then push that into popular books collection
   if (issueStatus === 'ACCEPTED') {
+    // update issueDate and returnDate
+    await BookTransaction.findByIdAndUpdate(id, {
+      issueDate: new Date(),
+      returnDate: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000), // Add 10 days to the current date
+    })
+
+    // increment users TotalAcceptedBooks
     const getUserData = await UserSchema.findById(userId)
-
     const { totalAcceptedBooks } = getUserData
-
     const updatedTotalAcceptedBooks = totalAcceptedBooks + 1
 
     await UserSchema.findByIdAndUpdate(userId, {
       totalAcceptedBooks: updatedTotalAcceptedBooks,
     })
+
     createOrUpdatePopularBook(bookId, bookTitle)
   } else if (issueStatus === 'CANCELLED') {
     // user's id destructer to decrement total books qty for users so he can request for a new books
-    const { userId } = result
     const getUserData = await UserSchema.findById(userId)
 
     // destructure user's total books qty and decrement by 1
