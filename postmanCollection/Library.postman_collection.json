@@ -12,7 +12,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/api/v1/filter?title=t",
+					"raw": "localhost:5000/api/v1/filter?title=the&category=novel&author=fyo&language=english",
 					"host": [
 						"localhost"
 					],
@@ -25,7 +25,7 @@
 					"query": [
 						{
 							"key": "title",
-							"value": "t"
+							"value": "the"
 						},
 						{
 							"key": "available",
@@ -34,18 +34,15 @@
 						},
 						{
 							"key": "category",
-							"value": "motivation",
-							"disabled": true
+							"value": "novel"
 						},
 						{
 							"key": "author",
-							"value": "fyo",
-							"disabled": true
+							"value": "fyo"
 						},
 						{
 							"key": "language",
-							"value": "russian",
-							"disabled": true
+							"value": "english"
 						}
 					]
 				}
@@ -59,7 +56,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\" : \"amit@gmail.com\",\r\n    \"password\" : \"amitkc\"\r\n}",
+					"raw": "{\r\n    \"email\" : \"randomOne@gmail.com\",\r\n    \"password\" : \"random\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -88,7 +85,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"usertwo\" , \r\n    \"email\" : \"usertwo@gmail.com\" ,\r\n    \"phone\" : \"9847612345\" ,\r\n    \"password\" : \"usertwo\"\r\n\r\n    // \"userType\" : \"admin_user\"\r\n}",
+					"raw": "{\r\n    \"username\": \"admin\" , \r\n    \"email\" : \"admin@gmail.com\" ,\r\n    \"phone\" : \"9847612345\" ,\r\n    \"password\" : \"admin\"\r\n,\r\n    \"userType\" : \"admin_user\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -181,12 +178,12 @@
 			"response": []
 		},
 		{
-			"name": "Book Transaction",
+			"name": "Book Transaction PENDING",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/api/v1/requestBooks",
+					"raw": "localhost:5000/api/v1/requestBooks/",
 					"host": [
 						"localhost"
 					],
@@ -194,7 +191,8 @@
 					"path": [
 						"api",
 						"v1",
-						"requestBooks"
+						"requestBooks",
+						""
 					]
 				}
 			},
@@ -215,6 +213,210 @@
 						"api",
 						"v1",
 						"popularBooks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book Transaction UPDATE Status",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"648c62ddb4545a733829f989\",\r\n    \"issueStatus\" : \"ACCEPTED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/requestBooks",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"requestBooks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book Transaction ACCEPTED",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/requestBooks/acceptedbooks",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"requestBooks",
+						"acceptedbooks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get All USERS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/books/647973e99d1daac1a4e03787",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"647973e99d1daac1a4e03787"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Single User BOOKS Transaction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/users/648eb6cea9f4af7a36dec5e1",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"648eb6cea9f4af7a36dec5e1"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "648eb6cea9f4af7a36dec5e1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch SingleUser Detail+All Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/users/?userId=648eb6cea9f4af7a36dec5e1",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						""
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "648eb6cea9f4af7a36dec5e1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Detail (Username,Email,Password)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"username\" : \"ram\"\r\n, \"email\" :  \"random@gmail.com\"\r\n, \"phone\" : \"9812121212\"\r\n// , \r\n// \"old_password\" : \"randomx\"\r\n// , \"new_password\" : \"random\"\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update EXTRA FINE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/checkbookreturn",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"checkbookreturn"
 					]
 				}
 			},

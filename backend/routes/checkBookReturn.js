@@ -15,6 +15,7 @@ const checkBookReturn = async () => {
   try {
     // Find the book transactions where returnDate is passed and isReturned is false
     const overdueTransactions = await BookTransactionSchema.find({
+      // less than new date + isReturned false condition
       returnDate: { $lt: new Date() },
       isReturned: false,
     })

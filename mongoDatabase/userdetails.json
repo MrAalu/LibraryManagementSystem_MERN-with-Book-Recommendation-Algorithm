@@ -1,51 +1,25 @@
 [{
   "_id": {
-    "$oid": "6483e37d05f1290b97a0233c"
+    "$oid": "649179774afae22ac6166b6e"
   },
   "username": "amitkc",
   "email": "amit@gmail.com",
   "phone": "9847612345",
   "userType": "normal_user",
-  "password": "$2b$10$dA/cSotxM/RoTgicYsOuPuZ/eVmkYSpe5mFYchPtTt1prFOHW8MhS",
+  "totalRequestedBooks": 3,
+  "totalAcceptedBooks": 2,
+  "password": "$2b$10$Kqac2OaYiVPr9GKCfP/h7eJRZTyPugVKWgSJTUI2jtTK4VYaBMS0O",
   "__v": 0
 },{
   "_id": {
-    "$oid": "6483e38e05f1290b97a0233e"
+    "$oid": "649179814afae22ac6166b71"
   },
   "username": "admin",
   "email": "admin@gmail.com",
   "phone": "9847612345",
   "userType": "admin_user",
-  "password": "$2b$10$qJt27Tql2jqthHFEVscwIOEifrgvgfMhnd/JAH3x3hVV6yrUGwGLK",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "648c50beff2b8b302d79d77a"
-  },
-  "username": "random",
-  "email": "random@gmail.com",
-  "phone": "9243233422",
-  "userType": "normal_user",
-  "password": "$2b$10$n3TF4zICLASRdRnANHP/x.jKZy89lfgDqNhu75vEqSqTbafjbckg.",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "648c5c01c4171bcbe838e2e0"
-  },
-  "username": "userone",
-  "email": "userone@gmail.com",
-  "phone": "9847612345",
-  "userType": "normal_user",
-  "password": "$2b$10$o1FErEwbg0JEUL3OQ2kP5eXRAp17NksQz70UZRHPEs.vYU7O7Uw0.",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "648c5c15c4171bcbe838e2e3"
-  },
-  "username": "usertwo",
-  "email": "usertwo@gmail.com",
-  "phone": "9847612345",
-  "userType": "normal_user",
-  "password": "$2b$10$mTq5CM0eYApFEBidElXTDujitYtxzK4uyOAkGmjwFA/2KFdJX2w6C",
+  "totalRequestedBooks": 0,
+  "totalAcceptedBooks": 0,
+  "password": "$2b$10$At8zc5iX2MwAZhZeeIc4kuJniE44Pr7BCNlxNYC.g9oOmSp3o915G",
   "__v": 0
 }]

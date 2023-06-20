@@ -1,226 +1,56 @@
 [{
   "_id": {
-    "$oid": "648c62cfb4545a733829f97b"
+    "$oid": "64918719aecb111d7d516c23"
   },
-  "userId": "648c5c01c4171bcbe838e2e0",
-  "userEmail": "userone@gmail.com",
-  "bookId": "647975881de41547d0528e56",
-  "bookTitle": "Jiwan Kada Ki Phool",
-  "issueStatus": "PENDING",
+  "userId": "649179774afae22ac6166b6e",
+  "userEmail": "amit@gmail.com",
+  "username": "amitkc",
+  "bookId": "64797eff1de41547d0528eba",
+  "bookTitle": "Inner Engineering: A Yogi's Guide to Joy",
+  "issueStatus": "ACCEPTED",
   "isReturned": false,
-  "extraCharge": 0,
+  "extraCharge": 100,
   "issueDate": {
-    "$date": "2023-06-16T13:25:02.476Z"
+    "$date": "2023-06-10T11:07:59.954Z"
+  },
+  "returnDate": {
+    "$date": "2023-06-02T03:45:35.246Z"
   },
   "__v": 0
 },{
   "_id": {
-    "$oid": "648c62d9b4545a733829f982"
+    "$oid": "64918720aecb111d7d516c2e"
   },
-  "userId": "648c5c01c4171bcbe838e2e0",
-  "userEmail": "userone@gmail.com",
-  "bookId": "647974491de41547d0528e3f",
-  "bookTitle": "Shutter Island",
-  "issueStatus": "PENDING",
-  "isReturned": false,
-  "extraCharge": 0,
-  "issueDate": {
-    "$date": "2023-06-16T13:25:02.476Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "648c62ddb4545a733829f989"
-  },
-  "userId": "648c5c01c4171bcbe838e2e0",
-  "userEmail": "userone@gmail.com",
+  "userId": "649179774afae22ac6166b6e",
+  "userEmail": "amit@gmail.com",
+  "username": "amitkc",
   "bookId": "647975ec1de41547d0528e5e",
   "bookTitle": "Palpasa Cafe",
-  "issueStatus": "PENDING",
+  "issueStatus": "ACCEPTED",
   "isReturned": false,
   "extraCharge": 0,
   "issueDate": {
-    "$date": "2023-06-16T13:25:02.476Z"
+    "$date": "2023-06-20T12:03:09.493Z"
+  },
+  "returnDate": {
+    "$date": "2023-06-30T12:03:09.493Z"
   },
   "__v": 0
 },{
   "_id": {
-    "$oid": "648c62e0b4545a733829f990"
+    "$oid": "6491954086e3e484656a601f"
   },
-  "userId": "648c5c01c4171bcbe838e2e0",
-  "userEmail": "userone@gmail.com",
-  "bookId": "647977f81de41547d0528e82",
-  "bookTitle": "The Pragmatic Programmer",
-  "issueStatus": "PENDING",
-  "isReturned": false,
-  "extraCharge": 0,
-  "issueDate": {
-    "$date": "2023-06-16T13:25:02.476Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "648c62e3b4545a733829f997"
-  },
-  "userId": "648c5c01c4171bcbe838e2e0",
-  "userEmail": "userone@gmail.com",
-  "bookId": "64797eff1de41547d0528eba",
-  "bookTitle": "Inner Engineering: A Yogi's Guide to Joy",
-  "issueStatus": "PENDING",
-  "isReturned": false,
-  "extraCharge": 0,
-  "issueDate": {
-    "$date": "2023-06-16T13:25:02.476Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "648c62f0b4545a733829f9a7"
-  },
-  "userId": "6483e37d05f1290b97a0233c",
+  "userId": "649179774afae22ac6166b6e",
   "userEmail": "amit@gmail.com",
-  "bookId": "64797eff1de41547d0528eba",
-  "bookTitle": "Inner Engineering: A Yogi's Guide to Joy",
-  "issueStatus": "PENDING",
-  "isReturned": false,
-  "extraCharge": 0,
-  "issueDate": {
-    "$date": "2023-06-16T13:25:02.476Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "648c6302b4545a733829f9b6"
-  },
-  "userId": "648c5c15c4171bcbe838e2e3",
-  "userEmail": "usertwo@gmail.com",
-  "bookId": "64797eff1de41547d0528eba",
-  "bookTitle": "Inner Engineering: A Yogi's Guide to Joy",
-  "issueStatus": "PENDING",
-  "isReturned": false,
-  "extraCharge": 0,
-  "issueDate": {
-    "$date": "2023-06-16T13:25:02.476Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "648c6303b4545a733829f9bc"
-  },
-  "userId": "648c5c15c4171bcbe838e2e3",
-  "userEmail": "usertwo@gmail.com",
-  "bookId": "647977f81de41547d0528e82",
-  "bookTitle": "The Pragmatic Programmer",
-  "issueStatus": "PENDING",
-  "isReturned": false,
-  "extraCharge": 0,
-  "issueDate": {
-    "$date": "2023-06-16T13:25:02.476Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "648c6308b4545a733829f9c2"
-  },
-  "userId": "648c5c15c4171bcbe838e2e3",
-  "userEmail": "usertwo@gmail.com",
-  "bookId": "647975ec1de41547d0528e5e",
-  "bookTitle": "Palpasa Cafe",
-  "issueStatus": "PENDING",
-  "isReturned": false,
-  "extraCharge": 0,
-  "issueDate": {
-    "$date": "2023-06-16T13:25:02.476Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "648c6332b4545a733829f9d5"
-  },
-  "userId": "6483e37d05f1290b97a0233c",
-  "userEmail": "amit@gmail.com",
-  "bookId": "647977f81de41547d0528e82",
-  "bookTitle": "The Pragmatic Programmer",
-  "issueStatus": "PENDING",
-  "isReturned": false,
-  "extraCharge": 0,
-  "issueDate": {
-    "$date": "2023-06-16T13:25:02.476Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "648c6356b4545a733829f9dd"
-  },
-  "userId": "6483e37d05f1290b97a0233c",
-  "userEmail": "amit@gmail.com",
-  "bookId": "647975c01de41547d0528e5a",
-  "bookTitle": "Karodaun Kastoori",
-  "issueStatus": "PENDING",
-  "isReturned": false,
-  "extraCharge": 0,
-  "issueDate": {
-    "$date": "2023-06-16T13:25:02.476Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "648c635fb4545a733829f9ed"
-  },
-  "userId": "648c50beff2b8b302d79d77a",
-  "userEmail": "random@gmail.com",
-  "bookId": "64797eff1de41547d0528eba",
-  "bookTitle": "Inner Engineering: A Yogi's Guide to Joy",
-  "issueStatus": "PENDING",
-  "isReturned": false,
-  "extraCharge": 0,
-  "issueDate": {
-    "$date": "2023-06-16T13:25:02.476Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "648c6361b4545a733829f9f3"
-  },
-  "userId": "648c50beff2b8b302d79d77a",
-  "userEmail": "random@gmail.com",
-  "bookId": "647977f81de41547d0528e82",
-  "bookTitle": "The Pragmatic Programmer",
-  "issueStatus": "PENDING",
-  "isReturned": false,
-  "extraCharge": 0,
-  "issueDate": {
-    "$date": "2023-06-16T13:25:02.476Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "648c6380b4545a733829f9f9"
-  },
-  "userId": "648c50beff2b8b302d79d77a",
-  "userEmail": "random@gmail.com",
+  "username": "amitkc",
   "bookId": "647977d11de41547d0528e7e",
   "bookTitle": "Make Your Own Neural Network",
   "issueStatus": "PENDING",
   "isReturned": false,
   "extraCharge": 0,
   "issueDate": {
-    "$date": "2023-06-16T13:25:02.476Z"
+    "$date": "2023-06-20T11:59:25.153Z"
   },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "648c6ca0257969404d78959e"
-  },
-  "userId": "6483e37d05f1290b97a0233c",
-  "userEmail": "amit@gmail.com",
-  "bookId": "647974491de41547d0528e3f",
-  "bookTitle": "Shutter Island",
-  "issueStatus": "PENDING",
-  "isReturned": false,
-  "extraCharge": 0,
-  "issueDate": {
-    "$date": "2023-06-16T13:56:17.539Z"
-  },
+  "returnDate": null,
   "__v": 0
 }]
