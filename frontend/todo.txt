@@ -6,11 +6,4 @@ FORGOT PASSWORD
 
 ADmin :
 
-
-option to issue a book to user manually by ADMIN
-
-
-bookId through , yo book ko koslai issue vako xa show on ISSUE BOOKS page 
-
-
-returned Book : 10+days ko books fetch 
+issue book to User  : bookid,useremail

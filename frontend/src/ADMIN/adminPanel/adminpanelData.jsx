@@ -33,7 +33,7 @@ export const adminpanelData = [
 
   {
     id: 5,
-    title: `Returned Books`,
+    title: `Return Due Books`,
     url: '/admin/returnedbooks',
     panel_icon: <LuBackpack />,
   },

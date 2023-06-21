@@ -88,13 +88,7 @@ const BooksRequests = () => {
                       <td>{userEmail}</td>
                       <td>{bookTitle}</td>
                       <td>{issueStatus}</td>
-                      {/* <td>
-                      <Link to={`/admin/booksrequests/editstatus/${_id}`}>
-                        <button className='btn mx-1 edit-books-btn'>
-                          View Details
-                        </button>
-                      </Link>
-                    </td> */}
+
                       <td>
                         <form className='d-flex' onSubmit={handleFormSubmit}>
                           <select

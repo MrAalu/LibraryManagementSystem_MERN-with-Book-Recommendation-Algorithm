@@ -89,8 +89,6 @@ const ManageBooks = () => {
             })}
           </tbody>
         </table>
-        <p>admin le filter garnu milna paryo for faster edit</p>
-        <p>category,featured in form </p>
       </div>
     </div>
   )

@@ -59,9 +59,12 @@ const getRequestedBooks = async (req, res) => {
     .json({ success: true, totalHits: result.length, data: result })
 }
 
-// issueStatus (filter ACCCEPTED BooksTransaction) NOT USED ANYWHERE , CALM DOWN
-const getRequestedBooksACCEPTED = async (req, res) => {
-  const result = await BookTransaction.find({ issueStatus: 'ACCEPTED' })
+// NOT RETURNED BOOKS, filters ( ACCEPTED + notReturned Books)
+const getNotReturnedBooks = async (req, res) => {
+  const result = await BookTransaction.find({
+    issueStatus: 'ACCEPTED',
+    isReturned: false,
+  })
   res
     .status(200)
     .json({ success: true, totalHits: result.length, data: result })
@@ -69,8 +72,20 @@ const getRequestedBooksACCEPTED = async (req, res) => {
 
 // Update book issue Status
 const patchRequestedBooks = async (req, res) => {
-  const { id, issueStatus } = req.body
-  const result = await BookTransaction.findByIdAndUpdate(id, { issueStatus })
+  const { id, issueStatus, isReturned } = req.body
+
+  // if issueStatus ayo vane issueStatus only update that , and viceversa
+  const result = await BookTransaction.findByIdAndUpdate(
+    id,
+    {
+      issueStatus,
+      isReturned,
+    },
+    {
+      new: true,
+      runValidators: true,
+    }
+  )
 
   // Fetching Book ID and Book Title for updating popular books if STATUS is ACCEPTED
   const { bookId, bookTitle, userId, returnDate } = result
@@ -139,5 +154,5 @@ module.exports = {
   postBooks,
   getRequestedBooks,
   patchRequestedBooks,
-  getRequestedBooksACCEPTED,
+  getNotReturnedBooks,
 }
