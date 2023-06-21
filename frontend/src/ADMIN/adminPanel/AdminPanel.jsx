@@ -4,8 +4,6 @@ import './adminpanel.css'
 import { Link } from 'react-router-dom'
 import { adminpanelData } from './adminpanelData'
 
-import { GiBookshelf } from 'react-icons/gi'
-
 const AdminPanel = () => {
   return (
     <div className='container mt-5 adminpanel-container'>

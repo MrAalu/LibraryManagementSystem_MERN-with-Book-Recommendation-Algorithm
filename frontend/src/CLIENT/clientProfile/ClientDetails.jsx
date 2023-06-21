@@ -114,7 +114,7 @@ const ClientDetails = ({ userData }) => {
             <img
               style={{ width: '100px' }}
               className='img-fluid'
-              src='https://www.svgrepo.com/download/43426/profile.svg'
+              src='/clientprofile.png'
             />
             <h5 className='mt-3'>{userData.username.toUpperCase()}</h5>
           </div>

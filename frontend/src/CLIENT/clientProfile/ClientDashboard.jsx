@@ -1,10 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import { backend_server } from '../../main'
 import axios from 'axios'
+import { Toaster, toast } from 'react-hot-toast'
 
 const ClientDashboard = ({ userBookData }) => {
+  const DELETE_BOOK_API = `${backend_server}/api/v1/requestBooks`
+
+  const handleRemoveBook = async (transactionId) => {
+    try {
+      const response = await axios.patch(DELETE_BOOK_API, {
+        id: transactionId,
+        issueStatus: 'DELETE',
+      })
+
+      console.log(response)
+      toast.success('Cancel Success')
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <div className='container my-3'>
+      <Toaster />
       {/* User Books data table */}
       {userBookData.length > 0 ? (
         <div className='row my-4'>
@@ -18,6 +36,7 @@ const ClientDashboard = ({ userBookData }) => {
                 <th scope='col'> Return Due</th>
                 <th scope='col'> Returned Status</th>
                 <th scope='col'>Extra Charge</th>
+                {/* <th scope='col'>Update</th> */}
               </tr>
             </thead>
             <tbody>
@@ -50,6 +69,18 @@ const ClientDashboard = ({ userBookData }) => {
                       <td>{updatedReturnDate}</td>
                       <td>{returnOrNot}</td>
                       <td>Nrs.{extraCharge} /-</td>
+                      {issueStatus === 'PENDING' ? (
+                        <td>
+                          <button
+                            className='btn btn-danger'
+                            onClick={() => handleRemoveBook(_id)}
+                          >
+                            Cancel
+                          </button>
+                        </td>
+                      ) : (
+                        ''
+                      )}
                     </tr>
                   )
                 })}

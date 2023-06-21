@@ -136,6 +136,27 @@ const getNotReturnedBooks = async (req, res) => {
 const patchRequestedBooks = async (req, res) => {
   const { id, issueStatus, isReturned } = req.body
 
+  // if user cancels the PENDING request then delete it from DB completly
+  if (issueStatus === 'DELETE') {
+    const getTransactionDetail = await BookTransaction.findById(id)
+    // user's id destructer to decrement total books qty for users so he can request for a new books
+    const { userId } = getTransactionDetail
+    const getUserData = await UserSchema.findById(userId)
+
+    // destructure user's total books qty and decrement by 1
+    const { totalRequestedBooks } = getUserData
+    const updatedTotalRequestedBooks = totalRequestedBooks - 1
+    await UserSchema.findByIdAndUpdate(userId, {
+      totalRequestedBooks: updatedTotalRequestedBooks,
+    })
+
+    await BookTransaction.findByIdAndDelete(id)
+
+    return res
+      .status(200)
+      .json({ success: true, message: `Book removed successfully` })
+  }
+
   // if issueStatus ayo vane issueStatus only update that , and viceversa
   const result = await BookTransaction.findByIdAndUpdate(
     id,

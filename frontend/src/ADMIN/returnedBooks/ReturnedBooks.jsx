@@ -11,7 +11,7 @@ const ReturnedBooks = () => {
 
   // Stored selected return Status from FORM
   const [bookReturnStatus, setBookReturnStatus] = useState()
-  const [isAnyBooksPending, setIsAnyBooksPending] = useState(true)
+  const [isAnyBooksPending, setIsAnyBooksPending] = useState(false)
 
   const fetchNotReturnedBooks = async () => {
     try {

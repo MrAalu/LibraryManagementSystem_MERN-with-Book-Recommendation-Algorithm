@@ -9,7 +9,7 @@ const PagenotFound = () => {
       <p>The page you are looking for does not exist.</p>
 
       <br />
-      <Link to='/adminhome'>
+      <Link to='/admin'>
         <button className=' btn' id='admin-pagenotfound-btn'>
           Goto Home Page
         </button>

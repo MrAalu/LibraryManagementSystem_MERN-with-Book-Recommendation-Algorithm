@@ -20,7 +20,7 @@
   },
   "bookId": "64797eff1de41547d0528eba",
   "bookTitle": "Inner Engineering: A Yogi's Guide to Joy",
-  "issueQuantity": 3,
+  "issueQuantity": 6,
   "__v": 0
 },{
   "_id": {
@@ -28,7 +28,7 @@
   },
   "bookId": "647977f81de41547d0528e82",
   "bookTitle": "The Pragmatic Programmer",
-  "issueQuantity": 3,
+  "issueQuantity": 4,
   "__v": 0
 },{
   "_id": {
@@ -36,7 +36,7 @@
   },
   "bookId": "647974491de41547d0528e3f",
   "bookTitle": "Shutter Island",
-  "issueQuantity": 1,
+  "issueQuantity": 2,
   "__v": 0
 },{
   "_id": {
@@ -52,6 +52,30 @@
   },
   "bookId": "647975c01de41547d0528e5a",
   "bookTitle": "Karodaun Kastoori",
+  "issueQuantity": 8,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64929c4c98b6e38a304322d0"
+  },
+  "bookId": "647977a51de41547d0528e7c",
+  "bookTitle": "Learn Python the hard way",
+  "issueQuantity": 5,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6492ac22ec53b01a0d0dd500"
+  },
+  "bookId": "64797eb91de41547d0528eb2",
+  "bookTitle": "DEATH : AN INSIDE STORY",
+  "issueQuantity": 5,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6493005ed96eea119b75cbdd"
+  },
+  "bookId": "64797f1e1de41547d0528ebe",
+  "bookTitle": "Meditation: The First and Last Freedom",
   "issueQuantity": 1,
   "__v": 0
 }]

@@ -3,9 +3,3 @@ Individual VIEW BOOKS page ma recommended/similar books algorithm
 Pagination
 
 FORGOT PASSWORD
-
-ADmin :
-
-issue book to User  : bookid,useremail
-
-user should be able to cancel book requests and delete it from db 

@@ -12,7 +12,6 @@ import AboutUsPage from './about/AboutUsPage'
 import PagenotFound from './404-pageNotFound/PagenotFound'
 import { LoginState } from '../LoginState'
 import ClientProfile from './clientProfile/ClientProfile'
-import ClientLogout from './clientLogout/ClientLogout'
 import ViewBook from './viewBooks/ViewBook'
 
 const ClientApp = () => {

@@ -1,55 +1,36 @@
 [{
   "_id": {
-    "$oid": "64918719aecb111d7d516c23"
+    "$oid": "6493004ed96eea119b75cbc8"
   },
   "userId": "649179774afae22ac6166b6e",
   "userEmail": "amit@gmail.com",
-  "username": "amitkc",
-  "bookId": "64797eff1de41547d0528eba",
-  "bookTitle": "Inner Engineering: A Yogi's Guide to Joy",
+  "username": "amit kc",
+  "bookId": "64797f1e1de41547d0528ebe",
+  "bookTitle": "Meditation: The First and Last Freedom",
   "issueStatus": "ACCEPTED",
   "isReturned": false,
   "extraCharge": 100,
   "issueDate": {
-    "$date": "2023-06-10T11:07:59.954Z"
+    "$date": "2023-05-21T13:51:26.578Z"
   },
   "returnDate": {
-    "$date": "2023-06-02T03:45:35.246Z"
+    "$date": "2023-06-01T13:51:26.578Z"
   },
   "__v": 0
 },{
   "_id": {
-    "$oid": "64918720aecb111d7d516c2e"
+    "$oid": "6493067a9e6389b025b0451f"
   },
   "userId": "649179774afae22ac6166b6e",
   "userEmail": "amit@gmail.com",
-  "username": "amitkc",
-  "bookId": "647975ec1de41547d0528e5e",
-  "bookTitle": "Palpasa Cafe",
-  "issueStatus": "ACCEPTED",
-  "isReturned": false,
-  "extraCharge": 0,
-  "issueDate": {
-    "$date": "2023-06-20T12:03:09.493Z"
-  },
-  "returnDate": {
-    "$date": "2023-06-30T12:03:09.493Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "6491954086e3e484656a601f"
-  },
-  "userId": "649179774afae22ac6166b6e",
-  "userEmail": "amit@gmail.com",
-  "username": "amitkc",
-  "bookId": "647977d11de41547d0528e7e",
-  "bookTitle": "Make Your Own Neural Network",
+  "username": "amit kc",
+  "bookId": "647977f81de41547d0528e82",
+  "bookTitle": "The Pragmatic Programmer",
   "issueStatus": "PENDING",
   "isReturned": false,
   "extraCharge": 0,
   "issueDate": {
-    "$date": "2023-06-20T11:59:25.153Z"
+    "$date": "2023-06-21T14:16:34.495Z"
   },
   "returnDate": null,
   "__v": 0
