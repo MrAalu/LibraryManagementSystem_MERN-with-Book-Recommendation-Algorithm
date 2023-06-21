@@ -39,7 +39,7 @@ const RecentlyAddedBooks = () => {
       <div className='row'>
         {latestBooks.length > 0 ? (
           latestBooks.map((book) => {
-            const { _id, title, image, author } = book
+            const { _id, title, image, author, available } = book
             const imgSrc = `${backend_server}/${image}`
 
             return (
@@ -65,13 +65,23 @@ const RecentlyAddedBooks = () => {
                     <p className='p card-text'>{author}</p>
                     <div className='form-group mb-2 justify-content-center d-flex'>
                       {/* Request Books Button */}
-                      <button
-                        type='button'
-                        className='btn btn-primary me-2'
-                        onClick={() => request_Book(_id)}
-                      >
-                        Request
-                      </button>
+                      {available ? (
+                        <button
+                          type='button'
+                          className='btn btn-primary me-2'
+                          onClick={() => request_Book(_id)}
+                        >
+                          Request
+                        </button>
+                      ) : (
+                        <button
+                          type='button'
+                          className='btn btn-primary me-2'
+                          disabled
+                        >
+                          Out of Stock
+                        </button>
+                      )}
 
                       {/* View Books Button */}
                       <Link to={`/books/${_id}`}>

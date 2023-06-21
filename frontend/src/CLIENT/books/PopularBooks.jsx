@@ -30,7 +30,7 @@ const PopularBooks = () => {
     <div className='row'>
       {popularBooks.length > 0 ? (
         popularBooks.map((book) => {
-          const { _id, title, image, author } = book
+          const { _id, title, image, author, available } = book
           const imgSrc = `${backend_server}/${image}`
 
           return (
@@ -52,13 +52,23 @@ const PopularBooks = () => {
                   <h5 className='h5 card-title'>{title}</h5>
                   <p className='p card-text'>{author}</p>
                   <div className='form-group mb-2 justify-content-center d-flex'>
-                    <button
-                      type='button'
-                      className='btn btn-primary me-2'
-                      onClick={() => request_Book(_id)}
-                    >
-                      Request
-                    </button>
+                    {available ? (
+                      <button
+                        type='button'
+                        className='btn btn-primary me-2'
+                        onClick={() => request_Book(_id)}
+                      >
+                        Request
+                      </button>
+                    ) : (
+                      <button
+                        type='button'
+                        className='btn btn-primary me-2'
+                        disabled
+                      >
+                        Out of Stock
+                      </button>
+                    )}
 
                     <Link to={`/books/${_id}`}>
                       <button type='button' className='btn btn-secondary me-2'>

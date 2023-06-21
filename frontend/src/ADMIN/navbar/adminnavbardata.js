@@ -16,8 +16,8 @@ const navbarLinks = [
     url: '/admin/viewusers',
   },
   {
-    name: 'Logout',
-    url: '/admin/logout',
+    name: `Issued Book's`,
+    url: '/admin/issuedbooks',
   },
   // {
   //  name : '',

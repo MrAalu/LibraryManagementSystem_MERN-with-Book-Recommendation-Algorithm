@@ -3,6 +3,7 @@ import { FaUserFriends } from 'react-icons/fa'
 import { TiTickOutline } from 'react-icons/ti'
 import { FiGitPullRequest } from 'react-icons/fi'
 import { LuBackpack } from 'react-icons/lu'
+import { AiOutlineLogout } from 'react-icons/ai'
 
 export const adminpanelData = [
   {
@@ -35,5 +36,12 @@ export const adminpanelData = [
     title: `Returned Books`,
     url: '/admin/returnedbooks',
     panel_icon: <LuBackpack />,
+  },
+
+  {
+    id: 6,
+    title: `Goto Logout`,
+    url: '/admin/logout',
+    panel_icon: <AiOutlineLogout />,
   },
 ]

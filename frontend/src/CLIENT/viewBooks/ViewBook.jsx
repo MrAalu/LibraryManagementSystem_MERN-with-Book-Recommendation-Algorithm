@@ -46,18 +46,37 @@ const ViewBook = () => {
           <p>by '{bookData.author}' </p>
           <h5 className='h5'>Category : {bookData.category} </h5>
           <h5>Language : {bookData.language} </h5>
+          <h5>
+            Available :
+            {bookData.available ? (
+              <span> In Stock</span>
+            ) : (
+              <span> Out of Stock</span>
+            )}{' '}
+          </h5>
+
           <h5 className='h5 my-1 mt-3 '>Sypnosis :</h5>
           <h6 className='h6  my-2'> {bookData.description}</h6>
 
           {/* Request Books Button */}
           <div className='text-center'>
-            <button
-              type='button'
-              className='btn btn-primary me-2 mt-3'
-              onClick={() => request_Book(bookData._id)}
-            >
-              Request
-            </button>
+            {bookData.available ? (
+              <button
+                type='button'
+                className='btn btn-primary me-2 mt-3'
+                onClick={() => request_Book(bookData._id)}
+              >
+                Request
+              </button>
+            ) : (
+              <button
+                disabled
+                type='button'
+                className='btn btn-primary me-2 mt-3'
+              >
+                Out of Stock
+              </button>
+            )}
 
             <button
               type='button'
