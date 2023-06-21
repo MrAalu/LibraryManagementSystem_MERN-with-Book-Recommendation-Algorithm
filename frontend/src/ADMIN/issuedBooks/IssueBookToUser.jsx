@@ -6,6 +6,7 @@ import { toast, Toaster } from 'react-hot-toast'
 
 const IssueBookToUser = () => {
   const API_URL = `${backend_server}/api/v1/filter`
+  const IssueBOOK_URL = `${backend_server}/api/v1/requestBooks/issuebook`
 
   const empty_field = {
     title: '',
@@ -56,12 +57,30 @@ const IssueBookToUser = () => {
   const [bookId, setBookId] = useState('')
   const [email, setEmail] = useState('')
 
-  const handleBookIssueFormSubmit = (e) => {
-    e.preventDefault()
+  const handleBookIssueFormSubmit = async (e) => {
+    try {
+      e.preventDefault()
 
-    // Reset form fields
-    setBookId('')
-    setEmail('')
+      await axios.post(IssueBOOK_URL, {
+        bookId,
+        userEmail: email,
+      })
+      toast.success('Book Issue Success')
+      // Reset form fields
+      setBookId('')
+      setEmail('')
+    } catch (error) {
+      const x = error.response.data.message
+
+      // Check is object is empty , BookID find garena vane empty object hunxa 'x'
+      const isEmpty = Object.keys(x).length === 0
+      if (!isEmpty) {
+        toast.error(x)
+      }
+      if (isEmpty) {
+        toast.error('Invalid BOOK ID')
+      }
+    }
   }
 
   return (

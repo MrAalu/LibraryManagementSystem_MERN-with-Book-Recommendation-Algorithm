@@ -33,6 +33,10 @@ const postBooks = async (req, res) => {
       .status(400)
       .json({ success: false, message: `Book already Requested` })
   } else {
+    await createBookTransaction()
+  }
+
+  async function createBookTransaction() {
     const result = await BookTransaction.create({
       userId,
       bookId,
@@ -44,6 +48,64 @@ const postBooks = async (req, res) => {
     // Update users total requested books on 'UserDetails' collection
     const updatedTotalRequestedBooks = totalRequestedBooks + 1
     await UserSchema.findByIdAndUpdate(userId, {
+      totalRequestedBooks: updatedTotalRequestedBooks,
+    })
+
+    return res.status(200).json({ success: true, data: result })
+  }
+}
+
+// ADMIN issue book to a USER using BookId and UserEmail
+const postIssueBooks = async (req, res) => {
+  const { bookId, userEmail } = req.body
+
+  // User can request upto 5 Books
+  const getUserData = await UserSchema.findOne({ email: userEmail })
+
+  if (!getUserData) {
+    return res
+      .status(400)
+      .json({ success: false, message: `Email doesn't Exists` })
+  }
+
+  // Users total requseted books requested
+  const { totalRequestedBooks, totalAcceptedBooks, _id, username } = getUserData
+  const userId = _id.toString() //converting raw ID to string only
+
+  if (totalRequestedBooks >= 5) {
+    return res
+      .status(400)
+      .json({ success: false, message: `Books Limit Reached` })
+  }
+
+  // Book title fetch
+  const bookDetails = await BookSchema.findById(bookId)
+  const { title } = bookDetails
+
+  // Check if user has previously requested for same book with id
+  const checkPrevRequest = await BookTransaction.findOne({ userId, bookId })
+
+  if (checkPrevRequest) {
+    return res
+      .status(400)
+      .json({ success: false, message: `Book already Issued` })
+  } else {
+    const result = await BookTransaction.create({
+      userId,
+      bookId,
+      userEmail,
+      username,
+      bookTitle: title,
+      issueStatus: 'ACCEPTED',
+      issueDate: new Date(),
+      returnDate: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000), // Add 10 days to the current date
+    })
+
+    // Update users total requested books on 'UserDetails' collection
+    const updatedTotalAcceptedBooks = totalAcceptedBooks + 1
+    const updatedTotalRequestedBooks = totalRequestedBooks + 1
+    await UserSchema.findByIdAndUpdate(userId, {
+      totalAcceptedBooks: updatedTotalAcceptedBooks,
       totalRequestedBooks: updatedTotalRequestedBooks,
     })
 
@@ -89,6 +151,20 @@ const patchRequestedBooks = async (req, res) => {
 
   // Fetching Book ID and Book Title for updating popular books if STATUS is ACCEPTED
   const { bookId, bookTitle, userId, returnDate } = result
+
+  // If book return TRUE ,
+  if (isReturned) {
+    // increment users TotalAcceptedBooks
+    const getUserData = await UserSchema.findById(userId)
+    const { totalAcceptedBooks, totalRequestedBooks } = getUserData
+    const updatedTotalAcceptedBooks = totalAcceptedBooks - 1
+    const updatedTotalRequestedBooks = totalRequestedBooks - 1
+
+    await UserSchema.findByIdAndUpdate(userId, {
+      totalAcceptedBooks: updatedTotalAcceptedBooks,
+      totalRequestedBooks: updatedTotalRequestedBooks,
+    })
+  }
 
   // If "ACCEPTED" then push that into popular books collection
   if (issueStatus === 'ACCEPTED') {
@@ -155,4 +231,5 @@ module.exports = {
   getRequestedBooks,
   patchRequestedBooks,
   getNotReturnedBooks,
+  postIssueBooks,
 }

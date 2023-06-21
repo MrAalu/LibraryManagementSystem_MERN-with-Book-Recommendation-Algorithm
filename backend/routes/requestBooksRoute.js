@@ -8,6 +8,7 @@ const {
   getRequestedBooks,
   patchRequestedBooks,
   getNotReturnedBooks,
+  postIssueBooks,
 } = require('../controller/requestBookController')
 
 requestBookRouter
@@ -18,5 +19,7 @@ requestBookRouter
 
 // Not used anywhere , calm down ( wasted hours lookin for where i used this lol)
 requestBookRouter.route('/notreturnedbooks').get(getNotReturnedBooks)
+
+requestBookRouter.route('/issuebook').post(verifyToken, postIssueBooks)
 
 module.exports = requestBookRouter
