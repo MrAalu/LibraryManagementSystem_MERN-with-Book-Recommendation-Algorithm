@@ -253,7 +253,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/api/v1/requestBooks/acceptedbooks",
+					"raw": "localhost:5000/api/v1/requestBooks/notreturnedbooks",
 					"host": [
 						"localhost"
 					],
@@ -262,7 +262,7 @@
 						"api",
 						"v1",
 						"requestBooks",
-						"acceptedbooks"
+						"notreturnedbooks"
 					]
 				}
 			},
@@ -417,6 +417,36 @@
 						"api",
 						"v1",
 						"checkbookreturn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN Issue Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bookId\":\"147975ec1de41547d0528e5e\",\r\n    \"userEmail\" : \"amit@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/requestBooks/issuebook",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"requestBooks",
+						"issuebook"
 					]
 				}
 			},
