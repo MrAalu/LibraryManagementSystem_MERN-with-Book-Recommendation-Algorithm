@@ -26,12 +26,22 @@ const postBooks = async (req, res) => {
   const { title } = bookDetails
 
   // Check if user has previously requested for same book with id
-  const checkPrevRequest = await BookTransaction.findOne({ userId, bookId })
+  const checkPrevRequest = await BookTransaction.find({ userId, bookId })
 
-  if (checkPrevRequest) {
-    return res
-      .status(400)
-      .json({ success: false, message: `Book already Requested` })
+  if (checkPrevRequest.length > 0) {
+    // SOME is used to check if any book transaction has isReturned value set to false
+    const isBookAlreadyRequested = checkPrevRequest.some(
+      (map_para) => !map_para.isReturned
+    )
+    //  if kunai book not returned xa vane , isBookAlreadyRequested "TRUE" hunxa
+
+    if (isBookAlreadyRequested) {
+      return res
+        .status(400)
+        .json({ success: false, message: 'Book already Requested' })
+    } else {
+      await createBookTransaction()
+    }
   } else {
     await createBookTransaction()
   }

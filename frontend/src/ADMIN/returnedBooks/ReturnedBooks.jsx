@@ -16,6 +16,12 @@ const ReturnedBooks = () => {
   const fetchNotReturnedBooks = async () => {
     try {
       const response = await axios.get(NOT_RETURNED_API)
+
+      if (response.data.data.length > 0) {
+        setIsAnyBooksPending(true)
+      } else {
+        setIsAnyBooksPending(false)
+      }
       setNotReturnedBooks(response.data.data)
     } catch (error) {
       console.log(error)
