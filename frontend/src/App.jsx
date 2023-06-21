@@ -13,7 +13,7 @@ const App = () => {
   const updateBookCharges = async () => {
     // hits api endpoints that runs book fine charge if not returned
     const response = await axios.get(UPDATE_BOOK_FINE)
-    console.log(response.data.message)
+    // console.log(response.data.message)
   }
 
   useEffect(() => {

@@ -24,7 +24,6 @@ const ClientApp = () => {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />
-            <Route path='/logout' element={<ClientLogout />} />
             <Route path='/signup' element={<Signup />} />
             <Route path='/menu' element={<FeaturedBooks />} />
             <Route path='/books' element={<Books />} />

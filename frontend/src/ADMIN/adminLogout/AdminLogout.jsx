@@ -29,7 +29,12 @@ const AdminLogout = () => {
     <div className='container'>
       <div className='row'>
         <div className='col text-center'>
-          <img className='img-fluid' src='/LogoutImage.jpg' alt='' />
+          <img
+            className='img-fluid'
+            src='/LogoutImage.jpg'
+            alt=''
+            style={{ width: '350px' }}
+          />
 
           <h3 className='h3'>are you sure, you want to Logout ? </h3>
 
