@@ -32,48 +32,52 @@ CLIENT can do -
 
 [Documentation Coming Soon!](https://www.github.com/MrAalu)
 
-## How to Run the Project Locally :
+## How to run Project locally :
 
-Clone the project
-
-```bash
-  git clone git@github.com:MrAalu/LibraryMgmtSys.git
-```
-
-Go to the project directory
+1. Clone the project
 
 ```bash
-  cd LibraryMgmtSys/frontend && backend
+  git clone git@github.com:MrAalu/LibraryManagementSystem_MERN.git
 ```
 
-Install dependencies
+2. Goto both frontend & backend
+
+```bash
+  cd frontend , cd backend
+```
+
+3. Install dependencies on Both Frontend & Backend
 
 ```bash
   npm install
 ```
 
-Start the server/client
+4. Start the Frontend and Backend
 
 ```bash
-  npm run dev
+  npm run start
 ```
 
-## Environment Variables
+5. Once you Run Backend(Server), database will be created automatically on Mongodb
 
-To run this project, you will need to add the following environment variables to your .env file
+```bash
+Import respective .JSON file into database Collection
+```
 
-Create a file called '.env' on backend folder and define these values
+## Login Credentials
 
-`CONNECTION_URL` -> MONGO DB Connection URL
+Starter Login Credentials :
 
-`CONNECTION_PORT` -> Define Server Listen Port e.g.5000
+1. ADMIN
 
-## API Reference
+```
+ Email : admin@gmail.com , Password : admin
+```
 
-#### Get all Books
+2. CLIENT
 
-```http
-  GET /api/v1/books
+```
+ Email : random@gmail.com , Password : random
 ```
 
 ## Lessons Learned

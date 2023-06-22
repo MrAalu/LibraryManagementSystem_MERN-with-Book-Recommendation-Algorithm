@@ -1,6 +1,6 @@
 ## app.use() ->
 
-`app.use(express.static('./public'))`
+`app.use(express.static('./public'))`  
 `app.use(express.urlencoded({ extended: false }))`  
 `app.use(express.json())`
 
@@ -22,7 +22,7 @@
 
 5-> Page Not Found 404 Error Handling
 
-6-> Clean BoilerPlate Codes i.e. Controller's Try/Catch Blocks using 'Try/Catch Wrapper'
+6-> Clean BoilerPlate Codes i.e. Controller's Try/Catch Blocks using 'Try/Catch Wrapper' or Package 'express-async-errors'
 
 7-> Custom Error Handler && Handling the thrown error Manually
 
@@ -62,8 +62,10 @@
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`CONNECTION_URL` -> Database Connection LINK
+`CONNECTION_PORT` -> Server starts at this PORT
 
-`CONNECTION_PORT` -> Just set this value to 5000
+`CONNECTION_URL` = MongoDb database Connection URL
 
-`TOKEN_STRING` -> String to Sign JWT Token
+`JWT_SECRET` = Json Web Token Sign & Verify
+
+`JWT_LIFE` = JWT Token Expiry Date
