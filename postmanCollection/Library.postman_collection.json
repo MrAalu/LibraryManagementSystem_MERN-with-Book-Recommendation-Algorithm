@@ -56,7 +56,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\" : \"random@gmail.com\",\r\n    \"password\" : \"random\"\r\n}",
+					"raw": "{\r\n    \"email\" : \"amit@gmail.com\",\r\n    \"password\" : \"amitkc\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -133,7 +133,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/api/v1/book/",
+					"raw": "localhost:5000/api/v1/book/?page=3",
 					"host": [
 						"localhost"
 					],
@@ -143,6 +143,12 @@
 						"v1",
 						"book",
 						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "3"
+						}
 					]
 				}
 			},
@@ -447,6 +453,64 @@
 						"v1",
 						"requestBooks",
 						"issuebook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ForgotPassword 1st",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"ami@gmail.com\",\r\n    \"phone\" : \"9847612345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/forgotpassword",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"forgotpassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot Password 2nd",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\" : \"251175774afae22ac6166b6e\",\r\n    \"newPassword\" : \"amitkc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/forgotpassword",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"forgotpassword"
 					]
 				}
 			},

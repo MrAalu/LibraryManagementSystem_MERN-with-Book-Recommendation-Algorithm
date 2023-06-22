@@ -6,9 +6,9 @@
   "email": "amit@gmail.com",
   "phone": "9847612345",
   "userType": "normal_user",
-  "totalRequestedBooks": 0,
-  "totalAcceptedBooks": 0,
-  "password": "$2b$10$Kqac2OaYiVPr9GKCfP/h7eJRZTyPugVKWgSJTUI2jtTK4VYaBMS0O",
+  "totalRequestedBooks": 3,
+  "totalAcceptedBooks": 2,
+  "password": "$2b$10$UVqGh/jXmsv9GpD2DWeVCOTqBsBFRzKVSXhFBYKRec4dDk7GmauBS",
   "__v": 0
 },{
   "_id": {
@@ -16,7 +16,7 @@
   },
   "username": "admin",
   "email": "admin@gmail.com",
-  "phone": "9847612345",
+  "phone": "9827612345",
   "userType": "admin_user",
   "totalRequestedBooks": 0,
   "totalAcceptedBooks": 0,

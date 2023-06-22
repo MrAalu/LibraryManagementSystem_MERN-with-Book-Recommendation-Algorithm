@@ -36,7 +36,7 @@
   },
   "bookId": "647974491de41547d0528e3f",
   "bookTitle": "Shutter Island",
-  "issueQuantity": 2,
+  "issueQuantity": 5,
   "__v": 0
 },{
   "_id": {
@@ -44,7 +44,7 @@
   },
   "bookId": "647974ad1de41547d0528e41",
   "bookTitle": "The Da Vinci Code",
-  "issueQuantity": 1,
+  "issueQuantity": 3,
   "__v": 0
 },{
   "_id": {
@@ -76,6 +76,30 @@
   },
   "bookId": "64797f1e1de41547d0528ebe",
   "bookTitle": "Meditation: The First and Last Freedom",
+  "issueQuantity": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "649315ac3d2d9f535e541b6d"
+  },
+  "bookId": "647974e21de41547d0528e43",
+  "bookTitle": "The Maid",
+  "issueQuantity": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6493e9c85029190112c79f7d"
+  },
+  "bookId": "647976a91de41547d0528e68",
+  "bookTitle": "Lord of the Flies",
+  "issueQuantity": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6493e9c95029190112c79f84"
+  },
+  "bookId": "647978bc1de41547d0528e90",
+  "bookTitle": "Into the Wild",
   "issueQuantity": 1,
   "__v": 0
 }]

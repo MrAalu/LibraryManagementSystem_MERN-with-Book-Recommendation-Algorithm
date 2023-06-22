@@ -1,4 +1,1 @@
 Individual VIEW BOOKS page ma recommended/similar books algorithm 
-
-
-FORGOT PASSWORD ( EMAIL + PHONE to recover )
