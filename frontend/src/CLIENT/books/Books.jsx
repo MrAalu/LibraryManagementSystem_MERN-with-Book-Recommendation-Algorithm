@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-
 import CustomPagination from '../pagination/CustomPagination'
-
 import SmallBanner from '../bannerHome/SmallBanner'
 import PopularBooks from './PopularBooks'
-
 import { backend_server } from '../../main'
 import BrowseCollectionBooks from './BrowseCollectionBooks'
 import { Toaster } from 'react-hot-toast'
@@ -19,9 +16,12 @@ const Books = () => {
   // If 0 results then display false , true = results found , false = 0 search results
   const [searchResult, setSearchResult] = useState(true)
 
-  const fetchData = async () => {
+  // if filterForm is active , disbale pagination else allow paginations
+  const [filterActive, setFilterActive] = useState(false)
+
+  const fetchData = async (pageNumber) => {
     try {
-      const resp = await axios.get(API_URL)
+      const resp = await axios.get(`${API_URL}/?page=${pageNumber}`)
       const data = resp.data.data
       // console.log(data)
       setBookData(data)
@@ -61,6 +61,7 @@ const Books = () => {
           <FilterBooksForm
             setBookData={setBookData}
             setSearchResult={setSearchResult}
+            setFilterActive={setFilterActive}
           ></FilterBooksForm>
         </div>
 
@@ -72,7 +73,10 @@ const Books = () => {
 
         {/* Pagination */}
         <div className='my-3 d-flex justify-content-center'>
-          <CustomPagination></CustomPagination>
+          <CustomPagination
+            fetchData={fetchData}
+            filterActive={filterActive}
+          ></CustomPagination>
         </div>
       </div>
     </div>

@@ -2,10 +2,3 @@
 
 API protection  needs to be done : eg . normal user shouldnt be able to access api's that handles books CRUD
 sol : require admin middleware that check userType from cookie token
-
-
-
-TODO :   // handle if book is return then allow user to request new book ,
-    // if 2nd book is also returned then only allow 3rd book else REJECT request
-
-    MAJOR ISSUE : previously tyo book liyeko xa vane cant buy it next time ?

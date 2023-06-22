@@ -32,6 +32,12 @@ body {
   box-sizing: inherit;
 }
 
+@media screen and (max-width: 768px) {
+  body {
+    padding-bottom: 25rem;
+  }
+}
+
 footer h5 {
   font-size: 1.3rem;
   font-weight: bold;

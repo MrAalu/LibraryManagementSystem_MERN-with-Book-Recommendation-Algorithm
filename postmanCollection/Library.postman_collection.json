@@ -56,7 +56,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\" : \"randomOne@gmail.com\",\r\n    \"password\" : \"random\"\r\n}",
+					"raw": "{\r\n    \"email\" : \"random@gmail.com\",\r\n    \"password\" : \"random\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -155,7 +155,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"bookId\":\"647975881de41547d0528e56\"\r\n}",
+					"raw": "{\r\n    \"bookId\":\"647974491de41547d0528e3f\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -225,7 +225,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\":\"648c62ddb4545a733829f989\",\r\n    \"issueStatus\" : \"ACCEPTED\"\r\n}",
+					"raw": "{\r\n    \"id\":\"649313d0edbb2ed05d504246\",\r\n    \"issueStatus\" : \"ACCEPTED\"\r\n\r\n    ,\r\n    \"isReturned\" : true\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

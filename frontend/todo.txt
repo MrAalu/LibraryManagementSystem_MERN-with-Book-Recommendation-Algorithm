@@ -2,4 +2,4 @@ Individual VIEW BOOKS page ma recommended/similar books algorithm
 
 Pagination
 
-FORGOT PASSWORD
+FORGOT PASSWORD ( EMAIL + PHONE to recover )
