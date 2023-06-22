@@ -1,0 +1,21 @@
+.recover-password-div {
+  --color-font-secondary: white;
+  --color-signup-button: rgb(72, 177, 98);
+  --color-signup-button-hover: rgb(99, 190, 148);
+}
+
+.recover-password-div button {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-signup-button);
+  color: var(--color-font-secondary);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px black;
+}
+
+.recover-password-div button:hover {
+  background-color: var(--color-signup-button-hover);
+  cursor: pointer;
+}

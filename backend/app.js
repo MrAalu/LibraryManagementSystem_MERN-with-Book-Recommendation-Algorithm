@@ -22,7 +22,10 @@ const CheckBookReturnRouter = require('./routes/checkBookReturn')
 const signUpRouter = require('./routes/signUpRoute')
 const loginRouter = require('./routes/loginRoutes')
 const logoutRouter = require('./routes/logoutRoute')
+const forgotpasswordRouter = require('./routes/forgotpassword')
+
 const filterRouter = require('./routes/filterRoutes')
+
 const CustomError = require('./errorHandler/CustomError')
 const PageNotFound = require('./errorHandler/PageNotFound')
 
@@ -48,6 +51,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 app.use('/api/v1/signup', signUpRouter)
 app.use('/api/v1/login', loginRouter)
 app.use('/api/v1/logout', logoutRouter)
+app.use('/api/v1/forgotpassword', forgotpasswordRouter)
 
 app.use('/api/v1/filter', filterRouter)
 

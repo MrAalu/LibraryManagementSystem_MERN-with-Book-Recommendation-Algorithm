@@ -236,11 +236,11 @@ const ClientDetails = ({ userData }) => {
             <Form.Group controlId='old password'>
               <Form.Label>Old Password</Form.Label>
               <Form.Control
-                type='text'
+                type='password'
                 minLength={5}
                 required
                 placeholder='Enter old password'
-                name='username'
+                name='old_password'
                 onChange={handleOnChangePassword}
                 value={inputFieldPassword.old_password}
               />
@@ -251,9 +251,9 @@ const ClientDetails = ({ userData }) => {
               <Form.Control
                 required
                 minLength={5}
-                type='email'
+                type='password'
                 placeholder='Enter new password'
-                name='email'
+                name='new_password'
                 onChange={handleOnChangePassword}
                 value={inputFieldPassword.new_password}
               />
@@ -264,9 +264,9 @@ const ClientDetails = ({ userData }) => {
               <Form.Control
                 required
                 minLength={5}
-                type='text'
+                type='password'
                 placeholder='Re-enter new Password'
-                name='phone'
+                name='confirm_password'
                 onChange={handleOnChangePassword}
                 value={inputFieldPassword.confirm_password}
               />

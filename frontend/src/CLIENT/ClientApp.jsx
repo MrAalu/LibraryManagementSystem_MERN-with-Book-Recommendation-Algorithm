@@ -13,6 +13,7 @@ import PagenotFound from './404-pageNotFound/PagenotFound'
 import { LoginState } from '../LoginState'
 import ClientProfile from './clientProfile/ClientProfile'
 import ViewBook from './viewBooks/ViewBook'
+import ForgotPassword from './forgotPassword/ForgotPassword'
 
 const ClientApp = () => {
   return (
@@ -24,6 +25,7 @@ const ClientApp = () => {
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
+            <Route path='/forgotpassword' element={<ForgotPassword />} />
             <Route path='/menu' element={<FeaturedBooks />} />
             <Route path='/books' element={<Books />} />
             <Route path='/books/:id' element={<ViewBook />} />

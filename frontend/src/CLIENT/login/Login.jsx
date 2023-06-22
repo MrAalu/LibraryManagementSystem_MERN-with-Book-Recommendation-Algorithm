@@ -99,7 +99,7 @@ const Login = () => {
 
       {/* LOWER DIV */}
       <div className='login-lowerdiv'>
-        <Link to=''>Forgot Password ?</Link>
+        <Link to='/forgotpassword'>Forgot Password ?</Link>
         <Link to='/signup' id='signupbtn-link'>
           <button>SignUp</button>
         </Link>
