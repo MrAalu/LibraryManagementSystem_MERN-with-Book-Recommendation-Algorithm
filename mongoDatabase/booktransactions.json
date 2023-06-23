@@ -26,7 +26,7 @@
   "username": "amit kc",
   "bookId": "647978281de41547d0528e86",
   "bookTitle": "2001: A Space Odyssey",
-  "issueStatus": "PENDING",
+  "issueStatus": "READY",
   "isReturned": false,
   "extraCharge": 0,
   "issueDate": {

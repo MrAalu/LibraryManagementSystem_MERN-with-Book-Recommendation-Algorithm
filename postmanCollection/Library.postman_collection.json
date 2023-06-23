@@ -56,7 +56,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\" : \"amit@gmail.com\",\r\n    \"password\" : \"amitkc\"\r\n}",
+					"raw": "{\r\n    \"email\": \"amit@gmail.com\",\r\n    \"password\": \"amitkc\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
