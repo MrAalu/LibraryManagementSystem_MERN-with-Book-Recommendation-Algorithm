@@ -125,7 +125,9 @@ const postIssueBooks = async (req, res) => {
 
 // issueStatus (filter PENDING BooksTransaction)
 const getRequestedBooks = async (req, res) => {
-  const result = await BookTransaction.find({ issueStatus: 'PENDING' })
+  const result = await BookTransaction.find({
+    issueStatus: { $in: ['PENDING', 'READY'] },
+  })
   res
     .status(200)
     .json({ success: true, totalHits: result.length, data: result })

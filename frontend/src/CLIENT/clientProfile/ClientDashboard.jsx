@@ -69,7 +69,7 @@ const ClientDashboard = ({ userBookData }) => {
                       <td>{updatedReturnDate}</td>
                       <td>{returnOrNot}</td>
                       <td>Nrs.{extraCharge} /-</td>
-                      {issueStatus === 'PENDING' ? (
+                      {issueStatus === 'PENDING' || issueStatus === 'READY' ? (
                         <td>
                           <button
                             className='btn btn-danger'

@@ -98,6 +98,9 @@ const BooksRequests = () => {
                             <option key='PENDING' value='PENDING'>
                               PENDING
                             </option>
+                            <option key='READY' value='READY'>
+                              READY to PICK
+                            </option>
                             <option key='ACCEPTED' value='ACCEPTED'>
                               ACCEPTED
                             </option>
