@@ -42,15 +42,61 @@ const CustomPagination = ({ fetchData, filterActive }) => {
       />
     )
 
-    // Page buttons
-    for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
+    // First page button
+    paginationButtons.push(
+      <Pagination.Item
+        key={1}
+        active={activePage === 1}
+        onClick={() => handlePageClick(1)}
+        className='btn-pagination'
+      >
+        {1}
+      </Pagination.Item>
+    )
+
+    const range = 2 // Number of page buttons to display on each side of the active page
+
+    if (activePage - range > 2) {
+      paginationButtons.push(
+        <Pagination.Ellipsis key='start-ellipsis' disabled />
+      )
+    }
+
+    for (
+      let pageNumber = activePage - range;
+      pageNumber <= activePage + range;
+      pageNumber++
+    ) {
+      if (pageNumber > 1 && pageNumber < totalPages) {
+        paginationButtons.push(
+          <Pagination.Item
+            key={pageNumber}
+            active={activePage === pageNumber}
+            onClick={() => handlePageClick(pageNumber)}
+            className='btn-pagination'
+          >
+            {pageNumber}
+          </Pagination.Item>
+        )
+      }
+    }
+
+    if (activePage + range < totalPages - 1) {
+      paginationButtons.push(
+        <Pagination.Ellipsis key='end-ellipsis' disabled />
+      )
+    }
+
+    // Last page button (if there are more than 1 page)
+    if (totalPages > 1) {
       paginationButtons.push(
         <Pagination.Item
-          key={pageNumber}
-          active={activePage === pageNumber}
-          onClick={() => handlePageClick(pageNumber)}
+          key={totalPages}
+          active={activePage === totalPages}
+          onClick={() => handlePageClick(totalPages)}
+          className='btn-pagination'
         >
-          {pageNumber}
+          {totalPages}
         </Pagination.Item>
       )
     }
@@ -63,7 +109,6 @@ const CustomPagination = ({ fetchData, filterActive }) => {
         onClick={() => handlePageClick(activePage + 1)}
       />
     )
-
     return paginationButtons
   }
 

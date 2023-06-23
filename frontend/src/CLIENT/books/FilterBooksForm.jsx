@@ -118,6 +118,17 @@ const FilterBooksForm = ({ setBookData, setSearchResult, setFilterActive }) => {
     fetchAllCategories()
   }, [])
 
+  // Clears the FORM value and Filter
+  const handleClearFilter = () => {
+    setFilterFields(empty_field)
+    setCategories([])
+    setAuthor([])
+    setLanguage([])
+
+    // After clearing all FORM Field , we have to refetch all Categories,Author's and Language's
+    fetchAllCategories()
+  }
+
   return (
     <div className='container '>
       <div className='row my-3 justify-content-center'>
@@ -196,13 +207,25 @@ const FilterBooksForm = ({ setBookData, setSearchResult, setFilterActive }) => {
               </select>
             </div>
 
-            <button
-              type='submit'
-              className='btn btn-success mx-1 my-1'
-              onClick={handleFormSubmit}
+            <div
+              className='col-xl-2 d-flex text-center '
+              style={{ width: 'fit-content' }}
             >
-              search
-            </button>
+              <button
+                type='submit'
+                className='btn btn-success mx-1 my-1 '
+                onClick={handleFormSubmit}
+              >
+                Search
+              </button>
+              <button
+                type='button'
+                className='btn btn-danger mx-1 my-1'
+                onClick={handleClearFilter}
+              >
+                Clear Filter
+              </button>
+            </div>
           </form>
         </div>
       </div>

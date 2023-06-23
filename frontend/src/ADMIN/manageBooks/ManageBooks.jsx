@@ -50,46 +50,50 @@ const ManageBooks = () => {
       </div>
 
       {/* TABLE BOOK DATA */}
-      <div className='row mt-3'>
-        <table className='table table-hover'>
-          <thead>
-            <tr>
-              <th scope='col'>#</th>
-              <th scope='col'>Title</th>
-              <th scope='col'>Category</th>
-              <th scope='col'>Featured</th>
-              <th scope='col'>Available</th>
-              <th scope='col'> Update</th>
-            </tr>
-          </thead>
-          <tbody>
-            {allBooks.map((book, index) => {
-              const { _id, title, category, featured, available } = book
+      {allBooks.length > 0 ? (
+        <div className='row mt-3'>
+          <table className='table table-hover'>
+            <thead>
+              <tr>
+                <th scope='col'>#</th>
+                <th scope='col'>Title</th>
+                <th scope='col'>Category</th>
+                <th scope='col'>Featured</th>
+                <th scope='col'>Available</th>
+                <th scope='col'> Update</th>
+              </tr>
+            </thead>
+            <tbody>
+              {allBooks.map((book, index) => {
+                const { _id, title, category, featured, available } = book
 
-              // Convert boolean values to strings
-              const featuredText = featured ? 'Yes' : 'No'
-              const availableText = available ? 'Yes' : 'No'
+                // Convert boolean values to strings
+                const featuredText = featured ? 'Yes' : 'No'
+                const availableText = available ? 'Yes' : 'No'
 
-              return (
-                <tr key={_id}>
-                  <th scope='row'>{index + 1}</th>
-                  <td>{title}</td>
-                  <td>{category}</td>
-                  <td>{featuredText}</td>
-                  <td>{availableText}</td>
-                  <td>
-                    <Link to={`/admin/managebooks/${_id}`}>
-                      <button className='btn mx-1 edit-books-btn'>
-                        View Details
-                      </button>
-                    </Link>
-                  </td>
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
-      </div>
+                return (
+                  <tr key={_id}>
+                    <th scope='row'>{index + 1}</th>
+                    <td>{title}</td>
+                    <td>{category}</td>
+                    <td>{featuredText}</td>
+                    <td>{availableText}</td>
+                    <td>
+                      <Link to={`/admin/managebooks/${_id}`}>
+                        <button className='btn mx-1 edit-books-btn'>
+                          View Details
+                        </button>
+                      </Link>
+                    </td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <p className='p text-center'>0 Book result's</p>
+      )}
     </div>
   )
 }

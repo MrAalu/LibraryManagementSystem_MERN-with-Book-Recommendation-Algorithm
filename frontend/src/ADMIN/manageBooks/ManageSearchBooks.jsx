@@ -49,11 +49,13 @@ const ManageSearchBooks = ({ setAllBooks, bookCategories }) => {
     const selectedFeatured = e.target.value
     setFilterFields({ ...filterFields, featured: selectedFeatured })
   }
-
   const handleAvailableChange = (e) => {
     const selectedAvailable = e.target.value
     setFilterFields({ ...filterFields, available: selectedAvailable })
   }
+
+  // TODO : Handle Clear Form Filter
+  const handleClearFilters = () => {}
 
   return (
     <div className='container '>
@@ -126,13 +128,27 @@ const ManageSearchBooks = ({ setAllBooks, bookCategories }) => {
               </option>
             </select>
 
-            <button
-              type='submit'
-              className='btn btn-success mx-1 my-1'
-              onClick={handleFormSubmit}
+            <div
+              className='col-xl-2 text-center d-flex '
+              style={{ width: 'fit-content' }}
             >
-              search
-            </button>
+              <button
+                type='submit'
+                className='btn btn-success mx-1 my-1'
+                onClick={handleFormSubmit}
+              >
+                Search
+              </button>
+
+              {/* Clear FORM Filter BTN */}
+              {/* <button
+                type='button'
+                className='btn btn-danger mx-1 my-1'
+                onClick={handleClearFilters}
+              >
+                Clear Filters
+              </button> */}
+            </div>
           </form>
         </div>
 
