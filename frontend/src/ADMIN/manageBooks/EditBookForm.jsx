@@ -96,7 +96,7 @@ const EditBookForm = () => {
       })
 
       setTimeout(() => {
-        window.location.href = '/admin-managebooks'
+        window.location.href = '/admin/managebooks'
       }, 1000)
     } catch (error) {
       console.log(error.response)

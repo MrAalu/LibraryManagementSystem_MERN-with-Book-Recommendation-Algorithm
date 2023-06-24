@@ -80,22 +80,6 @@
   "__v": 0
 },{
   "_id": {
-    "$oid": "647975c01de41547d0528e5a"
-  },
-  "title": "Karodaun Kastoori",
-  "image": "uploads\\f2fc39fd02e23ca73548efdf6cbe64f3",
-  "author": "Amar Neupane",
-  "description": "Karodaun Kasturi is widely mistaken for being the life story of famous actor/ director Hari Bansha Acharya of Nepal. Rather, it is a beautifully written fictional novel about how his life would have been if he had not discovered his talent as a comedian.",
-  "category": "NOVEL",
-  "available": true,
-  "featured": false,
-  "language": "nepali",
-  "createdAdded": {
-    "$date": "2023-06-02T04:45:59.122Z"
-  },
-  "__v": 0
-},{
-  "_id": {
     "$oid": "647975ec1de41547d0528e5e"
   },
   "title": "Palpasa Cafe",
@@ -104,38 +88,6 @@
   "description": "Palpasa Cafe is a novel by Nepali author Narayan Wagle. It tells the story of an artist, Drishya, during the height of the Nepalese Civil War. The novel is partly a love story of Drishya and the first generation American Nepali, Palpasa, who has returned to the land of her parents after 9/11.",
   "category": "NOVEL",
   "available": false,
-  "featured": false,
-  "language": "nepali",
-  "createdAdded": {
-    "$date": "2023-06-02T04:45:59.122Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "647976181de41547d0528e60"
-  },
-  "title": "Raktakunda",
-  "image": "uploads\\266c3e4c4dd85c238b1858ed6d02844e",
-  "author": "Krishna Abiral",
-  "description": "Rakta Kunda meaning ‘pool of blood’ is a Nepali novel by journalist Krishna Abiral. Based on the accounts of real event that took place in the year 2001, precisely the Royal Massacre, the novel tries to describe and explain the context and the background as well as the activity that took place before, during and after the monstrous act.",
-  "category": "NOVEL",
-  "available": true,
-  "featured": false,
-  "language": "nepali",
-  "createdAdded": {
-    "$date": "2023-06-02T04:45:59.122Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "647976641de41547d0528e62"
-  },
-  "title": "Seto Dharti",
-  "image": "uploads\\74e21bef8882c9ddf155691670c893bc",
-  "author": "Amar Neupane",
-  "description": "SETO DHARTI is a fantastic art work by Amar Neupane.This reveals the child marriage evil practices and the misery of child widows in Nepali culture.",
-  "category": "NOVEL",
-  "available": true,
   "featured": false,
   "language": "nepali",
   "createdAdded": {
@@ -160,22 +112,6 @@
   "__v": 0
 },{
   "_id": {
-    "$oid": "647976a91de41547d0528e68"
-  },
-  "title": "Lord of the Flies",
-  "image": "uploads\\6fc4ad5d2142e44ab4826e2ab52fbc77",
-  "author": "William Golding",
-  "description": "Lord of the Flies is a 1954 novel by the Nobel Prize-winning British author William Golding. The plot concerns a group of British boys who are stranded on an uninhabited island and their disastrous attempts to govern themselves.",
-  "category": "NOVEL",
-  "available": true,
-  "featured": false,
-  "language": "english",
-  "createdAdded": {
-    "$date": "2023-06-02T04:45:59.122Z"
-  },
-  "__v": 0
-},{
-  "_id": {
     "$oid": "647976c41de41547d0528e6a"
   },
   "title": "The Brothers Karamazov",
@@ -192,60 +128,12 @@
   "__v": 0
 },{
   "_id": {
-    "$oid": "647976e41de41547d0528e6e"
-  },
-  "title": "The Call of the Wild",
-  "image": "uploads\\3578560c73d8b51ef79b4c80800b9d83",
-  "author": "Jack London",
-  "description": "The Call of the Wild is a short adventure novel by Jack London, published in 1903 and set in Yukon, Canada, during the 1890s Klondike Gold Rush, when strong sled dogs were in high demand. The central character of the novel is a dog named Buck.",
-  "category": "NOVEL",
-  "available": true,
-  "featured": false,
-  "language": "english",
-  "createdAdded": {
-    "$date": "2023-06-02T04:45:59.122Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "647976f81de41547d0528e70"
-  },
-  "title": "To Kill a Mockingbird",
-  "image": "uploads\\e3999b14a171433529a795857c86ea36",
-  "author": "Harper Lee",
-  "description": "To Kill a Mockingbird is a novel by the American author Harper Lee. It was published in 1960 and was instantly successful. In the United States, it is widely read in high schools and middle schools.",
-  "category": "NOVEL",
-  "available": true,
-  "featured": false,
-  "language": "english",
-  "createdAdded": {
-    "$date": "2023-06-02T04:45:59.122Z"
-  },
-  "__v": 0
-},{
-  "_id": {
     "$oid": "6479773b1de41547d0528e74"
   },
   "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
   "image": "uploads\\1a2aacde9dfcbd1b8699a35ccad2a705",
   "author": "Robert Cecil Martin",
   "description": "Even bad code can function. But if code isn't clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesn't have to be that way.",
-  "category": "PROGRAMMING",
-  "available": true,
-  "featured": false,
-  "language": "english",
-  "createdAdded": {
-    "$date": "2023-06-02T04:45:59.122Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "6479777c1de41547d0528e78"
-  },
-  "title": "Head First Java Book",
-  "image": "uploads\\3047ac20662788372fbc61780acf734f",
-  "author": "Kathy Sierra",
-  "description": "Computer programming language Java is not easy to understand. It takes lot of time and practice to understand the complex programming language. But this book takes an interactive and fun approach for better understanding of different fundamentals of Java. The book offers multi-sensory and fun learning experience for new programmers, so they can easily pick up the new language.",
   "category": "PROGRAMMING",
   "available": true,
   "featured": false,
@@ -331,23 +219,7 @@
   "featured": false,
   "language": "english",
   "createdAdded": {
-    "$date": "2023-06-02T04:45:59.122Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "647978601de41547d0528e8a"
-  },
-  "title": "Dune",
-  "image": "uploads\\9bae68c18b79b5b022ce5a82ba44f2b5",
-  "author": "Frank Herbert",
-  "description": "Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, heir to a noble family tasked with ruling an inhospitable world where the only thing of value is the “spice” melange, a drug capable of extending life and enhancing consciousness. Coveted across the known universe, melange is a prize worth killing for....",
-  "category": "SCIENCE",
-  "available": true,
-  "featured": false,
-  "language": "english",
-  "createdAdded": {
-    "$date": "2023-06-02T04:45:59.122Z"
+    "$date": "2023-06-25T04:42:33.627Z"
   },
   "__v": 0
 },{
@@ -379,7 +251,7 @@
   "featured": false,
   "language": "english",
   "createdAdded": {
-    "$date": "2023-06-02T04:45:59.122Z"
+    "$date": "2023-06-24T04:42:33.627Z"
   },
   "__v": 0
 },{
@@ -443,39 +315,7 @@
   "featured": false,
   "language": "english",
   "createdAdded": {
-    "$date": "2023-06-02T04:45:59.122Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "647979781de41547d0528ea0"
-  },
-  "title": "Never Finished",
-  "image": "uploads\\3c97e16d68d3566078173bdcc81d5be0",
-  "author": "David Goggins",
-  "description": "Can't Hurt Me, David Goggins' smash hit memoir, demonstrated how much untapped ability we all have but was merely an introduction to the power of the mind.",
-  "category": "SELFIMPROVEMENT",
-  "available": true,
-  "featured": false,
-  "language": "english",
-  "createdAdded": {
-    "$date": "2023-06-02T04:45:59.122Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "6479798f1de41547d0528ea2"
-  },
-  "title": "The Four Agreements",
-  "image": "uploads\\fc6942d8d1b6eeca8e67b03ca94390ae",
-  "author": "Don Miguel Ruiz",
-  "description": "The Four Agreements: A Practical Guide to Personal Freedom is a self-help book by bestselling author Don Miguel Ruiz. The book offers a code of conduct claiming to be based on ancient Toltec wisdom that advocates freedom from self-limiting beliefs that may cause suffering and limitation in a person's life.",
-  "category": "SELFIMPROVEMENT",
-  "available": true,
-  "featured": false,
-  "language": "english",
-  "createdAdded": {
-    "$date": "2023-06-02T04:45:59.122Z"
+    "$date": "2023-06-25T04:42:33.627Z"
   },
   "__v": 0
 },{
@@ -491,23 +331,7 @@
   "featured": false,
   "language": "english",
   "createdAdded": {
-    "$date": "2023-06-02T04:45:59.122Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "64797e6d1de41547d0528eac"
-  },
-  "title": "Autobiography of a Yogi",
-  "image": "uploads\\197d45f1ec3784c26228fd863c7a536b",
-  "author": "Paramahansa Yogananda",
-  "description": "Autobiography of a Yogi is an autobiography of Paramahansa Yogananda published in 1946. Paramahansa Yogananda was born as Mukunda Lal Ghosh in Gorakhpur, India, into a Bengali Hindu family. Autobiography of a Yogi recounts his life and his encounters with spiritual figures of the Eastern and the Western world.",
-  "category": "SPIRITUAL",
-  "available": true,
-  "featured": false,
-  "language": "english",
-  "createdAdded": {
-    "$date": "2023-06-02T04:45:59.122Z"
+    "$date": "2023-06-25T04:45:59.122Z"
   },
   "__v": 0
 },{
@@ -518,22 +342,6 @@
   "image": "uploads\\9bb6f20428539eb814c34745406a3bd9",
   "author": "Osho",
   "description": "What Is Love?In this thoughtful, provocative work, Osho—one of the most revolutionary thinkers of our time—challenges us to question what we think we know about love and opens us to the possibility of a ...",
-  "category": "SPIRITUAL",
-  "available": true,
-  "featured": false,
-  "language": "english",
-  "createdAdded": {
-    "$date": "2023-06-02T04:45:59.122Z"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "64797eb91de41547d0528eb2"
-  },
-  "title": "DEATH : AN INSIDE STORY",
-  "image": "uploads\\ccf8c4233e667ba984edb4752d790c69",
-  "author": "Sadhguru",
-  "description": "Death is a taboo in most societies in the world. But what if we have got this completely wrong? What if death was not the catastrophe it is made out to be but an essential aspect of life, rife with spiritual possibilities for transcendence? For the first time, someone is saying just that.",
   "category": "SPIRITUAL",
   "available": true,
   "featured": false,
@@ -636,6 +444,246 @@
   "language": "english",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64967c201faf3efe0d583f2e"
+  },
+  "title": "Karodaun Kastoori",
+  "image": "uploads\\14531ce3da24695c913279f556e2d844",
+  "author": "Amar Neupane",
+  "description": "Karodaun Kasturi is widely mistaken for being the life story of famous actor/ director Hari Bansha Acharya of Nepal. Rather, it is a beautifully written fictional novel about how his life would have been if he had not discovered his talent as a comedian.",
+  "category": "NOVEL",
+  "available": true,
+  "featured": false,
+  "language": "nepali",
+  "createdAdded": {
+    "$date": "2023-06-23T04:42:33.627Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64967cbf1faf3efe0d583f66"
+  },
+  "title": "Raktakunda",
+  "image": "uploads\\7005c478097fab46d699185dd2a33e20",
+  "author": "Krishna Abiral",
+  "description": "Rakta Kunda meaning ‘pool of blood’ is a Nepali novel by journalist Krishna Abiral. Based on the accounts of real event that took place in the year 2001, precisely the Royal Massacre, the novel tries to describe and explain the context and the background as well as the activity that took place before, during and after the monstrous act.",
+  "category": "NOVEL",
+  "available": true,
+  "featured": false,
+  "language": "nepali",
+  "createdAdded": {
+    "$date": "2023-06-24T04:42:33.627Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "649680751faf3efe0d583f78"
+  },
+  "title": "Seto Dharti",
+  "image": "uploads\\2daf28a58d262afd094cce97dc080290",
+  "author": "Amar Neupane",
+  "description": "SETO DHARTI is a fantastic art work by Amar Neupane.This reveals the child marriage evil practices and the misery of child widows in Nepali culture.",
+  "category": "NOVEL",
+  "available": true,
+  "featured": false,
+  "language": "nepali",
+  "createdAdded": {
+    "$date": "2023-06-24T04:42:33.627Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "649680ac1faf3efe0d583f86"
+  },
+  "title": "Lord of the Flies",
+  "image": "uploads\\f3b1dd4a9ad36e966925e8d75a7d0a36",
+  "author": "William Golding",
+  "description": "Lord of the Flies is a 1954 novel by the Nobel Prize-winning British author William Golding. The plot concerns a group of British boys who are stranded on an uninhabited island and their disastrous attempts to govern themselves.",
+  "category": "NOVEL",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-24T04:42:33.627Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "649680cc1faf3efe0d583f8d"
+  },
+  "title": "The Call of the Wild",
+  "image": "uploads\\06ad36386093bbc4dd7be4a3d70d2ae9",
+  "author": "Jack London",
+  "description": "The Call of the Wild is a short adventure novel by Jack London, published in 1903 and set in Yukon, Canada, during the 1890s Klondike Gold Rush, when strong sled dogs were in high demand. The central character of the novel is a dog named Buck.",
+  "category": "NOVEL",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-24T04:42:33.627Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "649680fd1faf3efe0d583f9f"
+  },
+  "title": "To Kill a Mockingbird",
+  "image": "uploads\\0e74cb1515fb10e9c88ddf9ad0c810e8",
+  "author": "Harper Lee",
+  "description": "To Kill a Mockingbird is a novel by the American author Harper Lee. It was published in 1960 and was instantly successful. In the United States, it is widely read in high schools and middle schools.",
+  "category": "NOVEL",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-24T04:42:33.627Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6496811c1faf3efe0d583fa6"
+  },
+  "title": "Head First Java Book",
+  "image": "uploads\\3999dc1c5ef13f71c5c63367762aa610",
+  "author": "Kathy Sierra",
+  "description": "Computer programming language Java is not easy to understand. It takes lot of time and practice to understand the complex programming language. But this book takes an interactive and fun approach for better understanding of different fundamentals of Java. The book offers multi-sensory and fun learning experience for new programmers, so they can easily pick up the new language.",
+  "category": "PROGRAMMING",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-24T04:42:33.627Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6496813b1faf3efe0d583faf"
+  },
+  "title": "Dune",
+  "image": "uploads\\a1404fd35071a7a50d77c2779880327d",
+  "author": "Frank Herbert",
+  "description": "Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, heir to a noble family tasked with ruling an inhospitable world where the only thing of value is the “spice” melange, a drug capable of extending life and enhancing consciousness. Coveted across the known universe, melange is a prize worth killing for....",
+  "category": "SCIENCE",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-24T04:42:33.627Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "649681871faf3efe0d583fc6"
+  },
+  "title": "Never Finished: Unshackle Your Mind and Win the War Within",
+  "image": "uploads\\63b0f00a4b84fa7e6247f1e0de6d5d35",
+  "author": "David Goggins",
+  "description": "This is not a self-help book. It’s a wake-up call!  Can’t Hurt Me, David Goggins’ smash hit memoir, demonstrated how much untapped ability we all have but was merely an introduction to the power of the mind. In Never Finished, Goggins takes you inside his Mental Lab, where he developed the philosophy, psychology, and strategies that enabled him to learn that what he thought was his limit was only his beginning and that the quest for greatness is unending.  The stories and lessons in this raw, revealing, unflinching memoir offer the reader a blueprint they can use to climb from the bottom of the barrel into a whole new stratosphere that once seemed unattainable. Whether you feel off-course in life, are looking to maximize your potential or drain your soul to break through your so-called glass ceiling, this is the only book you will ever need.",
+  "category": "SELFIMPROVEMENT",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-24T04:42:33.627Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "649681ba1faf3efe0d583fd9"
+  },
+  "title": "The Four Agreements: A Practical Guide to Personal Freedom",
+  "image": "uploads\\5ee0aedd84e9aae37e34d2e1e32c0647",
+  "author": "Don Miguel Ruiz",
+  "description": "The Four Agreements: A Practical Guide to Personal Freedom is a self-help book by bestselling author Don Miguel Ruiz. The book offers a code of conduct claiming to be based on ancient Toltec wisdom that advocates freedom from self-limiting beliefs that may cause suffering and limitation in a person's life.",
+  "category": "SELFIMPROVEMENT",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-25T04:42:33.627Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "649681e11faf3efe0d583fe0"
+  },
+  "title": "Autobiography of a Yogi",
+  "image": "uploads\\a078de7b655d5905ebcd682cc5ab894a",
+  "author": "Paramahansa Yogananda",
+  "description": "Autobiography of a Yogi is an autobiography of Paramahansa Yogananda published in 1946. Paramahansa Yogananda was born as Mukunda Lal Ghosh in Gorakhpur, India, into a Bengali Hindu family. Autobiography of a Yogi recounts his life and his encounters with spiritual figures of the Eastern and the Western world.",
+  "category": "SPIRITUAL",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-24T04:42:33.627Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "649682031faf3efe0d583fe6"
+  },
+  "title": "DEATH : AN INSIDE STORY",
+  "image": "uploads\\5333cb40733760e180d46db768e9a0d7",
+  "author": "Sadhguru",
+  "description": "Death is a taboo in most societies in the world. But what if we have got this completely wrong? What if death was not the catastrophe it is made out to be but an essential aspect of life, rife with spiritual possibilities for transcendence? For the first time, someone is saying just that.",
+  "category": "SPIRITUAL",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-24T04:42:33.627Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "649688502b7ba4e870411173"
+  },
+  "title": "Summer Love",
+  "image": "uploads\\a52115518bfeb68f121b418d557088ac",
+  "author": "Subin Bhattarai",
+  "description": "There was crowd to see the entrance result in Central Department of Environmental Science, Kirtipur. In the notice board Atit saw the name - Saya in the number one. He did not see Saya but just her name. He was impressed by her name, and when he met the beautiful and talented Saya, he fell in love with her. And their two-years-collage-romance starts...",
+  "category": "ROMANCE",
+  "available": true,
+  "featured": false,
+  "language": "nepali",
+  "createdAdded": {
+    "$date": "2023-06-24T06:00:16.571Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "649688c72b7ba4e870411190"
+  },
+  "title": "Saya",
+  "image": "uploads\\ac6a21f660b8f9d65739fc345501a4cc",
+  "author": "Subin Bhattarai",
+  "description": "It is the sequel of Summer Love. It is based on point of view of narrator, Atit, Saaya and Susmita. According to the story, narrator takes the responsibility to mend the things between Atit and Saaya. Two years after the book about Atit's love story is published, the writer comes in contact with Saaya to know her story. Saaya says about her opinions and why she dissolved the relationship with Atit...",
+  "category": "ROMANCE",
+  "available": true,
+  "featured": false,
+  "language": "nepali",
+  "createdAdded": {
+    "$date": "2023-06-24T06:00:16.571Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6496896a2b7ba4e8704111a0"
+  },
+  "title": "The Girl in Room 105",
+  "image": "uploads\\0002430da3b00311a9da1dc2a77c0ab5",
+  "author": "Chetan Bhagat",
+  "description": "Hi, I’m Keshav, and my life is screwed. I hate my job and my girlfriend left me. Ah, the beautiful Zara. Zara is from Kashmir. She is a Muslim. And did I tell you my family is a bit, well, traditional? Anyway, leave that. Zara and I broke up four years ago. She moved on in life. I didn’t. I drank every night to forget her. I called, messaged, and stalked her on social media. She just ignored me. However, that night, on the eve of her birthday, Zara messaged me. She called me over, like old times, to her hostel room 105. I shouldn’t have gone, but I did… and my life changed forever. This is not a love story. It is an unlove story. From the author of Five Point Someone and 2 States, comes a fast-paced, funny and unputdownable thriller about obsessive love and finding purpose in life against the backdrop of contemporary India...",
+  "category": "MYSTERY",
+  "available": true,
+  "featured": false,
+  "language": "english",
+  "createdAdded": {
+    "$date": "2023-06-24T06:00:16.571Z"
   },
   "__v": 0
 }]

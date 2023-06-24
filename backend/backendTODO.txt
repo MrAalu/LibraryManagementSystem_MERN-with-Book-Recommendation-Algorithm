@@ -2,3 +2,9 @@
 
 API protection  needs to be done : eg . normal user shouldnt be able to access api's that handles books CRUD
 sol : require admin middleware that check userType from cookie token
+
+
+SIMILAR PRODUCTS API / FRONTEND - recommend based on CATEGORY if not LOGGED in 
+
+IMAGE SIZE CHECK and REPLACE / Optimize
+ADD some more NonFiction Movies 

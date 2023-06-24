@@ -7,7 +7,7 @@
   "phone": "9847612345",
   "userType": "normal_user",
   "totalRequestedBooks": 3,
-  "totalAcceptedBooks": 2,
+  "totalAcceptedBooks": 1,
   "password": "$2b$10$UVqGh/jXmsv9GpD2DWeVCOTqBsBFRzKVSXhFBYKRec4dDk7GmauBS",
   "__v": 0
 },{
@@ -30,8 +30,8 @@
   "email": "random@gmail.com",
   "phone": "9234242342",
   "userType": "normal_user",
-  "totalRequestedBooks": 0,
-  "totalAcceptedBooks": 0,
+  "totalRequestedBooks": 3,
+  "totalAcceptedBooks": 2,
   "password": "$2b$10$HWGpxlhLjiB4q1US26wCgOgGgQF.7VgJyzVVNBbIp.km1ZjK/j66.",
   "__v": 0
 }]

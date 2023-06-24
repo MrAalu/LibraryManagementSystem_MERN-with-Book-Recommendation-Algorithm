@@ -1,105 +1,65 @@
 [{
   "_id": {
-    "$oid": "648eb21571f527a78d3055c3"
-  },
-  "bookId": "647976c41de41547d0528e6a",
-  "bookTitle": "The Brothers Karamazov",
-  "issueQuantity": 3,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "648eb23271f527a78d3055d9"
-  },
-  "bookId": "647975ec1de41547d0528e5e",
-  "bookTitle": "Palpasa Cafe",
-  "issueQuantity": 3,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "648eb23471f527a78d3055dd"
+    "$oid": "649685a7b32c6189e5652f78"
   },
   "bookId": "64797eff1de41547d0528eba",
   "bookTitle": "Inner Engineering: A Yogi's Guide to Joy",
-  "issueQuantity": 6,
+  "issueQuantity": 10,
   "__v": 0
 },{
   "_id": {
-    "$oid": "648eb26d71f527a78d30562b"
+    "$oid": "649685a7b32c6189e5652f7f"
   },
-  "bookId": "647977f81de41547d0528e82",
-  "bookTitle": "The Pragmatic Programmer",
-  "issueQuantity": 4,
+  "bookId": "647975ec1de41547d0528e5e",
+  "bookTitle": "Palpasa Cafe",
+  "issueQuantity": 9,
   "__v": 0
 },{
   "_id": {
-    "$oid": "648ec54bf3447b9dc7e849d4"
-  },
-  "bookId": "647974491de41547d0528e3f",
-  "bookTitle": "Shutter Island",
-  "issueQuantity": 5,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "64918512b5919bf869e5532e"
-  },
-  "bookId": "647974ad1de41547d0528e41",
-  "bookTitle": "The Da Vinci Code",
-  "issueQuantity": 3,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "649186c0aecb111d7d50ff85"
-  },
-  "bookId": "647975c01de41547d0528e5a",
-  "bookTitle": "Karodaun Kastoori",
-  "issueQuantity": 8,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "64929c4c98b6e38a304322d0"
-  },
-  "bookId": "647977a51de41547d0528e7c",
-  "bookTitle": "Learn Python the hard way",
-  "issueQuantity": 5,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "6492ac22ec53b01a0d0dd500"
-  },
-  "bookId": "64797eb91de41547d0528eb2",
-  "bookTitle": "DEATH : AN INSIDE STORY",
-  "issueQuantity": 5,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "6493005ed96eea119b75cbdd"
-  },
-  "bookId": "64797f1e1de41547d0528ebe",
-  "bookTitle": "Meditation: The First and Last Freedom",
-  "issueQuantity": 1,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "649315ac3d2d9f535e541b6d"
-  },
-  "bookId": "647974e21de41547d0528e43",
-  "bookTitle": "The Maid",
-  "issueQuantity": 1,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "6493e9c85029190112c79f7d"
-  },
-  "bookId": "647976a91de41547d0528e68",
-  "bookTitle": "Lord of the Flies",
-  "issueQuantity": 1,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "6493e9c95029190112c79f84"
+    "$oid": "649685a7b32c6189e5652f86"
   },
   "bookId": "647978bc1de41547d0528e90",
   "bookTitle": "Into the Wild",
+  "issueQuantity": 10,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "649685a8b32c6189e5652f8d"
+  },
+  "bookId": "647979321de41547d0528e9a",
+  "bookTitle": "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+  "issueQuantity": 7,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "649685a8b32c6189e5652f94"
+  },
+  "bookId": "64797fbe1de41547d0528ec6",
+  "bookTitle": "Complete Works of Lao Tzu: Tao Teh Ching & Hau Hu Ching",
+  "issueQuantity": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "649685a9b32c6189e5652fa1"
+  },
+  "bookId": "649682031faf3efe0d583fe6",
+  "bookTitle": "DEATH : AN INSIDE STORY",
+  "issueQuantity": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "649685a9b32c6189e5652fb4"
+  },
+  "bookId": "6479795b1de41547d0528e9c",
+  "bookTitle": "Cant Hurt Me: Master Your Mind and Defy the Odds",
+  "issueQuantity": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64968a792b7ba4e8704126e1"
+  },
+  "bookId": "64797f1e1de41547d0528ebe",
+  "bookTitle": "Meditation: The First and Last Freedom",
   "issueQuantity": 1,
   "__v": 0
 }]

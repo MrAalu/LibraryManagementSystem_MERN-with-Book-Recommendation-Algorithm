@@ -3,6 +3,7 @@ import { backend_server } from '../../main'
 import axios from 'axios'
 import { FiCopy } from 'react-icons/fi'
 import { toast, Toaster } from 'react-hot-toast'
+import './issuebooktouser.css'
 
 const IssueBookToUser = () => {
   const API_URL = `${backend_server}/api/v1/filter`
@@ -156,7 +157,7 @@ const IssueBookToUser = () => {
         </div>
 
         {/* ISSUE BOOK FORM */}
-        <div className='col shadow mx-2'>
+        <div className='col shadow mx-2 issue-book-form'>
           <form onSubmit={handleBookIssueFormSubmit}>
             <div className='mb-3 mt-3'>
               <label htmlFor='bookId' className='form-label'>
