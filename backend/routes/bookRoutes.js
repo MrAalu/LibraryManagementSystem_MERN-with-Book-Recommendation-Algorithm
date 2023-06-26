@@ -12,7 +12,19 @@ const {
   deleteBook,
 } = require('../controller/booksController')
 
-booksRouter.route('/').get(getAllBooks).post(upload.single('image'), postBook)
-booksRouter.route('/:id').get(getSingleBook).patch(patchBook).delete(deleteBook)
+// Middlewares
+const verifyToken = require('../middleware/verifyToken')
+const adminAuthorization = require('../middleware/adminAuth')
+
+booksRouter
+  .route('/')
+  .get(getAllBooks)
+  .post(verifyToken, adminAuthorization, upload.single('image'), postBook)
+
+booksRouter
+  .route('/:id')
+  .get(getSingleBook)
+  .patch(verifyToken, adminAuthorization, patchBook)
+  .delete(verifyToken, adminAuthorization, deleteBook)
 
 module.exports = booksRouter

@@ -38,12 +38,13 @@ const getSingleUser = async (req, res) => {
 }
 
 // Fetch single user data + book transactions using POST method with empty body (COOKIE)
+// Gives back UserDetails
 const postSingleUser = async (req, res) => {
   const userId = req.userId
 
   const getUserData = await UserModel.findById(userId)
 
-  // Fetch all 3 Status to show users - ACCEPTED / PENDING / CANCELLED
+  // Fetch all 3 Status to show users - ACCEPTED / PENDING / CANCELLED / READY
   const getAllUserBookTransaction = await BookTransactionSchema.find({
     userId,
   })

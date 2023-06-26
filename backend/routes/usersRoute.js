@@ -1,6 +1,9 @@
 const express = require('express')
 const userRouter = express.Router()
 
+// Middleware
+const adminAuthorization = require('../middleware/adminAuth')
+
 const {
   getAllUsers,
   getSingleUser,
@@ -12,7 +15,7 @@ const verifyToken = require('../middleware/verifyToken')
 
 userRouter
   .route('/')
-  .get(getAllUsers)
+  .get(adminAuthorization, getAllUsers)
   .post(verifyToken, postSingleUser)
   .patch(verifyToken, patchUserDetail)
 

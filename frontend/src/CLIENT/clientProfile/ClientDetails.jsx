@@ -93,6 +93,8 @@ const ClientDetails = ({ userData }) => {
         toast.success('Password Changed Successfully')
       } catch (error) {
         console.log(error)
+        console.log(error.response)
+        toast.error(error.response.data.message)
       }
     } else {
       toast.error('Password Doesnt Match')

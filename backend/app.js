@@ -46,16 +46,20 @@ const path = require('path')
 // const { cookie } = require('express/lib/response')
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
-// ---------------------------MULTER ENDS------------------------------
+// Middlewares
+const verifyToken = require('./middleware/verifyToken')
 
+// ROUTES
 app.use('/api/v1/signup', signUpRouter)
 app.use('/api/v1/login', loginRouter)
-app.use('/api/v1/logout', logoutRouter)
+
+app.use('/api/v1/logout', verifyToken, logoutRouter)
 app.use('/api/v1/forgotpassword', forgotpasswordRouter)
 
+// Filter Books
 app.use('/api/v1/filter', filterRouter)
 
-// ALL BOOKS CRUD
+// ALL BOOKS CRUD (Dynamic Middleware Setup on API Endpoints)
 app.use('/api/v1/books', booksRouter)
 
 // Limit() and Skip() & Pagination
@@ -63,11 +67,11 @@ app.use('/api/v1/book', booksRouterLimitSkip)
 
 app.use('/api/v1/recentBooks', booksRouterRecentBooks)
 app.use('/api/v1/featuredBooks', booksRouterFeaturedBooks)
-app.use('/api/v1/requestBooks', requestBookRouter)
+app.use('/api/v1/requestBooks', verifyToken, requestBookRouter)
 app.use('/api/v1/popularBooks', popularBooksRouter)
 
-// User
-app.use('/api/v1/users', userRouter)
+// User Routes
+app.use('/api/v1/users', verifyToken, userRouter)
 
 // handles if book not returned then automate CHARGES FINE
 app.use('/api/v1/checkbookreturn', CheckBookReturnRouter)
@@ -75,6 +79,7 @@ app.use('/api/v1/checkbookreturn', CheckBookReturnRouter)
 app.use(CustomError)
 app.use(PageNotFound)
 
+// Server
 const port = process.env.CONNECTION_PORT || 3000
 const InitiateServer = async () => {
   try {

@@ -1,0 +1,47 @@
+Which ROUTES and API Endpoints need to be AUTHORIZED and AUTHENTICATED : 
+
+OPEN API : 
+1. Login 
+2. Signup
+3. Filter Books (FilterRouter)
+4. Limit & Skip Books Fetching (booksRouterLimitSkip)
+5. Recently Uploaded Books (booksRouterRecentBooks)
+6. Featured Books (booksRouterFeaturedBooks)
+7. Popular Books (popularBooksRouter)
+8. Update Not returned books CHARGE (CheckBookReturnRouter)
+9. ForgotPassword 
+
+Secured API : 
+1. Logout - Verify Token
+
+
+2. Books Router (CRUD on BOOKS) , API Endpoints :  
+
+// getAllBooks(Fetch all Books ) ->(Categories,Authors Fetched so OPEN)
+// getSingleBooks(Fetch Single Books ) ->(Individual Books Page Fetched so OPEN)
+
+// PostBook(create New Book ) -> Verify Token  + RequireAdmin UserType
+// PatchBook(Update Books Details ) ->Verify Token + RequireAdmin UserType
+// DeleteBook(Delete Book) ->Verify Token + RequireAdmin UserType
+
+
+
+3. Request Books Router (CRUD Book Transactions) , API Endpoints : 
+ 
+// postBooks(Request new Book) -> Verify Token  
+// getRequestedBooks(Fetch Requested Books) -> Verify Token  
+// patchRequestedBook(Update Requested Books) -> Verify Token  
+// getNotReturnedBooks (Books not returned in Time) -> Verify Token + RequireAdmin 
+// postIssueBook (ADMIN Issue book to User) -> Verify Token + RequireAdmin 
+
+
+4. User Router (USER CRUD Operations) , API Endpoints : 
+
+// getAllUsers (Fetches all Users 'normal_user') -> Verify Token + RequireAdmin 
+// getSingleUser (Fetch single User) -> Verify Token
+// postSingleUser (EMPTY Req.body POST, gives back : UserDetail + User Book Transactions) -> Verify Token
+// patchUserDetail (Update User Detail , Info + Password) -> Verify Token
+
+
+
+

@@ -1,0 +1,2 @@
+SIMILAR PRODUCTS API / FRONTEND - recommend based on CATEGORY if not LOGGED in 
+

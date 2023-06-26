@@ -4,8 +4,7 @@ const express = require('express')
 const logoutRouter = express.Router()
 
 const postLogout = require('../controller/logoutController')
-const verifyToken = require('../middleware/verifyToken')
 
-logoutRouter.route('/').post(verifyToken, postLogout)
+logoutRouter.route('/').post(postLogout)
 
 module.exports = logoutRouter

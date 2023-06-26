@@ -1,7 +1,8 @@
 const express = require('express')
 const requestBookRouter = express.Router()
 
-const verifyToken = require('../middleware/verifyToken')
+// Middleware
+const adminAuthorization = require('../middleware/adminAuth')
 
 const {
   postBooks,
@@ -13,13 +14,16 @@ const {
 
 requestBookRouter
   .route('/')
-  .post(verifyToken, postBooks)
-  .get(verifyToken, getRequestedBooks)
-  .patch(verifyToken, patchRequestedBooks)
+  .post(postBooks)
+  .get(getRequestedBooks)
+  .patch(patchRequestedBooks)
 
-// Not used anywhere , calm down ( wasted hours lookin for where i used this lol)
-requestBookRouter.route('/notreturnedbooks').get(getNotReturnedBooks)
+// Used to Fetch books that are not returned in TIME
+requestBookRouter
+  .route('/notreturnedbooks')
+  .get(adminAuthorization, getNotReturnedBooks)
 
-requestBookRouter.route('/issuebook').post(verifyToken, postIssueBooks)
+// admin issue book to User
+requestBookRouter.route('/issuebook').post(adminAuthorization, postIssueBooks)
 
 module.exports = requestBookRouter

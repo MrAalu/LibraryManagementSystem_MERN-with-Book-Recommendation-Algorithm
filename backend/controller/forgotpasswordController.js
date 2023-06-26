@@ -2,7 +2,7 @@
 const bcrpyt = require('bcrypt')
 const UserModel = require('../models/signUpModel')
 
-// First we check email and phone then call next APi that updates password
+// First we check email and phone then call next APi(patchUpdatePassword) that updates password
 const postForgotPassword = async (req, res) => {
   const { email, phone } = req.body
 

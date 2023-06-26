@@ -1,4 +1,7 @@
 // authenticates CLIENT user type
+
+// NOT USED ANYMORE
+
 const jwt = require('jsonwebtoken')
 
 const {
