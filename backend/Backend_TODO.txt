@@ -1,2 +1,5 @@
 SIMILAR PRODUCTS API / FRONTEND - recommend based on CATEGORY if not LOGGED in 
 
+Multiple Books Categories handle .
+
+Update book image also .

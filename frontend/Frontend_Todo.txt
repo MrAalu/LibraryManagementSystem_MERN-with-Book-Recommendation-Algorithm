@@ -1,1 +1,6 @@
 Individual VIEW BOOKS page ma recommended/similar books algorithm 
+
+
+Multiple Books Categories handle .
+
+Update book image also .
