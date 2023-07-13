@@ -81,7 +81,7 @@ const IssuedBooks = () => {
             </table>
           </div>
         ) : (
-          <p>Loading ...</p>
+          <p className='p text-center my-3'>No Issued Books Yet</p>
         )
       ) : (
         <p className='p text-center my-3'>No Issued Books Yet</p>

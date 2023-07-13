@@ -169,6 +169,23 @@ const patchRequestedBooks = async (req, res) => {
       .json({ success: true, message: `Book removed successfully` })
   }
 
+  // Book returned already , client le profile bata remove matra gareko
+  if (issueStatus === 'ALREADYRETURNED') {
+    await BookTransaction.findByIdAndDelete(id)
+    return res
+      .status(200)
+      .json({ success: true, message: `Book removed successfully` })
+  }
+
+  // If admin cancels the book then , user le profile bata cancel garda just remove it , dont decrement TotalRequestedBooks
+  // when admin cancels the book request, totalRequestBook is automatically decremented
+  if (issueStatus === 'ADMINCANCELLED') {
+    await BookTransaction.findByIdAndDelete(id)
+    return res
+      .status(200)
+      .json({ success: true, message: `Book removed successfully` })
+  }
+
   // if issueStatus ayo vane issueStatus only update that , and viceversa
   const result = await BookTransaction.findByIdAndUpdate(
     id,
@@ -192,6 +209,18 @@ const patchRequestedBooks = async (req, res) => {
     const { totalAcceptedBooks, totalRequestedBooks } = getUserData
     const updatedTotalAcceptedBooks = totalAcceptedBooks - 1
     const updatedTotalRequestedBooks = totalRequestedBooks - 1
+
+    // is returned = true , means bookTransaction status is to be set to - "RETURNED"
+    await BookTransaction.findByIdAndUpdate(
+      id,
+      {
+        issueStatus: 'RETURNED',
+      },
+      {
+        new: true,
+        runValidators: true,
+      }
+    )
 
     await UserSchema.findByIdAndUpdate(userId, {
       totalAcceptedBooks: updatedTotalAcceptedBooks,

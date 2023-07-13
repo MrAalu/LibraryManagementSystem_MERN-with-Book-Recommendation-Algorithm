@@ -6,11 +6,11 @@ import { Toaster, toast } from 'react-hot-toast'
 const ClientDashboard = ({ userBookData }) => {
   const DELETE_BOOK_API = `${backend_server}/api/v1/requestBooks`
 
-  const handleRemoveBook = async (transactionId) => {
+  const handleRemoveBook = async (transactionId, issueStatus) => {
     try {
       const response = await axios.patch(DELETE_BOOK_API, {
         id: transactionId,
-        issueStatus: 'DELETE',
+        issueStatus,
       })
 
       console.log(response)
@@ -73,9 +73,37 @@ const ClientDashboard = ({ userBookData }) => {
                         <td>
                           <button
                             className='btn btn-danger'
-                            onClick={() => handleRemoveBook(_id)}
+                            onClick={() => handleRemoveBook(_id, 'DELETE')}
                           >
                             Cancel
+                          </button>
+                        </td>
+                      ) : (
+                        ''
+                      )}
+                      {issueStatus === 'RETURNED' ? (
+                        <td>
+                          <button
+                            className='btn btn-dark'
+                            onClick={() =>
+                              handleRemoveBook(_id, 'ALREADYRETURNED')
+                            }
+                          >
+                            Remove
+                          </button>
+                        </td>
+                      ) : (
+                        ''
+                      )}
+                      {issueStatus === 'CANCELLED' ? (
+                        <td>
+                          <button
+                            className='btn btn-dark'
+                            onClick={() =>
+                              handleRemoveBook(_id, 'ADMINCANCELLED')
+                            }
+                          >
+                            Remove
                           </button>
                         </td>
                       ) : (
