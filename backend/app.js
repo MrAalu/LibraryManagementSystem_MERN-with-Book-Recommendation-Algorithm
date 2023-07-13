@@ -76,6 +76,10 @@ app.use('/api/v1/users', verifyToken, userRouter)
 // handles if book not returned then automate CHARGES FINE
 app.use('/api/v1/checkbookreturn', CheckBookReturnRouter)
 
+// RECOMMENDATION ALGO TESTING
+const { algoTest } = require('./controller/bookRecommendation')
+app.get('/api/algotest', algoTest)
+
 app.use(CustomError)
 app.use(PageNotFound)
 
@@ -85,7 +89,11 @@ const InitiateServer = async () => {
   try {
     await ConnectDatabase(process.env.CONNECTION_URL)
     console.log('Connected to Database Successfully')
-    app.listen(port, () => console.log(`server started at port ${port}...`))
+    app.listen(port, () =>
+      console.log(
+        `server started at port ${port}.......................................................`
+      )
+    )
   } catch (error) {
     console.log('ERROR IN SERVER')
   }

@@ -3,6 +3,9 @@ const BookSchema = require('../models/bookScheme')
 const PopularBookSchema = require('../models/PopularBooks')
 const UserSchema = require('../models/signUpModel')
 
+// This function Analyzes user book preferences then calculate books that is to be recommended
+const { analyzeUserPreferences } = require('../controller/bookRecommendation')
+
 // Creates a new User book request transaction
 const postBooks = async (req, res) => {
   const userId = req.userId
@@ -93,13 +96,27 @@ const postIssueBooks = async (req, res) => {
   const { title } = bookDetails
 
   // Check if user has previously requested for same book with id
-  const checkPrevRequest = await BookTransaction.findOne({ userId, bookId })
+  const checkPrevRequest = await BookTransaction.find({ userId, bookId })
 
-  if (checkPrevRequest) {
-    return res
-      .status(400)
-      .json({ success: false, message: `Book already Issued` })
+  if (checkPrevRequest.length > 0) {
+    // SOME is used to check if any book transaction has isReturned value set to false
+    const isBookAlreadyRequested = checkPrevRequest.some(
+      (map_para) => !map_para.isReturned
+    )
+    //  if kunai book not returned xa vane , isBookAlreadyRequested "TRUE" hunxa
+
+    if (isBookAlreadyRequested) {
+      return res
+        .status(400)
+        .json({ success: false, message: 'Book already Requested' })
+    } else {
+      await createBookTransaction()
+    }
   } else {
+    await createBookTransaction()
+  }
+
+  async function createBookTransaction() {
     const result = await BookTransaction.create({
       userId,
       bookId,
@@ -118,6 +135,8 @@ const postIssueBooks = async (req, res) => {
       totalAcceptedBooks: updatedTotalAcceptedBooks,
       totalRequestedBooks: updatedTotalRequestedBooks,
     })
+
+    await analyzeUserPreferences(userId, bookId)
 
     return res.status(200).json({ success: true, data: result })
   }
