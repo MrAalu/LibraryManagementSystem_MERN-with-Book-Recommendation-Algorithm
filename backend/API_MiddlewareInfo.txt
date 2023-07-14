@@ -11,6 +11,8 @@ OPEN API :
 8. Update Not returned books CHARGE (CheckBookReturnRouter)
 9. ForgotPassword 
 
+10. 'GET' /api/algotest/ TESTING Algorithm (directly implemented on app.js home page)
+
 Secured API : 
 1. Logout - Verify Token
 
@@ -23,7 +25,6 @@ Secured API :
 // PostBook(create New Book ) -> Verify Token  + RequireAdmin UserType
 // PatchBook(Update Books Details ) ->Verify Token + RequireAdmin UserType
 // DeleteBook(Delete Book) ->Verify Token + RequireAdmin UserType
-
 
 
 3. Request Books Router (CRUD Book Transactions) , API Endpoints : 
@@ -42,6 +43,10 @@ Secured API :
 // postSingleUser (EMPTY Req.body POST, gives back : UserDetail + User Book Transactions) -> Verify Token
 // patchUserDetail (Update User Detail , Info + Password) -> Verify Token
 
+
+5. Recommend Books Router (Generates book recommendations for User) , API Endpoints :
+
+// getRecommendedBooks - /api/v1/recommendedBooks/ -> verify Token
 
 
 
