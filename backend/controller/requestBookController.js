@@ -3,8 +3,7 @@ const BookSchema = require('../models/bookScheme')
 const PopularBookSchema = require('../models/PopularBooks')
 const UserSchema = require('../models/signUpModel')
 
-// This function Analyzes user book preferences then calculate books that is to be recommended
-const { analyzeUserPreferences } = require('../controller/bookRecommendation')
+const UserLastBookModel = require('../models/userLastBook')
 
 // Creates a new User book request transaction
 const postBooks = async (req, res) => {
@@ -136,7 +135,25 @@ const postIssueBooks = async (req, res) => {
       totalRequestedBooks: updatedTotalRequestedBooks,
     })
 
-    // await analyzeUserPreferences(userId, bookId)
+    // Store users last borrowed book
+    const checkUsersLastBook = await UserLastBookModel.find({ userId })
+    if (checkUsersLastBook.length != 0) {
+      await UserLastBookModel.findOneAndUpdate(
+        { userId },
+        { lastBorrowedBookId: bookId, lastBorrowedBookTitle: title },
+        {
+          new: true, // Return the updated document
+          runValidators: true, // Run validation rules on update
+        }
+      )
+    } else {
+      await UserLastBookModel.create({
+        userId,
+        userEmail,
+        lastBorrowedBookId: bookId,
+        lastBorrowedBookTitle: title,
+      })
+    }
 
     return res.status(200).json({ success: true, data: result })
   }
@@ -219,7 +236,7 @@ const patchRequestedBooks = async (req, res) => {
   )
 
   // Fetching Book ID and Book Title for updating popular books if STATUS is ACCEPTED
-  const { bookId, bookTitle, userId, returnDate } = result
+  const { bookId, bookTitle, userId, returnDate, userEmail } = result
 
   // If book return TRUE ,
   if (isReturned) {
@@ -263,6 +280,26 @@ const patchRequestedBooks = async (req, res) => {
     await UserSchema.findByIdAndUpdate(userId, {
       totalAcceptedBooks: updatedTotalAcceptedBooks,
     })
+
+    // Store users last borrowed book
+    const checkUsersLastBook = await UserLastBookModel.find({ userId })
+    if (checkUsersLastBook.length != 0) {
+      await UserLastBookModel.findOneAndUpdate(
+        { userId },
+        { lastBorrowedBookId: bookId, lastBorrowedBookTitle: bookTitle },
+        {
+          new: true, // Return the updated document
+          runValidators: true, // Run validation rules on update
+        }
+      )
+    } else {
+      await UserLastBookModel.create({
+        userId,
+        userEmail,
+        lastBorrowedBookId: bookId,
+        lastBorrowedBookTitle: bookTitle,
+      })
+    }
 
     createOrUpdatePopularBook(bookId, bookTitle)
   } else if (issueStatus === 'CANCELLED') {

@@ -76,8 +76,12 @@ app.use('/api/v1/users', verifyToken, userRouter)
 // handles if book not returned then automate CHARGES FINE
 app.use('/api/v1/checkbookreturn', CheckBookReturnRouter)
 
-// RECOMMENDATION ALGO TESTING
-const { algoTest } = require('./controller/bookRecommendation')
+// Fetch RECOMMENDED books
+const recommendedBooksRouter = require('./routes/recommendBooksRouter')
+app.use('/api/v1/recommendedBooks', verifyToken, recommendedBooksRouter)
+
+//---------------- RECOMMENDATION ALGO TESTING --------------------------
+const { algoTest } = require('./controller/bookRecommendationAlgorithm')
 app.get('/api/algotest', algoTest)
 
 app.use(CustomError)
