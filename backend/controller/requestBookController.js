@@ -136,7 +136,7 @@ const postIssueBooks = async (req, res) => {
       totalRequestedBooks: updatedTotalRequestedBooks,
     })
 
-    await analyzeUserPreferences(userId, bookId)
+    // await analyzeUserPreferences(userId, bookId)
 
     return res.status(200).json({ success: true, data: result })
   }
