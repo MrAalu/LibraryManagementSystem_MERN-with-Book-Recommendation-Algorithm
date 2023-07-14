@@ -1,0 +1,17 @@
+A brief dive into how the book recommendation is working here :
+
+CONTENT-BASED-FILTERING
+
+in ./Controller : analyzeUserPreferences(userId,bookId) function creates bookRecommendations for users.
+
+Algorithm Funtion takes two arguements , 'userId' to fetch users past book Preferences i.e. Category,Language,Author and 'bookId' which denotes users last/recent book. This is used to exclude recently borrowed book from Recommendations. Also, previously borrowed books are also Excluded from bookRecommendations.
+
+When ADMIN - issues a book to user || Accepts user book requests then, it stores users details + last borrowed book of user into 'UserLastBook' model. 
+
+This function can be called only on 'GET' /api/v1/recommendedBooks/ where, it fetches userId from 'verifyToken' middleware and then proceeds to check users last borrowed book from 'UserLastBook' model .
+
+Algorithm can be tested at 'GET' /api/algotest/ which will generate book recommendations in JSON format
+
+yetinai ho !
+
+

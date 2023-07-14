@@ -6,6 +6,7 @@ import './viewBooks.css'
 import useFetch from '../../useFetch'
 import RequestBook from '../requestBooks/RequestBook'
 import { Toaster } from 'react-hot-toast'
+import RecommendedBooks from '../recommendedBooks/RecommendedBooks'
 
 const ViewBook = () => {
   const { id } = useParams() //fetching book id from url params
@@ -88,6 +89,8 @@ const ViewBook = () => {
           </div>
         </div>
       </div>
+
+      <RecommendedBooks></RecommendedBooks>
     </div>
   )
 }
