@@ -359,7 +359,7 @@
   "author": "Sadhguru",
   "description": "Inner Engineering: A Yogi's Guide to Joy is a 2016 book authored by an Indian yogi and mystic Jaggi Vasudev. The book was featured among The New York Times Best Seller in the spirituality and self help category for November 2016.",
   "category": "SPIRITUAL",
-  "available": false,
+  "available": true,
   "featured": false,
   "language": "english",
   "createdAdded": {
@@ -407,7 +407,7 @@
   "author": "Osho",
   "description": "n this comprehensive and practical guide, the secrets of the ancient science of Tantra become available to a contemporary audience. Confined to small, hidden mystery schools for centuries, and often misunderstood and misinterpreted today. Tantra is not just a collection of techniques to enhance sexual experience. As Osho shows in these pages, it is a complete science of self-realization, based on the cumulative wisdom of centuries of exploration into the meaning of life and consciousness. Tantra―the very word means “technique”―is a set of powerful, transformative tools that can be used to bring new meaning and joy to every aspect of our daily lives.",
   "category": "SPIRITUAL",
-  "available": true,
+  "available": false,
   "featured": false,
   "language": "english",
   "createdAdded": {
@@ -651,7 +651,7 @@
   "featured": false,
   "language": "nepali",
   "createdAdded": {
-    "$date": "2023-06-24T06:00:16.571Z"
+    "$date": "2023-06-02T03:45:35.246Z"
   },
   "__v": 0
 },{

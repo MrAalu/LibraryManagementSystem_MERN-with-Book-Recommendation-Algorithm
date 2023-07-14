@@ -1,9 +1,7 @@
 // Functionality of this Javascript code is to generate recommendation books for user based on content based filtering
-const UserPreferenceModel = require('../models/UserPreferencesModel')
-const UserModel = require('../models/signUpModel')
+
 const BooksModel = require('../models/bookScheme')
 const BookTransactionModel = require('../models/bookTransaction')
-const PopularBookModel = require('../models/PopularBooks')
 
 // used in BookRequest updated by admin 'patchRequestedBooks' , admin issue book to user 'postIssueBooks'
 const analyzeUserPreferences = async (userId, bookId) => {
@@ -19,7 +17,7 @@ const analyzeUserPreferences = async (userId, bookId) => {
   // Get all books that the user has Borrowed
   const queriedBookData = await BooksModel.find({ _id: { $in: bookIdArray } })
 
-  // Extracting user intrested category,author,language
+  // Extracting user intrested category,author,language (NOT USED)
   const categoryArray = [...new Set(queriedBookData.map((obj) => obj.category))]
   const authorArray = [...new Set(queriedBookData.map((obj) => obj.author))]
   const languageArray = [...new Set(queriedBookData.map((obj) => obj.language))]
@@ -31,40 +29,67 @@ const analyzeUserPreferences = async (userId, bookId) => {
 
   const { category, author, language } = lastBorrowedBook
 
+  if (!categoryArray.includes(category)) {
+    categoryArray.push(category)
+  }
+  if (!languageArray.includes(language)) {
+    languageArray.push(language)
+  }
+  if (!authorArray.includes(author)) {
+    authorArray.push(author)
+  }
+
+  console.log(categoryArray, languageArray, authorArray)
+
   // Find all books with same language + exclude last borrowed book
-  const similarLanguageBooks = await BooksModel.find({
-    language,
+  let similarLanguageBooks = await BooksModel.find({
     available: true,
+    language: { $in: languageArray },
     _id: { $ne: bookId, $nin: exludeBooksId },
   })
 
   const similarAuthorBooks = similarLanguageBooks.filter((filter_para) => {
     return filter_para.author == author
   })
+  // console.log(similarAuthorBooks.length)
 
+  // Filter books that matches users past book category preferences && filter out books of author that user just borrowed(duplication control of same authors book,we have fetched it on above code)
   const similarCategoryBooks = similarLanguageBooks.filter((filter_para) => {
-    return filter_para.category === category && filter_para.author !== author
+    return (
+      categoryArray.includes(filter_para.category) &&
+      filter_para.author !== author
+    )
   })
+  // console.log(similarCategoryBooks.length)
 
   if (similarAuthorBooks.length <= 2) {
-    const recommendationBooks = similarAuthorBooks.concat(similarCategoryBooks)
-    return recommendationBooks.slice(0, 4)
-  } else {
-    const newAuthorBooks = similarAuthorBooks.slice(0, 2)
-    const recommendationBooks = newAuthorBooks.concat(
-      similarCategoryBooks.slice(0, 2)
-    )
-    return recommendationBooks
+    let recommendationBooks = similarAuthorBooks.concat(similarCategoryBooks)
+    recommendationBooks = recommendationBooks.slice(0, 4)
+
+    // If we have less than 4 books to recommend than we recommend books based on language
+    if (recommendationBooks.length < 4) {
+      // This function handles if recommended books are less than 4
+      const updatedBooks = similarLanguageBooks.filter((filter_para) => {
+        // exclude same authors to control repeatation
+        return filter_para.author !== authorArray.includes(filter_para.author)
+      })
+      recommendationBooks = recommendationBooks.concat(updatedBooks).slice(0, 4)
+      return recommendationBooks
+    }
   }
 
-  return similarAuthorBooks
+  const newAuthorBooks = similarAuthorBooks.slice(0, 2)
+  let recommendationBooks = newAuthorBooks.concat(similarCategoryBooks)
+  recommendationBooks = recommendationBooks.slice(0, 4)
+
+  return recommendationBooks
 }
 
 // API TESTING THE ALGORITHM
 const algoTest = async (req, res) => {
   const result = await analyzeUserPreferences(
-    '649179774afae22ac6166b6e',
-    '649682031faf3efe0d583fe6' //last purchase BookID
+    '649179774afae22ac6166b6e', //user ko ID
+    '64967c201faf3efe0d583f2e' //last purchase BookID
   )
 
   // Algo testing on showing BookTitle and Category for ease
@@ -75,33 +100,31 @@ const algoTest = async (req, res) => {
     author: book.author,
   }))
 
-  res
-    .status(200)
-    .json({ totalHits: titlesAndCategories.length, titlesAndCategories })
-
-  // query to find authors that has more than 2books in database
-  //  BooksModel.aggregate([
-  //    {
-  //      $group: {
-  //        _id: '$author',
-  //        count: { $sum: 1 },
-  //      },
-  //    },
-  //    {
-  //      $match: {
-  //        count: { $gt: 2 },
-  //      },
-  //    },
-  //  ])
-  //    .then((authorsWithMoreThan2Books) => {
-  //      console.log(authorsWithMoreThan2Books)
-  //    })
-  //    .catch((error) => {
-  //      console.error(error)
-  //    })
+  res.status(200).json({
+    totalHits: titlesAndCategories.length,
+    recommendedBooks: titlesAndCategories,
+  })
 }
 
-// recommended books haru dinxa
-const bookRecommendation = async () => {}
+module.exports = { analyzeUserPreferences, algoTest }
 
-module.exports = { bookRecommendation, analyzeUserPreferences, algoTest }
+// query to find authors that has more than 2books in database
+// BooksModel.aggregate([
+//   {
+//     $group: {
+//       _id: '$author',
+//       count: { $sum: 1 },
+//     },
+//   },
+//   {
+//     $match: {
+//       count: { $gt: 1 },
+//     },
+//   },
+// ])
+//   .then((authorsWithMoreThan2Books) => {
+//     console.log(authorsWithMoreThan2Books)
+//   })
+//   .catch((error) => {
+//     console.error(error)
+//   })
