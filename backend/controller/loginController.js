@@ -41,13 +41,34 @@ const postUserLogin = async (req, res) => {
     }
   )
 
-  res.cookie(String(result._id), jwt_token, {
+  res.cookie('access-cookie', jwt_token, {
     path: '/',
     //1000ms * sec * min * hr ->
     expires: new Date(Date.now() + 1000 * 60 * 60 * 24),
     httpOnly: true,
 
     // allows get request from same site or external site but , POST from external sites cookie wont be sent
+    sameSite: 'lax',
+  })
+
+  // Generating Refresh Token
+  const refresh_token = await jwt.sign(
+    {
+      id: result._id,
+      username: result.username,
+      email,
+      userType: result.userType,
+    },
+    process.env.JWT_REFRESH_SECRET,
+    {
+      expiresIn: process.env.JWT_REFRESH_LIFE,
+    }
+  )
+
+  res.cookie('refresh-cookie', refresh_token, {
+    path: '/',
+    expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365), //365days Cookie Expiry
+    httpOnly: true,
     sameSite: 'lax',
   })
 
