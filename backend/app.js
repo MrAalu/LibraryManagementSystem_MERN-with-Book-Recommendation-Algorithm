@@ -95,7 +95,7 @@ const InitiateServer = async () => {
     console.log('Connected to Database Successfully')
     app.listen(port, () =>
       console.log(
-        `server started at port ${port}.......................................................`
+        `server started at port ${port} . . . _____________________________________________`
       )
     )
   } catch (error) {

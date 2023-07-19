@@ -85,7 +85,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"admin\" , \r\n    \"email\" : \"admin@gmail.com\" ,\r\n    \"phone\" : \"9847612345\" ,\r\n    \"password\" : \"admin\"\r\n,\r\n    \"userType\" : \"admin_user\"\r\n}",
+					"raw": "// {\r\n//     \"username\": \"admin\" , \r\n//     \"email\" : \"admin@gmail.com\" ,\r\n//     \"phone\" : \"9847612345\" ,\r\n//     \"password\" : \"admin\",\r\n//     \"userType\" : \"admin_user\"\r\n// }\r\n{\r\n    \"username\": \"amitkc\" , \r\n    \"email\" : \"amitkc240@gmail.com\" ,\r\n    \"phone\" : \"9847612345\" ,\r\n    \"password\" : \"amitkc\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -102,6 +102,66 @@
 						"api",
 						"v1",
 						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VerifyEmail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"otpCode\" : \"3765\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/signup/verifyEmail",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"signup",
+						"verifyEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resend OTP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/signup/resendOtp",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"signup",
+						"resendOtp"
 					]
 				}
 			},
@@ -321,7 +381,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/api/v1/users/648eb6cea9f4af7a36dec5e1",
+					"raw": "localhost:5000/api/v1/users/649179774afae22ac6166b6e",
 					"host": [
 						"localhost"
 					],
@@ -330,7 +390,7 @@
 						"api",
 						"v1",
 						"users",
-						"648eb6cea9f4af7a36dec5e1"
+						"649179774afae22ac6166b6e"
 					],
 					"query": [
 						{

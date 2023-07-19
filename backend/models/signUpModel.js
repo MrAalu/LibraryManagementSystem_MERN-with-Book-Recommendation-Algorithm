@@ -1,3 +1,4 @@
+// This is the User's Module
 const mongoose = require('mongoose')
 
 const signUpScheme = mongoose.Schema({
@@ -22,6 +23,11 @@ const signUpScheme = mongoose.Schema({
       },
       message: 'Invalid email format. Only @gmail.com addresses are allowed.',
     },
+  },
+
+  emailVerified: {
+    type: Boolean,
+    default: false,
   },
 
   phone: {
