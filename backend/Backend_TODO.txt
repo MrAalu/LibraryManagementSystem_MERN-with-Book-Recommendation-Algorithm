@@ -3,3 +3,4 @@ Multiple Books Categories handle .
 
 Update book image also .
 
+Signup EMAIL Verification using OTP and When loggin in Check if Email is Verified too else , resend OTP and verify
