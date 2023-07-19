@@ -10,3 +10,11 @@ JWT_REFRESH_SECRET = &h+D?fhvq$cC6WoR
 JWT_LIFE = 15m
 
 JWT_REFRESH_LIFE = 365d
+
+
+# FOR EMAIL Verification
+
+EMAIL_USERNAME = Enter your Gmail Account EMAIL here
+EMAIL_PASSWORD = Enter your Gmail Account 'APP Password' ! not normal login password
+
+NOTE : App Password can be generated in google account after unlocking 2factor authentication 

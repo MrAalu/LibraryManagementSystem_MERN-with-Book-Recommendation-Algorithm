@@ -6,17 +6,22 @@ const jwt = require('jsonwebtoken')
 // SignUp model ma vako scheme use garera login credentials CrossCheck
 const UserModels = require('../models/signUpModel')
 
+// For EMAIL verification
+const { generateOtp, maskEmail, sendEmail } = require('./signUpController')
+const UserOtpVerificationModel = require('../models/userOtpVerificationModel')
+
 const postUserLogin = async (req, res) => {
   // converting @gmail.com domain into lowercase to match with database
-  const email = ConvertEmail(req.body.email)
+  const email = await ConvertEmail(req.body.email)
 
-  const result = await UserModels.findOne({ email }).select('+password')
+  const result = await UserModels.findOne({ email: email }).select('+password')
 
   if (!result) {
     return res
       .status(StatusCodes.UNAUTHORIZED)
-      .json({ message: `Invalid email or password` })
+      .json({ success: false, message: `Invalid email or password` })
   }
+
   const validate_password = await bcrypt.compare(
     req.body.password,
     result.password
@@ -24,7 +29,41 @@ const postUserLogin = async (req, res) => {
   if (!validate_password) {
     return res
       .status(StatusCodes.UNAUTHORIZED)
-      .json({ message: 'Invalid email or password' })
+      .json({ success: false, message: 'Invalid email or password' })
+  }
+
+  // After Email & Password matches then,check if email is verified or not
+  if (result.emailVerified === false) {
+    const userId = result.id
+
+    const otp_Code = Math.floor(Math.random() * 9000 + 1000)
+    const hashed_otpCode = await generateOtp(otp_Code)
+
+    res.cookie('otp-cookie', userId, {
+      path: '/', //1000ms * sec * min * hr ->
+      expires: new Date(Date.now() + 1000 * 60 * 60 * 24), // 24hr otp cookie that stores userId
+      httpOnly: true,
+      sameSite: 'lax',
+    })
+
+    await UserOtpVerificationModel.findOneAndUpdate(
+      { userId: userId },
+      {
+        otpCode: hashed_otpCode,
+        createdAt: new Date(),
+        expiresAt: new Date(Date.now() + 1000 * 60),
+      }
+    )
+
+    const maskedEmail = await maskEmail(email)
+
+    await sendEmail(email, otp_Code)
+
+    return res.status(StatusCodes.UNAUTHORIZED).json({
+      success: false,
+      message: `Email not Verified ! OTP Verification code re-sended to email ${maskedEmail}`,
+      ENTER_OTP: true,
+    })
   }
 
   // Generating json web token on success login
@@ -79,7 +118,7 @@ const postUserLogin = async (req, res) => {
 }
 
 // Converting @gmail.com to lower
-const ConvertEmail = (email) => {
+const ConvertEmail = async (email) => {
   const emailParts = email.split('@')
   const firstEmailPart = emailParts[0]
   const secondEmailPart = emailParts[1].toLowerCase()

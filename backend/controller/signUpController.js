@@ -50,7 +50,8 @@ const sendEmail = async (to, otp) => {
       from: process.env.EMAIL_USERNAME,
       to,
       subject: 'Verify Email ! Library Management System',
-      html: `<p>Your OTP Code is <strong>${otp}</strong>. This will expire in 60 seconds!</p>`,
+      html: `<p>Your OTP Code is <strong>${otp}</strong>. This will expire in 60 seconds!</p> </br>
+       <p>NOTICE : please verify your Email within next <strong>24hours</strong> or you would have to re-Register again.`,
     }
 
     const info = await transporter.sendMail(mailOptions)
@@ -86,7 +87,7 @@ const postUserSignup = async (req, res) => {
 
     res.cookie('otp-cookie', result.id, {
       path: '/', //1000ms * sec * min * hr ->
-      expires: new Date(Date.now() + 1000 * 60 * 5), // 5min otp cookie that stores userId
+      expires: new Date(Date.now() + 1000 * 60 * 60 * 24), // 24hr otp cookie that stores userId
       httpOnly: true,
       sameSite: 'lax',
     })
@@ -103,6 +104,7 @@ const postUserSignup = async (req, res) => {
     return res.status(200).json({
       success: true,
       message: `Verify Email ! OTP Verification code sended to email ${maskedEmail}`,
+      ENTER_OTP: true,
     })
   }
 
@@ -114,7 +116,7 @@ const postUserSignup = async (req, res) => {
   } else if (checkPrevUser && checkPrevUser.emailVerified == false) {
     res.cookie('otp-cookie', checkPrevUser.id, {
       path: '/', //1000ms * sec * min * hr ->
-      expires: new Date(Date.now() + 1000 * 60 * 5), // 5min otp cookie that stores userId
+      expires: new Date(Date.now() + 1000 * 60 * 60 * 24), // 24hr otp cookie that stores userId
       httpOnly: true,
       sameSite: 'lax',
     })
@@ -133,6 +135,7 @@ const postUserSignup = async (req, res) => {
     return res.status(200).json({
       success: true,
       message: `Email Already Exists ! Verify Email,OTP Verification code sended to email ${maskedEmail}`,
+      ENTER_OTP: true,
     })
   }
 }
@@ -192,7 +195,15 @@ const resendOtpCode = async (req, res) => {
   return res.status(200).json({
     success: true,
     message: `OTP Verification code re-sended to email ${maskedEmail}`,
+    ENTER_OTP: true,
   })
 }
 
-module.exports = { postUserSignup, verifyEmail, resendOtpCode }
+module.exports = {
+  postUserSignup,
+  verifyEmail,
+  resendOtpCode,
+  sendEmail,
+  generateOtp,
+  maskEmail,
+}
