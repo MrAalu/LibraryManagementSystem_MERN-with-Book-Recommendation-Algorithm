@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "64b89fff084897052e79d0a1"
+  },
+  "userId": "64b89fff084897052e79d09f",
+  "userEmail": "admin@gmail.com",
+  "otpCode": "$2b$10$QglnOTcWrteePymMVHMX..7mqkfEbpD73NxjyZw88kUqdFM35Kfwi",
+  "createdAt": {
+    "$date": "2023-07-20T02:46:23.198Z"
+  },
+  "expiresAt": {
+    "$date": "2023-07-20T02:47:23.198Z"
+  },
+  "__v": 0
+}]

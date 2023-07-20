@@ -4,6 +4,7 @@ import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import toast, { Toaster } from 'react-hot-toast'
 import { backend_server } from '../../main'
+import { BsEye, BsEyeSlash } from 'react-icons/bs'
 
 import { useLoginState } from '../../LoginState'
 
@@ -11,15 +12,24 @@ const Login = () => {
   const API_URL = `${backend_server}/api/v1/login`
 
   const navigate = useNavigate()
-
   const refUsername = useRef(null)
 
   const Empty_Field_Object = { email: '', password: '' }
   const [textfield, setTextField] = useState(Empty_Field_Object)
+  const [showPassword, setShowPassword] = useState(false) // State variable to track password visibility
+
+  const showLoadingToast = () => {
+    return toast.loading('Loggin in...', {
+      position: 'top-center',
+      duration: Infinity, // The toast will not automatically close
+    })
+  }
 
   const userLoginState = useLoginState()
 
+  // Login Form submit
   const HandleSubmit = async (e) => {
+    const loadingToastId = showLoadingToast()
     try {
       e.preventDefault()
       const email = textfield.email
@@ -27,6 +37,8 @@ const Login = () => {
 
       const response = await axios.post(API_URL, { email, password })
       const userType = await response.data.userType
+
+      toast.dismiss(loadingToastId)
 
       // Passing user email to refrence user is logged in , userType to refrence what user ROLE is
       userLoginState.login(email, userType)
@@ -37,14 +49,19 @@ const Login = () => {
         window.location.href = '/admin'
       }
     } catch (error) {
-      if (
+      toast.dismiss(loadingToastId)
+      // console.log('ERROR : ', error.response)
+
+      if (error.response.data.ENTER_OTP === true) {
+        navigate('/otp', { replace: true })
+      } else if (
         error.response &&
         error.response.data &&
         error.response.data.message
       ) {
         // Display the 'if' error message from the backend to frontend
         const error_message = error.response.data.message
-        console.log(error_message)
+        // console.log(error_message)
         toast.error(error_message)
       }
     }
@@ -82,15 +99,25 @@ const Login = () => {
             ref={refUsername}
           />
 
-          <input
-            type='password'
-            placeholder='Enter Password'
-            value={textfield.password}
-            onChange={HandleOnChange}
-            name='password'
-            autoComplete='off'
-            required
-          />
+          <div className='password-field'>
+            <input
+              type={showPassword ? 'text' : 'password'} // Toggle input type based on showPassword state
+              placeholder='Enter Password'
+              value={textfield.password}
+              onChange={HandleOnChange}
+              name='password'
+              autoComplete='off'
+              required
+            />
+            <span
+              onClick={() =>
+                setShowPassword((prevShowPassword) => !prevShowPassword)
+              }
+              style={{ cursor: 'pointer' }}
+            >
+              {showPassword ? <BsEye /> : <BsEyeSlash />}
+            </span>
+          </div>
 
           <button type='submit'>Login</button>
         </form>

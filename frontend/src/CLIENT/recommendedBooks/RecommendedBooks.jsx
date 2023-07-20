@@ -18,7 +18,8 @@ const RecommendedBooks = () => {
 
       setLatestBooks(fetchedBooks)
     } catch (error) {
-      console.log(error.respose)
+      console.log('Recommended Books Unable to Fetch ! Login Please')
+      // console.log(error.response)
     }
   }
 

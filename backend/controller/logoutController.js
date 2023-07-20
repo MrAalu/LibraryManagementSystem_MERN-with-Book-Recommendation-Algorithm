@@ -1,8 +1,10 @@
 const postLogout = (req, res) => {
-  const cookie_id = req.userId
+  const cookiesToClear = ['access-cookie', 'otp-cookie', 'refresh-cookie']
 
-  res.clearCookie(cookie_id)
-  // console.log(cookie_id)
+  // Loop through the array of cookie names and clear each one
+  cookiesToClear.forEach((cookieName) => {
+    res.clearCookie(cookieName)
+  })
 
   res.status(200).json({ message: 'Successfully Logged Out' })
 }

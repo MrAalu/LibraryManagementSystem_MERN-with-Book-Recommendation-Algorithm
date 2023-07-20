@@ -18,7 +18,8 @@ const signUpScheme = mongoose.Schema({
       // only accepts @gmail.com in email
       validator: function (value) {
         // Custom email validation logic
-        return /^[\w-]+@gmail\.com$/i.test(value)
+        // return /^[\w-]+@gmail\.com$/i.test(value)
+        return /^[a-zA-Z0-9._%+-]+@gmail\.com$/i.test(value)
         // test() method checks value matches or not and returns 'true' and 'false'
       },
       message: 'Invalid email format. Only @gmail.com addresses are allowed.',

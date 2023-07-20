@@ -85,6 +85,7 @@ const ForgotPassword = () => {
               onChange={(e) => setEmail(e.target.value)}
               required
               name='email'
+              autoComplete='off'
             />
           </div>
 
@@ -100,6 +101,7 @@ const ForgotPassword = () => {
               pattern='9\d{9}'
               minLength='10'
               maxLength='10'
+              autoComplete='off'
             />
           </div>
 
@@ -123,6 +125,7 @@ const ForgotPassword = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                autoComplete='off'
               />
             </div>
             <div className='form-group'>
@@ -134,6 +137,7 @@ const ForgotPassword = () => {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
+                autoComplete='off'
               />
             </div>
             {!passwordMatch && (

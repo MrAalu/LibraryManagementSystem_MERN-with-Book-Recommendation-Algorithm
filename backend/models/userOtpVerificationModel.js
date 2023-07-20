@@ -5,6 +5,10 @@ const UserOtpVerificationModel = new mongoose.Schema({
     type: String,
     required: true,
   },
+  userEmail: {
+    type: String,
+    required: true,
+  },
   otpCode: {
     type: String,
     required: true,

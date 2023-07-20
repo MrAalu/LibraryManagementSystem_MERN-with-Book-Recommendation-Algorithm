@@ -59,7 +59,7 @@ const postUserLogin = async (req, res) => {
 
     await sendEmail(email, otp_Code)
 
-    return res.status(StatusCodes.UNAUTHORIZED).json({
+    return res.status(StatusCodes.BAD_REQUEST).json({
       success: false,
       message: `Email not Verified ! OTP Verification code re-sended to email ${maskedEmail}`,
       ENTER_OTP: true,

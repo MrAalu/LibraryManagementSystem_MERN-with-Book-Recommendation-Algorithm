@@ -50,8 +50,7 @@ const sendEmail = async (to, otp) => {
       from: process.env.EMAIL_USERNAME,
       to,
       subject: 'Verify Email ! Library Management System',
-      html: `<p>Your OTP Code is <strong>${otp}</strong>. This will expire in 60 seconds!</p> </br>
-       <p>NOTICE : please verify your Email within next <strong>24hours</strong> or you would have to re-Register again.`,
+      html: `<p>Your OTP Code is <strong>${otp}</strong>. This will expire in 60 seconds!</p>`,
     }
 
     const info = await transporter.sendMail(mailOptions)
@@ -94,6 +93,7 @@ const postUserSignup = async (req, res) => {
 
     await UserOtpVerificationModel.create({
       userId: result.id,
+      userEmail: result.email,
       otpCode: hashed_otpCode,
       createdAt: new Date(),
       expiresAt: new Date(Date.now() + 1000 * 60),
@@ -112,6 +112,7 @@ const postUserSignup = async (req, res) => {
     return res.status(200).json({
       success: true,
       message: `Account already Exists, Goto Login`,
+      GOTO_LOGIN: true,
     })
   } else if (checkPrevUser && checkPrevUser.emailVerified == false) {
     res.cookie('otp-cookie', checkPrevUser.id, {
@@ -174,6 +175,27 @@ const verifyEmail = async (req, res) => {
 const resendOtpCode = async (req, res) => {
   const userId = req.cookies['otp-cookie']
 
+  const getUserData = await UserModel.findById({ _id: userId })
+
+  if (getUserData.emailVerified == true) {
+    return res.status(200).json({
+      success: true,
+      message: `Email already Verified ! Goto LOGIN`,
+      ENTER_OTP: true,
+    })
+  }
+
+  const getTokenData = await UserOtpVerificationModel.findOne({ userId })
+
+  // OTP Code isnt Expired yet so , dont send another OTP (Handle SPAMS)
+  if (new Date() < getTokenData.expiresAt) {
+    return res.status(200).json({
+      success: true,
+      message: `OTP Code Already Sended !`,
+      ENTER_OTP: true,
+    })
+  }
+
   const otp_Code = Math.floor(Math.random() * 9000 + 1000)
   const hashed_otpCode = await generateOtp(otp_Code)
 
@@ -186,7 +208,6 @@ const resendOtpCode = async (req, res) => {
     }
   )
 
-  const getUserData = await UserModel.findById({ _id: userId })
   const { email } = getUserData
   const maskedEmail = await maskEmail(email)
 

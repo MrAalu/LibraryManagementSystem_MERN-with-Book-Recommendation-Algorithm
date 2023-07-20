@@ -14,6 +14,7 @@ import { LoginState } from '../LoginState'
 import ClientProfile from './clientProfile/ClientProfile'
 import ViewBook from './viewBooks/ViewBook'
 import ForgotPassword from './forgotPassword/ForgotPassword'
+import OtpForm from './otpForm/OtpForm'
 
 const ClientApp = () => {
   return (
@@ -31,6 +32,8 @@ const ClientApp = () => {
             <Route path='/books/:id' element={<ViewBook />} />
             <Route path='/profile' element={<ClientProfile />} />
             <Route path='/about' element={<AboutUsPage />} />
+            <Route path='/otp' element={<OtpForm />} />
+
             <Route path='*' element={<PagenotFound></PagenotFound>} />
           </Routes>
           <Footer />

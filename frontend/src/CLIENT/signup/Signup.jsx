@@ -1,8 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react'
 import axios from 'axios'
 import './signup.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import toast, { Toaster } from 'react-hot-toast'
+import { BsEye, BsEyeSlash } from 'react-icons/bs'
 
 const Signup = () => {
   const API_URL = 'http://localhost:5000/api/v1/signup'
@@ -18,19 +19,33 @@ const Signup = () => {
     // confirm_password: '',
   }
 
+  const navigate = useNavigate()
+
   const [textField, setTextField] = useState(Empty_Form_Field)
+  const [loading, setLoading] = useState(false)
+  const [showPassword, setShowPassword] = useState(false) // State variable to track password visibility
+
+  const showLoadingToast = () => {
+    return toast.loading('Registering User...', {
+      position: 'top-center',
+      duration: Infinity, // The toast will not automatically close
+    })
+  }
 
   const HandleFormSubmit = async (e) => {
     try {
       e.preventDefault()
+      setLoading(true)
 
       // Validate email format
       const emailRegex = /^[A-Za-z0-9._%+-]+@gmail\.com$/
       const isValid = emailRegex.test(textField.email)
       // console.log(isValid)
       if (!isValid) {
-        toast.error('Invalid Email Format')
+        return toast.error('Invalid Email Format')
       }
+
+      const loadingToastId = showLoadingToast()
 
       const username = textField.username
       const email = textField.email
@@ -44,16 +59,27 @@ const Signup = () => {
         password,
       })
 
-      if (response.status === 200) {
-        toast.success('User Created Successfully')
-      }
+      toast.dismiss(loadingToastId)
+
+      // const message = response.data.message
+
+      // toast(message, {
+      //   icon: 'ℹ️',
+      // })
 
       setTextField(Empty_Form_Field)
-    } catch (error) {
-      console.log(error.response)
-      const userAlreadyExists = error.response.data.message
-      toast.error(userAlreadyExists)
+      setLoading(false)
 
+      if (response.data.GOTO_LOGIN == true) {
+        navigate('/login', { replace: true })
+      } else {
+        navigate('/otp', { replace: true })
+      }
+    } catch (error) {
+      console.log(error)
+      console.log(error.response)
+      // const userAlreadyExists = error.response.data.message
+      // toast.error(userAlreadyExists)
       // setErrorFeedback('Invalid Format')
     }
   }
@@ -117,21 +143,36 @@ const Signup = () => {
             minLength='10'
             maxLength='10'
           />
+
           <label htmlFor='passwordfield'>Password : </label>
-          <input
-            type='password'
-            placeholder='Enter Password'
-            id='passwordfield'
-            value={textField.password}
-            onChange={HandleOnChange}
-            name='password'
-            autoComplete='off'
-            required
-            minLength='5'
-          />
+
+          <div className='password-field'>
+            <input
+              type={showPassword ? 'text' : 'password'} // Toggle input type based on showPassword state
+              placeholder='Enter Password'
+              id='passwordfield'
+              value={textField.password}
+              onChange={HandleOnChange}
+              name='password'
+              autoComplete='off'
+              required
+              minLength='5'
+            />
+            <span
+              onClick={() =>
+                setShowPassword((prevShowPassword) => !prevShowPassword)
+              }
+              style={{ cursor: 'pointer' }}
+            >
+              {showPassword ? <BsEye /> : <BsEyeSlash />}
+            </span>
+          </div>
+
           <br />
 
-          <button>Signup</button>
+          <button disabled={loading}>
+            {loading ? 'Signing up...' : 'Sign Up'}
+          </button>
         </form>
       </div>
 

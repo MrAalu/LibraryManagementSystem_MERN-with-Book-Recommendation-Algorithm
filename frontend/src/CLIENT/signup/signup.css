@@ -169,3 +169,22 @@ button:active {
 #p-fail {
   color: red;
 }
+
+/* FOR TOGGELING PASSWORD  */
+
+/* In your CSS file or component's style */
+.password-field {
+  position: relative;
+}
+
+.password-field input {
+  padding-right: 30px; /* Adjust the value based on the icon size and spacing */
+}
+
+.password-field span {
+  position: absolute;
+  top: 50%;
+  right: 20px; /* Adjust the value based on the icon size and spacing */
+  transform: translateY(-50%);
+  font-size: 30px;
+}
