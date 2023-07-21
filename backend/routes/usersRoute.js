@@ -11,13 +11,11 @@ const {
   patchUserDetail,
 } = require('../controller/userController')
 
-const verifyToken = require('../middleware/verifyToken')
-
 userRouter
   .route('/')
   .get(adminAuthorization, getAllUsers)
-  .post(verifyToken, postSingleUser)
-  .patch(verifyToken, patchUserDetail)
+  .post(postSingleUser)
+  .patch(patchUserDetail)
 
 userRouter.route('/:userId').get(getSingleUser)
 

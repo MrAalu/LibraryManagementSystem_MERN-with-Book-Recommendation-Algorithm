@@ -12,15 +12,7 @@ const {
 const adminAuthorization = async (req, res, next) => {
   try {
     // Get the JWT token from the cookie
-    const cookies = req.headers.cookie
-    if (!cookies) {
-      return cookieNotAvailable(req, res)
-    }
-
-    const token = cookies.split('=')[1]
-    if (!token) {
-      return tokenNotAvailable(req, res)
-    }
+    const token = req.cookies['access-cookie']
 
     // Verify the token and decode the payload
     await jwt.verify(token, process.env.JWT_SECRET, (err, payload) => {
