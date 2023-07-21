@@ -59,20 +59,26 @@ const EditBookForm = () => {
   }
 
   const handleUpdateButton = async () => {
-    try {
-      const response = await axios.patch(`${API_URL}/${id}`, bookData)
-      toast.success('Update Success')
-      console.log(response)
-    } catch (error) {
-      console.log(error.response)
-      toast.error('error updating book')
+    const { title, category, author, description, language } = bookData
+
+    if (!title || !category || !author || !description || !language) {
+      return false // At least one required field is empty
+    } else {
+      try {
+        const response = await axios.patch(`${API_URL}/${id}`, bookData)
+        toast.success('Update Success')
+        console.log(response)
+      } catch (error) {
+        console.log(error.response)
+        toast.error('error updating book')
+      }
     }
   }
 
   const showConfirmation = () => {
     confirmAlert({
       title: 'Confirm',
-      message: 'Are you sure you want to delete this item?',
+      message: 'Are you sure you want to delete this Book?',
       buttons: [
         {
           label: 'Yes',
@@ -117,9 +123,11 @@ const EditBookForm = () => {
             id='title'
             type='text'
             className='form-control my-1'
+            required
             value={bookData.title}
             onChange={handleOnChange}
             name='title'
+            autoComplete='off'
           />
         </Col>
 
@@ -133,6 +141,8 @@ const EditBookForm = () => {
             value={bookData.category}
             onChange={handleOnChange}
             name='category'
+            required
+            autoComplete='off'
           />
         </Col>
 
@@ -146,6 +156,8 @@ const EditBookForm = () => {
             value={bookData.author}
             onChange={handleOnChange}
             name='author'
+            required
+            autoComplete='off'
           />
         </Col>
 
@@ -188,6 +200,8 @@ const EditBookForm = () => {
             value={bookData.language}
             onChange={handleOnChange}
             name='language'
+            required
+            autoComplete='off'
           />
         </Col>
 
@@ -202,6 +216,8 @@ const EditBookForm = () => {
             className='form-control my-1'
             value={bookData.description}
             onChange={handleOnChange}
+            required
+            autoComplete='off'
           ></textarea>
         </Col>
 

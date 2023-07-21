@@ -30,7 +30,7 @@ const verifyToken = async (req, res, next) => {
                 process.env.JWT_REFRESH_SECRET
               )
 
-              const { id, username, email } = decodedRefreshToken
+              const { id, username, email, userType } = decodedRefreshToken
 
               // Verify that the decoded refresh token is valid and matches the user
               if (decodedRefreshToken) {
@@ -40,6 +40,7 @@ const verifyToken = async (req, res, next) => {
                     id: id,
                     username: username,
                     email: email,
+                    userType: userType,
                   },
                   process.env.JWT_SECRET,
                   { expiresIn: process.env.JWT_LIFE } // Short-lived access token
