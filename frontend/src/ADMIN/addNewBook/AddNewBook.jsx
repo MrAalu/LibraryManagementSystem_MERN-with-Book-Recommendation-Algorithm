@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Container, Form, Row, Col, Button } from 'react-bootstrap'
 import { backend_server } from '../../main'
 import toast, { Toaster } from 'react-hot-toast'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const AddNewBook = () => {
   const API_URL = `${backend_server}/api/v1/books`
@@ -28,9 +28,13 @@ const AddNewBook = () => {
   }
 
   const handleOnChange = (e) => {
-    const name = e.target.name
-    const value = e.target.value
+    const { name, value } = e.target
     setInputValue({ ...inputvalue, [name]: value })
+  }
+
+  const handleOnChangeSelectOptions = (e) => {
+    const { name, value } = e.target
+    setInputValue({ ...inputvalue, [name]: value === 'true' ? true : false })
   }
 
   const handleSubmit = async (event) => {
@@ -50,8 +54,8 @@ const AddNewBook = () => {
     try {
       await axios.post(API_URL, formData)
       toast.success('new Book Created Successfully')
-      console.log('new Book Created Successfully')
-      // setInputValue(empty_inputfield)
+
+      setInputValue(empty_inputfield)
     } catch (error) {
       console.error('Error creating new Book : ', error.response)
       toast.error('Error creating new Book')
@@ -129,35 +133,45 @@ const AddNewBook = () => {
                 required
               />
             </Form.Group>
-            <Form.Group as={Col}>
-              <Form.Label>Available</Form.Label>
-              <Form.Control
-                type='text'
-                onChange={handleOnChange}
-                value={inputvalue.available}
-                placeholder='Available'
-                name='available'
-                autoComplete='off'
-                required
-              />
+            <Form.Group
+              as={Col}
+              className='d-flex'
+              style={{ alignItems: 'center' }}
+            >
+              <div className='me-3 '>
+                <Form.Label>Available</Form.Label>
+                <Form.Select
+                  style={{ width: 'fit-content' }}
+                  onChange={handleOnChangeSelectOptions}
+                  value={inputvalue.available.toString()}
+                  name='available'
+                  required
+                >
+                  <option value='true'>TRUE</option>
+                  <option value='false'>FALSE</option>
+                </Form.Select>
+              </div>
+
+              <div className='mx-3'>
+                <Form.Label>Featured</Form.Label>
+                <Form.Select
+                  style={{ width: 'fit-content' }}
+                  onChange={handleOnChangeSelectOptions}
+                  value={inputvalue.featured.toString()}
+                  name='featured'
+                  required
+                >
+                  <option value='true'>TRUE</option>
+                  <option value='false'>FALSE</option>
+                </Form.Select>
+              </div>
             </Form.Group>
           </Row>
           <Row className='mb-3'>
             <Form.Group as={Col}>
-              <Form.Label>Featured</Form.Label>
-              <Form.Control
-                type='text'
-                onChange={handleOnChange}
-                value={inputvalue.featured}
-                placeholder='Featured'
-                name='featured'
-                autoComplete='off'
-                required
-              />
-            </Form.Group>
-            <Form.Group as={Col}>
               <Form.Label>Image</Form.Label>
               <Form.Control
+                style={{ width: 'fit-content' }}
                 type='file'
                 onChange={handleImageChange}
                 accept='image/*'
@@ -165,17 +179,20 @@ const AddNewBook = () => {
               />
             </Form.Group>
           </Row>
-          <Button type='submit' variant='success'>
-            Submit
-          </Button>
 
-          <button
-            type='button'
-            className='btn btn-secondary mx-1'
-            onClick={() => navigate(-1)}
-          >
-            Go Back
-          </button>
+          <div className='text-center mt-5'>
+            <Button type='submit' variant='success'>
+              Submit
+            </Button>
+
+            <button
+              type='button'
+              className='btn btn-secondary mx-1'
+              onClick={() => navigate(-1)}
+            >
+              Go Back
+            </button>
+          </div>
         </Form>
       </Container>
       <Toaster />
