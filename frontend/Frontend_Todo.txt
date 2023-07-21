@@ -1,1 +1,5 @@
 Update book image also .
+
+FIXED : Book Request page ma based on book request Status , select option ni change huna paryo 
+i.e. if READY then select option ma default READY huna paryo
+

@@ -1,1 +1,3 @@
 Update book image also .
+
+When Delete book , we are only deleting Database info , not the actual IMAGE from Uploads

@@ -46,6 +46,7 @@ const BooksRequests = () => {
         issueStatus: bookIssueStatus,
       })
       toast.success('Update Success')
+      fetchPendingBooks()
     } catch (error) {
       console.log(error.response)
     }
@@ -92,7 +93,8 @@ const BooksRequests = () => {
                         <form className='d-flex' onSubmit={handleFormSubmit}>
                           <select
                             className='form-control mx-1'
-                            defaultValue='PENDING'
+                            // defaultValue='PENDING'
+                            defaultValue={issueStatus.toUpperCase()}
                             onChange={handleSelectChange}
                           >
                             <option key='PENDING' value='PENDING'>

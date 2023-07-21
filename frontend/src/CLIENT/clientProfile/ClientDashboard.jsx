@@ -14,7 +14,11 @@ const ClientDashboard = ({ userBookData }) => {
       })
 
       console.log(response)
-      toast.success('Cancel Success')
+      if (issueStatus === 'DELETE') {
+        toast.success('Cancel Success')
+      } else {
+        toast.success('Removed Successfully')
+      }
     } catch (error) {
       console.log(error)
     }

@@ -1,4 +1,6 @@
 const BookList = require('../models/bookScheme')
+const fs = require('fs')
+const path = require('path')
 
 // fetch all books
 const getAllBooks = async (req, res) => {
@@ -84,12 +86,35 @@ const patchBook = async (req, res) => {
 // delete single book by id
 const deleteBook = async (req, res) => {
   const { id: bookID } = req.params
-  const result = await BookList.findByIdAndDelete({ _id: bookID })
 
+  // Find the book to get the image filename
+  const book = await BookList.findById(bookID)
+  if (!book) {
+    return res.status(400).json({
+      success: false,
+      message: `Book with id ${bookID} doesn't exist`,
+    })
+  }
+
+  const imageFilename = book.image
+
+  // Delete the book from the database
+  const result = await BookList.findByIdAndDelete({ _id: bookID })
   if (!result) {
     return res.status(400).json({
       status: 'fail',
       message: `book with id ${bookID} doesn't exists`,
+    })
+  }
+
+  // Delete the image file from the uploads folder
+  if (imageFilename) {
+    const imagePath = path.join(__dirname, '..', imageFilename)
+    console.log('FILE PATH : ', imagePath)
+    fs.unlink(imagePath, (err) => {
+      if (err) {
+        console.error(`Error deleting image file: ${err}`)
+      }
     })
   }
 
