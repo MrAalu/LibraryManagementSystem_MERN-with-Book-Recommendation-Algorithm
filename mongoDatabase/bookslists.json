@@ -9,7 +9,7 @@
   "category": "MYSTERY",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T03:45:35.246Z"
   },
@@ -25,7 +25,7 @@
   "category": "MYSTERY",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -41,7 +41,7 @@
   "category": "MYSTERY",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -57,7 +57,7 @@
   "category": "MYSTERY",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -73,7 +73,7 @@
   "category": "NOVEL",
   "available": true,
   "featured": false,
-  "language": "nepali",
+  "language": "NEPALI",
   "createdAdded": {
     "$date": "2023-06-02T03:45:35.246Z"
   },
@@ -89,7 +89,7 @@
   "category": "NOVEL",
   "available": false,
   "featured": false,
-  "language": "nepali",
+  "language": "NEPALI",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -105,7 +105,7 @@
   "category": "NOVEL",
   "available": true,
   "featured": false,
-  "language": "nepali",
+  "language": "NEPALI",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -121,7 +121,7 @@
   "category": "NOVEL",
   "available": true,
   "featured": true,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -137,7 +137,7 @@
   "category": "PROGRAMMING",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -153,7 +153,7 @@
   "category": "PROGRAMMING",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -169,7 +169,7 @@
   "category": "PROGRAMMING",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -185,7 +185,7 @@
   "category": "PROGRAMMING",
   "available": true,
   "featured": true,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -201,7 +201,7 @@
   "category": "SCIENCE",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -217,7 +217,7 @@
   "category": "SCIENCE",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-25T04:42:33.627Z"
   },
@@ -233,7 +233,7 @@
   "category": "SCIENCE",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -249,7 +249,7 @@
   "category": "NONFICTION",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-24T04:42:33.627Z"
   },
@@ -265,7 +265,7 @@
   "category": "SCIENCE",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -281,7 +281,7 @@
   "category": "SELFIMPROVEMENT",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -297,7 +297,7 @@
   "category": "SELFIMPROVEMENT",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -313,7 +313,7 @@
   "category": "SELFIMPROVEMENT",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-25T04:42:33.627Z"
   },
@@ -329,7 +329,7 @@
   "category": "SELFIMPROVEMENT",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-25T04:45:59.122Z"
   },
@@ -345,7 +345,7 @@
   "category": "SPIRITUAL",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -361,7 +361,7 @@
   "category": "SPIRITUAL",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -376,8 +376,8 @@
   "description": "A step-by-step guide to 63 meditation techniques from ancient Buddhist, Taoist, Sufi and Hindu practices. The late author was a 20th-century mystic who wrote over 600 books and whose ashram in Poona is a centre for rest and meditation.",
   "category": "SPIRITUAL",
   "available": true,
-  "featured": true,
-  "language": "english",
+  "featured": false,
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -393,7 +393,7 @@
   "category": "SPIRITUAL",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -409,7 +409,7 @@
   "category": "SPIRITUAL",
   "available": false,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -425,7 +425,7 @@
   "category": "SPIRITUAL",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -441,7 +441,7 @@
   "category": "SPIRITUAL",
   "available": true,
   "featured": true,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-02T04:45:59.122Z"
   },
@@ -457,7 +457,7 @@
   "category": "NOVEL",
   "available": true,
   "featured": false,
-  "language": "nepali",
+  "language": "NEPALI",
   "createdAdded": {
     "$date": "2023-06-23T04:42:33.627Z"
   },
@@ -473,7 +473,7 @@
   "category": "NOVEL",
   "available": true,
   "featured": false,
-  "language": "nepali",
+  "language": "NEPALI",
   "createdAdded": {
     "$date": "2023-06-24T04:42:33.627Z"
   },
@@ -489,7 +489,7 @@
   "category": "NOVEL",
   "available": true,
   "featured": false,
-  "language": "nepali",
+  "language": "NEPALI",
   "createdAdded": {
     "$date": "2023-06-24T04:42:33.627Z"
   },
@@ -505,7 +505,7 @@
   "category": "NOVEL",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-24T04:42:33.627Z"
   },
@@ -521,7 +521,7 @@
   "category": "NOVEL",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-24T04:42:33.627Z"
   },
@@ -537,7 +537,7 @@
   "category": "NOVEL",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-24T04:42:33.627Z"
   },
@@ -553,7 +553,7 @@
   "category": "PROGRAMMING",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-24T04:42:33.627Z"
   },
@@ -569,7 +569,7 @@
   "category": "SCIENCE",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-24T04:42:33.627Z"
   },
@@ -585,7 +585,7 @@
   "category": "SELFIMPROVEMENT",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-24T04:42:33.627Z"
   },
@@ -601,7 +601,7 @@
   "category": "SELFIMPROVEMENT",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-25T04:42:33.627Z"
   },
@@ -617,7 +617,7 @@
   "category": "SPIRITUAL",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-24T04:42:33.627Z"
   },
@@ -632,8 +632,8 @@
   "description": "Death is a taboo in most societies in the world. But what if we have got this completely wrong? What if death was not the catastrophe it is made out to be but an essential aspect of life, rife with spiritual possibilities for transcendence? For the first time, someone is saying just that.",
   "category": "SPIRITUAL",
   "available": true,
-  "featured": false,
-  "language": "english",
+  "featured": true,
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-24T04:42:33.627Z"
   },
@@ -649,9 +649,9 @@
   "category": "ROMANCE",
   "available": true,
   "featured": false,
-  "language": "nepali",
+  "language": "NEPALI",
   "createdAdded": {
-    "$date": "2023-06-02T03:45:35.246Z"
+    "$date": "2023-07-26T05:28:34.697Z"
   },
   "__v": 0
 },{
@@ -665,7 +665,7 @@
   "category": "ROMANCE",
   "available": true,
   "featured": false,
-  "language": "nepali",
+  "language": "NEPALI",
   "createdAdded": {
     "$date": "2023-06-24T06:00:16.571Z"
   },
@@ -681,9 +681,25 @@
   "category": "MYSTERY",
   "available": true,
   "featured": false,
-  "language": "english",
+  "language": "ENGLISH",
   "createdAdded": {
     "$date": "2023-06-24T06:00:16.571Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64c0af52eac5212d44bac83c"
+  },
+  "title": "VSM",
+  "image": "uploads\\cc7f5e07faa487cc132befa3ec880448",
+  "author": "Dr Disrespect",
+  "description": "Too much power. Wow. Too much energy. Wow. Too much anticipation. WOW. It’s the nationally bestselling memoir from the biggest star in gaming: Dr Disrespect.\n\nDr Disrespect is a 6-foot-8 freak of nature with a 37-inch vertical, the two-time, back-to-back 1993–94 Blockbuster Video Game Champion, and in his factual opinion, the most dominant international gaming superstar in the history of the world.\n\nIt was just a matter of time before Western civilization came begging Doc to save literature by writing a memoir that reads like a vicious, muscular lion clawing his way through the rocks, roaring in anger and dominance. Here you will find his deepest, most intimate secrets. The untold history of his mysterious, legendary origins and his rise to unparalleled dominance. And most of all, you will find out what, exactly, Doc’s a doctor of.",
+  "category": "GAMING",
+  "available": true,
+  "featured": false,
+  "language": "ENGLISH",
+  "createdAdded": {
+    "$date": "2023-06-02T04:45:59.122Z"
   },
   "__v": 0
 }]
