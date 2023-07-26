@@ -1,6 +1,6 @@
 1.Update Book Image -DONE
 
-2.Handle client updating Email
+2.Handle client updating Email and Password - DONE
 
 3.Handle Admin ACCOUNT creation !
 

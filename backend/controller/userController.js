@@ -182,7 +182,8 @@ const patchUserDetail = async (req, res) => {
 
 // Converting @gmail.com to lower
 const ConvertEmail = async (email) => {
-  const emailParts = email.split('@')
+  const emailWithoutSpaces = email.replace(/\s/g, '') // Remove spaces using regular expression
+  const emailParts = emailWithoutSpaces.split('@')
   const firstEmailPart = emailParts[0]
   const secondEmailPart = emailParts[1].toLowerCase()
 

@@ -6,7 +6,7 @@ const postLogout = (req, res) => {
     res.clearCookie(cookieName)
   })
 
-  res.status(200).json({ message: 'Successfully Logged Out' })
+  return res.status(200).json({ message: 'Successfully Logged Out' })
 }
 
 module.exports = postLogout
