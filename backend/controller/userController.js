@@ -2,6 +2,11 @@ const UserModel = require('../models/signUpModel')
 const BookTransactionSchema = require('../models/bookTransaction')
 const bcrypt = require('bcrypt')
 
+// For EMAIL verification
+const { generateOtp, maskEmail, sendEmail } = require('./signUpController')
+const UserOtpVerificationModel = require('../models/userOtpVerificationModel')
+const postLogout = require('./logoutController')
+
 // Fetch all USERS data + check book return status and FINE Charge
 const getAllUsers = async (req, res) => {
   const result = await UserModel.find({ userType: 'normal_user' })
@@ -63,15 +68,72 @@ const patchUserDetail = async (req, res) => {
 
   // Updates Username,email and phone
   if (username && email && phone) {
-    const result = await UserModel.findByIdAndUpdate(
-      userId,
-      { username, email, phone },
-      {
-        new: true,
-        runValidators: true,
-      }
-    )
-    return res.status(200).json({ success: true, data: result })
+    const UserDetails = await UserModel.findById({ _id: userId })
+    const { email: oldEmail } = UserDetails
+    const newEmail = await ConvertEmail(email)
+
+    // if email is still same ,update username , phone
+    if (oldEmail == newEmail) {
+      const result = await UserModel.findByIdAndUpdate(
+        userId,
+        { username, phone },
+        {
+          new: true,
+          runValidators: true,
+        }
+      )
+      return res.status(200).json({ success: true, data: result })
+    } else {
+      const cookiesToClear = ['access-cookie', 'otp-cookie', 'refresh-cookie']
+
+      // Loop through the array of cookie names and clear each one
+      cookiesToClear.forEach((cookieName) => {
+        res.clearCookie(cookieName)
+      })
+
+      const otp_Code = Math.floor(Math.random() * 9000 + 1000)
+      const hashed_otpCode = await generateOtp(otp_Code)
+
+      res.cookie('otp-cookie', userId, {
+        path: '/', //1000ms * sec * min * hr ->
+        expires: new Date(Date.now() + 1000 * 60 * 60 * 24), // 24hr otp cookie that stores userId
+        httpOnly: true,
+        sameSite: 'lax',
+      })
+
+      await UserOtpVerificationModel.findOneAndUpdate(
+        { userId: userId },
+        {
+          otpCode: hashed_otpCode,
+          createdAt: new Date(),
+          expiresAt: new Date(Date.now() + 1000 * 60),
+        }
+      )
+
+      await UserModel.findByIdAndUpdate(
+        { _id: userId },
+        {
+          email: newEmail,
+          emailVerified: false,
+          username,
+          phone,
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      )
+
+      const maskedEmail = await maskEmail(newEmail)
+
+      await sendEmail(newEmail, otp_Code)
+
+      return res.status(StatusCodes.OK).json({
+        success: true,
+        message: `Verify Email ! OTP Verification code sended to email ${maskedEmail}`,
+        ENTER_OTP: true,
+      })
+    }
   }
 
   // Updates Password
@@ -79,6 +141,18 @@ const patchUserDetail = async (req, res) => {
     const getPassword = await UserModel.findById({ _id: userId }).select(
       '+password'
     )
+
+    // Alphanumeric password validation with Special character
+    const alphanumericRegex =
+      /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/
+
+    if (!new_password.match(alphanumericRegex)) {
+      return res.status(400).json({
+        success: true,
+        message:
+          'Password must be alphanumeric and contain at least one special character.',
+      })
+    }
 
     const comparePassword = await bcrypt.compare(
       old_password,
@@ -104,6 +178,15 @@ const patchUserDetail = async (req, res) => {
         .json({ success: false, message: `Invalid Password` })
     }
   }
+}
+
+// Converting @gmail.com to lower
+const ConvertEmail = async (email) => {
+  const emailParts = email.split('@')
+  const firstEmailPart = emailParts[0]
+  const secondEmailPart = emailParts[1].toLowerCase()
+
+  return (FinalEmail = firstEmailPart + '@' + secondEmailPart)
 }
 
 module.exports = { getAllUsers, getSingleUser, postSingleUser, patchUserDetail }

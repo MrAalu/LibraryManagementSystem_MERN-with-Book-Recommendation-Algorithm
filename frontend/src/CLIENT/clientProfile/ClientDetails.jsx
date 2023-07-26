@@ -4,11 +4,16 @@ import { Button, Modal, Row, Col, Form } from 'react-bootstrap'
 import { backend_server } from '../../main'
 import axios from 'axios'
 import { Toaster, toast } from 'react-hot-toast'
+import { BsEye, BsEyeSlash } from 'react-icons/bs'
+import { useNavigate } from 'react-router-dom'
+import { useLoginState } from '../../LoginState'
 
 const ClientDetails = ({ userData }) => {
   const UpdateUser_API_URL = `${backend_server}/api/v1/users`
   const [showEditModal, setShowEditModal] = useState(false)
   const [showChangePasswordModal, setShowChangePasswordModal] = useState(false)
+  const [showPassword, setShowPassword] = useState(false) // State variable to track password visibility
+  const navigate = useNavigate()
 
   const handleEditModalClose = () => {
     setShowEditModal(false)
@@ -53,6 +58,15 @@ const ClientDetails = ({ userData }) => {
   }
 
   // Updates user Details
+  const showLoadingToast = () => {
+    return toast.loading('Loading...', {
+      position: 'top-center',
+      duration: Infinity, // The toast will not automatically close
+    })
+  }
+
+  const userLoginState = useLoginState()
+
   const handleUpdateProfile = async (e) => {
     e.preventDefault()
     const { username, email, phone } = inputFieldNormal
@@ -64,7 +78,7 @@ const ClientDetails = ({ userData }) => {
     if (!isValid) {
       toast.error('Invalid Email Format')
     }
-
+    const loadingToastId = showLoadingToast()
     try {
       const response = await axios.patch(UpdateUser_API_URL, {
         username,
@@ -72,8 +86,19 @@ const ClientDetails = ({ userData }) => {
         phone,
       })
 
-      toast.success('Update Success')
+      toast.dismiss(loadingToastId)
+      if (response.data.ENTER_OTP == true) {
+        toast.success(response.data.message)
+
+        // reset OR set user login state to NULL
+        userLoginState.logout()
+
+        navigate('/otp', { replace: true })
+      } else {
+        toast.success('Update Success')
+      }
     } catch (error) {
+      toast.dismiss(loadingToastId)
       console.log(error.response)
     }
   }
@@ -84,6 +109,17 @@ const ClientDetails = ({ userData }) => {
     const { confirm_password, new_password, old_password } = inputFieldPassword
 
     if (new_password === confirm_password) {
+      // Validate alphanumeric password with a must Special character
+      const alphanumericRegex =
+        /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/
+
+      const isPasswordValid = alphanumericRegex.test(new_password)
+      if (!isPasswordValid) {
+        return toast.error(
+          'Password must be alphanumeric and contain at least one special character'
+        )
+      }
+
       try {
         const response = await axios.patch(UpdateUser_API_URL, {
           old_password,
@@ -262,16 +298,26 @@ const ClientDetails = ({ userData }) => {
             </Form.Group>
 
             <Form.Group controlId='confirm password'>
-              <Form.Label>Confirm Password</Form.Label>
-              <Form.Control
-                required
-                minLength={5}
-                type='password'
-                placeholder='Re-enter new Password'
-                name='confirm_password'
-                onChange={handleOnChangePassword}
-                value={inputFieldPassword.confirm_password}
-              />
+              <Form.Label>Confirm new Password</Form.Label>
+              <div className='password-field'>
+                <Form.Control
+                  type={showPassword ? 'text' : 'password'} // Toggle input type based on showPassword state
+                  required
+                  minLength={5}
+                  placeholder='Re-enter new Password'
+                  name='confirm_password'
+                  onChange={handleOnChangePassword}
+                  value={inputFieldPassword.confirm_password}
+                />
+                <span
+                  onClick={() =>
+                    setShowPassword((prevShowPassword) => !prevShowPassword)
+                  }
+                  style={{ cursor: 'pointer' }}
+                >
+                  {showPassword ? <BsEye /> : <BsEyeSlash />}
+                </span>
+              </div>
             </Form.Group>
 
             <Form.Group className='text-center my-2'>

@@ -186,5 +186,5 @@ button:active {
   top: 50%;
   right: 20px; /* Adjust the value based on the icon size and spacing */
   transform: translateY(-50%);
-  font-size: 30px;
+  font-size: 25px;
 }
