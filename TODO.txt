@@ -1,7 +1,9 @@
-1.Update Book Image 
+1.Update Book Image -DONE
 
 2.Handle client updating Email
 
 3.Handle Admin ACCOUNT creation !
 
-4.Password Alphanumeric implementation
+4.Password Alphanumeric implementation - DONE
+
+5.Clear Filter option on MANAGE BOOKS (ADMIN)

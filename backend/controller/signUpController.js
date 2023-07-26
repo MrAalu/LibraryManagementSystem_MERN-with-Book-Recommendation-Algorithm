@@ -64,6 +64,18 @@ const sendEmail = async (to, otp) => {
 const postUserSignup = async (req, res) => {
   const { username, email, phone, userType, password } = req.body
 
+  // Alphanumeric password validation with Special character
+  const alphanumericRegex =
+    /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/
+
+  if (!password.match(alphanumericRegex)) {
+    return res.status(400).json({
+      success: true,
+      message:
+        'Password must be alphanumeric and contain at least one special character.',
+    })
+  }
+
   const maskedEmail = await maskEmail(email)
 
   const hashedPassword = await bcrypt.hash(password, 10)

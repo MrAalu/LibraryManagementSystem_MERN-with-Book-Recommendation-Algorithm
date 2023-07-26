@@ -11,12 +11,11 @@ const Signup = () => {
   const refUsername = useRef(null)
 
   const Empty_Form_Field = {
-    // fullname: '',
     username: '',
     email: '',
     phone: '',
     password: '',
-    // confirm_password: '',
+    confirm_password: '',
   }
 
   const navigate = useNavigate()
@@ -42,7 +41,24 @@ const Signup = () => {
       const isValid = emailRegex.test(textField.email)
       // console.log(isValid)
       if (!isValid) {
+        setLoading(false)
         return toast.error('Invalid Email Format')
+      }
+
+      // Validate alphanumeric password with a must Special character
+      const alphanumericRegex =
+        /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/
+      const isPasswordValid = alphanumericRegex.test(textField.password)
+      if (!isPasswordValid) {
+        setLoading(false)
+        return toast.error(
+          'Password must be alphanumeric and contain at least one special character'
+        )
+      }
+
+      if (textField.password !== textField.confirm_password) {
+        setLoading(false)
+        return toast.error('Password doesnt match')
       }
 
       const loadingToastId = showLoadingToast()
@@ -60,12 +76,6 @@ const Signup = () => {
       })
 
       toast.dismiss(loadingToastId)
-
-      // const message = response.data.message
-
-      // toast(message, {
-      //   icon: 'ℹ️',
-      // })
 
       setTextField(Empty_Form_Field)
       setLoading(false)
@@ -148,12 +158,29 @@ const Signup = () => {
 
           <div className='password-field'>
             <input
-              type={showPassword ? 'text' : 'password'} // Toggle input type based on showPassword state
+              // type={showPassword ? 'text' : 'password'} // Toggle input type based on showPassword state
+              type='password'
               placeholder='Enter Password'
               id='passwordfield'
               value={textField.password}
               onChange={HandleOnChange}
               name='password'
+              autoComplete='off'
+              required
+              minLength='5'
+            />
+          </div>
+
+          <label htmlFor='passwordfield2'>Confirm Password : </label>
+
+          <div className='password-field'>
+            <input
+              type={showPassword ? 'text' : 'password'} // Toggle input type based on showPassword state
+              placeholder='Confirm Password'
+              id='passwordfield2'
+              value={textField.confirm_password}
+              onChange={HandleOnChange}
+              name='confirm_password'
               autoComplete='off'
               required
               minLength='5'
