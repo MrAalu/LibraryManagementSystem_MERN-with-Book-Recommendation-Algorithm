@@ -55,7 +55,27 @@ const ManageSearchBooks = ({ setAllBooks, bookCategories }) => {
   }
 
   // TODO : Handle Clear Form Filter
-  const handleClearFilters = () => {}
+  const handleClearFilters = () => {
+    setFilterFields(empty_field)
+
+    // Reset the "Category" select dropdown to the default placeholder option
+    const categorySelect = document.getElementById('categorySelect')
+    if (categorySelect) {
+      categorySelect.selectedIndex = 0
+    }
+
+    // Reset the "Featured" select dropdown to the default placeholder option
+    const featuredSelect = document.getElementById('featuredSelect')
+    if (featuredSelect) {
+      featuredSelect.selectedIndex = 0
+    }
+
+    // Reset the "Available" select dropdown to the default placeholder option
+    const availableSelect = document.getElementById('availableSelect')
+    if (availableSelect) {
+      availableSelect.selectedIndex = 0
+    }
+  }
 
   return (
     <div className='container '>
@@ -78,8 +98,9 @@ const ManageSearchBooks = ({ setAllBooks, bookCategories }) => {
 
             {/* Category Filter */}
             <select
+              id='categorySelect'
               className='form-control mx-1'
-              defaultValue='all'
+              defaultValue=''
               onChange={handleCategoryChange}
             >
               <option key='' value=''>
@@ -96,6 +117,7 @@ const ManageSearchBooks = ({ setAllBooks, bookCategories }) => {
 
             {/* Featured Filter */}
             <select
+              id='featuredSelect'
               className='form-control mx-1'
               defaultValue='all'
               onChange={handleFeaturedChange}
@@ -113,6 +135,7 @@ const ManageSearchBooks = ({ setAllBooks, bookCategories }) => {
 
             {/* Available Filter */}
             <select
+              id='availableSelect'
               className='form-control mx-1'
               defaultValue='all'
               onChange={handleAvailableChange}
@@ -141,13 +164,13 @@ const ManageSearchBooks = ({ setAllBooks, bookCategories }) => {
               </button>
 
               {/* Clear FORM Filter BTN */}
-              {/* <button
+              <button
                 type='button'
                 className='btn btn-danger mx-1 my-1'
                 onClick={handleClearFilters}
               >
                 Clear Filters
-              </button> */}
+              </button>
             </div>
           </form>
         </div>

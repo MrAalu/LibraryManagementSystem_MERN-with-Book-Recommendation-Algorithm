@@ -6,4 +6,10 @@
 
 4.Password Alphanumeric implementation - DONE
 
-5.Clear Filter option on MANAGE BOOKS (ADMIN)
+5.Clear Filter option on MANAGE BOOKS (ADMIN) - DONE
+
+
+!Important : When user updates email with wrong email then account is turned into UNVERIFIED so 
+admin must be able to change his Email and new email is verified and user can happly use the accout again
+
+6.Admin must be able to update user details -> Email(Verify too), username,phone.

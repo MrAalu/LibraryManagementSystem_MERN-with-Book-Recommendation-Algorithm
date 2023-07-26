@@ -47,7 +47,9 @@ const IssueBookToUser = () => {
     navigator.clipboard
       .writeText(_id)
       .then(() => {
-        toast.success('Book ID Copied to Clipboard')
+        toast('Book ID Copied to Clipboard', {
+          icon: 'ℹ️',
+        })
       })
       .catch((error) => {
         console.error('Copy failed:', error)
