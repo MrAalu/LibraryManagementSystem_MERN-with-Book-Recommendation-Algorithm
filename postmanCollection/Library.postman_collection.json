@@ -56,7 +56,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"amitkc240@gmail.com\",\r\n    \"password\": \"amitkc\"\r\n}\r\n\r\n// {\r\n//     \"email\": \"admin@gmail.com\",\r\n//     \"password\": \"admin\"\r\n// }",
+					"raw": "// {\r\n//     \"email\": \"amit.kc240@gmail.com\",\r\n//     \"password\": \"amitkc\"\r\n// }\r\n\r\n{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"admin\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -85,7 +85,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "// {\r\n//     \"username\": \"admin\" , \r\n//     \"email\" : \"admin@gmail.com\" ,\r\n//     \"phone\" : \"9847612345\" ,\r\n//     \"password\" : \"admin\",\r\n//     \"userType\" : \"admin_user\"\r\n// }\r\n{\r\n    \"username\": \"amitkc\" , \r\n    \"email\" : \"amitkc240@gmail.com\" ,\r\n    \"phone\" : \"9847612345\" ,\r\n    \"password\" : \"amitkc\"\r\n}",
+					"raw": "// {\r\n//     \"username\": \"admin\" , \r\n//     \"email\" : \"admin@gmail.com\" ,\r\n//     \"phone\" : \"9847612345\" ,\r\n//     \"password\" : \"admin\",\r\n//     \"userType\" : \"admin_user\"\r\n// }\r\n{\r\n    \"username\": \"amitkc\" , \r\n    \"email\" : \"amit.kc240@gmail.com\" ,\r\n    \"phone\" : \"9847612345\" ,\r\n    \"password\" : \"amitkc\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -114,7 +114,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"otpCode\" : \"3765\" \r\n}",
+					"raw": "{\r\n    \"otpCode\" : \"8938\" \r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -376,6 +376,38 @@
 			"response": []
 		},
 		{
+			"name": "Update Book Image",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Amitk/Desktop/VSM Book.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/books/updateImage/64c0a055f59443a74661b1a5",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"updateImage",
+						"64c0a055f59443a74661b1a5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "get Single User BOOKS Transaction",
 			"request": {
 				"method": "GET",
@@ -610,6 +642,26 @@
 						"api",
 						"v1",
 						"recommendedBooks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MONGODB Query Testing",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/query",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"query"
 					]
 				}
 			},

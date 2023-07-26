@@ -52,10 +52,17 @@ const EditBookForm = () => {
     const value = e.target.value
 
     setBookData({ ...bookData, [name]: value })
-    setBookData((prevData) => ({
-      ...prevData,
-      [name]: name === 'category' ? value.toUpperCase() : value,
-    }))
+  }
+
+  const handleCategoryOnChange = (e) => {
+    const name = e.target.name
+    const value = e.target.value
+    setBookData({ ...bookData, [name]: value.toUpperCase() })
+  }
+  const handleLanguageOnChange = (e) => {
+    const name = e.target.name
+    const value = e.target.value
+    setBookData({ ...bookData, [name]: value.toUpperCase() })
   }
 
   const handleUpdateButton = async () => {
@@ -67,7 +74,8 @@ const EditBookForm = () => {
       try {
         const response = await axios.patch(`${API_URL}/${id}`, bookData)
         toast.success('Update Success')
-        console.log(response)
+        // console.log(response)
+        fetchBookData()
       } catch (error) {
         console.log(error.response)
         toast.error('error updating book')
@@ -110,141 +118,190 @@ const EditBookForm = () => {
     }
   }
 
+  const [selectedImage, setSelectedImage] = useState(null)
+  const handleImageChange = (event) => {
+    setSelectedImage(event.target.files[0])
+  }
+
+  const handleImageUpdateFormSubmit = async (e) => {
+    e.preventDefault()
+
+    const formData = new FormData()
+    formData.append('image', selectedImage)
+
+    try {
+      await axios.patch(`${API_URL}/updateImage/${id}`, formData)
+
+      toast.success('Image Updated Successfully')
+      fetchBookData()
+    } catch (error) {
+      console.log(error.response)
+      toast.error('Error updating Image')
+    }
+  }
+
   return (
     <div className='container'>
       <h1 className='h1 text-center'>Edit Book</h1>
 
-      <form className='form my-3' onSubmit={handleSubmit}>
-        <Col className='d-flex align-items-center'>
-          <label htmlFor='title' className='col-md-1 my-1 me-2'>
-            Title
-          </label>
-          <input
-            id='title'
-            type='text'
-            className='form-control my-1'
-            required
-            value={bookData.title}
-            onChange={handleOnChange}
-            name='title'
-            autoComplete='off'
-          />
-        </Col>
-
-        <Col className='d-flex align-items-center'>
-          <label htmlFor='category' className='col-md-1 my-1 me-2'>
-            Category
-          </label>
-          <input
-            type='text'
-            className='form-control my-1'
-            value={bookData.category}
-            onChange={handleOnChange}
-            name='category'
-            required
-            autoComplete='off'
-          />
-        </Col>
-
-        <Col className='d-flex align-items-center'>
-          <label htmlFor='author' className='col-md-1 my-1 me-2'>
-            Author
-          </label>
-          <input
-            type='text'
-            className='form-control my-1'
-            value={bookData.author}
-            onChange={handleOnChange}
-            name='author'
-            required
-            autoComplete='off'
-          />
-        </Col>
-
-        <Col className='d-flex align-items-center'>
-          <label htmlFor='available' className='my-1 me-2'>
-            Available
-          </label>
-          <input
-            className='form-check-input'
-            id='available'
-            type='checkbox'
-            checked={bookData.available}
-            onChange={() =>
-              setBookData({ ...bookData, available: !bookData.available })
-            }
-          />
-
-          <label htmlFor='featured' className='my-1 me-2 ms-4'>
-            Featured
-          </label>
-
-          <input
-            className='form-check-input'
-            id='featured'
-            type='checkbox'
-            checked={bookData.featured}
-            onChange={() =>
-              setBookData({ ...bookData, featured: !bookData.featured })
-            }
-          />
-        </Col>
-
-        <Col className='d-flex align-items-center'>
-          <label htmlFor='language' className='col-md-1 my-1 me-2'>
-            Language
-          </label>
-          <input
-            type='text'
-            className='form-control my-1'
-            value={bookData.language}
-            onChange={handleOnChange}
-            name='language'
-            required
-            autoComplete='off'
-          />
-        </Col>
-
-        <Col className='d-flex align-items-center'>
-          <label htmlFor='description' className='col-md-1 my-1 me-2'>
-            Description
-          </label>
-          <textarea
-            name='description'
-            cols='20'
-            rows='5'
-            className='form-control my-1'
-            value={bookData.description}
-            onChange={handleOnChange}
-            required
-            autoComplete='off'
-          ></textarea>
-        </Col>
-
-        <div
-          className='col mt-3'
-          style={{ display: 'flex', justifyContent: 'center' }}
-        >
-          <button
-            type='button'
-            className='btn btn-secondary mx-3'
-            onClick={() => navigate(-1)}
-          >
-            Go Back
-          </button>
-
-          <button
-            type='submit'
-            className='btn btn-success mx-3'
-            onClick={handleUpdateButton}
-          >
-            Update
-          </button>
-          <button className='btn btn-danger mx-3' onClick={showConfirmation}>
-            Delete
-          </button>
+      <div className='row'>
+        <div className='col-md-4'>
+          <form className='form my-3' onSubmit={handleImageUpdateFormSubmit}>
+            <img
+              src={`${backend_server}/${bookData.image}`}
+              alt='book image'
+              style={{ width: '300px', height: '450px', overflow: 'hidden' }}
+            />
+            <input
+              type='file'
+              accept='image/*'
+              required
+              className='m-3'
+              onChange={handleImageChange}
+            />
+            <button type='submit' className='btn btn-success'>
+              Update Image
+            </button>
+          </form>
         </div>
-      </form>
+
+        <div className='col'>
+          <form className='form my-3' onSubmit={handleSubmit}>
+            <Col className='d-flex align-items-center'>
+              <label htmlFor='title' className='col-md-1 my-1 me-2'>
+                Title
+              </label>
+              <input
+                id='title'
+                type='text'
+                className='form-control my-1'
+                required
+                value={bookData.title}
+                onChange={handleOnChange}
+                name='title'
+                autoComplete='off'
+              />
+            </Col>
+
+            <Col className='d-flex align-items-center'>
+              <label htmlFor='category' className='col-md-1 my-1 me-2'>
+                Category
+              </label>
+              <input
+                type='text'
+                className='form-control my-1'
+                value={bookData.category}
+                onChange={handleCategoryOnChange}
+                name='category'
+                required
+                autoComplete='off'
+              />
+            </Col>
+
+            <Col className='d-flex align-items-center'>
+              <label htmlFor='author' className='col-md-1 my-1 me-2'>
+                Author
+              </label>
+              <input
+                type='text'
+                className='form-control my-1'
+                value={bookData.author}
+                onChange={handleOnChange}
+                name='author'
+                required
+                autoComplete='off'
+              />
+            </Col>
+
+            <Col className='d-flex align-items-center'>
+              <label htmlFor='available' className='my-1 me-2'>
+                Available
+              </label>
+              <input
+                className='form-check-input'
+                id='available'
+                type='checkbox'
+                checked={bookData.available}
+                onChange={() =>
+                  setBookData({ ...bookData, available: !bookData.available })
+                }
+              />
+
+              <label htmlFor='featured' className='my-1 me-2 ms-4'>
+                Featured
+              </label>
+
+              <input
+                className='form-check-input'
+                id='featured'
+                type='checkbox'
+                checked={bookData.featured}
+                onChange={() =>
+                  setBookData({ ...bookData, featured: !bookData.featured })
+                }
+              />
+            </Col>
+
+            <Col className='d-flex align-items-center'>
+              <label htmlFor='language' className='col-md-1 my-1 me-2'>
+                Language
+              </label>
+              <input
+                type='text'
+                className='form-control my-1 mx-3'
+                value={bookData.language}
+                onChange={handleLanguageOnChange}
+                name='language'
+                required
+                autoComplete='off'
+              />
+            </Col>
+
+            <Col className='d-flex align-items-center'>
+              <label htmlFor='description' className='col-md-1 my-1 me-2'>
+                Description
+              </label>
+              <textarea
+                name='description'
+                cols='20'
+                rows='5'
+                className='form-control my-1 mx-3'
+                value={bookData.description}
+                onChange={handleOnChange}
+                required
+                autoComplete='off'
+              ></textarea>
+            </Col>
+
+            <div
+              className='col mt-3'
+              style={{ display: 'flex', justifyContent: 'center' }}
+            >
+              <button
+                type='button'
+                className='btn btn-secondary mx-3'
+                onClick={() => navigate(-1)}
+              >
+                Go Back
+              </button>
+
+              <button
+                type='submit'
+                className='btn btn-success mx-3'
+                onClick={handleUpdateButton}
+              >
+                Update
+              </button>
+              <button
+                className='btn btn-danger mx-3'
+                onClick={showConfirmation}
+              >
+                Delete
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
       <Toaster />
     </div>
   )

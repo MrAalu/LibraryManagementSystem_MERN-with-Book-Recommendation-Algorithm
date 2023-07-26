@@ -84,6 +84,10 @@ app.use('/api/v1/recommendedBooks', verifyToken, recommendedBooksRouter)
 const { algoTest } = require('./controller/bookRecommendationAlgorithm')
 app.get('/api/algotest', algoTest)
 
+// Query Db
+const QueryRouter = require('./utils/MongoDbQuery')
+app.use('/api/v1/query', QueryRouter)
+
 app.use(CustomError)
 app.use(PageNotFound)
 
@@ -93,11 +97,7 @@ const InitiateServer = async () => {
   try {
     await ConnectDatabase(process.env.CONNECTION_URL)
     console.log('Connected to Database Successfully')
-    app.listen(port, () =>
-      console.log(
-        `server started at port ${port} . . . _____________________________________________`
-      )
-    )
+    app.listen(port, () => console.log(`server started at port ${port} . . . `))
   } catch (error) {
     console.log('ERROR IN SERVER')
   }

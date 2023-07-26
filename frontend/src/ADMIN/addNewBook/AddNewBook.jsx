@@ -17,7 +17,7 @@ const AddNewBook = () => {
     category: '',
     available: true,
     featured: false,
-    language: 'english',
+    language: 'ENGLISH',
   }
 
   const [selectedImage, setSelectedImage] = useState(null)
@@ -30,6 +30,15 @@ const AddNewBook = () => {
   const handleOnChange = (e) => {
     const { name, value } = e.target
     setInputValue({ ...inputvalue, [name]: value })
+  }
+
+  const handleCategoryOnChange = (e) => {
+    const { name, value } = e.target
+    setInputValue({ ...inputvalue, [name]: value.toUpperCase() })
+  }
+  const handleLanguageOnChange = (e) => {
+    const { name, value } = e.target
+    setInputValue({ ...inputvalue, [name]: value.toUpperCase() })
   }
 
   const handleOnChangeSelectOptions = (e) => {
@@ -111,7 +120,7 @@ const AddNewBook = () => {
               <Form.Label>Category</Form.Label>
               <Form.Control
                 type='text'
-                onChange={handleOnChange}
+                onChange={handleCategoryOnChange}
                 value={inputvalue.category}
                 placeholder='Category'
                 name='category'
@@ -125,7 +134,7 @@ const AddNewBook = () => {
               <Form.Label>Language</Form.Label>
               <Form.Control
                 type='text'
-                onChange={handleOnChange}
+                onChange={handleLanguageOnChange}
                 value={inputvalue.language}
                 placeholder='Language'
                 name='language'
