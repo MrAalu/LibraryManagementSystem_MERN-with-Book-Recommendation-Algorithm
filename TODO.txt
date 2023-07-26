@@ -1,0 +1,7 @@
+1.Update Book Image 
+
+2.Handle client updating Email
+
+3.Handle Admin ACCOUNT creation !
+
+4.Password Alphanumeric implementation

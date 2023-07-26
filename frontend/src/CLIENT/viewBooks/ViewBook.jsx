@@ -37,7 +37,7 @@ const ViewBook = () => {
           <img
             src={bookData.image}
             alt=''
-            style={{ height: '100%', width: '250px' }}
+            style={{ height: '90%', width: '300px' }}
             className='img-fluid'
           />
         </div>

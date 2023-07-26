@@ -110,7 +110,7 @@ const deleteBook = async (req, res) => {
   // Delete the image file from the uploads folder
   if (imageFilename) {
     const imagePath = path.join(__dirname, '..', imageFilename)
-    console.log('FILE PATH : ', imagePath)
+    // console.log('Deleted Image FILE PATH : ', imagePath)
     fs.unlink(imagePath, (err) => {
       if (err) {
         console.error(`Error deleting image file: ${err}`)
