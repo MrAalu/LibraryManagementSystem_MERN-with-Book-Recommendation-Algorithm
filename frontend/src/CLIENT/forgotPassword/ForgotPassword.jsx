@@ -47,6 +47,20 @@ const ForgotPassword = () => {
   const handlePasswordFormSubmit = async (e) => {
     e.preventDefault()
     if (password === confirmPassword) {
+      // Validate alphanumeric password with a must Special character
+      const alphanumericRegex =
+        /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/
+
+      const isPasswordValid = alphanumericRegex.test(password)
+      if (!isPasswordValid) {
+        return toast(
+          'Password must be alphanumeric and contain at least one special character',
+          {
+            icon: 'ℹ️',
+          }
+        )
+      }
+
       try {
         const response = await axios.patch(ForgotPassword_API, {
           userId,
@@ -66,6 +80,9 @@ const ForgotPassword = () => {
       }
     } else {
       setPasswordMatch(false)
+      setTimeout(() => {
+        setPasswordMatch(true)
+      }, 3000)
     }
   }
 

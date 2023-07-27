@@ -36,6 +36,18 @@ const patchUpdatePassword = async (req, res) => {
       .json({ success: false, message: `User doesn't exists` })
   }
 
+  // Validate alphanumeric password with a must Special character
+  const alphanumericRegex =
+    /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/
+
+  const isPasswordValid = alphanumericRegex.test(newPassword)
+  if (!isPasswordValid) {
+    return res.status(400).json({
+      success: false,
+      message: `'Password must be alphanumeric and contain at least one special character'`,
+    })
+  }
+
   const updatedPassword = await bcrpyt.hash(newPassword, 10)
 
   const result = await UserModel.findByIdAndUpdate(userId, {
