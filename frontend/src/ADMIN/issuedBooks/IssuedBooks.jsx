@@ -29,13 +29,16 @@ const IssuedBooks = () => {
   }, [])
 
   return (
-    <div className='container'>
+    <div className='container mt-2'>
       <h1 className='h1 text-center'>Issued Books</h1>
-      <Link to='/admin/issuedbooks/issuebooktouser'>
+
+      {/* Issue Book to User Button */}
+      {/* <Link to='/admin/issuedbooks/issuebooktouser'>
         <button className='btn btn-primary' type='button'>
           Issue book to User
         </button>
-      </Link>
+      </Link> */}
+
       {isAnyBooksIssued ? (
         notReturnedBooks.length > 0 ? (
           <div className='row mt-3'>

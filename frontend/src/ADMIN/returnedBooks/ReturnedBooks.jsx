@@ -60,7 +60,7 @@ const ReturnedBooks = () => {
   }
 
   return (
-    <div className='container'>
+    <div className='container mt-2'>
       <Toaster />
       <h1 className='h1 text-center'>Return Due Books</h1>
       {isAnyBooksPending ? (
@@ -97,7 +97,7 @@ const ReturnedBooks = () => {
                       <th scope='row'>{index + 1}</th>
                       {/* <td>{username}</td> */}
                       <td>{userEmail}</td>
-                      <td>{bookTitle}</td>
+                      <td style={{ width: '250px' }}>{bookTitle}</td>
                       <td>{new Date(returnDate).toDateString()}</td>
                       {isReturned ? <td>Returned</td> : <td>Not Returned</td>}
                       <td>Nrs.{extraCharge}/-</td>

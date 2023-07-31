@@ -80,7 +80,7 @@ const ManageSearchBooks = ({ setAllBooks, bookCategories }) => {
   return (
     <div className='container '>
       <div className='row'>
-        <div className='col-md-8'>
+        <div className='col-md-10'>
           <form
             method='get'
             className='form-inline d-flex justify-content-center'
@@ -104,7 +104,7 @@ const ManageSearchBooks = ({ setAllBooks, bookCategories }) => {
               onChange={handleCategoryChange}
             >
               <option key='' value=''>
-                All Categories
+                Categories
               </option>
               {bookCategories.map((books_category) => {
                 return (
@@ -175,13 +175,14 @@ const ManageSearchBooks = ({ setAllBooks, bookCategories }) => {
           </form>
         </div>
 
-        <div className='col mx-1 my-1'>
+        {/* Add new BOOK */}
+        {/* <div className='col mx-1 my-1'>
           <Link to='/admin/managebooks/addnewbook'>
             <button className='btn btn-primary' type='button'>
               Add new Book
             </button>
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   )

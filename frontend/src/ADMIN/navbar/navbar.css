@@ -1,5 +1,8 @@
-.navbar {
+.admin-navbar {
   background-color: #e3f2fd;
+  position: fixed !important;
+  width: 100%;
+  z-index: 1000;
 }
 
 /* Gap between navbar links */

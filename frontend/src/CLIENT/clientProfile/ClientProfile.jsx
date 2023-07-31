@@ -6,6 +6,7 @@ import { backend_server } from '../../main'
 import ClientDashboard from './ClientDashboard'
 import ClientDetails from './ClientDetails'
 import ClientLogout from '../clientLogout/ClientLogout'
+import './clientprofile.css'
 
 const ClientProfile = () => {
   const userLoginState = useLoginState()
@@ -61,15 +62,15 @@ const ClientProfile = () => {
 
   return (
     <div className='container-fluid'>
-      <Row className='my-3'>
+      {/* <Row className='my-3'>
         <h1 className='h1 text-center'>
           Welcome, {userLoginState.userLogState}
         </h1>
-      </Row>
+      </Row> */}
 
-      {/* Left Bar */}
-      <Row className='row my-3'>
-        <Col className='col-md-2'>
+      <Row className='row client-sidebar'>
+        {/* Left Bar */}
+        <Col className='col-md-2 client-dashboard-buttons'>
           <button
             onClick={handleOnclickDashboard}
             className='btn btn-primary my-1 mx-1'
@@ -97,6 +98,7 @@ const ClientProfile = () => {
 
         {/* Right Bar Page */}
         {/* Dashboard */}
+
         {showDashboard && (
           <Col>
             <ClientDashboard userBookData={userBookData}></ClientDashboard>

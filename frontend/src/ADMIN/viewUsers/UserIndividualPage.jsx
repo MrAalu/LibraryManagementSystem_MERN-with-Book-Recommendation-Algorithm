@@ -27,11 +27,11 @@ const UserIndividualPage = () => {
   }, [bookData, usersData])
 
   return (
-    <div className='container my-3'>
+    <div className='container mt-2'>
       {/* users details */}
       {userData && userData.username ? (
-        <div className='row text-center'>
-          <h1 className='h1 text-center'>User Details '{userData.username}'</h1>
+        <div className='row text-left my-2'>
+          <p className='h2'>{userData.username}'s Book Details : </p>
         </div>
       ) : (
         <p className='p text-center mt-4'>Loading ...</p>
@@ -39,7 +39,7 @@ const UserIndividualPage = () => {
 
       {/* User Books data table */}
       {userBookData.length > 0 ? (
-        <div className='row my-4'>
+        <div className='row'>
           <table className='table table-hover'>
             <thead>
               <tr>

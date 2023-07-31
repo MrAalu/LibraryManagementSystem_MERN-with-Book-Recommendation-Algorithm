@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Container, Row, Col } from 'react-bootstrap'
 import AdminNavbar from './navbar/AdminNavbar'
 import PagenotFound from './404-pageNotFoundADMIN/PagenotFound'
-
 import AdminHome from './adminHome/AdminHome'
 import ManageBooks from './manageBooks/ManageBooks'
 import ViewUsers from './viewUsers/ViewUsers'
@@ -14,33 +14,51 @@ import AddNewBook from './addNewBook/AddNewBook'
 import AdminLogout from './adminLogout/AdminLogout'
 import UserIndividualPage from './viewUsers/UserIndividualPage'
 import IssueBookToUser from './issuedBooks/IssueBookToUser'
+import Sidebar from './sidebar/Sidebar'
 
 const AdminAPP = () => {
   return (
     <React.Fragment>
       <Router>
         <AdminNavbar />
-        <Routes>
-          <Route path='/admin' element={<AdminHome />} />
-          <Route path='/admin/logout' element={<AdminLogout />} />
-          <Route path='/admin/managebooks' element={<ManageBooks />} />
-          <Route path='/admin/viewusers' element={<ViewUsers />} />
-          <Route path='/admin/viewusers/:id' element={<UserIndividualPage />} />
-          <Route path='/admin/issuedbooks' element={<IssuedBooks />} />
-          <Route
-            path='/admin/issuedbooks/issuebooktouser'
-            element={<IssueBookToUser />}
-          />
-          <Route path='/admin/booksrequests' element={<BooksRequests />} />
-          <Route path='/admin/returnedbooks' element={<ReturnedBooks />} />
-          <Route
-            path='/admin/managebooks/addnewbook'
-            element={<AddNewBook />}
-          />
-          <Route path='/admin/managebooks/:id' element={<EditBookForm />} />
-
-          <Route path='*' element={<PagenotFound></PagenotFound>} />
-        </Routes>
+        <Container fluid>
+          <Row>
+            <Col md={2}>
+              <Sidebar />
+            </Col>
+            <Col md={10} className='mt-5'>
+              <Routes>
+                <Route path='/admin' element={<AdminHome />} />
+                <Route path='/admin/logout' element={<AdminLogout />} />
+                <Route path='/admin/managebooks' element={<ManageBooks />} />
+                <Route path='/admin/viewusers' element={<ViewUsers />} />
+                <Route
+                  path='/admin/viewusers/:id'
+                  element={<UserIndividualPage />}
+                />
+                <Route path='/admin/issuedbooks' element={<IssuedBooks />} />
+                <Route
+                  path='/admin/issuebooktouser'
+                  element={<IssueBookToUser />}
+                />
+                <Route
+                  path='/admin/booksrequests'
+                  element={<BooksRequests />}
+                />
+                <Route
+                  path='/admin/returnedbooks'
+                  element={<ReturnedBooks />}
+                />
+                <Route path='/admin/addnewbook' element={<AddNewBook />} />
+                <Route
+                  path='/admin/managebooks/:id'
+                  element={<EditBookForm />}
+                />
+                <Route path='*' element={<PagenotFound />} />
+              </Routes>
+            </Col>
+          </Row>
+        </Container>
       </Router>
     </React.Fragment>
   )

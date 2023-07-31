@@ -1,0 +1,16 @@
+.client-dashboard-buttons button {
+  color: rgb(43, 40, 40) !important;
+  background-color: #d7f6ff54;
+  border: 1px solid rgba(0, 0, 0, 0.418) !important;
+  font-weight: bold;
+  margin-top: 15px !important;
+}
+
+.client-dashboard-buttons button:hover {
+  background-color: #9e9d9d91;
+  color: white !important;
+}
+
+.client-dashboard-buttons {
+  margin-top: 1rem !important;
+}

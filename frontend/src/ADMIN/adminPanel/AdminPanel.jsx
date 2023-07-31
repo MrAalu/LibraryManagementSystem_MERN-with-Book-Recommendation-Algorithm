@@ -1,8 +1,9 @@
 import React from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
-import './adminpanel.css'
 import { Link } from 'react-router-dom'
 import { adminpanelData } from './adminpanelData'
+
+import './adminpanel.css'
 
 const AdminPanel = () => {
   return (
@@ -33,9 +34,3 @@ const AdminPanel = () => {
 }
 
 export default AdminPanel
-
-// manage books (CRUD books)
-// Users (user details + issued books + issue new Books)
-// Issued Books (issued books + username)
-// book request (user's request for issueing books)
-// not returned books

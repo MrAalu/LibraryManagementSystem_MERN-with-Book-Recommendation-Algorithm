@@ -12,4 +12,3 @@ admin must be able to change his Email and new email is verified and user can ha
 
 4.check algo once, summer love then palpasa lida , palpasa recoomen gariraxa
 
-5.implement dashboard

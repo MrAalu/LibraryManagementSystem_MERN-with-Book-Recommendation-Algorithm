@@ -38,7 +38,7 @@ const ManageBooks = () => {
   }, [])
 
   return (
-    <div className='container '>
+    <div className='container mt-2'>
       <h1 className='h1 text-center'>Manage Books </h1>
 
       <div className='row my-3'>

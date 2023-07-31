@@ -26,13 +26,14 @@ const EditBookForm = () => {
     description: '',
     language: '',
   })
+  const [imagePath, setImagePath] = useState('')
 
   const fetchBookData = async () => {
     try {
       const response = await axios.get(`${API_URL}/${id}`)
 
       setBookData(response.data.data)
-      // console.log(bookData)
+      setImagePath(`${backend_server}/${response.data.data.image}`)
     } catch (error) {
       console.log('ERROR FETCHING BOOK data using _id')
     }
@@ -141,14 +142,14 @@ const EditBookForm = () => {
   }
 
   return (
-    <div className='container'>
+    <div className='container mt-2'>
       <h1 className='h1 text-center'>Edit Book</h1>
 
       <div className='row'>
         <div className='col-md-4'>
           <form className='form my-3' onSubmit={handleImageUpdateFormSubmit}>
             <img
-              src={`${backend_server}/${bookData.image}`}
+              src={imagePath}
               alt='book image'
               style={{ width: '300px', height: '450px', overflow: 'hidden' }}
             />

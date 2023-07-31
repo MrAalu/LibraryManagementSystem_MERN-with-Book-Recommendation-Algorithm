@@ -15,8 +15,8 @@ const ViewUsers = () => {
   }, [data])
 
   return (
-    <div className='container'>
-      <h1 className='h1 text-center my-3'>View User's</h1>
+    <div className='container mt-2'>
+      <h1 className='h1 text-center'>View User's</h1>
 
       <div className='row mt-3'>
         <table className='table table-hover'>

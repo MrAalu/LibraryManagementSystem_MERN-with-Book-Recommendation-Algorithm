@@ -67,7 +67,7 @@ const ClientDashboard = ({ userBookData }) => {
                   return (
                     <tr key={_id}>
                       <th scope='row'>{index + 1}</th>
-                      <td>{bookTitle}</td>
+                      <td style={{ width: '250px' }}>{bookTitle}</td>
                       <td>{issueStatus}</td>
                       <td>{bookissuedate}</td>
                       <td>{updatedReturnDate}</td>

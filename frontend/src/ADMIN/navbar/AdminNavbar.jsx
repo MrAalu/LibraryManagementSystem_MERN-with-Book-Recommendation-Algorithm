@@ -9,7 +9,7 @@ const AdminNavbar = () => {
   const { navbarLinks, navbarTitle, navbarImage } = navbarData
 
   return (
-    <nav className='navbar navbar-expand-xl '>
+    <nav className='navbar admin-navbar navbar-expand-xl '>
       <div className='container-fluid'>
         <Link to='/admin' className='a'>
           <img
