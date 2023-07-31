@@ -46,6 +46,8 @@ const ReturnedBooks = () => {
         isReturned: updateReturnStatus,
       })
       toast.success('Update Success')
+
+      fetchNotReturnedBooks()
     } catch (error) {
       console.log(error)
       console.log(error.response)

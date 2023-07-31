@@ -1,15 +1,15 @@
-1.Update Book Image -DONE
+1.Handle Admin ACCOUNT creation !
 
-2.Handle client updating Email and Password - DONE
-
-3.Handle Admin ACCOUNT creation !
-
-4.Password Alphanumeric implementation - DONE
-
-5.Clear Filter option on MANAGE BOOKS (ADMIN) - DONE
 
 
 !Important : When user updates email with wrong email then account is turned into UNVERIFIED so 
 admin must be able to change his Email and new email is verified and user can happly use the accout again
 
-6.Admin must be able to update user details -> Email(Verify too), username,phone.
+
+2.Admin must be able to update user details -> Email(Verify too), username,phone.
+
+3.RETURN Books ma click garda ,refresh huna paryo
+
+4.check algo once, summer love then palpasa lida , palpasa recoomen gariraxa
+
+5.implement dashboard

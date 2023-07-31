@@ -7,7 +7,7 @@ JWT_SECRET = n?s!6m=F$Kg%AgTJ-gN5)Hn~YtllC.AT
 
 JWT_REFRESH_SECRET = &h+D?fhvq$cC6WoR
 
-JWT_LIFE = 15m
+JWT_LIFE = 30m
 
 JWT_REFRESH_LIFE = 365d
 
