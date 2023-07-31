@@ -56,7 +56,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "// {\r\n//     \"email\": \"amit.kc240@gmail.com\",\r\n//     \"password\": \"amitkc\"\r\n// }\r\n\r\n{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"admin\"\r\n}",
+					"raw": "{\r\n    \"email\": \"amit.kc240@gmail.com\",\r\n    \"password\": \"Amit@123\"\r\n}\r\n\r\n// {\r\n//     \"email\": \"admin@gmail.com\",\r\n//     \"password\": \"admin\"\r\n// }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -85,7 +85,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "// {\r\n//     \"username\": \"admin\" , \r\n//     \"email\" : \"admin@gmail.com\" ,\r\n//     \"phone\" : \"9847612345\" ,\r\n//     \"password\" : \"admin\",\r\n//     \"userType\" : \"admin_user\"\r\n// }\r\n{\r\n    \"username\": \"amitkc\" , \r\n    \"email\" : \"amit.kc240@gmail.com\" ,\r\n    \"phone\" : \"9847612345\" ,\r\n    \"password\" : \"amitkc\"\r\n}",
+					"raw": "// {\r\n//     \"username\": \"admin\" , \r\n//     \"email\" : \"admin@gmail.com\" ,\r\n//     \"phone\" : \"9847612345\" ,\r\n//     \"password\" : \"admin\",\r\n//     \"userType\" : \"admin_user\"\r\n// }\r\n{\r\n    \"username\": \"amitkc\" , \r\n    \"email\" : \"amit.kc240@gmail.com\" ,\r\n    \"phone\" : \"9847612345\" ,\r\n    \"password\" : \"Amitkc123@\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -221,7 +221,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"bookId\":\"647974491de41547d0528e3f\"\r\n}",
+					"raw": "{\r\n    \"bookId\":\"647975881de41547d0528e56\"\r\n}\r\n\r\n// User requesting for a Book.",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -291,7 +291,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "// {// Change issueStatus (TransactionID)\r\n//     \"id\":\"64afdb739d445a2fd9902fd6\",\r\n//     \"issueStatus\" : \"ACCEPTED\"\r\n// }\r\n\r\n{// User Returns Book (TransactionID)\r\n    \"id\":\"64b0c3ac75c73e8e71a84095\",\r\n    \"isReturned\" : true\r\n}",
+					"raw": "{// Change issueStatus (TransactionID)\r\n    \"id\":\"64c798002ee87745dfc369a3\",\r\n    \"issueStatus\" : \"ACCEPTED\"\r\n}\r\n\r\n// {// User Returns Book (TransactionID)\r\n//     \"id\":\"64b0c3ac75c73e8e71a84095\",\r\n//     \"isReturned\" : true\r\n// }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -478,7 +478,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \r\n    \"username\" : \"ram\"\r\n, \"email\" :  \"random@gmail.com\"\r\n, \"phone\" : \"9812121212\"\r\n// , \r\n// \"old_password\" : \"randomx\"\r\n// , \"new_password\" : \"random\"\r\n }",
+					"raw": "{ \r\n//     \"username\" : \"ram\"\r\n// , \"email\" :  \"random@gmail.com\"\r\n// , \"phone\" : \"9812121212\"\r\n// , \r\n\r\n\"old_password\" : \"!Random123\"\r\n, \"new_password\" : \"Amit@123\"\r\n }",
 					"options": {
 						"raw": {
 							"language": "json"

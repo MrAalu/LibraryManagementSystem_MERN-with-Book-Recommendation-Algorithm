@@ -17,7 +17,7 @@ const analyzeUserPreferences = async (userId, bookId) => {
   // Get all books that the user has Borrowed
   const queriedBookData = await BooksModel.find({ _id: { $in: bookIdArray } })
 
-  // Extracting user intrested category,author,language (NOT USED)
+  // Extracting user intrested category,author,language
   const categoryArray = [...new Set(queriedBookData.map((obj) => obj.category))]
   const authorArray = [...new Set(queriedBookData.map((obj) => obj.author))]
   const languageArray = [...new Set(queriedBookData.map((obj) => obj.language))]
@@ -38,8 +38,8 @@ const analyzeUserPreferences = async (userId, bookId) => {
   if (!authorArray.includes(author)) {
     authorArray.push(author)
   }
-
   // console.log(categoryArray, languageArray, authorArray)
+  // console.log(exludeBooksId)
 
   // Find all books with same language + exclude last borrowed book
   let similarLanguageBooks = await BooksModel.find({
@@ -47,6 +47,7 @@ const analyzeUserPreferences = async (userId, bookId) => {
     language: { $in: languageArray },
     _id: { $ne: bookId, $nin: exludeBooksId },
   })
+  // console.log(similarLanguageBooks.length)
 
   const similarAuthorBooks = similarLanguageBooks.filter((filter_para) => {
     return filter_para.author == author
@@ -69,9 +70,20 @@ const analyzeUserPreferences = async (userId, bookId) => {
     // If we have less than 4 books to recommend than we recommend books based on language
     if (recommendationBooks.length < 4) {
       // This function handles if recommended books are less than 4
-      const updatedBooks = similarLanguageBooks.filter((filter_para) => {
+      let updatedBooks = similarLanguageBooks.filter((filter_para) => {
         // exclude same authors to control repeatation
         return filter_para.author !== authorArray.includes(filter_para.author)
+      })
+
+      updatedBooks = similarLanguageBooks.filter((book) => {
+        // Exclude books with ids that are already in the recommendationBooks array
+        if (
+          recommendationBooks.some((recBook) => recBook._id.equals(book._id))
+        ) {
+          return false
+        }
+
+        return true
       })
       recommendationBooks = recommendationBooks.concat(updatedBooks).slice(0, 4)
       return recommendationBooks
