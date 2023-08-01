@@ -1,3 +1,5 @@
+// Not USED ANYMORE
+
 import { GiBookshelf } from 'react-icons/gi'
 import { FaUserFriends } from 'react-icons/fa'
 import { TiTickOutline } from 'react-icons/ti'

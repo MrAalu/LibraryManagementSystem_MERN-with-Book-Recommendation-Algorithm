@@ -26,6 +26,8 @@ const forgotpasswordRouter = require('./routes/forgotpassword')
 
 const filterRouter = require('./routes/filterRoutes')
 
+const adminHomePageInfoRouter = require('./routes/adminHomePageInfoRoute')
+
 const CustomError = require('./errorHandler/CustomError')
 const PageNotFound = require('./errorHandler/PageNotFound')
 
@@ -48,6 +50,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
 // Middlewares
 const verifyToken = require('./middleware/verifyToken')
+const adminAuthorization = require('./middleware/adminAuth')
 
 // ROUTES
 app.use('/api/v1/signup', signUpRouter)
@@ -75,6 +78,14 @@ app.use('/api/v1/users', verifyToken, userRouter)
 
 // handles if book not returned then automate CHARGES FINE
 app.use('/api/v1/checkbookreturn', CheckBookReturnRouter)
+
+// Admin Home page Infos
+app.use(
+  '/api/v1/adminHomePageInfo',
+  verifyToken,
+  adminAuthorization,
+  adminHomePageInfoRouter
+)
 
 // Fetch RECOMMENDED books
 const recommendedBooksRouter = require('./routes/recommendBooksRouter')

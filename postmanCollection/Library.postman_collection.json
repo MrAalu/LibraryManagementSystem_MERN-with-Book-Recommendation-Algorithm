@@ -56,7 +56,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"amit.kc240@gmail.com\",\r\n    \"password\": \"Amit@123\"\r\n}\r\n\r\n// {\r\n//     \"email\": \"admin@gmail.com\",\r\n//     \"password\": \"admin\"\r\n// }",
+					"raw": "// {\r\n//     \"email\": \"amit.kc240@gmail.com\",\r\n//     \"password\": \"Amit@123\"\r\n// }\r\n\r\n{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"admin\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -662,6 +662,26 @@
 						"api",
 						"v1",
 						"query"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Home Page Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/adminHomePageInfo",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"adminHomePageInfo"
 					]
 				}
 			},
