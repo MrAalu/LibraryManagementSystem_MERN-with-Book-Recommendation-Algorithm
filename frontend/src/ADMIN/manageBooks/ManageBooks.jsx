@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ManageSearchBooks from './ManageSearchBooks'
 import axios from 'axios'
 import './managebooks.css'
+import CustomPagination from '../../CLIENT/pagination/CustomPagination'
 
 // API BASE URL
 import { backend_server } from '../../main'
@@ -9,6 +10,23 @@ import { Link } from 'react-router-dom'
 
 const ManageBooks = () => {
   const API_URL = `${backend_server}/api/v1/books`
+  const API_SKIPFETCH = `${backend_server}/api/v1/book/`
+
+  // If 0 results then display false , true = results found , false = 0 search results
+  const [searchResult, setSearchResult] = useState(true)
+
+  // if filterForm is active , disbale pagination else allow paginations
+  const [filterActive, setFilterActive] = useState(false)
+
+  const fetchData = async (pageNumber) => {
+    try {
+      const resp = await axios.get(`${API_SKIPFETCH}/?page=${pageNumber}`)
+      const data = await resp.data.data
+      setAllBooks(data)
+    } catch (error) {
+      console.log('Error fetching books collections', error)
+    }
+  }
 
   const [allBooks, setAllBooks] = useState([])
   const [categories, setCategories] = useState([])
@@ -28,13 +46,14 @@ const ManageBooks = () => {
       // console.log(bookCategories)
       setCategories(bookCategories)
 
-      setAllBooks(response.data.data)
+      // setAllBooks(response.data.data)
     } catch (error) {
       console.log(error.response)
     }
   }
   useEffect(() => {
-    fetchBooks()
+    fetchBooks() //Fetches all books
+    fetchData() //fetches only 8 books
   }, [])
 
   return (
@@ -90,6 +109,13 @@ const ManageBooks = () => {
               })}
             </tbody>
           </table>
+          {/* Pagination */}
+          <div className='my-3 d-flex justify-content-center'>
+            <CustomPagination
+              fetchData={fetchData}
+              filterActive={filterActive}
+            ></CustomPagination>
+          </div>
         </div>
       ) : (
         <p className='p text-center'>0 Book result's</p>

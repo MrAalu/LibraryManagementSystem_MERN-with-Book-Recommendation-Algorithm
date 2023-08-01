@@ -18,6 +18,10 @@ const ManageSearchBooks = ({ setAllBooks, bookCategories }) => {
   const handleFormSubmit = async (e) => {
     e.preventDefault()
 
+    if (JSON.stringify(filterFields) == JSON.stringify(empty_field)) {
+      return false
+    }
+
     const { title, category, featured, available } = filterFields
     try {
       const response = await axios.get(API_URL, {
