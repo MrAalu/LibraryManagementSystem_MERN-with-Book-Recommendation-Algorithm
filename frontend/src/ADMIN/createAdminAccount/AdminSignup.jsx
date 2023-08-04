@@ -1,11 +1,11 @@
 import React, { useRef, useState, useEffect } from 'react'
 import axios from 'axios'
-import './signup.css'
+import './adminsignup.css'
 import { Link, useNavigate } from 'react-router-dom'
 import toast, { Toaster } from 'react-hot-toast'
 import { BsEye, BsEyeSlash } from 'react-icons/bs'
 
-const Signup = () => {
+const AdminSignup = () => {
   const API_URL = 'http://localhost:5000/api/v1/signup'
 
   const refUsername = useRef(null)
@@ -73,6 +73,7 @@ const Signup = () => {
         email,
         phone,
         password,
+        userType: 'admin_user',
       })
 
       toast.dismiss(loadingToastId)
@@ -80,10 +81,13 @@ const Signup = () => {
       setTextField(Empty_Form_Field)
       setLoading(false)
 
+      // Account is already verified
       if (response.data.GOTO_LOGIN == true) {
-        navigate('/login', { replace: true })
+        toast('Account already Exists, Goto LOGIN', {
+          icon: 'ℹ️',
+        })
       } else {
-        navigate('/otp', { replace: true })
+        navigate('/admin/otp', { replace: true })
       }
     } catch (error) {
       console.log(error)
@@ -107,8 +111,8 @@ const Signup = () => {
   return (
     <div className='signup-maindiv'>
       {/* TOP DIV */}
-      <div className='signup-upperdiv'>
-        <h1>SignUp</h1>
+      <div className='signup-upperdiv text-center'>
+        <h2>Create Admin Account</h2>
       </div>
 
       {/* MIDDLE DIV */}
@@ -216,15 +220,15 @@ const Signup = () => {
       </div>
 
       {/* LOWER DIV */}
-      <div className='signup-lowerdiv'>
+      {/* <div className='signup-lowerdiv'>
         <p>Already have an Account ? </p>
         <Link to='/login'>
           <button>Login</button>
         </Link>
-      </div>
+      </div> */}
       <Toaster />
     </div>
   )
 }
 
-export default Signup
+export default AdminSignup

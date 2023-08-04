@@ -15,6 +15,8 @@ import AdminLogout from './adminLogout/AdminLogout'
 import UserIndividualPage from './viewUsers/UserIndividualPage'
 import IssueBookToUser from './issuedBooks/IssueBookToUser'
 import Sidebar from './sidebar/Sidebar'
+import AdminSignup from './createAdminAccount/AdminSignup'
+import AdminOtpForm from './adminOTP/adminOtpForm'
 
 const AdminAPP = () => {
   return (
@@ -55,6 +57,8 @@ const AdminAPP = () => {
                   element={<EditBookForm />}
                 />
                 <Route path='*' element={<PagenotFound />} />
+                <Route path='/admin/adminsignup' element={<AdminSignup />} />
+                <Route path='/admin/otp' element={<AdminOtpForm />} />
               </Routes>
             </Col>
           </Row>

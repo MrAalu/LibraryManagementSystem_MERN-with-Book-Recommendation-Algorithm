@@ -161,7 +161,7 @@ const verifyEmail = async (req, res) => {
   if (!userId || !userInputOtp) {
     return res
       .status(400)
-      .json({ success: false, message: `No Otp or UserId given` })
+      .json({ success: false, message: `Please enter your OTP Code` })
   }
 
   const UserOtpData = await UserOtpVerificationModel.findOne({ userId: userId })

@@ -21,7 +21,8 @@
   background-color: rgba(216, 224, 245, 0.678);
   border-radius: 5px;
   color: rgb(43, 40, 40) !important;
-  font-size: large !important;
+  /* font-size: large !important; */
+  font-size: 1rem !important;
   margin-top: 15px;
   margin-left: 15px;
   width: auto !important;

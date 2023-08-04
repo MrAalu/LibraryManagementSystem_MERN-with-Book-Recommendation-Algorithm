@@ -9,10 +9,9 @@ admin must be able to change his Email and new email is verified and user can ha
 2.Admin must be able to update user details -> Email(Verify too), username,phone.
 
 
+3. When Book is Ready to PICK , send MAIL to client
 
-3. ADMIN HOME , show important Informations
+5. Signup form lai Flexbox 
 
-
-4. MANAGE BOOKS ma PAGINATION + Limit 10 fetch
 
 

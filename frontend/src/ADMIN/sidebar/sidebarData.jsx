@@ -39,9 +39,14 @@ export const sidebarData = [
     title: `Return Due Books`,
     url: '/admin/returnedbooks',
   },
-
   {
     id: 9,
+    title: `Create admin Account`,
+    url: '/admin/adminsignup',
+  },
+
+  {
+    id: 10,
     title: `Goto Logout`,
     url: '/admin/logout',
   },
