@@ -57,13 +57,13 @@ const postUserLogin = async (req, res) => {
 
     const maskedEmail = await maskEmail(email)
 
-    await sendEmail(email, otp_Code)
-
-    return res.status(StatusCodes.BAD_REQUEST).json({
+    res.status(StatusCodes.BAD_REQUEST).json({
       success: false,
       message: `Email not Verified ! OTP Verification code re-sended to email ${maskedEmail}`,
       ENTER_OTP: true,
     })
+
+    await sendEmail(email, otp_Code)
   }
 
   // Generating json web token on success login

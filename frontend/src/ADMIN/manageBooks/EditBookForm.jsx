@@ -303,7 +303,6 @@ const EditBookForm = () => {
           </form>
         </div>
       </div>
-      <Toaster />
     </div>
   )
 }

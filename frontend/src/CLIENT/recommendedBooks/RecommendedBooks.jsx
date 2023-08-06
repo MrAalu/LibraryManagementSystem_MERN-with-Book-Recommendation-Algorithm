@@ -31,7 +31,6 @@ const RecommendedBooks = () => {
 
   return (
     <div className='row my-2'>
-      <Toaster />
       {latestBooks.length > 0 ? (
         <div>
           <h1 className='h1 mt-3' style={{ textAlign: 'center' }}>

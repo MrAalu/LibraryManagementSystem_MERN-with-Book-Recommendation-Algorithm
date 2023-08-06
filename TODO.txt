@@ -1,17 +1,10 @@
-1.Handle Admin ACCOUNT creation !
-
-
-
 !Important : When user updates email with wrong email then account is turned into UNVERIFIED so 
 admin must be able to change his Email and new email is verified and user can happly use the accout again
 
 
 2.Admin must be able to update user details -> Email(Verify too), username,phone.
 
-
-3. When Book is Ready to PICK , send MAIL to client
-
-5. Signup form lai Flexbox 
+!IMPORTANT : Unverified users lai Admin ma 'View Users' ma check . 
 
 
 

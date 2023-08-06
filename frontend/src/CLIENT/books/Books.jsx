@@ -36,7 +36,6 @@ const Books = () => {
 
   return (
     <div className='container'>
-      <Toaster />
       {/* Popular Books Heading */}
       <div className='row'>
         <h1 className='h1 mt-3' style={{ textAlign: 'center' }}>

@@ -226,7 +226,6 @@ const AdminSignup = () => {
           <button>Login</button>
         </Link>
       </div> */}
-      <Toaster />
     </div>
   )
 }

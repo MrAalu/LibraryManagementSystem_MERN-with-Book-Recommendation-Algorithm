@@ -23,11 +23,8 @@ const AdminOtpForm = () => {
     try {
       const response = await axios.post(OTP_VERIFY_API, { otpCode: otp_code })
 
-      // toast.success(response.data.message)
       toast.success('Account Created Successfully')
-      setTimeout(() => {
-        window.location.href = '/admin/adminsignup'
-      }, 1000)
+      navigate('/admin/adminsignup', { replace: true })
     } catch (error) {
       console.log(error.response)
       if (error.response.data.success == false) {
@@ -60,7 +57,6 @@ const AdminOtpForm = () => {
 
   return (
     <div className='container text-center my-3'>
-      <Toaster />
       <h1 className='h1'>Email Verification Form</h1>
       <p className='p'>
         Enter your <strong>OTP</strong> code :{' '}

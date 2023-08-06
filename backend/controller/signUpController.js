@@ -111,13 +111,13 @@ const postUserSignup = async (req, res) => {
       expiresAt: new Date(Date.now() + 1000 * 60),
     })
 
-    await sendEmail(email, otp_Code)
-
-    return res.status(200).json({
+    res.status(200).json({
       success: true,
       message: `Verify Email ! OTP Verification code sended to email ${maskedEmail}`,
       ENTER_OTP: true,
     })
+
+    await sendEmail(email, otp_Code)
   }
 
   if (checkPrevUser && checkPrevUser.emailVerified == true) {
@@ -143,13 +143,13 @@ const postUserSignup = async (req, res) => {
       }
     )
 
-    await sendEmail(email, otp_Code)
-
-    return res.status(200).json({
+    res.status(200).json({
       success: true,
       message: `Email Already Exists ! Verify Email,OTP Verification code sended to email ${maskedEmail}`,
       ENTER_OTP: true,
     })
+
+    await sendEmail(email, otp_Code)
   }
 }
 
@@ -223,13 +223,13 @@ const resendOtpCode = async (req, res) => {
   const { email } = getUserData
   const maskedEmail = await maskEmail(email)
 
-  await sendEmail(email, otp_Code)
-
-  return res.status(200).json({
+  res.status(200).json({
     success: true,
     message: `OTP Verification code re-sended to email ${maskedEmail}`,
     ENTER_OTP: true,
   })
+
+  await sendEmail(email, otp_Code)
 }
 
 module.exports = {

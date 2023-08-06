@@ -43,6 +43,7 @@ const Login = () => {
       // Passing user email to refrence user is logged in , userType to refrence what user ROLE is
       userLoginState.login(email, userType)
       if (userType === 'normal_user') {
+        toast.success('Login Success')
         navigate('/', { replace: true })
       } else if (userType === 'admin_user') {
         // Hard reload into ADMIN Page
@@ -131,7 +132,6 @@ const Login = () => {
           <button>SignUp</button>
         </Link>
       </div>
-      <Toaster />
     </div>
   )
 }

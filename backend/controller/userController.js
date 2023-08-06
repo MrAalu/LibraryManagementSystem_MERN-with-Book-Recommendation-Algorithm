@@ -83,6 +83,8 @@ const patchUserDetail = async (req, res) => {
         }
       )
       return res.status(200).json({ success: true, data: result })
+
+      // If user gives new Email
     } else {
       const cookiesToClear = ['access-cookie', 'otp-cookie', 'refresh-cookie']
 
@@ -126,13 +128,13 @@ const patchUserDetail = async (req, res) => {
 
       const maskedEmail = await maskEmail(newEmail)
 
-      await sendEmail(newEmail, otp_Code)
-
-      return res.status(StatusCodes.OK).json({
+      res.status(StatusCodes.OK).json({
         success: true,
         message: `Verify Email ! OTP Verification code sended to email ${maskedEmail}`,
         ENTER_OTP: true,
       })
+
+      await sendEmail(newEmail, otp_Code)
     }
   }
 

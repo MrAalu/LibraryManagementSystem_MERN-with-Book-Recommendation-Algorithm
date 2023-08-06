@@ -29,7 +29,6 @@ const ViewBook = () => {
 
   return (
     <div className='container'>
-      <Toaster />
       <h1 className='h1 text-center my-4'>Book Details</h1>
 
       <div className='row mt-1 mb-3 shadow'>

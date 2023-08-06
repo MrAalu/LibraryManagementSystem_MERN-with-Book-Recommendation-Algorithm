@@ -26,7 +26,6 @@ const ClientDashboard = ({ userBookData }) => {
 
   return (
     <div className='container my-3'>
-      <Toaster />
       {/* User Books data table */}
       {userBookData.length > 0 ? (
         <div className='row my-4'>

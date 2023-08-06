@@ -3,6 +3,7 @@ import ClientApp from './CLIENT/ClientApp'
 import AdminAPP from './ADMIN/AdminAPP'
 import { backend_server } from './main'
 import axios from 'axios'
+import { Toaster } from 'react-hot-toast'
 
 // conditionally rendering home page based on user Role/Type
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
 
   return (
     <React.Fragment>
+      <Toaster />
       {userType === 'admin_user' ? <AdminAPP /> : <ClientApp />}
     </React.Fragment>
   )

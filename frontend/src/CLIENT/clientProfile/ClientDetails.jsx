@@ -143,7 +143,6 @@ const ClientDetails = ({ userData }) => {
 
   return (
     <div className='container my-3'>
-      <Toaster />
       {/* Image + Userdetails Box Section */}
       <Row className='align-items-center '>
         {/* Image Section */}

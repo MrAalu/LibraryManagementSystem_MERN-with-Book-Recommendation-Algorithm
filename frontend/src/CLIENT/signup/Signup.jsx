@@ -42,7 +42,9 @@ const Signup = () => {
       // console.log(isValid)
       if (!isValid) {
         setLoading(false)
-        return toast.error('Invalid Email Format')
+        return toast('Invalid Email Format', {
+          icon: 'ℹ️',
+        })
       }
 
       // Validate alphanumeric password with a must Special character
@@ -51,14 +53,19 @@ const Signup = () => {
       const isPasswordValid = alphanumericRegex.test(textField.password)
       if (!isPasswordValid) {
         setLoading(false)
-        return toast.error(
-          'Password must be alphanumeric and contain at least one special character'
+        return toast(
+          'Password must be alphanumeric and contain at least one special character',
+          {
+            icon: 'ℹ️',
+          }
         )
       }
 
       if (textField.password !== textField.confirm_password) {
         setLoading(false)
-        return toast.error('Password doesnt match')
+        return toast('Password doesnt match', {
+          icon: 'ℹ️',
+        })
       }
 
       const loadingToastId = showLoadingToast()
@@ -82,8 +89,14 @@ const Signup = () => {
 
       if (response.data.GOTO_LOGIN == true) {
         navigate('/login', { replace: true })
+        toast('Account Already Exists , You can Login ! ', {
+          icon: 'ℹ️',
+        })
       } else {
         navigate('/otp', { replace: true })
+        toast(response.data.message, {
+          icon: 'ℹ️',
+        })
       }
     } catch (error) {
       console.log(error)
@@ -222,7 +235,6 @@ const Signup = () => {
           <button>Login</button>
         </Link>
       </div>
-      <Toaster />
     </div>
   )
 }

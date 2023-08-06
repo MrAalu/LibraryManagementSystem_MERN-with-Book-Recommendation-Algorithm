@@ -25,13 +25,16 @@ const OtpForm = () => {
     try {
       const response = await axios.post(OTP_VERIFY_API, { otpCode: otp_code })
 
-      // toast.success(response.data.message)
+      toast.success(response.data.message)
 
       navigate('/login', { replace: true })
     } catch (error) {
       console.log(error.response)
       if (error.response.data.success == false) {
-        toast.error(error.response.data.message)
+        // toast.error(error.response.data.message)
+        toast(error.response.data.message, {
+          icon: 'ℹ️',
+        })
       }
     }
   }
@@ -60,7 +63,6 @@ const OtpForm = () => {
 
   return (
     <div className='container text-center my-3'>
-      <Toaster />
       <h1 className='h1'>Email Verification Form</h1>
       <p className='p'>
         Enter your <strong>OTP</strong> code :{' '}

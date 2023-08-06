@@ -61,7 +61,6 @@ const ReturnedBooks = () => {
 
   return (
     <div className='container mt-2'>
-      <Toaster />
       <h1 className='h1 text-center'>Return Due Books</h1>
       {isAnyBooksPending ? (
         notReturnedBooks.length > 0 ? (

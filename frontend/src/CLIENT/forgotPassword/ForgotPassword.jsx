@@ -88,7 +88,6 @@ const ForgotPassword = () => {
 
   return (
     <div className='container'>
-      <Toaster />
       <h1 className='h2 text-center my-3'>Recover Account </h1>
 
       <div className='d-flex flex-column align-items-center '>

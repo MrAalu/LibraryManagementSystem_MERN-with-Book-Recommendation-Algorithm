@@ -204,7 +204,6 @@ const AddNewBook = () => {
           </div>
         </Form>
       </Container>
-      <Toaster />
     </div>
   )
 }
