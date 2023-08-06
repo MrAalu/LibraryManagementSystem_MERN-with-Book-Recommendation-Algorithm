@@ -686,6 +686,56 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Update User Email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"userId\":\"64cfad59ba9e399c5ecfd957\", \r\n    \"newEmail\":\"amit.kc240@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/updateUserEmail",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"updateUserEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resend Otp",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/signup/resendOtp",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"signup",
+						"resendOtp"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

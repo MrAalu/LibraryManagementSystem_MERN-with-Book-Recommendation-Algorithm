@@ -87,6 +87,14 @@ app.use(
   adminHomePageInfoRouter
 )
 
+const UpdateUserEmailRouter = require('./routes/updateUserEmailRoute')
+app.use(
+  '/api/v1/updateUserEmail',
+  verifyToken,
+  adminAuthorization,
+  UpdateUserEmailRouter
+)
+
 // Fetch RECOMMENDED books
 const recommendedBooksRouter = require('./routes/recommendBooksRouter')
 app.use('/api/v1/recommendedBooks', verifyToken, recommendedBooksRouter)

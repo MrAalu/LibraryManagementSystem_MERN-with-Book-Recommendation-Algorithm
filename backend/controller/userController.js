@@ -106,6 +106,7 @@ const patchUserDetail = async (req, res) => {
       await UserOtpVerificationModel.findOneAndUpdate(
         { userId: userId },
         {
+          userEmail: newEmail,
           otpCode: hashed_otpCode,
           createdAt: new Date(),
           expiresAt: new Date(Date.now() + 1000 * 60),

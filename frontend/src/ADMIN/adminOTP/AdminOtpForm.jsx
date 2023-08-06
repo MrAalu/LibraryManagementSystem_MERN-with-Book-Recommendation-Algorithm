@@ -4,10 +4,13 @@ import { backend_server } from '../../main'
 import axios from 'axios'
 import { useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
 
 const AdminOtpForm = () => {
   const OTP_VERIFY_API = `${backend_server}/api/v1/signup/verifyEmail`
   const RESEND_OTP_API = `${backend_server}/api/v1/signup/resendOtp`
+
+  const navigate = useNavigate()
 
   const [otp_code, setOtp_code] = useState('')
   const [loading, setLoading] = useState(false)
@@ -23,12 +26,15 @@ const AdminOtpForm = () => {
     try {
       const response = await axios.post(OTP_VERIFY_API, { otpCode: otp_code })
 
-      toast.success('Account Created Successfully')
-      navigate('/admin/adminsignup', { replace: true })
+      toast.success(response.data.message)
+
+      navigate('/admin', { replace: true })
     } catch (error) {
       console.log(error.response)
       if (error.response.data.success == false) {
-        toast.error(error.response.data.message)
+        toast(error.response.data.message, {
+          icon: 'ℹ️',
+        })
       }
     }
   }
