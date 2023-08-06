@@ -40,8 +40,10 @@ const adminHomePageInfo = async (req, res) => {
     }
   })
 
-  //3 Fetching all User Infos i.e. total Registered users (userType = normal_user)
-  const getUserDetails = await UserModel.find({ userType: 'normal_user' })
+  //3 Fetching all User Infos i.e. total Registered users (userType = normal_user and Verified User)
+  const getUserDetails = await UserModel.find({
+    userType: 'normal_user',
+  })
   const totalRegisteredUsers = getUserDetails.length
 
   res.status(200).json({

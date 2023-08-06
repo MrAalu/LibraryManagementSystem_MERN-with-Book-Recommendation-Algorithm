@@ -4,7 +4,8 @@ admin must be able to change his Email and new email is verified and user can ha
 
 2.Admin must be able to update user details -> Email(Verify too), username,phone.
 
-!IMPORTANT : Unverified users lai Admin ma 'View Users' ma check . 
 
 
 
+
+email  update garda MAIL ma revert to old email function allow garne

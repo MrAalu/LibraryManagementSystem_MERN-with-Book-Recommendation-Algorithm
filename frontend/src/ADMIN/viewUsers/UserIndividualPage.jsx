@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { backend_server } from '../../main'
 import useFetch from '../../useFetch'
+import { Button, Modal, Row, Col, Form } from 'react-bootstrap'
 
 const UserIndividualPage = () => {
   const { id } = useParams()
@@ -31,7 +32,31 @@ const UserIndividualPage = () => {
       {/* users details */}
       {userData && userData.username ? (
         <div className='row text-left my-2'>
-          <p className='h2'>{userData.username}'s Book Details : </p>
+          <Row className='align-items-center '>
+            {/* Image Section */}
+            <Col md={4} className='text-center mx-1 my-2'>
+              <div className='profile-details border p-4 shadow'>
+                <img
+                  style={{ width: '100px' }}
+                  className='img-fluid'
+                  src='/clientprofile.png'
+                />
+                <p className='mt-3'>{userData.username.toUpperCase()}</p>
+              </div>
+            </Col>
+
+            {/* Other user INFO */}
+            <Col md={6}>
+              <div className='profile-details border p-4 shadow mx-1 my-2'>
+                <h5>Email: {userData.email}</h5>
+                <hr />
+
+                <h5>Phone: {userData.phone}</h5>
+                <hr />
+                <h5>Total Books: {userData.totalAcceptedBooks}</h5>
+              </div>
+            </Col>
+          </Row>
         </div>
       ) : (
         <p className='p text-center mt-4'>Loading ...</p>

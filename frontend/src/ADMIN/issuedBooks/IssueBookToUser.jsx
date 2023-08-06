@@ -16,9 +16,23 @@ const IssueBookToUser = () => {
   const [filterFields, setFilterFields] = useState(empty_field)
   const [allBooks, setAllBooks] = useState([])
 
-  const handleOnChange = (e) => {
+  const handleOnChange = async (e) => {
     const { name, value } = e.target
     setFilterFields({ ...filterFields, [name]: value })
+
+    const { title } = filterFields
+    try {
+      const response = await axios.get(API_URL, {
+        params: {
+          title,
+        },
+      })
+
+      setAllBooks(response.data.data)
+    } catch (error) {
+      console.log(error)
+      console.log(error.response)
+    }
   }
 
   const handleSearchFormSubmit = async (e) => {
