@@ -736,6 +736,39 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Similar Books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/similarBooks/649682031faf3efe0d583fe6",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"similarBooks",
+						"649682031faf3efe0d583fe6"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

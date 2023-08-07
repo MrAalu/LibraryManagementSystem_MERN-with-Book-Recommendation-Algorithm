@@ -13,10 +13,10 @@ const Home = () => {
       <BannerHome></BannerHome>
       <div className='container'>
         <Row className='my-3'>
-          <RecentlyAddedBooks></RecentlyAddedBooks>
+          <RecommendedBooks></RecommendedBooks>
         </Row>
         <Row>
-          <RecommendedBooks></RecommendedBooks>
+          <RecentlyAddedBooks></RecentlyAddedBooks>
         </Row>
         <Row>
           <FeaturedBooks></FeaturedBooks>

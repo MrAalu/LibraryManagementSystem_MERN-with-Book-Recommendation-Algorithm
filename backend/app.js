@@ -87,6 +87,7 @@ app.use(
   adminHomePageInfoRouter
 )
 
+// Update Users Email - ADMIN
 const UpdateUserEmailRouter = require('./routes/updateUserEmailRoute')
 app.use(
   '/api/v1/updateUserEmail',
@@ -94,6 +95,10 @@ app.use(
   adminAuthorization,
   UpdateUserEmailRouter
 )
+
+// Fetch Similar Books
+const SimilarBooksRouter = require('./routes/similarBooksRouter')
+app.use('/api/v1/similarBooks', SimilarBooksRouter)
 
 // Fetch RECOMMENDED books
 const recommendedBooksRouter = require('./routes/recommendBooksRouter')

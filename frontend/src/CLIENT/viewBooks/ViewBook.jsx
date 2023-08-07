@@ -2,11 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { backend_server } from '../../main'
 import './viewBooks.css'
-
 import useFetch from '../../useFetch'
 import RequestBook from '../requestBooks/RequestBook'
-import { Toaster } from 'react-hot-toast'
-import RecommendedBooks from '../recommendedBooks/RecommendedBooks'
+import SimilarBooks from './SimilarBooks'
 
 const ViewBook = () => {
   const { id } = useParams() //fetching book id from url params
@@ -25,6 +23,7 @@ const ViewBook = () => {
 
   useEffect(() => {
     setBookData({ ...data, image: imageFullPath })
+    window.scrollTo(0, 0)
   }, [data])
 
   return (
@@ -89,7 +88,7 @@ const ViewBook = () => {
         </div>
       </div>
 
-      <RecommendedBooks></RecommendedBooks>
+      <SimilarBooks />
     </div>
   )
 }

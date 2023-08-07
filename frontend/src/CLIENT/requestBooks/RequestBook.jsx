@@ -28,7 +28,7 @@ const RequestBook = () => {
       } catch (error) {
         console.log(error.response)
         const message = error.response.data.message
-        toast.error(message)
+        toast(message, { icon: 'ℹ️' })
       }
     }
   }
