@@ -87,7 +87,7 @@
   "author": "Narayan Wagle",
   "description": "Palpasa Cafe is a novel by Nepali author Narayan Wagle. It tells the story of an artist, Drishya, during the height of the Nepalese Civil War. The novel is partly a love story of Drishya and the first generation American Nepali, Palpasa, who has returned to the land of her parents after 9/11.",
   "category": "NOVEL",
-  "available": false,
+  "available": true,
   "featured": false,
   "language": "NEPALI",
   "createdAdded": {
@@ -247,7 +247,7 @@
   "author": "Jon Krakauer",
   "description": "Into the Wild is a 1996 non-fiction book written by Jon Krakauer. It is an expansion of a 9,000-word article by Krakauer on Chris McCandless titled \"Death of an Innocent\", which appeared in the January 1993 issue of Outside.",
   "category": "NONFICTION",
-  "available": true,
+  "available": false,
   "featured": false,
   "language": "ENGLISH",
   "createdAdded": {
@@ -651,7 +651,7 @@
   "featured": false,
   "language": "NEPALI",
   "createdAdded": {
-    "$date": "2023-07-26T05:28:34.697Z"
+    "$date": "2023-06-02T03:45:35.246Z"
   },
   "__v": 0
 },{
