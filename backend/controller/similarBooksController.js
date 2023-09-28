@@ -17,7 +17,7 @@ const fetchSimilarBooks = async (req, res) => {
     .exec()
 
   // If only one category from that book then fetch similar books based on Language
-  if (getSimilarBooks.length === 0) {
+  if (getSimilarBooks.length === 0 || !getSimilarBooks) {
     const getSimilarBooksTwo = await BookModel.find({
       _id: { $ne: bookId }, // Exclude the current Book
       language,
