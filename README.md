@@ -22,6 +22,14 @@ CLIENT can do -
 
 `3.Viewing/CRUD Operations on Profile || Dashboard`
 
+## Version Specifications :
+
+1. NodeJS : v18.16.0
+2. Express : v4.18.2
+3. ReactJS : v18.2.0
+4. Using MongoDB: v6.0.6
+   Using Mongosh: v2.0.2
+
 ## Demo
 
 [Showcase Demo Coming Soon!](https://www.github.com/MrAalu)
@@ -40,7 +48,7 @@ CLIENT can do -
   git clone git@github.com:MrAalu/LibraryManagementSystem_MERN.git
 ```
 
-2. Goto both frontend & backend
+2. Goto Both 'Frontend' and 'Backend' folder
 
 ```bash
   cd frontend , cd backend
@@ -52,13 +60,15 @@ CLIENT can do -
   npm install
 ```
 
+**NOTE : In 'backend' make sure to create a '.env' file and copy paste the values of '.env.example' into newly created '.env' file**
+
 4. Start the Frontend and Backend
 
 ```bash
-  npm run start
+  npm run dev
 ```
 
-5. Once you Run Backend(Server), database will be created automatically on Mongodb
+5. Once you Run Backend(Server), database will be created automatically on Mongodb & You just have to Import the TABLE Data which is Stored in folder 'mongoDatabase'
 
 ```bash
 Import respective .JSON file into database Collection
@@ -68,16 +78,10 @@ Import respective .JSON file into database Collection
 
 Starter Login Credentials :
 
-1. ADMIN
+ADMIN :
 
 ```
  Email : admin@gmail.com , Password : admin
-```
-
-2. CLIENT
-
-```
- Email : random@gmail.com , Password : random
 ```
 
 ## Lessons Learned
@@ -94,6 +98,6 @@ Email : amit.kc240@gmail.com
 
 **Frontend :** React, Bootstrap
 
-**Backend :** Node, Express, Mongo
+**Backend :** Node, Express, MongoDB
 
 #### Developed By :- [@MrAalu](https://www.github.com/MrAalu)
