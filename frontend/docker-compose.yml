@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  app:
+    build: .
+
+    volumes:
+      - .:/library_frontapp
+      - /library_frontapp/node_modules
+
+    ports:
+      - 5173:5173
+
+    image: library_frontapp:reactjs
+
+    container_name: library_frontapp_container
+
+    command: npm run dev
