@@ -74,6 +74,16 @@ CLIENT can do -
 Import respective .JSON file into database Collection
 ```
 
+## How to run Project using Docker :
+
+- Populate localhost mongodb database (explained in Step5 above).
+- goto .env and make sure to use correct 'CONNECTION_URL'
+- then, goto main folder location i.e. cd LIBRARYMANAGEMENTSYSTEM_MERN/ and use command :
+
+```
+docker-compose up
+```
+
 ## Login Credentials
 
 Starter Login Credentials :
