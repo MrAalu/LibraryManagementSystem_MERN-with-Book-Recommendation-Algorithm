@@ -80,6 +80,7 @@ const AddNewBook = () => {
       toast.success("new Book Created Successfully");
 
       setInputValue(empty_inputfield);
+      setSelectedImage(null);
     } catch (error) {
       console.error("Error creating new Book : ", error.response);
       toast.error("Error creating new Book");
