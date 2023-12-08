@@ -225,6 +225,7 @@ const ClientDetails = ({ userData }) => {
                 name='email'
                 value={inputFieldNormal.email}
                 onChange={handleOnChangeNormal}
+                readOnly
               />
             </Form.Group>
 

@@ -18,7 +18,7 @@
 }
 
 .sidebar-nav-link {
-  background-color: rgba(216, 224, 245, 0.678);
+  background-color: rgba(216, 224, 245, 0.678) !important;
   border-radius: 5px;
   color: rgb(43, 40, 40) !important;
   /* font-size: large !important; */
