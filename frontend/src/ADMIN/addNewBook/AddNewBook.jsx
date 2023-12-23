@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const AddNewBook = () => {
   const API_URL = `${backend_server}/api/v1/books`;
+  const API_URL_ALL_BOOK_CATEGORIES = `${backend_server}/api/v1/book_category`;
 
   const navigate = useNavigate();
 
@@ -47,10 +48,31 @@ const AddNewBook = () => {
     setInputValue({ ...inputvalue, [name]: value });
   };
 
-  const handleCategoryOnChange = (e) => {
+  // ALL Books Categories
+  const [relatedCategories, setRelatedCategories] = useState([]);
+
+  const handleCategorySelection = (selectedCategory) => {
+    setInputValue({ ...inputvalue, category: selectedCategory.toUpperCase() });
+    setRelatedCategories([]);
+  };
+
+  const handleCategoryOnChange = async (e) => {
     const { name, value } = e.target;
     setInputValue({ ...inputvalue, [name]: value.toUpperCase() });
+
+    // CALL API to Fetch all CATEGORIES so USER CAN Select
+    try {
+      // TODO , use POST Request and send what letters user types
+      const data = await axios.post(API_URL_ALL_BOOK_CATEGORIES, {
+        user_input_category: value,
+      });
+      const book_categories = data.data.book_category;
+      setRelatedCategories(book_categories);
+    } catch (error) {
+      console.log(error.response);
+    }
   };
+
   const handleLanguageOnChange = (e) => {
     const { name, value } = e.target;
     setInputValue({ ...inputvalue, [name]: value.toUpperCase() });
@@ -143,6 +165,17 @@ const AddNewBook = () => {
                 autoComplete="off"
                 required
               />
+              <div>
+                {relatedCategories.map((category) => (
+                  <div
+                    key={category}
+                    className="clickable-category"
+                    onClick={() => handleCategorySelection(category)}
+                  >
+                    {category}
+                  </div>
+                ))}
+              </div>
             </Form.Group>
           </Row>
           <Row className="mb-3">

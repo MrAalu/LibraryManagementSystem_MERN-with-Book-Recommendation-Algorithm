@@ -184,7 +184,9 @@ const postIssueBooks = async (req, res) => {
 const getRequestedBooks = async (req, res) => {
   const result = await BookTransaction.find({
     issueStatus: { $in: ["PENDING", "READY"] },
-  });
+  })
+    .sort({ issueDate: -1 }) // 1 for ascending order, -1 for descending order
+    .exec();
   res
     .status(200)
     .json({ success: true, totalHits: result.length, data: result });
